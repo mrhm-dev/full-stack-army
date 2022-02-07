@@ -10,6 +10,8 @@ Write and share your valuable articles for our community. You can write article 
 -   For series article use `README.md` file to share your table of contents, basic overview of the series and author information.
 -   After your pull request being merged make sure you also update `articles/README.md` file with your newly created article link.
 
+<hr />
+
 **Important Articles:**
 <br />
 _Here we will pin the most important and valuable articles_
