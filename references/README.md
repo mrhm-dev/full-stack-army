@@ -16,5 +16,6 @@ Feel free to update this `README.md` file to add additional resources like youtu
 **Articles:**
 
 **Books:**
+- `FullStack` [FullStack Development - Connecting The Dots](https://www.rokomari.com/book/211527/fullstack-development)
 
 **Others:**
