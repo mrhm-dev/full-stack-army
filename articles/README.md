@@ -11,14 +11,11 @@ Write and share your valuable articles for our community. You can write article 
 -   After your pull request being merged make sure you also update `articles/README.md` file with your newly created article link.
 
 **Important Articles:**
-_Here we will pin the most important and valuable articles_
-
 <br />
+_Here we will pin the most important and valuable articles_
 
 **Article Series:**
 _List of all series articles_
-
-<br />
 
 **Articles:**
 
