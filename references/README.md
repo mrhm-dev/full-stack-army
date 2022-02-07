@@ -6,8 +6,6 @@ Feel free to update this `README.md` file to add additional resources like youtu
 
 -   `CLI` [Command Line Interface For Beginners](https://youtu.be/xF6t9h8iD6I)
 
-<br />
-
 **Youtube Playlists:**
 
 -   `Git` [Git Bangla Tutorial](https://www.youtube.com/playlist?list=PL_XxuZqN0xVDDw5eyzuRDXBzgdnW7UpDF)
@@ -15,14 +13,9 @@ Feel free to update this `README.md` file to add additional resources like youtu
 -   `JavaScript` [JavaScript All You Need to Know](https://www.youtube.com/playlist?list=PL_XxuZqN0xVAu_dWUVFbscqZdTzE8t6Z1)
 -   `JavaScript` [Make Fun of JavaScript Array](https://www.youtube.com/playlist?list=PL_XxuZqN0xVDr08QgQHljCecWtA4jBLnS)
 
-<br />
-
 **Articles:**
 
-<br />
-
 **Books:**
-
-<br />
+- `FullStack` [FullStack Development - Connecting The Dots](https://www.rokomari.com/book/211527/fullstack-development)
 
 **Others:**
