@@ -4,6 +4,7 @@ In this repository, you will find source codes, explanations, and other resource
 
 **Quick Links:**
 
+-   [Live Classes](live-classes/README.md)
 -   [Articles](articles/README.md)
 -   [Examples](examples/README.md)
 -   [Projects](projects/README.md)
