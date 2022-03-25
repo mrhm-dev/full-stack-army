@@ -1,91 +1,19 @@
 const express = require('express');
-const bcrypt = require('bcryptjs');
 const connectDB = require('./db');
-const User = require('./models/User');
+const authenticate = require('./middleware/authenticate');
+const routes = require('./routes');
 
 const app = express();
 app.use(express.json());
-/**
-name = Input()
-email = Input()
-password = Input()
-If name && email && password is Invalid:
-return 400 error
-user = find user with email
-if user found:
-return 400 error
-hash = hash password
-user = save name, email, hash to user model
-return 201
-End
- */
-app.post('/register', async (req, res, next) => {
-	/**
-	* Request Input Sources:
-		- req Body
-		- req Param
-		- req Query
-		- req Header
-		- req Cookies
-  */
-	const { name, email, password, accountStatus } = req.body;
-	if (!name || !email || !password) {
-		return res.status(400).json({ message: 'Invalid Data' });
-	}
+app.use(routes);
 
-	try {
-		let user = await User.findOne({ email });
-		if (user) {
-			return res.status(400).json({ message: 'User already exist' });
-		}
-
-		user = new User({ name, email, password, accountStatus });
-
-		const salt = await bcrypt.genSalt(10);
-		const hash = await bcrypt.hash(password, salt);
-		user.password = hash;
-
-		await user.save();
-		return res
-			.status(201)
-			.json({ message: 'User Created Successfully', user });
-	} catch (e) {
-		next(e);
-	}
+app.get('/private', authenticate, async (req, res) => {
+	console.log('I am the user', req.user);
+	return res.status(200).json({ message: 'I am a private route' });
 });
 
-app.post('/login', async (req, res, next) => {
-	/**
-	 * Start
-			email = Input()
-			password = Input()
-			user = find user with email
-			if user not found:
-			return 400 error
-			if password not equal to user.hash:
-			return 400 error
-			token = generate token using user
-			return token
-			end
-	 */
-	const { email, password } = req.body;
-	try {
-		const user = await User.findOne({ email });
-
-		if (!user) {
-			return res.status(400).json({ message: 'Invalid Credential' });
-		}
-
-		const isMatch = await bcrypt.compare(password, user.password);
-		if (!isMatch) {
-			return res.status(400).json({ message: 'Invalid Credential' });
-		}
-
-		delete user._doc.password;
-		return res.status(200).json({ message: 'Login Successful', user });
-	} catch (e) {
-		next(e);
-	}
+app.get('/public', authenticate, (req, res) => {
+	return res.status(200).json({ message: 'I am a public route' });
 });
 
 app.get('/', (_, res) => {
@@ -98,7 +26,12 @@ app.get('/', (_, res) => {
 
 app.use((err, req, res, next) => {
 	console.log(err);
-	res.status(500).json({ message: 'Server Error Occurred' });
+	const message = err.message ? err.message : 'Server Error Occurred';
+	const status = err.status ? err.status : 500;
+
+	res.status(status).json({
+		message,
+	});
 });
 
 connectDB('mongodb://localhost:27017/attendance-db')
