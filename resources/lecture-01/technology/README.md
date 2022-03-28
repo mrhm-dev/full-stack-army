@@ -10,62 +10,62 @@ Sample : [http://itest.sourceforge.net/documentation/developer/Software_Requirem
 ### Requirement Analysis & Design:
 
 - System Design
-    - Architectural Decision
-        - Monolithic (Layered)
-            - Easy to develop, but very complex to maintain when application grows
-        - Microservice
-            - very hard to develop, but easy to maintain
-        - Server less (FAAS - Function as a service)
-    - Select Database
-        - SQL
-            - PostgreSQL
-            - MySQL
-        - NoSQL
-            - MongoDB
-            - Casandra
-        - Key value
-            - Redis
-            - DynamoDB
-        - Graph Database
-            - Neo4j
-        - Search Database
-            - Elastic Search (Open source - Full Text Search)
-            - Algolia Search (Open AI 3 - Natural Language Processing)
+  - Architectural Decision
+    - Monolithic (Layered)
+      - Easy to develop, but very complex to maintain when application grows
+    - Microservice
+      - very hard to develop, but easy to maintain
+    - Server less (FAAS - Function as a service)
+  - Select Database
+    - SQL
+      - PostgreSQL
+      - MySQL
+    - NoSQL
+      - MongoDB
+      - Casandra
+    - Key value
+      - Redis
+      - DynamoDB
+    - Graph Database
+      - Neo4j
+    - Search Database
+      - Elastic Search (Open source - Full Text Search)
+      - Algolia Search (Open AI 3 - Natural Language Processing)
 - Software Architecture
-    - OOP
-    - OOP Design Pattern & Principles
-    - DSA
-    - Clean Code Architecture
-    - Problem Solving
+  - OOP
+  - OOP Design Pattern & Principles
+  - DSA
+  - Clean Code Architecture
+  - Problem Solving
 - Testing
-    - Test Driven Development
-    - E2E
+  - Test Driven Development
+  - E2E
 - Distribution
-    - DevOps
-        - Continuous
-            - Git & Github
-            - Linux, SSH
-            - Circle CI, Travis CI, Jenkins
-            - Docker, Docker Compose
-            - Docker Swarm, Kubernetes
-            - Prometheus, Nagios
-            - Ansible
-    - Cloud Engineering
-        - VPC (Virtual Private Cloud)
-        - EC2 (Elastic Computing Cloud)
-        - S3 (Simple Storage Service)
-        - RDS (Relational Database Service)
-        - DynamoDB
-        - Route 53
-        - CloudFront (CDN)
-        - SES (Simple Email Service)
-        - SNS (Simple Notification Service)
-        - SQS (Simple Queue Service)
-        - API Gateway
-        - Lambda
-        - Step Function
-        - Cloud Watch
-        - Cloud Formation, Terraform, CDK
+  - DevOps
+    - Continuous
+      - Git & Github
+      - Linux, SSH
+      - Circle CI, Travis CI, Jenkins
+      - Docker, Docker Compose
+      - Docker Swarm, Kubernetes
+      - Prometheus, Nagios
+      - Ansible
+  - Cloud Engineering
+    - VPC (Virtual Private Cloud)
+    - EC2 (Elastic Computing Cloud)
+    - S3 (Simple Storage Service)
+    - RDS (Relational Database Service)
+    - DynamoDB
+    - Route 53
+    - CloudFront (CDN)
+    - SES (Simple Email Service)
+    - SNS (Simple Notification Service)
+    - SQS (Simple Queue Service)
+    - API Gateway
+    - Lambda
+    - Step Function
+    - Cloud Watch
+    - Cloud Formation, Terraform, CDK
 - Maintenance
 
 ### Our Decision for PS Caffe:
@@ -73,3 +73,16 @@ Sample : [http://itest.sourceforge.net/documentation/developer/Software_Requirem
 - Architecture: Monolithic
 - Database - NoSQL (MongoDB Atlas)
 - Backend - NodeJS (Express, Hapi, Fastify) (MVC)
+
+### Steps:
+
+- Requirements
+- Design
+- Implementation
+  - UI/UX Design
+  - Web Design
+  - Frontend Development
+  - Backend Development
+  - Test Code
+- Testing, Deployment
+- Maintenance
