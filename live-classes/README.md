@@ -8,3 +8,4 @@
 - [Lecture 3 - Programming Language Foundation - A Bigger Landscape](https://youtu.be/1LWq-OdB7jY)
 - [Lecture 4 - Programming Fundamentals using JavaScript](https://youtu.be/tAkUXTvm-xo)
 - [Lecture 5 - Array Operations - Imperative vs Declarative](https://youtu.be/LADJO7KniNY)
+- [Lecture 6 - JavaScript Array and Object Deep Dive](https://youtu.be/Mr5rksCjybA)
