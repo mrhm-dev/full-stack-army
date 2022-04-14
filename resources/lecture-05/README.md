@@ -18,7 +18,7 @@
     ```
     `Result:`
 
-    ![code](/img/1.jpeg "Result")
+    ![code](./img/1.jpeg "Result")
 
     </br>
 
@@ -47,7 +47,7 @@
     ``` 
     `Result:`
 
-    ![code](/img/2.jpeg "Result")
+    ![code](./img/2.jpeg "Result")
 
     </br>
     
@@ -128,7 +128,7 @@
     ```
     `Result:`
 
-    ![code](/img/3.jpeg "Result")
+    ![code](./img/3.jpeg "Result")
 
     </br></br>
 
@@ -141,7 +141,7 @@
     ```
     `Result:`
 
-    ![code](/img/4.jpeg "Result")
+    ![code](./img/4.jpeg "Result")
 
     forEach() এ argument আকারে যে function pass করা হয়, তার 
     Parameter এ ৩ টি item pass করা যায়। 
@@ -167,7 +167,7 @@
     ```
     `Result:`
 
-    ![code](/img/5.jpeg "Result")
+    ![code](./img/5.jpeg "Result")
 
  
     
@@ -207,7 +207,7 @@
     ```
     `Result:`
 
-    ![code](/img/6.jpeg "obj2 Result")
+    ![code](./img/6.jpeg "obj2 Result")
 
     </br>
 
@@ -223,7 +223,7 @@
     ```
     `Result:`
 
-    ![code](/img/7.jpeg "obj Result")
+    ![code](./img/7.jpeg "obj Result")
    
     </br>
 
@@ -235,7 +235,7 @@
     ```
     `Result:`
 
-    ![code](/img/8.jpeg "arr Result")
+    ![code](./img/8.jpeg "arr Result")
 
     </br></br>
 
@@ -267,7 +267,7 @@
     ```
     `Result:`
 
-    ![code](/img/9.jpeg "Updated arr5 Result")
+    ![code](./img/9.jpeg "Updated arr5 Result")
     
     </br></br>
 
@@ -285,14 +285,14 @@
     ```
     `arr7 Result:`
 
-    ![code](/img/10.jpeg "arr7 Result")
+    ![code](./img/10.jpeg "arr7 Result")
 
     ```jsx
     console.log(arr8);
     ```
     `arr8 বা মুল Array এর কোন পরিবর্তন হয়নিঃ`
 
-    ![code](/img/11.jpeg "arr8")
+    ![code](./img/11.jpeg "arr8")
 
     </br></br>
     
