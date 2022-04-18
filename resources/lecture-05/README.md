@@ -16,58 +16,102 @@
     }
     console.log(sum);
     ```
+    `Result:`
 
+    ![code](./img/1.jpeg "Result")
+
+    </br>
+
+    >নিচের Array থেকে শুধু Number গুলা বের করতে হবে, কোন নতুন Array 
+    >তৈরি করা যাবে না। এই সিস্টেমে করলে memory তে জায়গা কম লাগবে।
+    
     ```jsx
-    const arr = [1, 2, 3, null, false, 4, 5, '', 'test', 6, 7];
+    let arr2=[1,2,3,null,false,6];
 
-    let count = 0;
-    for (let i = 0; i < arr.length; i++) {
-    	for (let j = i; j < arr.length - 1; j++) {
-    		if (!arr[j] || typeof arr[j] !== 'number') {
-    			arr[j] = arr[j + 1];
-    			arr[j + 1] = undefined;
-    		}
-    	}
-    	if (arr[i] === undefined) {
-    		count++;
-    	}
+    count=0;
+    for(let i=0;i<arr2.length;i++){
+      for(let j=i;j<arr2.length-1;j++){
+         if(!arr2[j]||typeof(arr2[j])!=="number"){
+            arr2[j]=arr2[j+1];
+            arr2[j+1]=undefined;
+         }
+      }
+   
+     if(arr2[i]==undefined){
+       count++;
+     }
+  
     }
+    arr2.length-=count;//Array থেকে undefined গুলো বাদ দিলাম
+    console.log(count,arr2);
+    ``` 
+    `Result:`
 
-    arr.length -= count;
-    console.log(count, arr);
+    ![code](./img/2.jpeg "Result")
 
-    // arr = [1, false, true, '', 2, 3]
-    // val = 1, j = 1
-    // val = 1, j = false
-    // val = 1, j = true
-    // val = 1, j = ''
-    // val = 1, j = 2
-    // val = 1, j = 3
-    // 1, true, '', 2, 3, undefined
-    // val = true, j = true
-    // val = true, j = ''
-    // val = true, j = 2
-    // val = true, j = 3
-    // 1, '', 2, 3, undefined, undefined
-    // val = '',
-    // 1, 2, 3, undefined, undefined, undefined
-    ```
+    </br>
+    
+    > ### Loop এর ভিতরের ঘটনা
 
-  - Declarative traverse
+    i=0 তে,
 
-    ```jsx
-    const numbers = [2, 5, 6, 7, 89, 100];
+    যখন j=3 হবে,
+    [1,2,3,false,undefined,6]
 
-    let sum = 0;
-    numbers.forEach(function (value, index) {
-    	if (index <= 3) {
-    		sum += value;
-    	}
-    });
+    যখন j=4 হবে,
+    [1,2,3,false,6,undefined]
 
-    console.log(sum);
-    ```
+    new array [1,2,3,false,6,undefined]
 
+    >#### আবার
+    i=1 তে,
+
+    যখন j=3 হবে, 
+    [1,2,3,6,undefined,undefined]
+
+    যখন j=4 হবে,
+    [1,2,3,6,undefined,undefined]
+
+    new array [1,2,3,6,undefined,undefined]
+   
+    >#### আবার
+    i=2 তে,
+
+    যখন j=4 হবে,
+    [1,2,3,6,undefined,undefined]
+
+    new array [1,2,3,6,undefined,undefined]
+    
+    >#### আবার
+    i=3 তে,
+
+    যখন j=4 হবে,
+    [1,2,3,6,undefined,undefined]
+
+    new array [1,2,3,6,undefined,undefined]
+
+    >#### আবার
+    i=4 তে
+    যখন j=4 হবে,
+    [1,2,3,6,undefined,undefined]
+
+    new array [1,2,3,6,undefined,undefined]
+    
+    >#### আবার
+    i=5 তে,
+
+    j তে প্রবেশ করবে না, কারণ j=5 হওয়া সম্ভব না।
+
+    >Final Array
+    >>[1,2,3,6,undefined,undefined]
+    > 
+    >এই Array থেকে count বাদ দিলে আমাদের Final Result পাওয়া যাবে।
+    >>[1,2,3,6]
+
+    </br></br>
+   
+    
+    >নতুন Array তৈরি করে উপরের কাজটা করা হল,এতে বেশি Memory লাগবে
     ```jsx
     const arr = [1, 2, 3, null, false, 4, 5, '', 'test', 6, 7];
 
@@ -82,6 +126,61 @@
     }
     console.log(newArr);
     ```
+    `Result:`
+
+    ![code](./img/3.jpeg "Result")
+
+    </br></br>
+
+    > ### Declerative way তে Travers করা [Built in method]
+    ```jsx
+    let arr20=[1,2,3,4];
+    arr20.forEach((value,index,arr)=>{
+      console.log(`index:${index} value:${value} Array:${arr}`);
+    });
+    ```
+    `Result:`
+
+    ![code](./img/4.jpeg "Result")
+
+    forEach() এ argument আকারে যে function pass করা হয়, তার 
+    Parameter এ ৩ টি item pass করা যায়। 
+
+    প্রথমটাঃValue
+
+    দ্বিতীয়টাঃindex
+
+    তৃতীয়টাঃওই Array টা
+
+    আমি যদি চাই value আর index বাদ দিয়ে শুধু Array টা show করাতে 
+    তখন value ও index এর জায়গায় Underscore( _ ) ব্যবহার করতে 
+    হবে। তবে arrow function এ পর পর ২ টা Underscore( _ ) ব্যবহার 
+    করলে এটা error throw korbe
+
+
+
+    >Underscore এর মাধ্যমে value ও index Skip করিছি
+    ```jsx
+    arr20.forEach(function(_,_,arra){
+      console.log(`Array:[${arra}]`);
+    });
+    ```
+    `Result:`
+
+    ![code](./img/5.jpeg "Result")
+
+ 
+    
+    ***Error Show*** করবে কারণ forEach() এর Argument এ Arrow Function
+    ব্যবহার করেছি।
+    ```jsx
+    let arr404=[1,2,3];
+    arr404.forEach((_,_,arra)=>{
+      console.log(`Array:[${arra}]`);/*SyntaxError: Duplicate parameter name not allowed in this context*/
+    });
+    ```
+    </br></br>
+
 
   - Update
 
@@ -96,6 +195,7 @@
 
     const obj2 = arr[2];
     obj2.value = 300;
+    console.log(obj2);
 
     /* const index = arr.findIndex(function (val) {
     	return val.id === 4;
@@ -104,15 +204,42 @@
     arr[index].value = 400;
     
     console.log(arr); */
+    ```
+    `Result:`
 
+    ![code](./img/6.jpeg "obj2 Result")
+
+    </br>
+
+    ```jsx
+    /*find() Method Mutable Way তে কাজ করে, কারণ এটা মুল Array কে
+    change করে ফেলে।*/
     const obj = arr.find(function (val) {
     	return val.id === 4;
     });
 
     obj.value = 400;
     console.log(obj);
+    ```
+    `Result:`
+
+    ![code](./img/7.jpeg "obj Result")
+   
+    </br>
+
+    > arr ও পরিবর্তন হয়ে গেছে 
+
+    ```jsx
     console.log(arr);
 
+    ```
+    `Result:`
+
+    ![code](./img/8.jpeg "arr Result")
+
+    </br></br>
+
+    ```jsx
     console.log(arr[3] === obj);
 
     const a = { a: 10 };
@@ -120,11 +247,12 @@
     const c = a;
     console.log(a === c);
     ```
-
+    </br>
+    
   - Delete
 
     ```jsx
-    const arr = [
+    const arr5 = [
     	{ id: 1, value: 10 },
     	{ id: 2, value: 20 },
     	{ id: 3, value: 30 },
@@ -132,17 +260,42 @@
     	{ id: 5, value: 50 },
     ];
 
-    // splice -> mutable
-    const index = arr.findIndex((item) => item.id === 4);
-    const arr1 = arr.splice(index, 1);
-    console.log(arr);
-
-    // filter -> immutable
-    const arr2 = arr.filter((item) => item.id !== 4);
-    console.log(arr);
-    console.log(arr2);
+    // splice -> mutable 
+    const index = arr5.findIndex((item) => item.id === 4);
+    const arr1 = arr5.splice(index, 1);//একটা item Delete হয়ে যাবে 
+    console.log(arr5);
     ```
+    `Result:`
 
+    ![code](./img/9.jpeg "Updated arr5 Result")
+    
+    </br></br>
+
+    ```jsx
+    // filter -> immutable
+    const arr8 = [
+    	{ id: 1, value: 100 },
+    	{ id: 2, value: 200 },
+    	{ id: 3, value: 300 },
+    	{ id: 4, value: 400 },
+    	{ id: 5, value: 500 },
+    ];
+    const arr7 = arr8.filter((item) => item.id !== 4);
+    console.log(arr7);
+    ```
+    `arr7 Result:`
+
+    ![code](./img/10.jpeg "arr7 Result")
+
+    ```jsx
+    console.log(arr8);
+    ```
+    `arr8 বা মুল Array এর কোন পরিবর্তন হয়নিঃ`
+
+    ![code](./img/11.jpeg "arr8")
+
+    </br></br>
+    
   - Mutation
   - Map
   - Filter
