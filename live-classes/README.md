@@ -10,3 +10,4 @@
 - [Lecture 5 - Array Operations - Imperative vs Declarative](https://youtu.be/LADJO7KniNY)
 - [Lecture 6 - JavaScript Array and Object Deep Dive](https://youtu.be/Mr5rksCjybA)
 - [Lecture 7 - QNA 1 - Don't Miss The Last Part](https://youtu.be/TAa7gSbPVis)
+- [Lecture 8 - Understand JavaScript Functions | Function as a value](https://youtu.be/lctjTl1ftdw)
