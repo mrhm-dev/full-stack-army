@@ -20,4 +20,3 @@
 2:28:06 – Why This Journey 
 2:34:13 – Timeframes
 2:38:07 - Discussion Part
-
