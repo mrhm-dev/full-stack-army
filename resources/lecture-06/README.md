@@ -351,6 +351,22 @@ delete arrToObj[4000000];
 console.timeEnd('obj'); // 0.015ms
 ```
 
+### Check Truthy value
+```js
+let arr = [1,2,3,null,undefined,0,NaN,4,5];
+let truthy = arr.filter((v) => v);
+// As a default, v will return truthy values.
+console.log(truthy); // [1,2,3,4,5]
+
+// However, if we simply need truthful values and don't want to utilize the default method, we can just put (!! double exclamation) before the array property, It will return only truthy values as well.
+
+let arr = [1,2,3,null,undefined,0,NaN,4,5];
+let truthy = arr.filter((v) => !!v);
+console.log(truthy); // [1,2,3,4,5]
+
+```
+
+
 ### Performance check for map, filter, reduce
 
 ```jsx
