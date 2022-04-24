@@ -13,3 +13,4 @@ In this repository you can find all the lecture resources in markdown format.
 - [Lecture 6 - JavaScript Array and Object Deep Dive](lecture-06/README.md)
 - [Lecture 7 - QNA 1 - Don't Miss The Last Part](lecture-07/README.md)
 - [Lecture 8 - Understand JavaScript Functions | Function as a value](lecture-08/README.md)
+- [Lecture 9 - Functional Programming in JavaScript](lecture-09/README.md)
