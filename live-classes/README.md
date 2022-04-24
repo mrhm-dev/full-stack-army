@@ -11,3 +11,4 @@
 - [Lecture 6 - JavaScript Array and Object Deep Dive](https://youtu.be/Mr5rksCjybA)
 - [Lecture 7 - QNA 1 - Don't Miss The Last Part](https://youtu.be/TAa7gSbPVis)
 - [Lecture 8 - Understand JavaScript Functions | Function as a value](https://youtu.be/lctjTl1ftdw)
+- [Lecture 9 - Functional Programming in JavaScript](https://youtu.be/wMy2IZ12mxM)
