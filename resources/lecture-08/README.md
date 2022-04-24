@@ -350,4 +350,4 @@ operations.forEach((operation) => {
 ##### Important Links
 
 - [Meta Programming](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Meta_programming)
-- [Source Code of this class](./app.js)
+- [Source Code of this class](../../src/lecture-08/app.js)
