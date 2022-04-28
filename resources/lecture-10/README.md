@@ -296,3 +296,8 @@ To learn more go through [The event loop - JavaScript | MDN](https://developer.m
 #### Source code:
 
 [Lecture 10 - Asynchronous Programming in JavaScript - Source Code](../../src/lecture-10/app.js)
+
+---
+
+#### Tasks:
+- Create [Lodash](https://lodash.com) library on your own.
