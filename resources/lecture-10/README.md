@@ -8,8 +8,6 @@
 - Callback
 - Promise
 - Async Await
-- Async Iterator
-- Async Generator
 
 ---
 
@@ -285,10 +283,6 @@ To learn more go through [The event loop - JavaScript | MDN](https://developer.m
 - [The JavaScript Event Loop: Explained - Towards Dev](https://towardsdev.com/event-loop-in-javascript-672c07618dc9)
 - [What the heck is the event loop anyway? | Philip Roberts | JSConf EU](https://youtu.be/8aGhZQkoFbQ)
 - [Asynchronous JavaScript - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)
-- [Iterators and generators - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators)
-- [JavaScript iterators and generators: A complete guide - LogRocket Blog](https://blog.logrocket.com/javascript-iterators-and-generators-a-complete-guide/)
-- [for await...of - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of)
-- [JavaScript async iterators](https://www.nodejsdesignpatterns.com/blog/javascript-async-iterators/)
 - [JavaScript Visualizer 9000](https://www.jsv9000.app/)
 
 ---
@@ -300,4 +294,5 @@ To learn more go through [The event loop - JavaScript | MDN](https://developer.m
 ---
 
 #### Tasks:
+
 - Create [Lodash](https://lodash.com) library on your own.
