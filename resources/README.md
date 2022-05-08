@@ -15,3 +15,4 @@ In this repository you can find all the lecture resources in markdown format.
 - [Lecture 8 - Understand JavaScript Functions | Function as a value](lecture-08/README.md)
 - [Lecture 9 - Functional Programming in JavaScript](lecture-09/README.md)
 - [Lecture 10 - Asynchronous Programming in JavaScript](./lecture-10/README.md)
+- [Lecture 11 - Async Iterator & Generator in JavaScript | Project Requirements](./lecture-11/README.md)
