@@ -16,3 +16,4 @@ In this repository you can find all the lecture resources in markdown format.
 - [Lecture 9 - Functional Programming in JavaScript](lecture-09/README.md)
 - [Lecture 10 - Asynchronous Programming in JavaScript](./lecture-10/README.md)
 - [Lecture 11 - Async Iterator & Generator in JavaScript | Project Requirements](./lecture-11/README.md)
+- [Lecture 12 - Attendance System Requirement Analysis](./lecture-12/README.md)
