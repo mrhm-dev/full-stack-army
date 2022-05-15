@@ -15,3 +15,4 @@
 - [Lecture 10 - Asynchronous Programming in JavaScript](https://youtu.be/OCkxS7W3gwU)
 - [Lecture 11 - Async Iterator & Generator in JavaScript | Project Requirements](https://youtu.be/phzeyHwoIrQ)
 - [Lecture 12 - Attendance System Requirement Analysis](https://youtu.be/Gsj7uU_7Um4)
+- [Lecture 13 - Create Models, Write Pseudo Code and Adda](https://youtu.be/BfGOYh9Fdwg)
