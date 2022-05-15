@@ -45,8 +45,8 @@ End
 
 ---
 
-**Progress**
+**Progress:**  
 Follow [this link](https://thirsty-camelotia-a8e.notion.site/Attendance-System-8b5ccfe9b2384e84b904d6a85013170b) to check the progress
 
-**Source Code**
+**Source Code**  
 [Click Here](../../src/attendance-system/)
