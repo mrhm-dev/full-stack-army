@@ -7,6 +7,9 @@
  */
 
 import { useState } from 'react';
+import InputSection from './components/inputs/InputSection';
+import OperationSection from './components/operations/OperationSection';
+import HistorySection from './components/history/HistorySection';
 
 function* generateId() {
 	let id = 0;
@@ -40,34 +43,6 @@ const App = () => {
 		setInputState({ ...InitialInputState });
 		setResult(0);
 	};
-
-	// const handleFieldA = (e) => {
-	// 	setInputState({
-	// 		...inputState,
-	// 		a: parseInt(e.target.value),
-	// 	});
-	// };
-
-	// const handleFieldB = (e) => {
-	// 	setInputState({
-	// 		...inputState,
-	// 		b: parseInt(e.target.value),
-	// 	});
-	// };
-
-	// const handleInputFields = (key, value) => {
-	//   setInputState({
-	//     ...inputState,
-	//     [key]: value
-	//   })
-	// };
-
-	// const handleInputFields = (inp) => {
-	// 	setInputState({
-	// 		...inputState, // previous state
-	// 		...inp, // new state
-	// 	});
-	// };\
 
 	const handleArithmeticOps = (operation) => {
 		if (!inputState.a || !inputState.b) {
@@ -104,67 +79,22 @@ const App = () => {
 	return (
 		<div style={{ width: '50%', margin: '0 auto' }}>
 			<h1>Result: {result}</h1>
-			<div>
-				<p>Inputs</p>
-				<input
-					type='number'
-					value={inputState.a}
-					onChange={handleInputFields}
-					name='a'
-				/>
-				<input
-					type='number'
-					value={inputState.b}
-					onChange={handleInputFields}
-					name='b'
-				/>
-			</div>
-			<div>
-				<p>Operations</p>
-				<button onClick={() => handleArithmeticOps('+')}>+</button>
-				<button onClick={() => handleArithmeticOps('-')}>-</button>
-				<button onClick={() => handleArithmeticOps('*')}>*</button>
-				<button onClick={() => handleArithmeticOps('/')}>/</button>
-				<button onClick={() => handleArithmeticOps('%')}>%</button>
-				<button onClick={handleClearOps}>Clear</button>
-			</div>
-			<div>
-				<p>History</p>
-				{histories.length === 0 ? (
-					<p>
-						<small>There is no history</small>
-					</p>
-				) : (
-					<ul>
-						{histories.map((historyItem) => (
-							<li key={historyItem.id}>
-								<p>
-									Operation: {historyItem.inputs.a}{' '}
-									{historyItem.operation}{' '}
-									{historyItem.inputs.b}, Result:{' '}
-									{historyItem.result}
-								</p>
-								<small>
-									{historyItem.date.toLocaleDateString()}{' '}
-									{historyItem.date.toLocaleTimeString()}
-								</small>
-								<br />
-								<button
-									onClick={() =>
-										handleRestoreBtn(historyItem)
-									}
-									disabled={
-										restoredHistory != null &&
-										restoredHistory === historyItem.id
-									}
-								>
-									restore
-								</button>
-							</li>
-						))}
-					</ul>
-				)}
-			</div>
+
+			<InputSection
+				inputs={inputState}
+				handleInputFields={handleInputFields}
+			/>
+
+			<OperationSection
+				handleArithmeticOps={handleArithmeticOps}
+				handleClearOps={handleClearOps}
+			/>
+
+			<HistorySection
+				histories={histories}
+				restoredHistory={restoredHistory}
+				handleRestoreBtn={handleRestoreBtn}
+			/>
 		</div>
 	);
 };
