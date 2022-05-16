@@ -18,3 +18,4 @@ In this repository you can find all the lecture resources in markdown format.
 - [Lecture 11 - Async Iterator & Generator in JavaScript | Project Requirements](./lecture-11/README.md)
 - [Lecture 12 - Attendance System Requirement Analysis](./lecture-12/README.md)
 - [Lecture 13 - Create Models, Write Pseudo Code and Adda](./lecture-13/README.md)
+- [Lecture 14 - Backend 1 | Course planning and discussion](./lecture-14/README.md)
