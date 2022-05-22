@@ -17,3 +17,4 @@
 - [Lecture 12 - Attendance System Requirement Analysis](https://youtu.be/Gsj7uU_7Um4)
 - [Lecture 13 - Create Models, Write Pseudo Code and Adda](https://youtu.be/BfGOYh9Fdwg)
 - [Lecture 14 - Backend 1 | Course planning and discussion](https://youtu.be/QBTOAGGgehA)
+- [Lecture 15 - [Backend 2] Introduction to Backend Development](https://youtu.be/Mc6UEF957hU)
