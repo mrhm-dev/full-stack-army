@@ -6,4 +6,4 @@
 
 ### Agile Model (Use when requirements change frequently)
 
-![https://producttribe.com/uploads/2018/01/Img-1-2x-1.png](https://producttribe.com/uploads/2018/01/Img-1-2x-1.png)
+![Agile](https://static.javatpoint.com/tutorial/software-engineering/images/software-engineering-agile-model.png)
