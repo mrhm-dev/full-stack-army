@@ -20,3 +20,4 @@ In this repository you can find all the lecture resources in markdown format.
 - [Lecture 13 - Create Models, Write Pseudo Code and Adda](./lecture-13/README.md)
 - [Lecture 14 - Backend 1 | Course planning and discussion](./lecture-14/README.md)
 - [Lecture 15 - [Backend 2] Introduction to Backend Development](./lecture-15/README.md)
+- [Lecture 16 - Backend 3 | Understand Express Middleware](./lecture-16/README.md)
