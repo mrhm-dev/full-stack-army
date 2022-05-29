@@ -61,7 +61,7 @@
 
 #### References
 
-- [Source Code](../../src/lecture-16/)
+- [Source Code](../../src/raffle-draw/)
 - [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 
 #### Task

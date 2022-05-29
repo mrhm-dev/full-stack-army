@@ -19,3 +19,4 @@
 - [Lecture 14 - Backend 1 | Course planning and discussion](https://youtu.be/QBTOAGGgehA)
 - [Lecture 15 - [Backend 2] Introduction to Backend Development](https://youtu.be/Mc6UEF957hU)
 - [Lecture 16 - [Backend 3] Understand Express Middleware](https://youtu.be/kXeNJJ4mQ7w)
+- [Lecture 17 - [Backend 4] Raffle Draw Project](https://youtu.be/4D2DIu8bhqU)
