@@ -20,3 +20,4 @@
 - [Lecture 15 - [Backend 2] Introduction to Backend Development](https://youtu.be/Mc6UEF957hU)
 - [Lecture 16 - [Backend 3] Understand Express Middleware](https://youtu.be/kXeNJJ4mQ7w)
 - [Lecture 17 - [Backend 4] Raffle Draw Project](https://youtu.be/4D2DIu8bhqU)
+- [Lecture 18 - [Backend 5] Understand The Concepts of Database](https://youtu.be/SyKO3oZLz00)
