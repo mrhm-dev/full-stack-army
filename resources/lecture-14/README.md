@@ -1,6 +1,6 @@
 # Lecture 14 - Backend 1 | Course planning and discussion
 
-#### Curriculum:
+## Curriculum:
 
 - ExpressJS
 - MongoDB
@@ -21,6 +21,6 @@
 - Serverless
   - No code low code
 
-#### Task
+### Task
 
 - What is Backend Development? What is the responsibilities of Backend developer? Make a research paper about backend journey.

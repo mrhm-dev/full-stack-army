@@ -2,7 +2,7 @@
 
 We will make a lottery app in this class. The details are given below:
 
-#### Lottery API
+## Lottery API
 
 - sell lottery ticket
 - update lottery ticket
@@ -12,7 +12,7 @@ We will make a lottery app in this class. The details are given below:
 - bulk buy (user can buy multiple tickets at a time)
 - raffle draw
 
-#### Ticket
+### Ticket
 
 - number (unique)
 - username

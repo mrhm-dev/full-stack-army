@@ -1,6 +1,6 @@
 # Lecture 18 - [Backend 5] Understand The Concepts of Database
 
-#### Database Paradigms:
+## Database Paradigms
 
 1. Key Value Database
    - [Redis](https://redis.io/)
@@ -24,6 +24,6 @@
 7. Multi Model Database
    - [Fauna DB](https://fauna.com/)
 
-#### References:
+### References
 
 - [7 Database Paradigms](https://tudip.com/blog-post/7-database-paradigms/)

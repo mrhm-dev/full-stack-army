@@ -1,6 +1,6 @@
 # Lecture 12 - Attendance System Requirement Analysis
 
-#### Agenda
+## Agenda
 
 - Functional Requirement Analysis
 - Create A Basic SRS
@@ -8,7 +8,7 @@
 
 ---
 
-#### Client's Requirement:
+### Client's Requirement
 
 We need an attendance system. Students can create their own profile. Admin can see list of students and their attendances. Admin can enable and disable attend button. Also this button can be disabled based on a timer. Each time admin enable attend button, students can participate for only once. Each day, student will have a time sheet of attendance.
 
@@ -16,9 +16,9 @@ Student can see their own time logs and attend button when enabled.
 
 ---
 
-### Functional Requirements:
+### Functional Requirements
 
-#### Admin:
+#### Admin
 
 - Admin can create student.
 - Admin can delete / update / check students information.
@@ -27,7 +27,7 @@ Student can see their own time logs and attend button when enabled.
 - Admin can enable or disable attendance button.
 - Admin can check stats of a given day.
 
-#### Student:
+#### Student
 
 - Student can register themselves.
 - There will be following account status for a student:
@@ -52,9 +52,9 @@ Student can see their own time logs and attend button when enabled.
 
 ---
 
-### Requirement Analysis:
+### Requirement Analysis
 
-#### Models:
+#### Models
 
 ##### User
 
@@ -84,7 +84,7 @@ Student can see their own time logs and attend button when enabled.
 - Status
 - TimeLimit
 
-#### Endpoints:
+#### Endpoints
 
 ##### Student Endpoints
 

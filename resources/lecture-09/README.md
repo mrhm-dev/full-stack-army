@@ -1,6 +1,6 @@
 # Lecture 9 - Functional Programming in JavaScript
 
-### Today's Agenda
+## Today's Agenda
 
 - Pure Function + Side Effects + Immutability
 - Higher Order Function
@@ -10,7 +10,7 @@
 
 ---
 
-#### Function statement vs Function expression
+### Function statement vs Function expression
 
 ```js
 // function statement
@@ -32,7 +32,7 @@ If a function is not able to change any value of a variable, the function is cal
 ```js
 // Pure Function
 function sum(a, b) {
-	return a + b;
+  return a + b;
 }
 
 sum(10, 20); // 30
@@ -44,8 +44,8 @@ Now let's talk about the side effect. If a function can update the value of a va
 // Pure Function
 let limit = 100;
 function changeLimit(limit) {
-	limit = 500;
-	return limit;
+  limit = 500;
+  return limit;
 }
 ```
 
@@ -55,7 +55,7 @@ This will not change the value of limit. That is why This is a pure function.
 // Side effect
 let limit = 100;
 function changeLimit() {
-	limit = 500;
+  limit = 500;
 }
 
 console.log(changeLimit(limit)); // undefined
@@ -68,8 +68,8 @@ This will change the value of limit. So, it is the example of side effect. There
 // Pure Function
 const arr = [1, 2, 3];
 function add(arr, data) {
-	arr = [...arr, data];
-	return arr;
+  arr = [...arr, data];
+  return arr;
 }
 ```
 
@@ -77,14 +77,14 @@ function add(arr, data) {
 // Side Effect
 const arr = [1, 2, 3];
 function add(data) {
-	arr.push(data);
+  arr.push(data);
 }
 ```
 
 ```js
 // Impure Function
 function log(msg) {
-	console.log(msg);
+  console.log(msg);
 }
 ```
 
@@ -105,21 +105,21 @@ There are two condition for higher order function.
 
   ```js
   function randomSum(max) {
-  	const random1 = Math.floor(Math.random() * max);
-  	const random2 = Math.floor(Math.random() * max);
-  	return random1 + random2; // placeholder
+    const random1 = Math.floor(Math.random() * max);
+    const random2 = Math.floor(Math.random() * max);
+    return random1 + random2; // placeholder
   }
 
   function randomSub(max) {
-  	const random1 = Math.floor(Math.random() * max);
-  	const random2 = Math.floor(Math.random() * max);
-  	return random1 - random2; // placeholder
+    const random1 = Math.floor(Math.random() * max);
+    const random2 = Math.floor(Math.random() * max);
+    return random1 - random2; // placeholder
   }
 
   function randomSqrSum(max) {
-  	const random1 = Math.floor(Math.random() * max);
-  	const random2 = Math.floor(Math.random() * max);
-  	return random1 * random1 + random2 * random2; // placeholder
+    const random1 = Math.floor(Math.random() * max);
+    const random2 = Math.floor(Math.random() * max);
+    return random1 * random1 + random2 * random2; // placeholder
   }
   ```
 
@@ -127,20 +127,20 @@ There are two condition for higher order function.
 
   ```js
   function generateTwoRandNumber(max, cb) {
-  	const random1 = Math.floor(Math.random() * max);
-  	const random2 = Math.floor(Math.random() * max);
-  	const result = cb(random1, random2);
-  	return result;
+    const random1 = Math.floor(Math.random() * max);
+    const random2 = Math.floor(Math.random() * max);
+    const result = cb(random1, random2);
+    return result;
   }
   const cb = function (rand1, rand2) {
-  	console.log(rand1, rand2);
+    console.log(rand1, rand2);
   };
   generateTwoRandNumber(100, cb);
 
   console.log(generateTwoRandNumber(1000, (rand1, rand2) => rand1 + rand2));
   console.log(generateTwoRandNumber(10, (rand1, rand2) => rand1 * rand2));
   console.log(
-  	generateTwoRandNumber(10, (rand1, rand2) => rand1 * rand1 + rand2 * rand2)
+    generateTwoRandNumber(10, (rand1, rand2) => rand1 * rand1 + rand2 * rand2)
   );
   ```
 
@@ -149,13 +149,13 @@ There are two condition for higher order function.
 - Function can be returned from another function.
   ```js
   function power(p) {
-  	return function (n) {
-  		let result = 1;
-  		for (let i = 1; i <= p; i++) {
-  			result *= n;
-  		}
-  		return result;
-  	};
+    return function (n) {
+      let result = 1;
+      for (let i = 1; i <= p; i++) {
+        result *= n;
+      }
+      return result;
+    };
   }
   ```
 
@@ -170,52 +170,53 @@ There are some hidden concepts:
     ```js
     const a = 10;
     function mostOuter() {
-    	function outer() {
-    		console.log(a);
-    	}
+      function outer() {
+        console.log(a);
+      }
     }
     ```
   - Local
     ```js
     function mostOuter() {
-    	function outer() {
-    		const a = 10;
-    		console.log(a);
-    	}
+      function outer() {
+        const a = 10;
+        console.log(a);
+      }
     }
     ```
   - Block
     ```js
     {
-    	const notScoped = 'scoped';
-    	{
-    		{
-    			{
-    				console.log(notScoped);
-    			}
-    		}
-    	}
+      const notScoped = "scoped";
+      {
+        {
+          {
+            console.log(notScoped);
+          }
+        }
+      }
     }
     ```
+
 - Closure: Closure is just a memory, which we can use after a function died.
 - Execution context
 
   ```js
   function A(a) {
-  	console.log('I am A');
+    console.log("I am A");
   }
 
   function B() {
-  	A();
+    A();
   }
 
   function C() {
-  	B();
-  	B();
+    B();
+    B();
   }
   function D() {
-  	C();
-  	A();
+    C();
+    A();
   }
 
   D();
@@ -225,15 +226,15 @@ There are some hidden concepts:
 
   ```js
   function randomSum(max) {
-  	const random1 = Math.floor(Math.random() * max);
-  	const random2 = Math.floor(Math.random() * max);
-  	t();
-  	function t() {
-  		console.log(test);
-  	}
-  	var test = 'something';
-  	t();
-  	return random1 + random2; // placeholder
+    const random1 = Math.floor(Math.random() * max);
+    const random2 = Math.floor(Math.random() * max);
+    t();
+    function t() {
+      console.log(test);
+    }
+    var test = "something";
+    t();
+    return random1 + random2; // placeholder
   }
 
   const r = randomSum(15);
@@ -264,11 +265,11 @@ There are two ways to define a variable.
 
 ```js
 (function (name) {
-	console.log(name);
-})('Nayem');
+  console.log(name);
+})("Nayem");
 
 (() => {
-	console.log('Test');
+  console.log("Test");
 })();
 ```
 
@@ -287,7 +288,7 @@ There are two ways to define a variable.
 
 ---
 
-#### Task:
+#### Task
 
 - Research about Higher Order Function.
 - Create lodash library by immutable way.
