@@ -4,7 +4,7 @@
 - Project Structure
 - Project
 
-#### Middleware:
+## Middleware
 
 - What is Middleware?
 
@@ -15,12 +15,12 @@
     // We will never call it, express will automatically invoke for us.
     // This is middleware
     function xyz(req, res, next) {
-    	next();
+      next();
     }
 
     // This is controller
     function xyz(req, res, next) {
-    	res.send();
+      res.send();
     }
     ```
 
@@ -28,38 +28,38 @@
 
     ```js
     // Demo Code
-    const express = require('express');
+    const express = require("express");
 
     const app = express();
 
-    app.use(express.static(__dirname + '/public'));
+    app.use(express.static(__dirname + "/public"));
 
     const simpleLogger = (req, res, next) => {
-    	console.log(`${req.url} - ${req.method} - ${new Date().toISOString()}`);
-    	next();
+      console.log(`${req.url} - ${req.method} - ${new Date().toISOString()}`);
+      next();
     };
 
     const secondMiddleWare = (res, req, next) => {
-    	console.log('I am second middleware');
-    	next();
+      console.log("I am second middleware");
+      next();
     };
 
     app.use([simpleLogger, secondMiddleWare]);
 
-    app.get('/hello', (req, res, next) => {
-    	res.json({ message: 'Hello' });
+    app.get("/hello", (req, res, next) => {
+      res.json({ message: "Hello" });
     });
 
-    app.get('/', (req, res, next) => {
-    	res.json({ message: 'Sweet Home' });
+    app.get("/", (req, res, next) => {
+      res.json({ message: "Sweet Home" });
     });
 
     app.listen(8000, () => {
-    	console.log('Application running on port 8000');
+      console.log("Application running on port 8000");
     });
     ```
 
-#### References
+### References
 
 - [Source Code](../../src/raffle-draw/)
 - [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)

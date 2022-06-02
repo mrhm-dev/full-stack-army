@@ -1,6 +1,6 @@
 # Lecture 15 - [Backend 2] Introduction to Backend Development
 
-#### Topics to learn
+## Topics to learn
 
 **Must Needed**
 
@@ -45,7 +45,7 @@ To learn above 4 topics we need to learn some another topics:
 - Cloud Computing
 - DevOps
 
-#### Server Application Responsibilities
+### Server Application Responsibilities
 
 - Listen Request
   - Always Same
@@ -58,7 +58,7 @@ To learn above 4 topics we need to learn some another topics:
 - Response
   - Always Same
 
-#### HTTP (Hypertext Transfer Protocol):
+#### HTTP (Hypertext Transfer Protocol)
 
 - GET - want to read data from server
 - POST - create new data
@@ -73,16 +73,16 @@ To learn above 4 topics we need to learn some another topics:
 - Update Book - /books/bookId
 - Delete Book - /book/booksId
 
-#### Pipeline:
+#### Pipeline
 
 REQUEST -> MIDDLEWARE[logger, body parser, file parser, user ip, block ip, authentication, authorization, validation] -> CONTROLLER (Business Logic) -> MIDDLEWARE[error handler] -> RESPONSE
 
-#### References:
+#### References
 
 - [ExpressJS API References](https://expressjs.com/en/4x/api.html)
 - [Source Code](../../src/lecture-15/)
 
-#### Tasks:
+#### Tasks
 
 Complete the playlist [Express Js Crash Course In Bangla](https://youtube.com/playlist?list=PL_XxuZqN0xVDm9HkiP4h_76qNBZix6XME)
 

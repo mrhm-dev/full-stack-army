@@ -1,6 +1,6 @@
 # Lecture 7 - QNA 1 - Don't Miss The Last Part
 
-### Important Links
+## Important Links
 
 - **For Development Essentials**
   - [Development Essentials - Must Learn](https://youtube.com/playlist?list=PL_XxuZqN0xVAebtxbmfZUaq69AS3ST4RZ)
