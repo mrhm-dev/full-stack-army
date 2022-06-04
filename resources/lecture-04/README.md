@@ -236,6 +236,6 @@ console.log(generateRandomNumber(5, 10));
   <summary>Expression vs Statement</summary>
 </details>
 
-###### Important Links
+### Important Links
 
 - Blog site - [Hashnode](https://hashnode.com/)
