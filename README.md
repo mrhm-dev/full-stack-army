@@ -10,8 +10,7 @@ In this repository, you will find source codes, explanations, and other resource
 - [Projects](projects/README.md)
 - [References](references/README.md)
 - [Resources](resources/README.md)
-- [Source Code](source-code/maruf/README.md)
-- [Src](src/README.md)
+- [Source Code](source-code//README.md)
 
 ### Our Contributors
 
