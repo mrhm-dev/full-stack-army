@@ -2,8 +2,8 @@
 
 In this directory, you will find all the necessary source codes that came with this course.
 
-- [Lecture 4 - Programming Fundamentals using JavaScript](https://youtu.be/tAkUXTvm-xo)
-- [Lecture 5 - Array Operations - Imperative vs Declarative](https://youtu.be/LADJO7KniNY)
+- [Lecture 4 - Programming Fundamentals using JavaScript](./lecture-04/)
+- [Lecture 5 - Array Operations - Imperative vs Declarative](./lecture-05/)
 - [Lecture 8 - Understand JavaScript Functions | Function as a value](./lecture-08/app.js)
 - [Lecture 9 - Functional Programming in JavaScript](./lecture-09/app.js)
 - [Lecture 10 - Asynchronous Programming in JavaScript](./lecture-10/app.js)
