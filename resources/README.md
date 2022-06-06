@@ -24,3 +24,4 @@ In this repository you can find all the lecture resources in markdown format.
 - [Lecture 17 - Backend 4 | Raffle Draw Project](./lecture-17/README.md)
 - [Lecture 18 - Backend 5 | Understand The Concepts of Database](./lecture-18/README.md)
 - [Lecture 19 - Backend 6 | Adda with Random Topics | You can Skip](./lecture-19/README.md)
+- [Lecture 20 - Backend 7 | Start Working with Mongoose](./lecture-20/README.md)
