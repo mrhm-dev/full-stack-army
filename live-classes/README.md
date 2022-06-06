@@ -21,3 +21,4 @@
 - [Lecture 16 - [Backend 3] Understand Express Middleware](https://youtu.be/kXeNJJ4mQ7w)
 - [Lecture 17 - [Backend 4] Raffle Draw Project](https://youtu.be/4D2DIu8bhqU)
 - [Lecture 18 - [Backend 5] Understand The Concepts of Database](https://youtu.be/SyKO3oZLz00)
+- [Lecture 19 - [Backend 6] Adda with Random Topics | You can Skip](https://youtu.be/mqq5VgRMIho)
