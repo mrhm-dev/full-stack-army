@@ -1,0 +1,9 @@
+{
+  "name": "mongo-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^6.3.5"
+  }
+}

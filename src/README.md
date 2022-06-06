@@ -12,3 +12,4 @@ In this directory, you will find all the necessary source codes that came with t
 - [Lecture 15 - Backend 2 | Introduction to Backend Development](./lecture-15)
 - [Lecture 16 - Backend 3 | Understand Express Middleware](./raffle-draw/)
 - [Lecture 17 - Backend 4 | Raffle Draw Project](./raffle-draw/)
+- [Lecture 20 - Backend 7 | Start Working with Mongoose](./mongo-demo/)
