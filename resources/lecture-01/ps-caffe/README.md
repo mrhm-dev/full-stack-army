@@ -12,7 +12,7 @@ PS Caffe is an imaginary online coffee delivery service. This business is design
   - Email verification
   - Forget password
   - Block users if necessary
-- Multiple Roles:
+- Multiple Roles (Role Based Access Control):
   There will be mainly five roles:
   - Admin: Admin can create and manage everything including sales data
   - Manager: Manager can't be able to create anything but can see sales data, inventory and products
