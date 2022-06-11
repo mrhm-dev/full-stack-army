@@ -16,3 +16,7 @@
 - [Declarative programming - Wikipedia](https://en.wikipedia.org/wiki/Declarative_programming)
 - [Functional programming - Wikipedia](https://en.wikipedia.org/wiki/Functional_programming)
 - [Object-oriented programming - Wikipedia](https://en.wikipedia.org/wiki/Object-oriented_programming)
+
+**Class Overview**
+
+- [We Need Freedom, We have to Stop Technology War](../../articles/we-need-freedom/README.md)
