@@ -1,6 +1,6 @@
-# Lecture 13 - Create Models, Write Pseudo Code and Adda
+# Lecture 22 - Authentication System from Pseudo Code to Real Code
 
-## Pseudo code
+## Pseudo Code
 
 ### Authentication
 
@@ -43,10 +43,26 @@ return token
 End
 ```
 
+**Reset Password:**
+
+```txt
+Start
+new-password = Input()
+old-password = Input()
+TODO
+                                     I
+if old-not equal to user.hash password:
+   return 400 error
+else hashNewPassword = hash new-password
+   save hashNewPassword
+   return 201
+End
+```
+
 ---
 
 **Progress:**  
 Follow [this link](https://thirsty-camelotia-a8e.notion.site/Attendance-System-8b5ccfe9b2384e84b904d6a85013170b) to check the progress
 
 **Source Code**  
-[Click Here](../../projects/attendance-system/)
+[Click Here](../../src/attendance-system/)

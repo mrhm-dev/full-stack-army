@@ -24,3 +24,4 @@
 - [Lecture 19 - [Backend 6] Adda with Random Topics | You can Skip](https://youtu.be/mqq5VgRMIho)
 - [Lecture 20 - [Backend 7] Start Working with Mongoose](https://youtu.be/y5Rism0fEqE)
 - [Lecture 21 - QNA on Express 101 and Books](https://youtu.be/krI6QUCGHY4)
+- [Lecture 22 - Authentication System from Pseudo Code to Real Code](https://youtu.be/0gl4grplEcI)
