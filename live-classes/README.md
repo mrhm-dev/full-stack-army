@@ -23,3 +23,4 @@
 - [Lecture 18 - [Backend 5] Understand The Concepts of Database](https://youtu.be/SyKO3oZLz00)
 - [Lecture 19 - [Backend 6] Adda with Random Topics | You can Skip](https://youtu.be/mqq5VgRMIho)
 - [Lecture 20 - [Backend 7] Start Working with Mongoose](https://youtu.be/y5Rism0fEqE)
+- [Lecture 21 - QNA on Express 101 and Books](https://youtu.be/krI6QUCGHY4)
