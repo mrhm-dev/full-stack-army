@@ -8,23 +8,23 @@
 
 ```javascript
 const names = [
-  "HM Nayeem",
-  "Aditya Chakraborty",
-  "Abu Rayhan",
-  "Shaker Hossain",
-  "Akib Ahmad",
-  "Alvi Chowdhury",
+	'HM Nayeem',
+	'Aditya Chakraborty',
+	'Abu Rayhan',
+	'Shaker Hossain',
+	'Akib Ahmad',
+	'Alvi Chowdhury',
 ];
 let index = -1;
 let person = names[++index];
 
 setInterval(() => {
-  person = names[index++];
-  console.log(person, person.length);
+	person = names[index++];
+	console.log(person, person.length);
 
-  if (index === names.length) {
-    index = 0;
-  }
+	if (index === names.length) {
+		index = 0;
+	}
 }, 1000);
 ```
 
@@ -41,43 +41,43 @@ setInterval(() => {
 
 ```javascript
 if (studyBasic) {
-  wontJoin();
+	wontJoin();
 }
 
 if (studyAdvanced) {
-  join();
+	join();
 }
 
 if (teacherSpeaks) {
-  silent();
+	silent();
 }
 
 if (!teacherSpeaks) {
-  shout();
+	shout();
 }
 
 // Scenario 1 - Single branch
 // if condition
 if (hasMoney) {
-  buyPhone();
+	buyPhone();
 }
 
 // Scenario 2 - Two branches
 // if else condition
-if (toss === "head") {
-  win();
+if (toss === 'head') {
+	win();
 } else {
-  loss();
+	loss();
 }
 
 // Scenario 3 - Multiple branches
 // else if
 if (1 > 1) {
-  big();
+	big();
 } else if (1 < 1) {
-  small();
+	small();
 } else {
-  same();
+	same();
 }
 ```
 
@@ -88,10 +88,10 @@ if (1 > 1) {
 
 ```javascript
 for (let i = 1; i <= 100; i++) {
-  // it's a new js file,
-  // we can write any valid js code here
-  // every code written inside this block will execute multiple times
-  console.log("Hello world!", i);
+	// it's a new js file,
+	// we can write any valid js code here
+	// every code written inside this block will execute multiple times
+	console.log('Hello world!', i);
 }
 
 // There are total three types of loop available in JS
@@ -103,13 +103,13 @@ for (let i = 1; i <= 100; i++) {
 // 3. do while *
 
 while (true) {
-  let num = Math.ceil(Math.random() * 100);
-  console.log("Hello World", num);
-  if (num === 99) break;
+	let num = Math.ceil(Math.random() * 100);
+	console.log('Hello World', num);
+	if (num === 99) break;
 }
 
 do {
-  console.log("It will run at least once");
+	console.log('It will run at least once');
 } while (false);
 ```
 
@@ -119,20 +119,20 @@ do {
   <summary>Arrays</summary>
 
 ```javascript
-const name1 = "Rayhan";
-const name2 = "Alvi";
-const name3 = "Anik";
-const name4 = "Arjun";
-const name5 = "Ayman";
+const name1 = 'Rayhan';
+const name2 = 'Alvi';
+const name3 = 'Anik';
+const name4 = 'Arjun';
+const name5 = 'Ayman';
 
 const students = [
-  "Rayhan",
-  "Alvi",
-  "Anik",
-  "Arjun",
-  "Ayman",
-  "Ayuub",
-  "Bidyut",
+	'Rayhan',
+	'Alvi',
+	'Anik',
+	'Arjun',
+	'Ayman',
+	'Ayuub',
+	'Bidyut',
 ];
 
 // console.log(students[0]);
@@ -142,7 +142,7 @@ const students = [
 // console.log(students[4]);
 
 for (let i = 0; i < students.length; i++) {
-  console.log(students[i], students[i].toLowerCase());
+	console.log(students[i], students[i].toLowerCase());
 }
 
 // name1.sendEmail();
@@ -156,11 +156,11 @@ const bools = [true, true, false, false];
 const nulls = [null, null, null];
 const undefineds = [undefined, undefined, undefined];
 const arrayOfArray = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
+	[1, 2, 3],
+	[4, 5, 6],
+	[7, 8, 9],
 ];
-const mixed = [true, null, "Str", 5, [12, 2, 4]];
+const mixed = [true, null, 'Str', 5, [12, 2, 4]];
 ```
 
 </details>
@@ -170,37 +170,37 @@ const mixed = [true, null, "Str", 5, [12, 2, 4]];
 
 ```javascript
 const student1 = {
-  firstName: "Abu",
-  secondName: "Rayhan",
-  email: "rayhan@example.com",
-  age: 25,
-  attend: true,
+	firstName: 'Abu',
+	secondName: 'Rayhan',
+	email: 'rayhan@example.com',
+	age: 25,
+	attend: true,
 };
 
 const student2 = {
-  firstName: "Alvi",
-  secondName: "Chowdhury",
-  email: "alvi@example.com",
-  age: 25,
-  attend: true,
+	firstName: 'Alvi',
+	secondName: 'Chowdhury',
+	email: 'alvi@example.com',
+	age: 25,
+	attend: true,
 };
 
 const student3 = {
-  firstName: "Akib",
-  secondName: "Ahmad",
-  email: "akib@example.com",
-  age: 25,
-  attend: true,
+	firstName: 'Akib',
+	secondName: 'Ahmad',
+	email: 'akib@example.com',
+	age: 25,
+	attend: true,
 };
 
 const allStudents = [student1, student2, student3];
 
 for (let i = 0; i < allStudents.length; i++) {
-  sendMail(allStudents[i].email);
+	sendMail(allStudents[i].email);
 }
 
 function sendMail(email) {
-  console.log("Sending email to", email);
+	console.log('Sending email to', email);
 }
 ```
 
@@ -211,20 +211,20 @@ function sendMail(email) {
 
 ```javascript
 function nameOfFunction(name) {
-  if (!name) {
-    console.log("Please provide your name");
-  } else {
-    console.log("Hello", name);
-  }
+	if (!name) {
+		console.log('Please provide your name');
+	} else {
+		console.log('Hello', name);
+	}
 }
 
-nameOfFunction("Murshed");
-nameOfFunction("Fahim");
+nameOfFunction('Murshed');
+nameOfFunction('Fahim');
 nameOfFunction();
 
 function generateRandomNumber(min = 1, max) {
-  const randomNumber = Math.floor(Math.random() * min + (max - min));
-  return randomNumber;
+	const randomNumber = Math.floor(Math.random() * min + (max - min));
+	return randomNumber;
 }
 
 console.log(generateRandomNumber(5, 10));
@@ -239,3 +239,4 @@ console.log(generateRandomNumber(5, 10));
 ### Important Links
 
 - Blog site - [Hashnode](https://hashnode.com/)
+- [Class Overview](../../class-overview/Lecture-04/README.md)
