@@ -687,4 +687,247 @@ function uuidv4() {
 
 ### Array
 
+আমাদের সমস্ত ছাত্রের ইনফরমেশন আমরা অ্যারেতে স্টোর করে রাখি এখন।
+
+```js
+const students = [
+	{
+		id: uuidv4(),
+		name: 'Md Al-Amin',
+		email: 'alamin@test.com',
+	},
+	{
+		id: uuidv4(),
+		name: 'Akib Ahmed',
+		email: 'akib@test.com',
+	},
+	{
+		id: uuidv4(),
+		name: 'Elias Emon',
+		email: 'elias@test.com',
+	},
+];
+```
+
+যেহেতু আমরা UI নিয়ে কাজ করছি না তাই আমরা চাইবো না বারবার আইডি চেইঞ্জ হোক। আমরা একবার প্রোগ্রাম রান করে যে আউটপুট জেনারেট হবে সেটাকেই স্টোর করে রাখবো। বারবার আইডি চেইঞ্জ হলে আমরা আমাদের যে অপারেশন তা ঠিকভাবে করতে পারবো না। সুতরাং আমরা প্রথমবার রান করার পর সেই আউটপুটকে স্টোর করে নিই আগে।
+
+```js
+const students = [
+	{
+		id: '67de71e5-0eac-474f-ab51-850ba9b31ed5',
+		name: 'Md Al-Amin',
+		email: 'alamin@test.com',
+	},
+	{
+		id: 'ebdf6b78-c32b-4b1d-8574-e8c655b05c1e',
+		name: 'Akib Ahmed',
+		email: 'akib@test.com',
+	},
+	{
+		id: 'ee729e84-a84e-4adf-b32c-4647a7114d5b',
+		name: 'Elias Emon',
+		email: 'elias@test.com',
+	},
+];
+```
+
+অ্যারেতে স্টোর করে রাখলে আমরা কিছু সুবিধা পাবো। সেগুলো হলোঃ
+
+1. Create a new one
+2. Update
+3. Delete
+4. Filter
+5. Easily Traverse
+
+এবার আমরা এক এক করে এই কাজগুলো দেখি।
+
+- Create a new one
+
+এটা সবচেয়ে সহজ কাজ। আমরা জানি আমরা যখন অ্যারেতে একটা ডাটা ইনসার্ট করতে চাই দুইটা মেথড আমরা ইউজ করতে পারি। যদি সবার শেষে ইনসার্ট করতে চাই তাহলে `push` মেথড ব্যবহার করবো, আর যদি সবার প্রথমে ইনসার্ট করতে চাই তাহলে `unshift` মেথড ব্যবহার করবো। কিন্তু `unshift` অনেক এক্সপেন্সিভ। কেন এক্সপেন্সিভ? কারণ আমাকে প্রতিটা ইলেমেন্ট এক ঘর করে ডান পাশে শিফট করতে হচ্ছে। যার কারনে অনেক বেশি অপারেশন ঘটাতে হচ্ছে। অর্থাৎ এর কমপ্লেক্সিটি O(n)। অন্যদিকে `push` মেথডে আমার কাউকে সরাতে হচ্ছে না। শুধু শেষে ডাটাটা বসিয়ে দিলেই হলো। অর্থাৎ এর কমপ্লেক্সিটি O(1)। O(n) হলো ডাটা সাইজের উপর এর এক্সিকিউশন টাইম নির্ভর করে। সাইজ ছোট হলে কম সময় আর সাইজ বড় হলে বেশি সময়। এটার সমস্যা হলো আমরা এখানে বিগ অ্যামাউন্টের ডাটা স্টোর করে রাখতে পারবো না। আর O(1) হলো ডাটার সাইজ কতো বড় বা ছোট সেটা বিবেচ্য না। সেটা একটা নির্দিষ্ট সময়েই এক্সিকিউট হবে তা বড় সাইজের ডাটা হোক বা ছোট সাইজের। তার এক্সিকিউশন টাইম কন্সট্যান্ট। এক্ষেত্রে ডাটা ইনসার্টের জন্য আমরা `push` মেথড ব্যবহার করবো।
+
+```js
+students.push({
+	id: '0a2c956c-a9f4-48b9-83fa-551b432dfb2b',
+	name: 'Fahim Faisal',
+	email: 'fahim@test.com',
+});
+```
+
+এখন আমাদের প্রোগ্রাম রান করালে দেখা যাবে আমাদের অ্যারেতে নতুন ডাটা ক্রিয়েট হয়ে গেছে।
+
+- Update
+
+আমরা দুইভাবে আপডেট করতে পারি। একটা হচ্ছে যাকে আপডেট করতে হবে find মেথডের মাধ্যমে সেই অবজেক্টকে বের করে তাকে আপডেট করা। আরেকটা হলো ঐ অবজেক্টের ইনডেক্সকে findIndex মেথডের মাধ্যমে বের করে সেটা ধরে আপডেট করা। অবজেক্ট ধরে যদি আপডেট করতে চাই সেক্ষেত্রে একটা সমস্যা আছে। সেটা একটু আমরা দেখি।
+
+```js
+const idToUpdate = 'ee729e84-a84e-4adf-b32c-4647a7114d5b';
+const updatedData = {
+	name: 'Habiba Akhtar',
+	email: 'habiba@test.com',
+};
+
+let updatedObj = students.find((item) => item.id === idToUpdate);
+updatedObj = {
+	id: idToUpdate,
+	...updatedObj,
+};
+console.log('Updated', students);
+/* 
+Updated [
+  {
+    id: '67de71e5-0eac-474f-ab51-850ba9b31ed5',
+    name: 'Md Al-Amin',
+    email: 'alamin@test.com'
+  },
+  {
+    id: 'ebdf6b78-c32b-4b1d-8574-e8c655b05c1e',
+    name: 'Akib Ahmed',
+    email: 'akib@test.com'
+  },
+  {
+    id: 'ee729e84-a84e-4adf-b32c-4647a7114d5b',
+    name: 'Elias Emon',
+    email: 'elias@test.com'
+  },
+  {
+    id: '0a2c956c-a9f4-48b9-83fa-551b432dfb2b',
+    name: 'Fahim Faisal',
+    email: 'fahim@test.com'
+  }
+]
+*/
+```
+
+কিছুই আপডেট হলো না। কারণ আমরা অবজেক্ট অ্যাসাইন করছি। আর যেহেতু অ্যাসাইন করছি সেহেতু এর রেফারেন্সও আলাদা হয়ে গেছে। আলাদা রেফারেন্সের কারণে আমার আপডেট কাজ করছে না। এবার আসি ইনডেক্স বের করে কিভাবে আপডেট করতে পারি সেটা নিয়ে।
+
+```js
+const idToUpdate = 'ee729e84-a84e-4adf-b32c-4647a7114d5b';
+const updatedData = {
+	name: 'Habiba Akhtar',
+	email: 'habiba@test.com',
+};
+
+const updatedIndex = students.findIndex((item) => item.id === idToUpdate);
+students[updatedIndex] = {
+	...students[updatedIndex],
+	...updatedData,
+};
+console.log('Updated', students);
+```
+
+তিনটা ডট দেয়াকে জাভাস্ক্রিপ্টে বলে স্প্রেড অপারেটর। এর মানে হলো অরিজিনাল অবজেক্টে যা যা আছে সবই থাকবে। আর নতুন ডাটা অনুযায়ী সেটা আপডেট হবে। যখন কোনো কিছু রিঅ্যাসাইনের কাজ আসবে তখন আমরা find ব্যবহার না করে findIndex ব্যবহার করবো। এই আপডেট করা মোটামুটি রকমের কমপ্লেক্স। তাই এর কমপ্লেক্সিটি আমরা O(n) হিসেবে ধরতে পারি।
+
+- Delete
+
+ডিলিট করাটা তুলনামূলক সহজ। কিন্তু আমরা ডিলিটের জন্য দুইটা মেথড ইউজ করতে পারি `splice` এবং `filter`। এই দুইটা মেথডের কমপ্লেক্সিটি O(n)। এখানে আমরা splice নিয়ে কাজ করছি। পরের ধাপে আমরা filter অপারেশন দেখাবো। আমরা যদি আমাদের upodatedIndex ডিলিট করতে চাই তাহলে এভাবে লিখতে হবে।
+
+```js
+students.splice(updatedIndex, 1);
+```
+
+- Filter
+
+```js
+const filteredStudents = students.filter((item) => item.id !== idToUpdate);
+console.log(filteredStudents);
+```
+
+- Easily Traverse
+
+অ্যারের ক্ষেত্রে ট্রাভার্স করা অনেক সহজ। ধরি আমরা ছাত্রদের নাম জানতে চাইছি। তিনভাবে আমরা অ্যারে ট্রাভার্সের মাধ্যমে নাম বের করে আনতে পারি। এগুলো হলো। `for` loop, `for in` loop, `for of` loop। নিচে তিনটারই উদাহরণ দেয়া হলো।
+
+```js
+for (let i = 0; i < students.length; i++) {
+	console.log(students[i].name);
+}
+
+for (let i in students) {
+	console.log(students[i].name);
+}
+
+for (let student of students) {
+	console.log(student.name);
+}
+```
+
+এছাড়াই কিছু বিল্ট-ইন মেথড রয়েছে অ্যারে ট্রাভার্সের জন্য। যেমন `forEach`, `map`, `filter`, `every`, `reduce`, `some`, `find`, `findIndex` ইত্যাদি। তাহলে আমরা বুঝলাম যে অ্যারে অনেক সহজে ট্রাভার্স করা যায়। এটার কমপ্লেক্সিটি O(n)।
+
 ### Object Over Array
+
+এবার আমরা আমাদের ছাত্রদের অ্যারেকে একটা অবজেক্টে রূপান্তরিত করি এবং একে একে অ্যারের ক্ষেত্রে যে যে অপারেশন করেছি সেই সেই অপারেশন করার চেষ্টা করি।
+
+```js
+const students = {
+	'67de71e5-0eac-474f-ab51-850ba9b31ed5': {
+		id: '67de71e5-0eac-474f-ab51-850ba9b31ed5',
+		name: 'Md Al-Amin',
+		email: 'alamin@test.com',
+	},
+	'ebdf6b78-c32b-4b1d-8574-e8c655b05c1e': {
+		id: 'ebdf6b78-c32b-4b1d-8574-e8c655b05c1e',
+		name: 'Akib Ahmed',
+		email: 'akib@test.com',
+	},
+	'ee729e84-a84e-4adf-b32c-4647a7114d5b': {
+		id: 'ee729e84-a84e-4adf-b32c-4647a7114d5b',
+		name: 'Elias Emon',
+		email: 'elias@test.com',
+	},
+};
+```
+
+আমাদের অবজেক্ট রেডি। এবার আমরা অপারেশনগুলো দেখি এক এক করে।
+
+- Create a new one
+
+অ্যারেতে আমরা সহজেই push মেথড ইউজ করে ডাটা ইনসার্ট করেছিলাম। কিন্তু অবজেক্টে তো এরকম কিছু নেই। তাহলে আমরা কিভাবে এই অপারেশন চালাবো। দেখি একটু কিভাবে করা যায়।
+
+```js
+const std = {
+	id: uuidv4(),
+	name: 'Feroz Khan',
+	email: 'feroz@test.com',
+};
+
+students[std.id] = std;
+```
+
+একটাই উপায়। এবং সবচেয়ে সহজ উপায়। এই উপায়ে আপনি যতো চান ততো ডাটা ক্রিয়েট করতে পারবেন। খুব সহজ। আর এর কমপ্লেক্সিটি হলো O(1)।
+
+- Update
+
+যেহেতু এটা অ্যারে না সেহেতু এখানে find বা findIndex কিছুই কাজ করবে না। তাহলে কিভাবে আপডেট করবো। খুব সহজ। চলুন দেখা যাক।
+
+```js
+const idToBeUpdated = 'ee729e84-a84e-4adf-b32c-4647a7114d5b';
+const updatedData = {
+	name: 'HM Azizul',
+	email: 'azizul@test.com',
+};
+students[idToBeUpdated] = {
+	...students[idToBeUpdated],
+	...updatedData,
+};
+```
+
+এখন যদি আপনি প্রোগ্রাম রান করান দেখবেন আপনার ডাটা আপডেট হয়ে গেছে। কিন্তু যেহেতু এখানে কোনো ধরণের বিল্ট-ইন মেথড লাগেনি তাই এর কমপ্লেক্সিটি হবে O(1)।
+
+- Delete
+
+অবজেক্ট থেকে ডিলিট করা খুব সহজ।মানে এত সহজ হওয়া সম্ভব না। জাস্ট একটা কীওয়ার্ড ব্যবহার করলে ডিলিট হয়ে যাবে।
+
+```js
+delete students[idToBeUpdated];
+```
+
+কাজ শেষ। কমপ্লেক্সিটি O(1)।
+
+- Get anything if you have the key
+
+যদি আমাদের কোনো অবজেক্টের কী জানা থাকে তাহলে ১ সেকেন্ডের মধ্যে আমরা সেই অবজেক্টকে পেয়ে যাবো। কিভাবে> দেখুন তাহলে-
+
+```js
+console.log(students['67de71e5-0eac-474f-ab51-850ba9b31ed5']);
+```
+
+জাস্ট এটুকুই। আর এটার কমপ্লেক্সিটিও O(1)।
