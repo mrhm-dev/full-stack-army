@@ -11,15 +11,15 @@
 
     let sum = 0;
     for (let i = 0; i < numbers.length; i++) {
-      // console.log(numbers[i] * 2);
-      sum += numbers[i];
+    	// console.log(numbers[i] * 2);
+    	sum += numbers[i];
     }
     console.log(sum);
     ```
 
     `Result:`
 
-    ![code](./img/1.jpeg "Result")
+    ![code](./img/1.jpeg 'Result')
 
     </br>
 
@@ -31,16 +31,16 @@
 
     count = 0;
     for (let i = 0; i < arr2.length; i++) {
-      for (let j = i; j < arr2.length - 1; j++) {
-        if (!arr2[j] || typeof arr2[j] !== "number") {
-          arr2[j] = arr2[j + 1];
-          arr2[j + 1] = undefined;
-        }
-      }
+    	for (let j = i; j < arr2.length - 1; j++) {
+    		if (!arr2[j] || typeof arr2[j] !== 'number') {
+    			arr2[j] = arr2[j + 1];
+    			arr2[j + 1] = undefined;
+    		}
+    	}
 
-      if (arr2[i] == undefined) {
-        count++;
-      }
+    	if (arr2[i] == undefined) {
+    		count++;
+    	}
     }
     arr2.length -= count; //Array থেকে undefined গুলো বাদ দিলাম
     console.log(count, arr2);
@@ -48,7 +48,7 @@
 
     `Result:`
 
-    ![code](./img/2.jpeg "Result")
+    ![code](./img/2.jpeg 'Result')
 
     </br>
 
@@ -121,23 +121,23 @@
     > নতুন Array তৈরি করে উপরের কাজটা করা হল,এতে বেশি Memory লাগবে
 
     ```jsx
-    const arr = [1, 2, 3, null, false, 4, 5, "", "test", 6, 7];
+    const arr = [1, 2, 3, null, false, 4, 5, '', 'test', 6, 7];
 
     /* const filteredArray = arr.filter((val) => typeof val === 'number');
     console.log(filteredArray); */
 
     const newArr = [];
     for (let i = 0; i < arr.length; i++) {
-      if (typeof arr[i] === "number") {
-        newArr.push(arr[i]);
-      }
+    	if (typeof arr[i] === 'number') {
+    		newArr.push(arr[i]);
+    	}
     }
     console.log(newArr);
     ```
 
     `Result:`
 
-    ![code](./img/3.jpeg "Result")
+    ![code](./img/3.jpeg 'Result')
 
     </br></br>
 
@@ -146,13 +146,13 @@
     ```jsx
     let arr20 = [1, 2, 3, 4];
     arr20.forEach((value, index, arr) => {
-      console.log(`index:${index} value:${value} Array:${arr}`);
+    	console.log(`index:${index} value:${value} Array:${arr}`);
     });
     ```
 
     `Result:`
 
-    ![code](./img/4.jpeg "Result")
+    ![code](./img/4.jpeg 'Result')
 
     forEach() এ argument আকারে যে function pass করা হয়, তার
     Parameter এ ৩ টি item pass করা যায়।
@@ -172,13 +172,13 @@
 
     ```jsx
     arr20.forEach(function (_, _, arra) {
-      console.log(`Array:[${arra}]`);
+    	console.log(`Array:[${arra}]`);
     });
     ```
 
     `Result:`
 
-    ![code](./img/5.jpeg "Result")
+    ![code](./img/5.jpeg 'Result')
 
     **_Error Show_** করবে কারণ forEach() এর Argument এ Arrow Function
     ব্যবহার করেছি।
@@ -186,9 +186,9 @@
     ```jsx
     let arr404 = [1, 2, 3];
     arr404.forEach((_, _, arra) => {
-      console.log(
-        `Array:[${arra}]`
-      ); /*SyntaxError: Duplicate parameter name not allowed in this context*/
+    	console.log(
+    		`Array:[${arra}]`
+    	); /*SyntaxError: Duplicate parameter name not allowed in this context*/
     });
     ```
 
@@ -198,11 +198,11 @@
 
     ```jsx
     const arr = [
-      { id: 1, value: 10 },
-      { id: 2, value: 20 },
-      { id: 3, value: 30 },
-      { id: 4, value: 40 },
-      { id: 5, value: 50 },
+    	{ id: 1, value: 10 },
+    	{ id: 2, value: 20 },
+    	{ id: 3, value: 30 },
+    	{ id: 4, value: 40 },
+    	{ id: 5, value: 50 },
     ];
 
     const obj2 = arr[2];
@@ -220,7 +220,7 @@
 
     `Result:`
 
-    ![code](./img/6.jpeg "obj2 Result")
+    ![code](./img/6.jpeg 'obj2 Result')
 
     </br>
 
@@ -228,7 +228,7 @@
     /*find() Method Mutable Way তে কাজ করে, কারণ এটা মুল Array কে
     change করে ফেলে।*/
     const obj = arr.find(function (val) {
-      return val.id === 4;
+    	return val.id === 4;
     });
 
     obj.value = 400;
@@ -237,7 +237,7 @@
 
     `Result:`
 
-    ![code](./img/7.jpeg "obj Result")
+    ![code](./img/7.jpeg 'obj Result')
 
     </br>
 
@@ -249,7 +249,7 @@
 
     `Result:`
 
-    ![code](./img/8.jpeg "arr Result")
+    ![code](./img/8.jpeg 'arr Result')
 
     </br></br>
 
@@ -268,11 +268,11 @@
 
     ```jsx
     const arr5 = [
-      { id: 1, value: 10 },
-      { id: 2, value: 20 },
-      { id: 3, value: 30 },
-      { id: 4, value: 40 },
-      { id: 5, value: 50 },
+    	{ id: 1, value: 10 },
+    	{ id: 2, value: 20 },
+    	{ id: 3, value: 30 },
+    	{ id: 4, value: 40 },
+    	{ id: 5, value: 50 },
     ];
 
     // splice -> mutable
@@ -283,18 +283,18 @@
 
     `Result:`
 
-    ![code](./img/9.jpeg "Updated arr5 Result")
+    ![code](./img/9.jpeg 'Updated arr5 Result')
 
     </br></br>
 
     ```jsx
     // filter -> immutable
     const arr8 = [
-      { id: 1, value: 100 },
-      { id: 2, value: 200 },
-      { id: 3, value: 300 },
-      { id: 4, value: 400 },
-      { id: 5, value: 500 },
+    	{ id: 1, value: 100 },
+    	{ id: 2, value: 200 },
+    	{ id: 3, value: 300 },
+    	{ id: 4, value: 400 },
+    	{ id: 5, value: 500 },
     ];
     const arr7 = arr8.filter((item) => item.id !== 4);
     console.log(arr7);
@@ -302,7 +302,7 @@
 
     `arr7 Result:`
 
-    ![code](./img/10.jpeg "arr7 Result")
+    ![code](./img/10.jpeg 'arr7 Result')
 
     ```jsx
     console.log(arr8);
@@ -310,7 +310,7 @@
 
     `arr8 বা মুল Array এর কোন পরিবর্তন হয়নিঃ`
 
-    ![code](./img/11.jpeg "arr8")
+    ![code](./img/11.jpeg 'arr8')
 
     </br></br>
 
@@ -327,16 +327,16 @@
     ```jsx
     // Object Literal
     const microphone = {
-      brand: "Fifine",
-      indictor: true,
-      price: 8000,
-      color: "Black",
-      startRecording() {
-        console.log("recording started");
-      },
-      stopRecording() {
-        console.log("recording stopped");
-      },
+    	brand: 'Fifine',
+    	indictor: true,
+    	price: 8000,
+    	color: 'Black',
+    	startRecording() {
+    		console.log('recording started');
+    	},
+    	stopRecording() {
+    		console.log('recording stopped');
+    	},
     };
     /* Object.freeze(microphone);
     microphone.newProperty = 'my new property';
@@ -368,10 +368,10 @@
     console.log(Object.keys(empty).length === 0);
     console.log(Object.entries(microphone));
     const arr = [
-      ["brand", "Fifine"],
-      ["indictor", true],
-      ["price", 8000],
-      ["color", "Black"],
+    	['brand', 'Fifine'],
+    	['indictor', true],
+    	['price', 8000],
+    	['color', 'Black'],
     ];
 
     console.log(Object.fromEntries(arr));
@@ -388,6 +388,7 @@
 ### Important Links:
 
 - [Make Fun Of Javascript Array](https://www.youtube.com/playlist?list=PL_XxuZqN0xVDr08QgQHljCecWtA4jBLnS)
+- [Class Overview](../../class-overview/Lecture-05-06/README.md)
 
 ### Task:
 
