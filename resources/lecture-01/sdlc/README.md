@@ -2,7 +2,7 @@
 
 ### Waterfall Model (Use when requirements do not change frequently)
 
-![https://kissflow.com/wp-content/uploads/2020/05/waterfall-model.png](https://kissflow.com/wp-content/uploads/2020/05/waterfall-model.png)
+![hello](https://project-management.com/wp-content/uploads/2020/05/waterfall-project-management-banner.png)
 
 ### Agile Model (Use when requirements change frequently)
 

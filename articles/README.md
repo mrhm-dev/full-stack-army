@@ -22,3 +22,5 @@ _List of all series articles_
 **Articles:**
 
 - `Programming` [Understand Programming Languages](understand-programming-languages/README.md)
+- [Application Requirements and Landscape](./application-requirements-and-landscape/README.md)
+- [We Need Freedom, We have to Stop Technology War](./we-need-freedom/README.md)

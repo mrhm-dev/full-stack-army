@@ -21,3 +21,10 @@
 - [Lecture 16 - [Backend 3] Understand Express Middleware](https://youtu.be/kXeNJJ4mQ7w)
 - [Lecture 17 - [Backend 4] Raffle Draw Project](https://youtu.be/4D2DIu8bhqU)
 - [Lecture 18 - [Backend 5] Understand The Concepts of Database](https://youtu.be/SyKO3oZLz00)
+- [Lecture 19 - [Backend 6] Adda with Random Topics | You can Skip](https://youtu.be/mqq5VgRMIho)
+- [Lecture 20 - [Backend 7] Start Working with Mongoose](https://youtu.be/y5Rism0fEqE)
+- [Lecture 21 - QNA on Express 101 and Books](https://youtu.be/krI6QUCGHY4)
+- [Lecture 22 - Authentication System from Pseudo Code to Real Code](https://youtu.be/0gl4grplEcI)
+- [Lecture 23 - Implement JWT and Refactor The Project Structure](https://youtu.be/D5A5BSGQVBU)
+- [Lecture 24 - Implement User CRUD Operations](https://youtu.be/xr0sKPvAipQ)
+

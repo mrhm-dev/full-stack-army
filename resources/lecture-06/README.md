@@ -15,7 +15,7 @@
   - Filter
 
     ```jsx
-    const numbers = [1, 2, 3, 4, false, "", NaN, 5, 6];
+    const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
     const filteredArr = numbers.filter((v) => v);
     console.log(filteredArr);
     ```
@@ -35,17 +35,17 @@
 
     // we want this -> '1234falseNaN56'
     const result = numbers.reduce((acc, cur, i) => {
-      if (i === 0) {
-        acc += "[";
-      }
-      if (cur) {
-        acc += cur.toString() + (i < numbers.length - 1 ? ", " : "");
-      }
-      if (i === numbers.length - 1) {
-        acc += "]";
-      }
-      return acc;
-    }, "");
+    	if (i === 0) {
+    		acc += '[';
+    	}
+    	if (cur) {
+    		acc += cur.toString() + (i < numbers.length - 1 ? ', ' : '');
+    	}
+    	if (i === numbers.length - 1) {
+    		acc += ']';
+    	}
+    	return acc;
+    }, '');
     console.log(result);
 
     // const result = numbers.reduce((acc, cur) => {
@@ -58,51 +58,51 @@
     ```
 
     ```jsx
-    const axios = require("axios").default;
-    const url = "https://jsonplaceholder.typicode.com/posts";
+    const axios = require('axios').default;
+    const url = 'https://jsonplaceholder.typicode.com/posts';
 
     async function getData() {
-      const { data } = await axios.get(url);
-      // const result = data.slice(0, 10).map((item) => {
-      // 	return {
-      // 		userId: item.userId,
-      // 		id: item.id,
-      // 		title: item.title,
-      // 	};
-      // });
-      const result = data.slice(0, 10).reduce((acc, cur) => {
-        acc[cur.id] = {
-          ...cur,
-        };
-        delete acc[cur.id].body;
-        return acc;
-      }, {});
-      return result;
+    	const { data } = await axios.get(url);
+    	// const result = data.slice(0, 10).map((item) => {
+    	// 	return {
+    	// 		userId: item.userId,
+    	// 		id: item.id,
+    	// 		title: item.title,
+    	// 	};
+    	// });
+    	const result = data.slice(0, 10).reduce((acc, cur) => {
+    		acc[cur.id] = {
+    			...cur,
+    		};
+    		delete acc[cur.id].body;
+    		return acc;
+    	}, {});
+    	return result;
     }
 
     getData()
-      .then((data) => console.log(data))
-      .catch((e) => console.log(e));
+    	.then((data) => console.log(data))
+    	.catch((e) => console.log(e));
     ```
 
     ```jsx
     const names = [
-      "Ayman",
-      "Abu Rayhan",
-      "Anik",
-      "Elias Emon",
-      "Engr. Sabbir",
-      "Fahim Faisal",
-      "Feroz Khan",
-      "Habib",
-      "HM Azizul",
-      "Hridoy Saha",
-      "Jahid Hassan",
-      "Johir",
-      "Md Al-Amin",
-      "Md Arafatul",
-      "Md Ashraful",
-      "Parvez",
+    	'Ayman',
+    	'Abu Rayhan',
+    	'Anik',
+    	'Elias Emon',
+    	'Engr. Sabbir',
+    	'Fahim Faisal',
+    	'Feroz Khan',
+    	'Habib',
+    	'HM Azizul',
+    	'Hridoy Saha',
+    	'Jahid Hassan',
+    	'Johir',
+    	'Md Al-Amin',
+    	'Md Arafatul',
+    	'Md Ashraful',
+    	'Parvez',
     ];
 
     // const namesGroup = {
@@ -112,19 +112,19 @@
     // };
 
     const namesGrouped = names.reduce((acc, cur) => {
-      const firstLetter = cur[0].toUpperCase();
-      if (firstLetter in acc) {
-        acc[firstLetter].push(cur);
-      } else {
-        acc[firstLetter] = [cur];
-      }
-      return acc;
+    	const firstLetter = cur[0].toUpperCase();
+    	if (firstLetter in acc) {
+    		acc[firstLetter].push(cur);
+    	} else {
+    		acc[firstLetter] = [cur];
+    	}
+    	return acc;
     }, {});
 
     Object.keys(namesGrouped).forEach((groupKey) => {
-      console.log("-----------", groupKey, "-----------");
-      namesGrouped[groupKey].forEach((name) => console.log(name));
-      console.log();
+    	console.log('-----------', groupKey, '-----------');
+    	namesGrouped[groupKey].forEach((name) => console.log(name));
+    	console.log();
     });
     ```
 
@@ -146,29 +146,29 @@
      */
 
     function uuidv4() {
-      return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
-        const r = (Math.random() * 16) | 0;
-        const v = c == "x" ? r : (r & 0x3) | 0x8;
-        return v.toString(16);
-      });
+    	return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    		const r = (Math.random() * 16) | 0;
+    		const v = c == 'x' ? r : (r & 0x3) | 0x8;
+    		return v.toString(16);
+    	});
     }
 
     const students = [
-      {
-        id: "67de71e5-0eac-474f-ab51-850ba9b31ed5",
-        name: "Md Al-Amin",
-        email: "alamin@test.com",
-      },
-      {
-        id: "ebdf6b78-c32b-4b1d-8574-e8c655b05c1e",
-        name: "Akib Ahmed",
-        email: "akib@test.com",
-      },
-      {
-        id: "ee729e84-a84e-4adf-b32c-4647a7114d5b",
-        name: "Elias Emon",
-        email: "elias@test.com",
-      },
+    	{
+    		id: '67de71e5-0eac-474f-ab51-850ba9b31ed5',
+    		name: 'Md Al-Amin',
+    		email: 'alamin@test.com',
+    	},
+    	{
+    		id: 'ebdf6b78-c32b-4b1d-8574-e8c655b05c1e',
+    		name: 'Akib Ahmed',
+    		email: 'akib@test.com',
+    	},
+    	{
+    		id: 'ee729e84-a84e-4adf-b32c-4647a7114d5b',
+    		name: 'Elias Emon',
+    		email: 'elias@test.com',
+    	},
     ];
 
     /**
@@ -181,42 +181,42 @@
 
     // create a new students
     students.push({
-      id: uuidv4(),
-      name: "Fahim Faisal",
-      email: "fahim@test.com",
+    	id: uuidv4(),
+    	name: 'Fahim Faisal',
+    	email: 'fahim@test.com',
     });
 
     // update
-    const idToUpdate = "ee729e84-a84e-4adf-b32c-4647a7114d5b";
+    const idToUpdate = 'ee729e84-a84e-4adf-b32c-4647a7114d5b';
     const updatedData = {
-      name: "Habiba Akhtar",
-      // email: 'habiba@test.com',
+    	name: 'Habiba Akhtar',
+    	// email: 'habiba@test.com',
     };
 
     const updatedIndex = students.findIndex((item) => item.id === idToUpdate);
     students[updatedIndex] = {
-      ...students[updatedIndex],
-      ...updatedData,
+    	...students[updatedIndex],
+    	...updatedData,
     };
-    console.log("Updated", students);
+    console.log('Updated', students);
 
     // Delete
     students.splice(updatedIndex, 1);
 
-    console.log("Deleted", students);
+    console.log('Deleted', students);
 
     // forEach, map, filter, every, reduce, some, find, findIndex -> traversing method
 
     for (let i = 0; i < students.length; i++) {
-      console.log(students[i].name);
+    	console.log(students[i].name);
     }
 
     for (let i in students) {
-      console.log(students[i].name);
+    	console.log(students[i].name);
     }
 
     for (let student of students) {
-      console.log(student.name);
+    	console.log(student.name);
     }
     ```
 
@@ -236,29 +236,29 @@
      */
 
     function uuidv4() {
-      return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
-        const r = (Math.random() * 16) | 0;
-        const v = c == "x" ? r : (r & 0x3) | 0x8;
-        return v.toString(16);
-      });
+    	return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    		const r = (Math.random() * 16) | 0;
+    		const v = c == 'x' ? r : (r & 0x3) | 0x8;
+    		return v.toString(16);
+    	});
     }
 
     const students = {
-      "67de71e5-0eac-474f-ab51-850ba9b31ed5": {
-        id: "67de71e5-0eac-474f-ab51-850ba9b31ed5",
-        name: "Md Al-Amin",
-        email: "alamin@test.com",
-      },
-      "ebdf6b78-c32b-4b1d-8574-e8c655b05c1e": {
-        id: "ebdf6b78-c32b-4b1d-8574-e8c655b05c1e",
-        name: "Akib Ahmed",
-        email: "akib@test.com",
-      },
-      "ee729e84-a84e-4adf-b32c-4647a7114d5b": {
-        id: "ee729e84-a84e-4adf-b32c-4647a7114d5b",
-        name: "Elias Emon",
-        email: "elias@test.com",
-      },
+    	'67de71e5-0eac-474f-ab51-850ba9b31ed5': {
+    		id: '67de71e5-0eac-474f-ab51-850ba9b31ed5',
+    		name: 'Md Al-Amin',
+    		email: 'alamin@test.com',
+    	},
+    	'ebdf6b78-c32b-4b1d-8574-e8c655b05c1e': {
+    		id: 'ebdf6b78-c32b-4b1d-8574-e8c655b05c1e',
+    		name: 'Akib Ahmed',
+    		email: 'akib@test.com',
+    	},
+    	'ee729e84-a84e-4adf-b32c-4647a7114d5b': {
+    		id: 'ee729e84-a84e-4adf-b32c-4647a7114d5b',
+    		name: 'Elias Emon',
+    		email: 'elias@test.com',
+    	},
     };
 
     /**
@@ -272,22 +272,22 @@
 
     // create
     const std = {
-      id: uuidv4(),
-      name: "Feroz Khan",
-      email: "feroz@test.com",
+    	id: uuidv4(),
+    	name: 'Feroz Khan',
+    	email: 'feroz@test.com',
     };
 
     students[std.id] = std;
 
     // update
-    const idToBeUpdated = "ee729e84-a84e-4adf-b32c-4647a7114d5b";
+    const idToBeUpdated = 'ee729e84-a84e-4adf-b32c-4647a7114d5b';
     const updatedData = {
-      name: "HM Azizul",
-      email: "azizul@test.com",
+    	name: 'HM Azizul',
+    	email: 'azizul@test.com',
     };
     students[idToBeUpdated] = {
-      ...students[idToBeUpdated],
-      ...updatedData,
+    	...students[idToBeUpdated],
+    	...updatedData,
     };
 
     // delete
@@ -303,7 +303,7 @@
     // }
 
     Object.values(students).forEach((student) => {
-      console.log(student.name, student.email);
+    	console.log(student.name, student.email);
     });
     ```
 
@@ -313,46 +313,46 @@
 const arr = [];
 const arrToObj = {};
 for (let i = 0; i < 5000000; i++) {
-  const o = {
-    id: i,
-    value: i,
-  };
-  arr.push(o);
-  arrToObj[i] = o;
+	const o = {
+		id: i,
+		value: i,
+	};
+	arr.push(o);
+	arrToObj[i] = o;
 }
 
-console.time("array");
+console.time('array');
 let id = 4999999;
 const obj = arr.find((item) => item.id === id);
 obj.value = 555;
-console.timeEnd("array"); // 104.901ms
+console.timeEnd('array'); // 104.901ms
 
-console.time("obj");
+console.time('obj');
 arrToObj[id].value = 999;
-console.timeEnd("obj"); // 0.019ms
+console.timeEnd('obj'); // 0.019ms
 
-console.time("array");
+console.time('array');
 arr.unshift({
-  id: 5000000,
-  value: 5000000,
+	id: 5000000,
+	value: 5000000,
 });
-console.timeEnd("array"); // 15.084ms
+console.timeEnd('array'); // 15.084ms
 
-console.time("obj");
+console.time('obj');
 arrToObj[5000000] = {
-  id: 5000000,
-  value: 5000000,
+	id: 5000000,
+	value: 5000000,
 };
-console.timeEnd("obj"); // 0.018ms
+console.timeEnd('obj'); // 0.018ms
 
-console.time("array");
+console.time('array');
 const index = arr.findIndex((item) => item.id === 4000000);
 arr.splice(index, 1);
-console.timeEnd("array"); // 93.135ms
+console.timeEnd('array'); // 93.135ms
 
-console.time("obj");
+console.time('obj');
 delete arrToObj[4000000];
-console.timeEnd("obj"); // 0.015ms
+console.timeEnd('obj'); // 0.015ms
 ```
 
 ### Check Truthy value
@@ -375,47 +375,47 @@ console.log(truthy); // [1,2,3,4,5]
 ```jsx
 const arr = [];
 for (let i = 1; i < 5000000; i++) {
-  arr.push(i);
+	arr.push(i);
 }
 
-console.time("not-optimized");
+console.time('not-optimized');
 arr.filter((item) => item % 2 === 0).map((item) => item * 2);
-console.timeEnd("not-optimized"); // 562.423ms
+console.timeEnd('not-optimized'); // 562.423ms
 
-console.time("optimized");
+console.time('optimized');
 arr.reduce((acc, cur) => {
-  if (cur % 2 === 0) {
-    acc.push(cur * 2);
-  }
-  return acc;
+	if (cur % 2 === 0) {
+		acc.push(cur * 2);
+	}
+	return acc;
 }, []);
-console.timeEnd("optimized"); // 238.3ms
+console.timeEnd('optimized'); // 238.3ms
 ```
 
 ### Implementation of reduce function
 
 ```jsx
 function myReduce(arr, cb, init) {
-  let acc = init;
-  for (let i = 0; i < arr.length; i++) {
-    acc = cb(acc, arr[i], i, arr);
-  }
-  return acc;
+	let acc = init;
+	for (let i = 0; i < arr.length; i++) {
+		acc = cb(acc, arr[i], i, arr);
+	}
+	return acc;
 }
 
 const sum = myReduce([1, 2, 3, 4], (a, b) => a + b, 0);
 console.log(sum);
 
-const arr = [1, 2, "", false, 3, NaN, false, 4, 5, NaN, 6];
+const arr = [1, 2, '', false, 3, NaN, false, 4, 5, NaN, 6];
 const result = myReduce(
-  arr,
-  (acc, cur) => {
-    if (cur) {
-      acc.push(cur ** 2);
-    }
-    return acc;
-  },
-  []
+	arr,
+	(acc, cur) => {
+		if (cur) {
+			acc.push(cur ** 2);
+		}
+		return acc;
+	},
+	[]
 );
 console.log(result);
 ```
@@ -423,6 +423,7 @@ console.log(result);
 ### Important Links
 
 - [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
+- [Class Overview](../../class-overview/Lecture-05-06/README.md)
 
 ### Task
 

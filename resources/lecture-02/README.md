@@ -16,3 +16,7 @@
 - [Declarative programming - Wikipedia](https://en.wikipedia.org/wiki/Declarative_programming)
 - [Functional programming - Wikipedia](https://en.wikipedia.org/wiki/Functional_programming)
 - [Object-oriented programming - Wikipedia](https://en.wikipedia.org/wiki/Object-oriented_programming)
+
+**Class Overview**
+
+- [Lecture - 02](../../class-overview/Lecture-02/README.md)

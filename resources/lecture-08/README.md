@@ -6,9 +6,9 @@
 
   ```jsx
   function name_of_the_function(/** Input something  */) {
-    // Function body
-    // any valid js code
-    // return a result
+  	// Function body
+  	// any valid js code
+  	// return a result
   }
   ```
 
@@ -111,62 +111,63 @@
 
   ```jsx
   function sleep(name) {
-    console.log(`${name} is sleeping`);
+  	console.log(`${name} is sleeping`);
   }
 
   function awake(name) {
-    console.log(`${name} is awake`);
+  	console.log(`${name} is awake`);
   }
 
   function eat(name, time) {
-    console.log(`${name} is taking ${time}`);
+  	console.log(`${name} is taking ${time}`);
   }
 
   function walk(name, destination) {
-    console.log(`${name} is walking to ${destination}`);
+  	console.log(`${name} is walking to ${destination}`);
   }
 
   function study(name) {
-    console.log(`${name} is studying`);
+  	console.log(`${name} is studying`);
   }
 
   function work(name) {
-    console.log(`${name} is working`);
+  	console.log(`${name} is working`);
   }
 
   function jobHolderLifecycle(name) {
-    awake(name);
-    eat(name, "breakfast");
-    walk(name, "office");
-    work(name);
-    eat(name, "lunch");
-    walk(name, "home");
-    eat(name, "dinner");
-    sleep(name);
+  	awake(name);
+  	eat(name, 'breakfast');
+  	walk(name, 'office');
+  	work(name);
+  	eat(name, 'lunch');
+  	walk(name, 'home');
+  	eat(name, 'dinner');
+  	sleep(name);
   }
 
   function studentsLifecycle(name) {
-    awake(name);
-    eat(name, "breakfast");
-    study(name);
-    eat(name, "lunch");
-    study(name);
-    eat(name, "dinner");
-    sleep(name);
+  	awake(name);
+  	eat(name, 'breakfast');
+  	study(name);
+  	eat(name, 'lunch');
+  	study(name);
+  	eat(name, 'dinner');
+  	sleep(name);
   }
   ```
 
 - **Steps of a function**
 
   - **There are two steps of a function**
+
     - **Define a function**
 
       ```jsx
       function testFunction() {
-        const a = 10;
-        const b = 20;
-        const result = a + b + Math.max(a, b);
-        console.log(result);
+      	const a = 10;
+      	const b = 20;
+      	const result = a + b + Math.max(a, b);
+      	console.log(result);
       }
       ```
 
@@ -180,8 +181,8 @@ There are some problems in above defined function. We can't use the function for
 
 ```jsx
 function testFunction(a = 10, b = 20) {
-  const result = a + b + Math.max(a, b);
-  console.log(result);
+	const result = a + b + Math.max(a, b);
+	console.log(result);
 }
 ```
 
@@ -195,15 +196,15 @@ testFunction(100, 200); // Here 100 and 200 are arguments
 
   ```jsx
   function sum(a, b) {
-    return a + b;
+  	return a + b;
   }
 
   function subtract(a, b) {
-    return a - b;
+  	return a - b;
   }
 
   function times(a, b) {
-    return a * b;
+  	return a * b;
   }
 
   const a = 10;
@@ -225,7 +226,7 @@ Function is a first class citizen. Because we can treat function as a value.
 
     ```jsx
     function testFunction() {
-      console.log("I am a test function");
+    	console.log('I am a test function');
     }
 
     const fn = testFunction;
@@ -238,7 +239,7 @@ Function is a first class citizen. Because we can treat function as a value.
     ```jsx
     const arr = [fn, testFunction];
     const obj = {
-      fn: testFunction,
+    	fn: testFunction,
     };
     ```
 
@@ -246,7 +247,7 @@ Function is a first class citizen. Because we can treat function as a value.
 
     ```jsx
     function fnArgument(fn) {
-      return fn();
+    	return fn();
     }
     fnArgument(testFunction);
     ```
@@ -255,7 +256,7 @@ Function is a first class citizen. Because we can treat function as a value.
 
     ```jsx
     function returnFn() {
-      return testFunction;
+    	return testFunction;
     }
     ```
 
@@ -263,8 +264,8 @@ Function is a first class citizen. Because we can treat function as a value.
 
   ```jsx
   const newFn = new Function(
-    "str",
-    `let obj = {};
+  	'str',
+  	`let obj = {};
       for (let s of str) {
           if (s !== ' ') {
               obj[s] = s;
@@ -273,7 +274,7 @@ Function is a first class citizen. Because we can treat function as a value.
       return obj;`
   );
 
-  console.log(newFn("HM Nayem"));
+  console.log(newFn('HM Nayem'));
   ```
 
 On the above code, we can pass arguments as many as we want. But last argument must be the function body. If we don't pass the body as last argument it will throw an error.
@@ -282,14 +283,14 @@ On the above code, we can pass arguments as many as we want. But last argument m
 
 ```jsx
 const fData = {
-  params: ["a", "b"],
-  body: ["const r = a + b", "return r"],
+	params: ['a', 'b'],
+	body: ['const r = a + b', 'return r'],
 };
 
 const fBody = fData.body.reduce((acc, cur) => {
-  acc += cur + ";";
-  return acc;
-}, "");
+	acc += cur + ';';
+	return acc;
+}, '');
 
 const tf = new Function(...fData.params, fBody);
 console.log(tf(100, 200));
@@ -297,9 +298,9 @@ console.log(tf(100, 200));
 
 ```jsx
 const greetFn = new Function(
-  "name",
-  "email",
-  `
+	'name',
+	'email',
+	`
 	const fName = name.split(' ')[0];
 	console.log('Hello,', fName, 'Is that your email?', email);
 	console.log('Yeah, this is mine.');
@@ -310,36 +311,36 @@ const greetFn = new Function(
 console.log(typeof greetFn);
 console.log(greetFn.__proto__);
 // console.log(greetFn.toString());
-const fName = greetFn("HM Nayem", "nayem@gmail.com");
-console.log("First Name:", fName);
+const fName = greetFn('HM Nayem', 'nayem@gmail.com');
+console.log('First Name:', fName);
 ```
 
 ```jsx
 const operations = [
-  {
-    args: [10, 20],
-    params: ["a", "b"],
-    body: 'console.log("a + b",a + b)',
-  },
-  {
-    args: [10, 20],
-    params: ["a", "b"],
-    body: 'console.log("a - b",a - b)',
-  },
-  {
-    args: [10, 20],
-    params: ["a", "b"],
-    body: 'console.log("a * b",a * b)',
-  },
-  {
-    args: [],
-    params: [],
-    body: 'console.log("Hello World! No params, no args")',
-  },
-  {
-    args: [5],
-    params: ["n"],
-    body: `
+	{
+		args: [10, 20],
+		params: ['a', 'b'],
+		body: 'console.log("a + b",a + b)',
+	},
+	{
+		args: [10, 20],
+		params: ['a', 'b'],
+		body: 'console.log("a - b",a - b)',
+	},
+	{
+		args: [10, 20],
+		params: ['a', 'b'],
+		body: 'console.log("a * b",a * b)',
+	},
+	{
+		args: [],
+		params: [],
+		body: 'console.log("Hello World! No params, no args")',
+	},
+	{
+		args: [5],
+		params: ['n'],
+		body: `
 			for (let i = 0; i < n; i++) {
 				let line = '';
 				for (let j = 0; j < n; j++) {
@@ -348,12 +349,12 @@ const operations = [
 				console.log(line);
 			}
 		`,
-  },
+	},
 ];
 
 operations.forEach((operation) => {
-  const fn = new Function(...operation.params, operation.body);
-  fn(...operation.args);
+	const fn = new Function(...operation.params, operation.body);
+	fn(...operation.args);
 });
 ```
 
@@ -361,3 +362,4 @@ operations.forEach((operation) => {
 
 - [Meta Programming](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Meta_programming)
 - [Source Code of this class](../../src/lecture-08/app.js)
+- [Class Overview](../../class-overview/Lecture-08/README.md)

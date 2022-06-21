@@ -12,6 +12,8 @@ If requirements change frequently, we use function. You can see [this code](./ap
 - [GeeksForGeeks](https://www.geeksforgeeks.org/)
 - [Scratch](https://scratch.mit.edu/)
 - [Scratch Tutorial Playlist](https://youtube.com/playlist?list=PLym69wpbTIIEkUnqkOznZfQU6lRxebpO3)
+- [Class Overview](../../class-overview/Lecture-03/README.md
+- [Understanding the origin of fundamental concepts] (https://www.tutorialspoint.com/computer_programming/index.htm)
 
 ### Today's Task
 
