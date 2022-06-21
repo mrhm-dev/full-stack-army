@@ -25,3 +25,6 @@
 - [Lecture 20 - [Backend 7] Start Working with Mongoose](https://youtu.be/y5Rism0fEqE)
 - [Lecture 21 - QNA on Express 101 and Books](https://youtu.be/krI6QUCGHY4)
 - [Lecture 22 - Authentication System from Pseudo Code to Real Code](https://youtu.be/0gl4grplEcI)
+- [Lecture 23 - Implement JWT and Refactor The Project Structure](https://youtu.be/D5A5BSGQVBU)
+- [Lecture 24 - Implement User CRUD Operations](https://youtu.be/xr0sKPvAipQ)
+
