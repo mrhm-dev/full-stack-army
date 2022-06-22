@@ -1,8 +1,8 @@
-# Lecture 10 - Asynchronous Programming in JavaScript & Lecture 11 - Async Iterator & Generator in JavaScript | Project Requirements
+# Lecture 10 - Asynchronous Programming in JavaScript
 
 ## Introduction
 
-আজকের লেকচার বেসিক্যালি Asynchronous Programming নিয়ে। এখানে মূলত ১০ এবং ১১ এই দুইটা ক্লাসের লেকচার একসাথে মার্জ করা হবে। আজকের এজেন্ডাগুলো একটু দেখে নিই।
+আজকের লেকচার বেসিক্যালি Asynchronous Programming নিয়ে। আজকের এজেন্ডাগুলো একটু দেখে নেয়া যাক।
 
 - Understand Asynchronous Programming
 - Event Loop
@@ -14,6 +14,15 @@
   - Async Generator
 
 একে একে সব বিষয় আলোচনা করা হবে।
+
+## Table of contents
+
+- [Understand Asynchronous Programming](#understand-asynchronous-programming)
+- [Event Loop](#event-loop)
+- [Ways we can handle Asynchronous Tasks](#ways-we-can-handle-asynchronous-tasks)
+  - [Callback](#callback)
+  - [Promise](#promise)
+  - [Async Await](#async-await)
 
 ## Understand Asynchronous Programming
 
@@ -274,3 +283,79 @@ get(`/users?username=anarul`)
 ```
 
 এখানেও অনেক কাজ করতে হয়েছে। তবে কলব্যাকের তুলনায় এই কোডটা অনেক ভালভাবে পড়া যাচ্ছে। চিন্তা করেন কলব্যাকে প্রতিটা ফাংশনের জন্য যদি try catch ব্লক ব্যবহার করি তাহলে কতটা কষ্ট হবে আমাদের। সেখানে প্রমিজে আমরা মাত্র একটা catch ব্লক ব্যবহার করে আমাদের সমস্ত এরর হ্যান্ডেল করতে পারি। আর চেইন আকার হওয়ায় আমরা কোডটা সহজেই বুঝতে পারছি।
+
+কিন্তু তাও এটাও অনেক কষ্টকর। খুব বেশি যে সহজ হয়ে গেলো তা না। আরো সহজ সল্যুশন আছে এটার চাইতে। চলুন দেখা যাক।
+
+### Async Await
+
+Async Await এর ক্ষেত্রে প্রমিজ থাকলে সেটা then catch কিছু লেখার দরকার নাই। সরাসরি রেজাল্ট নিয়ে আসতে পারি। এর একটা শর্ত হচ্ছে async ফাংশন না হলে আমরা await করতে দিবো না। await এর মানেই হচ্ছে অপেক্ষা করা। Async Await হচ্ছে অনেকটা অ্যাসিনক্রোনাস প্রোগ্রামিং এর সিনক্রোনাস সিনট্যাক্স। দেখতে মনে হবে সিনক্রোনাস, কিন্তু কাজ হবে অ্যাসিনক্রোনাসের। কোনো ফাংশনকে async বানাতে হলে function কীওয়ার্ডের আগে জাস্ট async বসিয়ে দিলেই তা async ফাংশন হয়ে যাবে। এখন এই ফাংশন কিছু করুক বা না করুক একটা প্রমিজ রিটার্ন করবে। বিশ্বাস করার জন্য তো প্রমাণ দরকার। চলুন একটা প্রমাণ দেখাই।
+
+![Async](./Screenshot_3.png)
+
+যখন আমরা async কীওয়ার্ড ইউজ করিনি, তখন ফাংশন আমাদের undefined রিটার্ন করছে। কিন্তু যখন async ফাংশন লিখলাম তা আমাদের একটা প্রমিজ রিটার্ন করছে।
+
+এবার আমরা আমাদের আগের টাস্ক Async Await দিয়ে করি।
+
+```js
+const get = (url) => Promise.resolve(url);
+
+async function getUserName(username) {
+	try {
+		const mainUser = await get(`/users?username=${username}`);
+		const posts = await get(`/posts?user_id=${mainUser.id}`);
+		const comments = await get(`/comments?post_id=${posts[0].id}`);
+		const user = await get(`/users?username=${comments[0].username}`);
+		console.log(user);
+	} catch (e) {
+		console.log(e);
+	}
+}
+```
+
+যখনই ডাটা আসার ব্যাপার থাকবে তখন তা আসার জন্য কিছু সময় লাগবে। ঐ সময়টা যেন ব্লক হয়ে না থাকে তাই await দিয়ে বুঝানো হয় তোমার রিকোয়েস্ট প্রসেসিং হচ্ছে, একটু টাইম লাগবে। তুমি অপেক্ষা করো। যে ডাটা আসছে তা আমরা একেকটা ভ্যারিয়েবলে স্টোর করছি। সবশেষে ইউজার আসার পর আমরা তা প্রিন্ট করবো। এখানে দেখুন একটা try catch ব্লক দিয়ে কাজটা শেষ হয়ে যাচ্ছে। কোনো চেইন নেই। যেহেতু ভ্যারিয়েবলে আমরা ডাটা স্টোর করে রাখতে পারছি, আমরা ভ্যারিয়েবল ধরে ধরে ডিবাগ করতে পারি। খুব সহজেই পড়া যাচ্ছে। প্রমিজ, কলব্যাকে যেটা অনেক কাজ করতে হতো, এক্ষেত্রে অনেক কম কাজ করে অ্যাসিনক্রোনাস টাস্ক হ্যান্ডেল করা যায়।
+
+এবার আমরা একটা রিয়েল লাইফ উদাহরণ দেখি। তার জন্য আমাদের axios প্যাকেজ ইনস্টল করে নিতে হবে এবং [jsonPlacehlder](https://jsonplaceholder.typicode.com) থেকে ডাটা নিতে পারি।
+
+```js
+const axios = require('axios').default;
+const USERS_URL = 'https://jsonplaceholder.typicode.com/users';
+const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts';
+const COMMENTS_URL = 'https://jsonplaceholder.typicode.com/comments';
+
+async function getComments(username) {
+	try {
+		const { data: user } = await axios.get(`${USERS_URL}?username=${username}`);
+		const { data: posts } = await axios.get(
+			`${POSTS_URL}?userId=${user[0].id}`
+		);
+		const { data: comments } = await axios.get(
+			`${COMMENTS_URL}?postId=${posts[0].id}`
+		);
+
+		const { data: userWithComment } = await axios.get(
+			`${USERS_URL}?email=${comments[1].email}`
+		);
+		console.log(userWithComment);
+	} catch (error) {
+		console.log('Error Occurred', error.toJSON());
+	}
+}
+
+getComments('Bret');
+```
+
+প্রথমে আমরা ইউজার, পোস্ট এবং কমেন্টের URL কে ভ্যারিয়েবলে নিয়ে নিলাম। এরপর async ফাংশন বানালাম। সর্বপ্রথমে আমরা ইউজারনেইম দিয়ে ইউজার বের করে স্টোর করলাম। এরপর ঐ ইউজারের আইডি ব্যবহার করে সকল পোস্ট বের করে নিলাম। এরপর ঐ পোস্টগুলোর মধ্য থেকে প্রথম পোস্টের আইডি ব্যবহার করে কমেন্টগুলো বের করে নিলাম। তারপর প্রথম কমেন্টের থেকে আমরা ইউজার ইমেইল বের করে নিলাম। এরপর ঐ ইমেইল দিয়ে ইউজার বের করার জন্য হিট করলাম। কিন্তু কোনো ইউজার পাওয়া না যাওয়ার তা একটা ফাঁকা অ্যারে [] আউটপুট দিচ্ছে। এরর হ্যান্ডলিং এর জন্য try catch ব্লক ব্যবহার করেছি।
+
+Async Iterator এবং Async Generator নিয়ে নেক্সট ক্লাসে আলোচনা করা হবে।
+
+## Resource for this lecture
+
+এই লেকচারের সমস্ত রিসোর্স [লেকচার ১০](../../resources/lecture-10/README.md) এ পাবেন।
+
+## Source Code
+
+এই লেকচারের সমস্ত সোর্স কোড এই [লিংকে](../../src/lecture-10/app.js) এ পাবেন।
+
+## AUTHOR
+
+[Aditya Chakraborty](https://github.com/adityackr)
