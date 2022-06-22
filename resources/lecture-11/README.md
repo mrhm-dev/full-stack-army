@@ -18,7 +18,7 @@ We use iterator because we cannot pause a loop. When a loop starts it will not s
 const arr = [1, 2, 3, 4];
 let index = 0;
 function next() {
-  return arr[index++];
+	return arr[index++];
 }
 
 console.log(next()); // 1
@@ -31,7 +31,7 @@ console.log(next()); // undefined
 In iterator if there is no value it returns simply `undefined`.
 
 ```js
-const channel = "Stack";
+const channel = 'Stack';
 const channelIterator = channel[Symbol.iterator]();
 console.log(channelIterator.next()); // { value: 'S', done: false }
 console.log(channelIterator.next()); // { value: 't', done: false }
@@ -44,28 +44,28 @@ console.log(channelIterator.next()); // { value: undefined, done: true }
 
 ```js
 const range = {
-  start: 0,
-  stop: 100,
-  step: 5,
+	start: 0,
+	stop: 100,
+	step: 5,
 };
 range[Symbol.iterator] = function () {
-  let current = this.start;
-  const stop = this.stop;
-  const step = this.step;
-  return {
-    next() {
-      const o = {
-        value: current,
-        done: current > stop,
-      };
-      current += step;
-      return o;
-    },
-  };
+	let current = this.start;
+	const stop = this.stop;
+	const step = this.step;
+	return {
+		next() {
+			const o = {
+				value: current,
+				done: current > stop,
+			};
+			current += step;
+			return o;
+		},
+	};
 };
 
 for (let v of range) {
-  console.log(v);
+	console.log(v);
 }
 ```
 
@@ -77,9 +77,9 @@ Generator is used to create an iterator more easily. Generator always returns an
 
 ```js
 function* myGenerator() {
-  yield 1;
-  yield 2;
-  yield 3;
+	yield 1;
+	yield 2;
+	yield 3;
 }
 
 const iterator = myGenerator();
@@ -91,9 +91,9 @@ console.log(iterator.next());
 
 ```js
 function* range(start = 0, stop = 100, step = 5) {
-  for (let i = start; i <= stop; i += step) {
-    yield i;
-  }
+	for (let i = start; i <= stop; i += step) {
+		yield i;
+	}
 }
 
 // const rangeIt = range(1, 10, 3);
@@ -108,30 +108,30 @@ function* range(start = 0, stop = 100, step = 5) {
 // console.log(rangeIt.next());
 
 for (let v of range()) {
-  console.log(v);
+	console.log(v);
 }
 ```
 
 ```js
 function* generateId() {
-  let index = 1;
-  while (true) {
-    yield index++;
-  }
+	let index = 1;
+	while (true) {
+		yield index++;
+	}
 }
 
 const generateUserId = generateId();
 const generateProductId = generateId();
-console.log("User", generateUserId.next().value);
-console.log("User", generateUserId.next().value);
-console.log("User", generateUserId.next().value);
+console.log('User', generateUserId.next().value);
+console.log('User', generateUserId.next().value);
+console.log('User', generateUserId.next().value);
 
-console.log("Product", generateProductId.next().value);
-console.log("Product", generateProductId.next().value);
-console.log("Product", generateProductId.next().value);
-console.log("Product", generateProductId.next().value);
-console.log("Product", generateProductId.next().value);
-console.log("Product", generateProductId.next().value);
+console.log('Product', generateProductId.next().value);
+console.log('Product', generateProductId.next().value);
+console.log('Product', generateProductId.next().value);
+console.log('Product', generateProductId.next().value);
+console.log('Product', generateProductId.next().value);
+console.log('Product', generateProductId.next().value);
 ```
 
 ---
@@ -139,10 +139,10 @@ console.log("Product", generateProductId.next().value);
 ##### for of loop
 
 ```js
-const channel = "Stack";
+const channel = 'Stack';
 const channelIterator = channel[Symbol.iterator]();
 for (let v of channel) {
-  console.log(v); // S t a c k
+	console.log(v); // S t a c k
 }
 ```
 
@@ -151,56 +151,56 @@ for (let v of channel) {
 ##### Async Iterator and Generator
 
 ```js
-const axios = require("axios").default;
+const axios = require('axios').default;
 
 async function getUsers() {
-  const url = "https://jsonplaceholder.typicode.com/users";
-  const { data: users } = await axios.get(url);
-  return users;
+	const url = 'https://jsonplaceholder.typicode.com/users';
+	const { data: users } = await axios.get(url);
+	return users;
 }
 
 async function* getPostsByUser(users) {
-  const url = "https://jsonplaceholder.typicode.com/posts";
-  for (let i = 0; i < users.length; i++) {
-    const { data: posts } = await axios.get(`${url}?userId=${users[i].id}`);
-    yield posts;
-  }
+	const url = 'https://jsonplaceholder.typicode.com/posts';
+	for (let i = 0; i < users.length; i++) {
+		const { data: posts } = await axios.get(`${url}?userId=${users[i].id}`);
+		yield posts;
+	}
 }
 
 getUsers()
-  .then(async (users) => {
-    // const userIterator = await getPostsByUser(users);
-    // await userIterator.next();
-    // await userIterator.next();
-    // console.log((await userIterator.next()).value);
+	.then(async (users) => {
+		// const userIterator = await getPostsByUser(users);
+		// await userIterator.next();
+		// await userIterator.next();
+		// console.log((await userIterator.next()).value);
 
-    for await (let v of getPostsByUser(users)) {
-      console.log(v.map((d) => d.title));
-    }
-  })
-  .catch((e) => {
-    console.log(e);
-  });
+		for await (let v of getPostsByUser(users)) {
+			console.log(v.map((d) => d.title));
+		}
+	})
+	.catch((e) => {
+		console.log(e);
+	});
 ```
 
 We can write the above program as below:
 
 ```js
-const axios = require("axios").default;
+const axios = require('axios').default;
 
 async function getUsers() {
-  const url = "https://jsonplaceholder.typicode.com/users";
-  const { data: users } = await axios.get(url);
-  return users.map((user) =>
-    axios.get(`https://jsonplaceholder.typicode.com/posts?userId=${user.id}`)
-  );
+	const url = 'https://jsonplaceholder.typicode.com/users';
+	const { data: users } = await axios.get(url);
+	return users.map((user) =>
+		axios.get(`https://jsonplaceholder.typicode.com/posts?userId=${user.id}`)
+	);
 }
 
 (async () => {
-  const users = await getUsers();
-  for await (let v of users) {
-    console.log(v.data.map((post) => post.title));
-  }
+	const users = await getUsers();
+	for await (let v of users) {
+		console.log(v.data.map((post) => post.title));
+	}
 })();
 ```
 
@@ -220,6 +220,7 @@ Student can see their own time logs and attend button when enable.
 - [JavaScript iterators and generators: A complete guide - LogRocket Blog](https://blog.logrocket.com/javascript-iterators-and-generators-a-complete-guide/)
 - [for await...of - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of)
 - [JavaScript async iterators](https://www.nodejsdesignpatterns.com/blog/javascript-async-iterators/)
+- [Class Overview](../../class-overview/Lecture-11/README.md)
 
 ---
 
