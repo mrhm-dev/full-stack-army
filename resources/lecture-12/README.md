@@ -88,31 +88,31 @@ Student can see their own time logs and attend button when enabled.
 
 ##### Student Endpoints
 
-- POST/auth/login [public]
-- POST/auth/register [public]
-- PATCH/profiles [private]
-- PATCH/profiles/avatar [private]
-- PUT/auth/change-password [private]
-- GET/timesheet [private]
-- GET/attendance [private]
-- GET/attendanceStatus [private]
+- POST /auth/login [public]
+- POST /auth/register [public]
+- PATCH /profiles [private]
+- PATCH /profiles/avatar [private]
+- PUT /auth/change-password [private]
+- GET /timesheet [private]
+- GET /attendance [private]
+- GET /attendanceStatus [private]
 
 ##### Admin Endpoints
 
-- GET/users [private]
-- POST/users [private]
-- PATCH/users/userId [private]
-- DELETE/users/userId [private]
-- GET/users/userId [private]
-- GET/profiles [private]
-- POST/profiles [private]
-- PATCH/profiles/profileId [private]
-- DELETE/profiles/profileId [private]
-- GET/profiles/profileId [private]
-- GET/timesheet/userId [private]
-- GET/timesheet/stats [private]
-- POST/attendance/enable [private]
-- GET/attendance/disabled/:attendanceId [private]
+- GET /users [private]
+- POST /users [private]
+- PATCH /users/userId [private]
+- DELETE /users/userId [private]
+- GET /users/userId [private]
+- GET /profiles [private]
+- POST /profiles [private]
+- PATCH /profiles/profileId [private]
+- DELETE /profiles/profileId [private]
+- GET /profiles/profileId [private]
+- GET /timesheet/userId [private]
+- GET /timesheet/stats [private]
+- POST /attendance/enable [private]
+- GET /attendance/disabled/:attendanceId [private]
 
 ---
 
@@ -125,3 +125,7 @@ Student can see their own time logs and attend button when enabled.
 #### Project Management
 
 See through [this notion link](https://thirsty-camelotia-a8e.notion.site/Projects-26859035fe2a4649b9556f5fbe77728b) to get an idea about project management
+
+#### Important links
+
+- [Class Overview](../../class-overview/Lecture-12/README.md)
