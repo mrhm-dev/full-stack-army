@@ -13,4 +13,5 @@ In this repository you will find all class overviews.
 - [Lecture 10 - Asynchronous Programming in JavaScript](./Lecture-10/README.md)
 - [Lecture 11 - Async Iterator & Generator in JavaScript | Project Requirements](./Lecture-11/README.md)
 - [Lecture 12 - Attendance System Requirement Analysis](./Lecture-12/README.md)
+- [Lecture 13 - Create Models, Write Pseudo Code and Adda](./Lecture-13/README.md)
 - [Lecture 21 - QNA on Express 101 and Books](./Lecture-21/README.md)
