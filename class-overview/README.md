@@ -16,4 +16,5 @@ In this repository you will find all class overviews.
 - [Lecture 13 - Create Models, Write Pseudo Code and Adda](./Lecture-13/README.md)
 - [Lecture 14 - Backend 1 | Course planning and discussion](./Lecture-14/README.md)
 - [Lecture 15 - Backend 2 | Introduction to Backend Development](./Lecture-15/README.md)
+- [Lecture 16 - Backend 3 | Understand Express Middleware](./Lecture-16/README.md)
 - [Lecture 21 - QNA on Express 101 and Books](./Lecture-21/README.md)
