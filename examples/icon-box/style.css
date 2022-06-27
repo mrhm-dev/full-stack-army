@@ -1,0 +1,66 @@
+body{
+     margin: 0;
+     background-color: rgb(228, 221, 221);
+     padding: 0; 
+     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+p{
+      font-size: 18px;
+      letter-spacing:0.05ch;
+}
+h2{
+      font-size: 26px;
+}
+
+section.icon-box{
+      height: 600px;
+      width: 80%;
+      margin: auto;
+      margin-top: 10%;
+}
+
+.icon-box .wrapper{
+      display: flex;
+}
+
+.icon-box .wrapper .box{
+      margin: 10px 20px;
+      padding: 35px 15px;
+      text-align: center;
+      background-color: black;
+      color: #CFC5C3;
+      border-radius: 10px;
+      box-shadow: 0 16px 16px -8px gray;
+}
+
+.box:hover{
+      transition: .4s;
+      transform: rotateY(180deg);
+}
+
+.box:hover .description{
+      transform: rotateY(180deg);
+}
+
+.box:hover .title{
+      transform: rotateY(180deg);
+}
+
+.box:hover i{
+      transform: rotateY(180deg);
+}
+     
+.box i{
+      font-size: 25px;
+}
+
+.facebook i{
+      color: #4267B2;
+}
+
+.instagram i{
+      color: #833AB4;
+}
+.youtube i{
+      color: #FF0000;
+}
