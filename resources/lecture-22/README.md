@@ -51,7 +51,7 @@ new-password = Input()
 old-password = Input()
 TODO
                                      I
-if old-not equal to user.hash password:
+if old-password not equal to user.hash password:
    return 400 error
 else hashNewPassword = hash new-password
    save hashNewPassword
