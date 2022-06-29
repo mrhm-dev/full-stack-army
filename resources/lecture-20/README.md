@@ -6,6 +6,7 @@ This video was part of our backend BootCamp. In this video, we discussed Mongoos
 
 - [MongooseJs](https://mongoosejs.com/)
 - [Source Code](../../src/mongo-demo/)
+- [Class Overview](../../class-overview/Lecture-20/README.md)
 
 ## Tasks
 

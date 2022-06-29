@@ -20,4 +20,5 @@ In this repository you will find all class overviews.
 - [Lecture 17 - Backend 4 | Raffle Draw Project](./Lecture-17/README.md)
 - [Lecture 18 - Backend 5 | Understand The Concepts of Database](./Lecture-18/README.md)
 - [Lecture 19 - Backend 6 | Adda with Random Topics | You can Skip](./Lecture-19/README.md)
+- [Lecture 20 - Backend 7 | Start Working with Mongoose](./Lecture-20/README.md)
 - [Lecture 21 - QNA on Express 101 and Books](./Lecture-21/README.md)

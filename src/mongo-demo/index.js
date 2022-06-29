@@ -5,22 +5,20 @@ const personSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 		minlength: [3, 'Minimum 3 chars'],
-		maxlength: [10, 'Maximum 10 chars'],
+		maxlength: [20, 'Maximum 20 chars'],
 	},
 	lastName: {
 		type: String,
 		required: true,
 		minlength: [3, 'Minimum 3 chars'],
-		maxlength: [10, 'Maximum 10 chars'],
+		maxlength: [20, 'Maximum 20 chars'],
 	},
 	email: {
 		type: String,
 		required: true,
-		minlength: [3, 'Minimum 3 chars'],
-		maxlength: [10, 'Maximum 10 chars'],
 		validate: {
 			validator: function (v) {
-				return v.endWith('.com');
+				return v.endsWith('.com');
 			},
 			message: 'Invalid email formats',
 		},
@@ -36,21 +34,21 @@ mongoose
 	.connect('mongodb://localhost:27017/mongo-demo')
 	.then(async () => {
 		console.log('Database connected');
-		// const person = new Person({
-		// 	firstName: 'Aditya',
-		// 	lastName: 'Chakraborty',
-		// 	email: 'aditya@example.com',
-		// 	age: 30,
-		// 	bio: 'Backend Developer',
-		// 	single: true,
-		// });
-		// await person.save();
-		// console.log('Person created');
-		// console.log(person);
+		const person = new Person({
+			firstName: 'Aditya',
+			lastName: 'Chakraborty',
+			email: 'aditya@example.com',
+			age: 30,
+			bio: 'Backend Developer',
+			single: true,
+		});
+		await person.save();
+		console.log('Person created');
+		console.log(person);
 		// const people = await Person.find({ lastName: 'Chakraborty' });
 		// console.log(people);
-		const person = new Person({ firstName: '11' });
-		await person.save();
+		// const person = new Person({ firstName: '11' });
+		// await person.save();
 	})
 	.catch((e) => {
 		console.log(e);
