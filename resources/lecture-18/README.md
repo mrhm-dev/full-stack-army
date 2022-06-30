@@ -27,3 +27,4 @@
 ### References
 
 - [7 Database Paradigms](https://tudip.com/blog-post/7-database-paradigms/)
+- [Class Overview](../../class-overview/Lecture-18/README.md)

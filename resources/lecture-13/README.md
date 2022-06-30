@@ -49,4 +49,7 @@ End
 Follow [this link](https://thirsty-camelotia-a8e.notion.site/Attendance-System-8b5ccfe9b2384e84b904d6a85013170b) to check the progress
 
 **Source Code**  
-[Click Here](../../projects/attendance-system/)
+[Click Here](../../src/lecture-13/)
+
+**Class Overview:**
+[Lecture 13](../../class-overview/Lecture-13/README.md)
