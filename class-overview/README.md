@@ -22,5 +22,5 @@ In this repository you will find all class overviews.
 - [Lecture 19 - Backend 6 | Adda with Random Topics | You can Skip](./Lecture-19/README.md)
 - [Lecture 20 - Backend 7 | Start Working with Mongoose](./Lecture-20/README.md)
 - [Lecture 21 - QNA on Express 101 and Books](./Lecture-21/README.md)
-- [Lecture 22 - Authentication System from Pseudo Code to Real Code](./Lecture-22/README.md)
+- [Lecture 22 - Authentication System from Pseudo Code to Real Code](./Lecture-22/README.MD)
 - [Lecture 23 - Implement JWT and Refactor The Project Structure](./Lecture-23/README.md)
