@@ -25,3 +25,4 @@ In this repository you will find all class overviews.
 - [Lecture 22 - Authentication System from Pseudo Code to Real Code](./Lecture-22/README.MD)
 - [Lecture 23 - Implement JWT and Refactor The Project Structure](./Lecture-23/README.md)
 - [Lecture 24 - Implement User CRUD Operations](./Lecture-24/README.md)
+- [Lecture 25 - QNA on 5 Recorded Courses and Motivational ADDA](./Lecture-25/README.md)
