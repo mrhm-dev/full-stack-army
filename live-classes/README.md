@@ -29,4 +29,4 @@
 - [Lecture 24 - Implement User CRUD Operations](https://youtu.be/xr0sKPvAipQ)
 - [Lecture 25 - QNA on 5 Recorded Courses and Motivational ADDA](https://youtu.be/KseSdSmvvuM)
 - [Lecture 26 - Implement Attendance System Main Functionalities](https://youtu.be/A5S7mWxqs2s)
-
+- [Lecture 27 - Frontend Core Concepts and Communication](https://youtu.be/0T7YagglhFY)
