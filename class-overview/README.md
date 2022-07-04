@@ -28,3 +28,4 @@ In this repository you will find all class overviews.
 - [Lecture 25 - QNA on 5 Recorded Courses and Motivational ADDA](./Lecture-25/README.md)
 - [Lecture 26 - Implement Attendance System Main Functionalities](./Lecture-26/README.md)
 - [Lecture 27 - Frontend Core Concepts and Communication](./Lecture-27/README.md)
+- [Lecture 28 - Frontend 1 - Frontend Course Planning & Discussion](./Lecture-28/README.md)
