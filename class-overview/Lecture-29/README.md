@@ -425,6 +425,10 @@ export default App;
 
 All images related to atomic design collected from [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/).
 
+## Source Code
+
+- [Source Code for this lecture](../../src/lecture-29/)
+
 ## Author
 
 - [Aditya Chakraborty](https://github.com/adityackr)
