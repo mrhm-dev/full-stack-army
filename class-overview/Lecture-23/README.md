@@ -58,7 +58,7 @@ app.post('/login', async (req, res, next) => {
 
 		delete user._doc.password;
 
-		const token = jwt.sign(user._doc।_অচ।_অ।_।, 'secret-key');
+		const token = jwt.sign(user._doc, 'secret-key');
 
 		return res.status(200).json({ message: 'Login Successful', token });
 	} catch (e) {

@@ -16,3 +16,4 @@ In this directory, you will find all the necessary source codes that came with t
 - [Lecture 23 - Implement JWT and Refactor The Project Structure](./lecture-23/)
 - [Lecture 24 - Implement User CRUD Operations](./lecture-24/)
 - [Lecture 26 - Implement Attendance System Main Functionalities](./lecture-26/)
+- [Lecture 29 - Frontend 2 - Understand React in A Different Way](./lecture-29/)
