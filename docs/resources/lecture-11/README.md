@@ -220,7 +220,7 @@ Student can see their own time logs and attend button when enable.
 - [JavaScript iterators and generators: A complete guide - LogRocket Blog](https://blog.logrocket.com/javascript-iterators-and-generators-a-complete-guide/)
 - [for await...of - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of)
 - [JavaScript async iterators](https://www.nodejsdesignpatterns.com/blog/javascript-async-iterators/)
-- [Class Overview](../../class-overview/Lecture-11/README.md)
+- [Class Overview](../../Class%20Overview/Lecture-11/README.md)
 
 ---
 

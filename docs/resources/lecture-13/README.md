@@ -52,4 +52,4 @@ Follow [this link](https://thirsty-camelotia-a8e.notion.site/Attendance-System-8
 [Click Here](../../src/lecture-13/)
 
 **Class Overview:**
-[Lecture 13](../../class-overview/Lecture-13/README.md)
+[Lecture 13](../../Class%20Overview/Lecture-13/README.md)

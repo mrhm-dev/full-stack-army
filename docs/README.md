@@ -11,7 +11,7 @@ In this repository, you will find source codes, explanations, and other resource
 - [References](references/README.md)
 - [Resources](resources/README.md)
 - [Source Code](src/README.md)
-- [Class Overview](./class-overview/README.md)
+- [Class Overview](Class Overview/README.md)
 
 ### Our Contributors
 

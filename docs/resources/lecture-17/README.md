@@ -35,7 +35,7 @@ We will make a lottery app in this class. The details are given below:
 #### References
 
 - [Source Code](../../projects/raffle-draw/)
-- [Class Overview](../../class-overview/Lecture-17/README.md)
+- [Class Overview](../../Class%20Overview/Lecture-17/README.md)
 
 #### Tasks
 

@@ -19,4 +19,4 @@
 
 **Class Overview**
 
-- [Lecture - 02](../../class-overview/Lecture-02/README.md)
+- [Lecture - 02](../../Class%20Overview/Fundamentals/02.We%20Need%20Freedom,%20We%20have%20to%20Stop%20Technology%20War/We%20Need%20Freedom.md)

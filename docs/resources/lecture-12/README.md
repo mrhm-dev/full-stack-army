@@ -128,4 +128,4 @@ See through [this notion link](https://thirsty-camelotia-a8e.notion.site/Project
 
 #### Important links
 
-- [Class Overview](../../class-overview/Lecture-12/README.md)
+- [Class Overview](../../Class%20Overview/Lecture-12/README.md)

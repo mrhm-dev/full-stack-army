@@ -286,7 +286,7 @@ There are two ways to define a variable.
 - [গল্পে গল্পে ক্লোজার](https://youtu.be/zSlSfqQTeFE)
 - [গল্পে গল্পে জাভাস্ক্রিপ্ট স্কোপ](https://youtu.be/nRJPxro5GtY)
 - [Source Code](../../src/lecture-09/app.js)
-- [Class Overview](../../class-overview/Lecture-09/README.md)
+- [Class Overview](../../Class%20Overview/Lecture-09/README.md)
 
 ---
 

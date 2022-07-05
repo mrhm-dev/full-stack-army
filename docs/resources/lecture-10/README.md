@@ -284,7 +284,7 @@ To learn more go through [The event loop - JavaScript | MDN](https://developer.m
 - [What the heck is the event loop anyway? | Philip Roberts | JSConf EU](https://youtu.be/8aGhZQkoFbQ)
 - [Asynchronous JavaScript - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)
 - [JavaScript Visualizer 9000](https://www.jsv9000.app/)
-- [Class Overview](../../class-overview/Lecture-10/README.md)
+- [Class Overview](../../Class%20Overview/Lecture-10/README.md)
 
 ---
 

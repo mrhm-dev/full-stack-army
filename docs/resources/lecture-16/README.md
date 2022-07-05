@@ -63,7 +63,7 @@
 
 - [Source Code](../../src/lecture-16/)
 - [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
-- [Class Overview](../../class-overview/Lecture-16/README.md)
+- [Class Overview](../../Class%20Overview/Lecture-16/README.md)
 
 #### Task
 
