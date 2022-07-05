@@ -5,3 +5,6 @@ In this simple icon-box example has only one dependency which is fontawesome cdn
 This card template is not 100% responsive. It's created just for practice purpose and keep here for beginner developer so that they can learn at least something from this. 
 
 Thank you :)
+
+
+

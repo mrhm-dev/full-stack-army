@@ -1,6 +1,6 @@
 # Project information
 site_name: Full Stack Army
-site_url: https://squidfunk.github.io/mkdocs-material/
+site_url: https://squidfunk.github.io/
 site_author: Martin Donath
 site_description: >-
   Create a branded static site from a set of Markdown files to host the
@@ -58,7 +58,7 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
   font:
-    text: Roboto
+    text:  Hind Siliguri
     code: Fira Code
   favicon: assets/favicon.png
   icon:
@@ -108,3 +108,4 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+
