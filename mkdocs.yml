@@ -1,13 +1,13 @@
 # Project information
 site_name: Full Stack Army
-site_url: https://squidfunk.github.io/
-site_author: Martin Donath
+site_url: https://fullstackarmy.taraldinn.me/
+site_author: Stack Learner
 site_description: >-
   Create a branded static site from a set of Markdown files to host the
   documentation of your Open Source or commercial project
 # Repository
-repo_name: mrhm-dev/full-stack-army
-repo_url: https://github.com/mrhm-dev/full-stack-army.git
+repo_name: taraldinn/full-stack-army
+repo_url: https://github.com/taraldinn/full-stack-army.git
 copyright: Copyright &copy;  2022 Stack Learner
 
 # Configuration
