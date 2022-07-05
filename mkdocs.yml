@@ -13,7 +13,7 @@ copyright: Copyright &copy;  2022 Stack Learner
 # Configuration
 theme:
   name: material
-  custom_dir: !ENV [THEME_DIR, "site"]
+
 
   # Static files
   static_templates:
