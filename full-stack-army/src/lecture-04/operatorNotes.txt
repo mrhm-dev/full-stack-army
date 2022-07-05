@@ -1,0 +1,7 @@
+operator: mathematical representation
+
+add()
+
+mod()
+
+lessThan() val1 < val2

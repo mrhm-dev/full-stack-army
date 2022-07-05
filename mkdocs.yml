@@ -1,0 +1,110 @@
+# Project information
+site_name: Full Stack Army
+site_url: https://squidfunk.github.io/mkdocs-material/
+site_author: Martin Donath
+site_description: >-
+  Create a branded static site from a set of Markdown files to host the
+  documentation of your Open Source or commercial project
+# Repository
+repo_name: mrhm-dev/full-stack-army
+repo_url: https://github.com/mrhm-dev/full-stack-army.git
+copyright: Copyright &copy;  2022 Stack Learner
+
+# Configuration
+theme:
+  name: material
+  custom_dir: !ENV [THEME_DIR, "site"]
+
+  # Static files
+  static_templates:
+    - 404.html
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: true
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  features:
+    - content.code.annotate
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+  palette:
+    - scheme: default
+      primary: red
+      accent: pink
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: red
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Fira Code
+  favicon: assets/favicon.png
+  icon:
+    logo: logo
+
+   
+extra_css:
+  - stylesheets/extra.css
+
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde

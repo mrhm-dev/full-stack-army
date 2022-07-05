@@ -1,0 +1,5268 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Lecture 5 - Array Operations - Imperative vs Declarative and Lecture 6 - JavaScript Array and Object Deep Dive - Full Stack Army</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lecture-5-array-operations-imperative-vs-declarative-and-lecture-6-javascript-array-and-object-deep-dive" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Full Stack Army" class="md-header__button md-logo" aria-label="Full Stack Army" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Full Stack Army
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lecture 5 - Array Operations - Imperative vs Declarative and Lecture 6 - JavaScript Array and Object Deep Dive
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Full Stack Army" class="md-nav__button md-logo" aria-label="Full Stack Army" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Full Stack Army
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome to Full Stack Army
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Articles
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Articles" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Articles
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../articles/" class="md-nav__link">
+        Community Driven Articles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Application requirements and landscape
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Application requirements and landscape" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Application requirements and landscape
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../articles/application-requirements-and-landscape/" class="md-nav__link">
+        Application Requirements and Landscape
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Understand programming languages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Understand programming languages" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Understand programming languages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../articles/understand-programming-languages/" class="md-nav__link">
+        Understand Programming Languages
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          We need freedom
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="We need freedom" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          We need freedom
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../articles/we-need-freedom/" class="md-nav__link">
+        We Need Freedom, We have to Stop Technology War
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Class overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Class overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Class overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Class Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Lecture 01
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 01" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-01/" class="md-nav__link">
+        Application Requirements and Landscape
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          Lecture 02
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 02" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-02/" class="md-nav__link">
+        We Need Freedom, We have to Stop Technology War
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Lecture 03
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 03" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-03/" class="md-nav__link">
+        Lecture 3 - Programming Language Foundation - A Bigger Landscape
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          Lecture 04
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 04" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-04/" class="md-nav__link">
+        Lecture 04 - Programming Fundamentals using JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6">
+          Lecture 05 06
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 05 06" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 05 06
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Lecture 5 - Array Operations - Imperative vs Declarative and Lecture 6 - JavaScript Array and Object Deep Dive
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Lecture 5 - Array Operations - Imperative vs Declarative and Lecture 6 - JavaScript Array and Object Deep Dive
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array-operations" class="md-nav__link">
+    Array Operations
+  </a>
+  
+    <nav class="md-nav" aria-label="Array Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imperative-traverse" class="md-nav__link">
+    Imperative Traverse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declarative-traverse" class="md-nav__link">
+    Declarative Traverse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    Update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    Delete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutation" class="md-nav__link">
+    Mutation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    Map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter" class="md-nav__link">
+    Filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduce" class="md-nav__link">
+    Reduce
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-deep-dive" class="md-nav__link">
+    Object Deep Dive
+  </a>
+  
+    <nav class="md-nav" aria-label="Object Deep Dive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#object-operations" class="md-nav__link">
+    Object Operations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vs-method" class="md-nav__link">
+    Function vs Method
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-as-a-data-structure" class="md-nav__link">
+    Object as a Data Structure
+  </a>
+  
+    <nav class="md-nav" aria-label="Object as a Data Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    Array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-over-array" class="md-nav__link">
+    Object Over Array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-of-object-and-array-operation-costs" class="md-nav__link">
+    Comparison of object and array operation costs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-for-this-lecture" class="md-nav__link">
+    Resource for this lecture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    AUTHOR
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_7">
+          Lecture 07
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 07" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-07/" class="md-nav__link">
+        Lecture 7 - QNA 1 - Don't Miss The Last Part
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          Lecture 08
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 08" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 08
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-08/" class="md-nav__link">
+        Lecture 8 - Understand JavaScript Functions | Function as a value
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_9" type="checkbox" id="__nav_3_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_9">
+          Lecture 09
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 09" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 09
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-09/" class="md-nav__link">
+        Lecture 9 - Functional Programming in JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_10" type="checkbox" id="__nav_3_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_10">
+          Lecture 10
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 10" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_10">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-10/" class="md-nav__link">
+        Lecture 10 - Asynchronous Programming in JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_11" type="checkbox" id="__nav_3_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_11">
+          Lecture 11
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 11" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_11">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 11
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-11/" class="md-nav__link">
+        Lecture 11 - Async Iterator & Generator in JavaScript | Project Requirements
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_12" type="checkbox" id="__nav_3_12" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_12">
+          Lecture 12
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 12" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_12">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 12
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-12/" class="md-nav__link">
+        Lecture 12 - Attendance System Requirement Analysis
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_13" type="checkbox" id="__nav_3_13" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_13">
+          Lecture 13
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 13" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_13">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 13
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-13/" class="md-nav__link">
+        Lecture 13 - Create Models, Write Pseudo Code and Adda
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_14" type="checkbox" id="__nav_3_14" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_14">
+          Lecture 14
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 14" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_14">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 14
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-14/" class="md-nav__link">
+        Lecture 14 - Backend 1 | Course planning and discussion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_15" type="checkbox" id="__nav_3_15" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_15">
+          Lecture 15
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 15" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_15">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 15
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-15/" class="md-nav__link">
+        Lecture 15 - Backend 2 | Introduction to Backend Development
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_16" type="checkbox" id="__nav_3_16" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_16">
+          Lecture 16
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 16" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_16">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 16
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-16/" class="md-nav__link">
+        Lecture 16 - [Backend 3] Understand Express Middleware
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_17" type="checkbox" id="__nav_3_17" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_17">
+          Lecture 17
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 17" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_17">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 17
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-17/" class="md-nav__link">
+        Lecture 17 - Backend 4 | Raffle Draw Project
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_18" type="checkbox" id="__nav_3_18" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_18">
+          Lecture 18
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 18" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_18">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 18
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-18/" class="md-nav__link">
+        Lecture 18 - Backend 5 | Understand The Concepts of Database
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_19" type="checkbox" id="__nav_3_19" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_19">
+          Lecture 19
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 19" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_19">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 19
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-19/" class="md-nav__link">
+        Lecture 19 - Backend 6 | Adda with Random Topics | You can Skip
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_20" type="checkbox" id="__nav_3_20" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_20">
+          Lecture 20
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 20" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_20">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 20
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-20/" class="md-nav__link">
+        Lecture 20 - Backend 7 | Start Working with Mongoose
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_21" type="checkbox" id="__nav_3_21" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_21">
+          Lecture 21
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 21" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_21">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 21
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-21/" class="md-nav__link">
+        Lecture 21 - QNA on Express 101 and Books
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_22" type="checkbox" id="__nav_3_22" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_22">
+          Lecture 23
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 23" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_22">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 23
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-23/" class="md-nav__link">
+        Lecture 23 - Implement JWT and Refactor The Project Structure
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_23" type="checkbox" id="__nav_3_23" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_23">
+          Lecture 24
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 24" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_23">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 24
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-24/" class="md-nav__link">
+        Lecture 24 - Implement User CRUD Operations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_24" type="checkbox" id="__nav_3_24" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_24">
+          Lecture 25
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 25" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_24">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 25
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-25/" class="md-nav__link">
+        Lecture 25 - QNA on 5 Recorded Courses and Motivational ADDA
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_25" type="checkbox" id="__nav_3_25" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_25">
+          Lecture 26
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 26" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_25">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 26
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-26/" class="md-nav__link">
+        Lecture 26 - Implement Attendance System Main Functionalities
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_26" type="checkbox" id="__nav_3_26" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_26">
+          Lecture 27
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 27" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_26">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 27
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-27/" class="md-nav__link">
+        Lecture 27 - Frontend Core Concepts and Communication
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_27" type="checkbox" id="__nav_3_27" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_27">
+          Lecture 28
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 28" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_27">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 28
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-28/" class="md-nav__link">
+        Lecture 28 [Frontend 1] - Frontend Course Planning & Discussion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_28" type="checkbox" id="__nav_3_28" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_28">
+          Lecture 29
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 29" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_28">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 29
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture-29/" class="md-nav__link">
+        Lecture 29 [Frontend 2] - Understand React in A Different Way
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Examples" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        Create and Showcase Examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Icon box
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Icon box" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Icon box
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/icon-box/REDME/" class="md-nav__link">
+        Dependency
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Live classes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Live classes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Live classes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../live-classes/" class="md-nav__link">
+        Live Class Recording
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Projects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Projects" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/" class="md-nav__link">
+        Share Your Dummy Projects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_2">
+          Raffle draw
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Raffle draw" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Raffle draw
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/raffle-draw/requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          References
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="References" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        Add Necessary References
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Resources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Resources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        Resources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" type="checkbox" id="__nav_8_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_2">
+          Lecture 0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 0" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-0/" class="md-nav__link">
+        0. Full-stack Army - Welcome | Decision-Making Video
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3" type="checkbox" id="__nav_8_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_3">
+          Lecture 01
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 01" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_3">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-01/" class="md-nav__link">
+        Lecture 1 - Application Requirements & Landscape | Development Big Picture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3_2" type="checkbox" id="__nav_8_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_3_2">
+          Ps caffe
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ps caffe" data-md-level="3">
+        <label class="md-nav__title" for="__nav_8_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Ps caffe
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-01/ps-caffe/" class="md-nav__link">
+        Problem Solvers Caffe (PS Caffe)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3_3" type="checkbox" id="__nav_8_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_3_3">
+          Sdlc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sdlc" data-md-level="3">
+        <label class="md-nav__title" for="__nav_8_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Sdlc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-01/sdlc/" class="md-nav__link">
+        SDLC Models
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3_4" type="checkbox" id="__nav_8_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_3_4">
+          Technology
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Technology" data-md-level="3">
+        <label class="md-nav__title" for="__nav_8_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Technology
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-01/technology/" class="md-nav__link">
+        Choose Necessary Technology
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_4" type="checkbox" id="__nav_8_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_4">
+          Lecture 02
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 02" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_4">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-02/" class="md-nav__link">
+        Lecture 2 - We Need Freedom, We have to Stop Technology War
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_5" type="checkbox" id="__nav_8_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_5">
+          Lecture 03
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 03" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_5">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-03/" class="md-nav__link">
+        Lecture 3 - Programming Language Foundation - A Bigger Landscape
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_6" type="checkbox" id="__nav_8_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_6">
+          Lecture 04
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 04" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_6">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-04/" class="md-nav__link">
+        Lecture 4 - Programming Fundamentals using JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_7" type="checkbox" id="__nav_8_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_7">
+          Lecture 05
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 05" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_7">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-05/" class="md-nav__link">
+        Lecture 5 - Array Operations - Imperative vs Declarative
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_8" type="checkbox" id="__nav_8_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_8">
+          Lecture 06
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 06" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_8">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 06
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-06/" class="md-nav__link">
+        Lecture 6 - JavaScript Array and Object Deep Dive
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_9" type="checkbox" id="__nav_8_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_9">
+          Lecture 07
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 07" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_9">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-07/" class="md-nav__link">
+        Lecture 7 - QNA 1 - Don't Miss The Last Part
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_10" type="checkbox" id="__nav_8_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_10">
+          Lecture 08
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 08" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_10">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 08
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-08/" class="md-nav__link">
+        Lecture 8 - Understand JavaScript Functions | Function as a value
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_11" type="checkbox" id="__nav_8_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_11">
+          Lecture 09
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 09" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_11">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 09
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-09/" class="md-nav__link">
+        Lecture 9 - Functional Programming in JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_12" type="checkbox" id="__nav_8_12" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_12">
+          Lecture 10
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 10" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_12">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-10/" class="md-nav__link">
+        Lecture 10 - Asynchronous Programming in JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_13" type="checkbox" id="__nav_8_13" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_13">
+          Lecture 11
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 11" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_13">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 11
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-11/" class="md-nav__link">
+        Lecture 11 - Async Iterator & Generator in JavaScript | Project Requirements
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_14" type="checkbox" id="__nav_8_14" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_14">
+          Lecture 12
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 12" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_14">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 12
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-12/" class="md-nav__link">
+        Lecture 12 - Attendance System Requirement Analysis
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_15" type="checkbox" id="__nav_8_15" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_15">
+          Lecture 13
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 13" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_15">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 13
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-13/" class="md-nav__link">
+        Lecture 13 - Create Models, Write Pseudo Code and Adda
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_16" type="checkbox" id="__nav_8_16" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_16">
+          Lecture 14
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 14" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_16">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 14
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-14/" class="md-nav__link">
+        Lecture 14 - Backend 1 | Course planning and discussion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_17" type="checkbox" id="__nav_8_17" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_17">
+          Lecture 15
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 15" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_17">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 15
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-15/" class="md-nav__link">
+        Lecture 15 - [Backend 2] Introduction to Backend Development
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_18" type="checkbox" id="__nav_8_18" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_18">
+          Lecture 16
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 16" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_18">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 16
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-16/" class="md-nav__link">
+        Lecture 16 - [Backend 3] Understand Express Middleware
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_19" type="checkbox" id="__nav_8_19" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_19">
+          Lecture 17
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 17" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_19">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 17
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-17/" class="md-nav__link">
+        Lecture 17 - [Backend 4] Raffle Draw Project
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_20" type="checkbox" id="__nav_8_20" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_20">
+          Lecture 18
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 18" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_20">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 18
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-18/" class="md-nav__link">
+        Lecture 18 - [Backend 5] Understand The Concepts of Database
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_21" type="checkbox" id="__nav_8_21" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_21">
+          Lecture 19
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 19" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_21">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 19
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-19/" class="md-nav__link">
+        Lecture 19 - [Backend 6] Adda with Random Topics | You can Skip
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_22" type="checkbox" id="__nav_8_22" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_22">
+          Lecture 20
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 20" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_22">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 20
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-20/" class="md-nav__link">
+        Lecture 20 - [Backend 7] Start Working with Mongoose
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_23" type="checkbox" id="__nav_8_23" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_23">
+          Lecture 22
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 22" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_23">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 22
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lecture-22/" class="md-nav__link">
+        Lecture 22 - Authentication System from Pseudo Code to Real Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Src
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Src" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Src
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../src/" class="md-nav__link">
+        Full Stack Army - Source Codes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" type="checkbox" id="__nav_9_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_2">
+          Lecture 05
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 05" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_2">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../src/lecture-05/task/" class="md-nav__link">
+        Task
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3" type="checkbox" id="__nav_9_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_3">
+          Lecture 29
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 29" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_3">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 29
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3_1" type="checkbox" id="__nav_9_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_3_1">
+          React app
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="React app" data-md-level="3">
+        <label class="md-nav__title" for="__nav_9_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          React app
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3_1_1" type="checkbox" id="__nav_9_3_1_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_3_1_1">
+          First app
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="First app" data-md-level="4">
+        <label class="md-nav__title" for="__nav_9_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          First app
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../src/lecture-29/react-app/first-app/" class="md-nav__link">
+        Getting Started with Create React App
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_4">
+          Raffle draw
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Raffle draw" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_4">
+          <span class="md-nav__icon md-icon"></span>
+          Raffle draw
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../src/raffle-draw/requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Timestamp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Timestamp" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Timestamp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../timestamp/Class%20-%207/" class="md-nav__link">
+        Class   7
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../timestamp/Class%20-%208/" class="md-nav__link">
+        Class   8
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../timestamp/Class%20-%209/" class="md-nav__link">
+        Class   9
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../timestamp/Class%2010/" class="md-nav__link">
+        Class 10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../timestamp/class%20-%200/" class="md-nav__link">
+        Class   0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../timestamp/class%20-%201/" class="md-nav__link">
+        Class   1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../timestamp/class%20-%204/" class="md-nav__link">
+        Class   4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../timestamp/class%20-%205/" class="md-nav__link">
+        Class   5
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array-operations" class="md-nav__link">
+    Array Operations
+  </a>
+  
+    <nav class="md-nav" aria-label="Array Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imperative-traverse" class="md-nav__link">
+    Imperative Traverse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declarative-traverse" class="md-nav__link">
+    Declarative Traverse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    Update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    Delete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutation" class="md-nav__link">
+    Mutation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    Map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter" class="md-nav__link">
+    Filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduce" class="md-nav__link">
+    Reduce
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-deep-dive" class="md-nav__link">
+    Object Deep Dive
+  </a>
+  
+    <nav class="md-nav" aria-label="Object Deep Dive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#object-operations" class="md-nav__link">
+    Object Operations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vs-method" class="md-nav__link">
+    Function vs Method
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-as-a-data-structure" class="md-nav__link">
+    Object as a Data Structure
+  </a>
+  
+    <nav class="md-nav" aria-label="Object as a Data Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    Array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-over-array" class="md-nav__link">
+    Object Over Array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-of-object-and-array-operation-costs" class="md-nav__link">
+    Comparison of object and array operation costs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-for-this-lecture" class="md-nav__link">
+    Resource for this lecture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    AUTHOR
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="lecture-5-array-operations-imperative-vs-declarative-and-lecture-6-javascript-array-and-object-deep-dive">Lecture 5 - Array Operations - Imperative vs Declarative and Lecture 6 - JavaScript Array and Object Deep Dive</h1>
+<p>এই দুই লেকচারে আমরা আজ অ্যারে এবং অবজেক্ট নিয়ে বিশদ আলোচনা করবো। যেহেতু এই দুই লেকচার একটার সাথে একটা রিলেটেড তাই আমার কাছে দুইটা লেকচারের ওভারভিউ একসাথে লেখাটা যুক্তিযুক্ত বলে মনে হয়েছে। আমাদের আজকের এজেন্ডা হলো-</p>
+<ul>
+<li>
+<p>Array Operations</p>
+</li>
+<li>
+<p>Imperative traverse</p>
+</li>
+<li>Declarative traverse</li>
+<li>Update</li>
+<li>Delete</li>
+<li>Mutation</li>
+<li>Map</li>
+<li>Filter</li>
+<li>
+<p>Reduce</p>
+</li>
+<li>
+<p>Object Deep Drive</p>
+</li>
+<li>
+<p>Object Operations</p>
+</li>
+<li>
+<p>Function vs Method</p>
+</li>
+<li>
+<p>Object as a Data Structure</p>
+</li>
+<li>
+<p>Array Operations</p>
+</li>
+<li>Object Over Array</li>
+</ul>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li>
+<p><a href="#array-operations">Array Operations</a></p>
+</li>
+<li>
+<p><a href="#imperative-traverse">Imperative traverse</a></p>
+</li>
+<li><a href="#declarative-traverse">Declarative traverse</a></li>
+<li><a href="#update">Update</a></li>
+<li><a href="#delete">Delete</a></li>
+<li><a href="#mutation">Mutation</a></li>
+<li><a href="#map">Map</a></li>
+<li><a href="#filter">Filter</a></li>
+<li>
+<p><a href="#reduce">Reduce</a></p>
+</li>
+<li>
+<p><a href="#object-deep-dive">Object Deep Drive</a></p>
+</li>
+<li>
+<p><a href="#object-operations">Object Operations</a></p>
+</li>
+<li>
+<p><a href="#function-vs-method">Function vs Method</a></p>
+</li>
+<li>
+<p><a href="#object-as-a-data-structure">Object as a Data Structure</a></p>
+</li>
+<li>
+<p><a href="#array">Array</a></p>
+</li>
+<li><a href="#object-over-array">Object Over Array</a></li>
+<li><a href="#comparison-of-object-and-array-operation-costs">Comparison of object and array operation costs</a></li>
+</ul>
+<h2 id="array-operations">Array Operations</h2>
+<h3 id="imperative-traverse">Imperative Traverse</h3>
+<p>আমাদেরকে যদি বলা হয় একটা অ্যারে ট্রাভার্স করার জন্য, আমরা খুব সহজেই একটা লুপ চালিয়ে ট্রাভার্স করে ফেলতে পারি। এখন প্রশ্ন আসতে পারে ট্রাভার্স কি। ট্রাভার্স হলো ধরুন আমরা একটা অ্যারের প্রতিটা ইলেমেন্ট যেমন লুপ চালিয়ে টাচ করে যে অপারেশন করা দরকার করতে পারি এটাকেই বলে ট্রাভার্স। যেমনঃ</p>
+<pre><code class="language-js">const numbers = [2, 5, 6, 7, 89, 100];
+
+for (let i = 0; i &lt; numbers.length; i++) {
+    console.log(numbers[i]);
+}
+</code></pre>
+<p>আমরা সব ইলেমেন্ট প্রিন্ট করে ফেলতে পারি এভাবে <code>numbers</code> অ্যারের। আমরা যদি চাই প্রতিটা ইলেমেন্ট ২ দ্বারা গুণ করে সেই আউটপুট দেখাবো সেটাও পারবো।</p>
+<pre><code class="language-js">const numbers = [2, 5, 6, 7, 89, 100];
+
+for (let i = 0; i &lt; numbers.length; i++) {
+    console.log(numbers[i] * 2);
+}
+</code></pre>
+<p>এবার যদি আমরা চাই সব ইলেমেন্টের যোগফল বের করবো তাও পারবো।</p>
+<pre><code class="language-js">const numbers = [2, 5, 6, 7, 89, 100];
+
+let sum = 0;
+for (let i = 0; i &lt; numbers.length; i++) {
+    sum += numbers[i];
+}
+
+console.log(sum);
+</code></pre>
+<p>একে বলে Imperative Traversing। কারণ আমরা কোথা থেকে লুপ শুরু হবে তা বলে দিয়েছি, কোথায় গিয়ে থামবে তাও বলে দিয়েছি, এমনকি কিভাবে ইনক্রিমেন্ট হবে তাও বলে দিয়েছি। এরপর অপারেশন কি হবে সেটাও বলে দিয়েছি। তাই এটা একটা Imperative Traversing।</p>
+<h3 id="declarative-traverse">Declarative Traverse</h3>
+<p>সাধারণত আমাদের ফর লুপ চালিয়ে জাভাস্ক্রিপ্টে কাজ করতে হয় না। যেহেতু জাভাস্ক্রিপ্ট একটা হাই লেভেল ল্যাঙ্গুয়েজ সেহেতু এর বিভিন্ন মেথড আছে, যেগুলো ব্যবহার করে আমরা ডিক্লারেটিভ ওয়েতে ট্রাভার্স করতে পারি। ফাংশন এবং মেথড কি এগুলো আমরা পরবর্তীতে জানবো। আমরা যেভাবে ইম্পারেটিভ ট্রাভার্স করেছিলাম সেভাবে যদি ডিক্লারেটিভ ওয়েতে করতে যায় তাহলে একটা সুন্দর মেথড আছে যার নাম <code>forEach</code>। আমরা একটু এই মেথড বুঝার চেষ্টা করি।</p>
+<pre><code class="language-js">const numbers = [2, 5, 6, 7, 89, 100];
+
+numbers.forEach(function () {
+    console.log('Hello World');
+});
+</code></pre>
+<p>এখন এই প্রোগ্রাম রান করালে দেখা যাবে যে ছয়বার <code>Hello World</code> প্রিন্ট হবে। কেন ছয়বার কারণ <code>numbers</code> এর ইলেমেন্ট আছে ছয়টা। <code>forEach</code> এর কাজই হলো যতটা ইলেমেন্ট ততবার লুপ চলবে। <code>forEach</code> এর মধ্যে আর্গুমেন্ট আকারে একটা কলব্যাক ফাংশন পাস করবে। আমরা চাইলে ফাংশনটা <code>forEach</code> এর মধ্যে না লিখে বাইরে লিখে সেই ফাংশনের নামটাও পাস করে দিতে পারি। এখন ভিতরের ফাংশনটা কিন্তু আমরা কোথাও কল করিনি। তাহলে কিভাবে তা কল হলো? আমাদের জন্য <code>forEach</code> সেই ফাংশনটা কল করে রেখেছে কোনো না কোনোভাবে। এই কলব্যাক ফাংশনের মধ্যে প্যারামিটার আকারে কিছু না কিছু আছে। সেগুলো সব <code>arguments</code> নামক একটা ডাটা স্ট্রাকচারে স্টোর করা আছে। এটা অনেকটা অ্যারের মতো কাজ করে, কিন্তু অ্যারে না, এটা একটা ডিফারেন্ট টাইপের একটা ডাটা স্ট্রাকচার। একটা উদাহরণ দিলে সুন্দরভাবে বুঝা যাবে ব্যাপারটা।</p>
+<pre><code class="language-js">const numbers = [2, 5, 6, 7, 89, 100];
+
+numbers.forEach(function () {
+    console.log(arguments);
+});
+
+/* * Output
+[Arguments] { '0': 2, '1': 0, '2': [ 2, 5, 6, 7, 89, 100 ] }
+[Arguments] { '0': 5, '1': 1, '2': [ 2, 5, 6, 7, 89, 100 ] }
+[Arguments] { '0': 6, '1': 2, '2': [ 2, 5, 6, 7, 89, 100 ] }
+[Arguments] { '0': 7, '1': 3, '2': [ 2, 5, 6, 7, 89, 100 ] }
+[Arguments] { '0': 89, '1': 4, '2': [ 2, 5, 6, 7, 89, 100 ] }
+[Arguments] { '0': 100, '1': 5, '2': [ 2, 5, 6, 7, 89, 100 ] }
+*/
+</code></pre>
+<p>আউটপুট থেকে দেখা যাচ্ছে অবজেক্টের মধ্যে '0' এর মধ্যে আছে আমাদের অ্যারের প্রতিটা ভ্যালু, '1' এর মধ্যে আছে সেই সংশ্লিষ্ট ভ্যালুর ইনডেক্স নাম্বার এবং '2' এর মধ্যে আছে পুরো অ্যারে। তাহলে আমরা বুঝতে পারলাম, <code>forEach</code> এর মধ্যে আর্গুমেন্ট আকারে যে ফাংশনটা আছে তার ভিতর তিনটা প্যারামিটার আছে। যদি একটু আমরা চেক করে দেখি,</p>
+<pre><code class="language-js">const numbers = [2, 5, 6, 7, 89, 100];
+
+numbers.forEach(function (value, index, array) {
+    console.log(value, index, array);
+});
+
+/* * Output
+2 0 [ 2, 5, 6, 7, 89, 100 ]
+5 1 [ 2, 5, 6, 7, 89, 100 ]
+6 2 [ 2, 5, 6, 7, 89, 100 ]
+7 3 [ 2, 5, 6, 7, 89, 100 ]
+89 4 [ 2, 5, 6, 7, 89, 100 ]
+100 5 [ 2, 5, 6, 7, 89, 100 ]
+*/
+</code></pre>
+<p>দেখা যাচ্ছে আমরা যে আউটপুট পেয়েছিলাম আর্গুমেন্টস এর বেলায় ঠিক সেই আউটপুটই পেয়েছি। <code>arguments</code> অনেক কাজের। আপনি যখন কোনো লাইব্রেরি বা ফ্রেমওয়ার্ক নিয়ে কাজ করবেন তখন যদি কোনো মেথডের আর্গুমেন্ট জানার প্রয়োজন হয় সহজেই তা বের করে নিতে পারবেন।</p>
+<p>এবার আসি আবার <code>forEach</code> এর কথায়। এটা দিয়ে ফর লুপের যাবতীয় যা যা কাজ আমরা করি সবই করতে পারি। এবার আমরা ফর লুপ দিয়ে যোগফলের যে কাজটি করেছিলাম সেটা একটু <code>forEach</code> দিয়ে করে দেখি।</p>
+<pre><code class="language-js">const numbers = [2, 5, 6, 7, 89, 100];
+
+let sum = 0;
+numbers.forEach(function (value) {
+    sum += value;
+});
+console.log(sum); // 209
+</code></pre>
+<p>একই রেজাল্ট পাবো আমরা। এখানে একটা কথা বলে রাখা দরকার, যদি আমাদের <code>value</code> ছাড়া আর কিছু না লাগে তবে ফাংশন প্যারামিটার হিসেবে শুধু <code>value</code> নিলেই হবে। কিন্তু আমার যদি শুধু <code>array</code> দরকার হয় তবে অবশ্যই <code>value, index, array</code> এভাবে লিখতে হবে। নাহয় প্রোগ্রাম ভুল আউটপুট দেখাবে। এবার যদি চাই আমরা শুধু জোড় ইলেমেন্টগুলো প্রিন্ট করবো সেটাও পারবো।</p>
+<pre><code class="language-js">const numbers = [2, 5, 6, 7, 89, 100];
+
+numbers.forEach(function (value) {
+    if (value % 2 === 0) {
+        console.log(value);
+    }
+});
+</code></pre>
+<p>এখানে <code>forEach</code> ফাংশন আমরা তৈরি করিনি। আমরা শুধু ব্যবহার করেছি। সুতরাং এটি একটি ডিক্লারেটিভ মেথড। এখন হয়তো অনেকেরই জানতে ইচ্ছা করছে <code>forEach</code> মেথডে কি এমন করা হয়েছে। যারা <code>forEach</code> সহ অ্যারে এবং অ্যারে মেথড সম্পর্কে জানতে আগ্রহী তারা স্ট্যাক লার্নারের এই <a href="https://youtube.com/playlist?list=PL_XxuZqN0xVDr08QgQHljCecWtA4jBLnS">প্লেলিস্ট</a> দেখতে পারেন।</p>
+<p>এখন আমি চাইছি যে শুধু প্রথম ৪টা ইলেমেন্টের যোগফল বের করবো। সেটার জন্য আমাদের কি করতে হবে তাহলে?</p>
+<pre><code class="language-js">const numbers = [2, 5, 6, 7, 89, 100];
+
+let sum = 0;
+numbers.forEach(function (value, index) {
+    if (index &lt;= 3) {
+        sum += value;
+    }
+});
+console.log(sum);
+</code></pre>
+<p><code>forEach</code> মেথড মনে রাখার সহজ উপায় হলো, আমরা যে ফর লুপ লিখতাম সেটা আর লিখতে হবে না। সেটা <code>forEach</code> আমাদের জন্য করে দিয়েছে। শুধু আমাদের কাজ হচ্ছে যেটা আমরা লুপের বডিতে লিখতাম সেটা আমরা কলব্যাক ফাংশনের বডির মধ্যে লিখবো।</p>
+<p>ধরি আমাদের একটা অ্যারে আছে নিচের মতো।</p>
+<pre><code class="language-js">const arr = [1, 2, 3, null, false, 4, 5, '', 'test', 6, 7];
+</code></pre>
+<p>এখন আমরা চাইছি এখান থেকে নাম্বার ছাড়া বাকি যা আছে সেগুলো বাদ দিয়ে শুধু নাম্বারগুলো ফিল্টার করে নিতে। সেটা আমরা ডিক্লারেটিভ ওয়েতে করতে চাইছি না। আমরা চাইছি ইম্পেরেটিভ ওয়েতে করতে। কিভাবে করতে পারি?</p>
+<p>আমরা এভাবে শুরু করতে পারি।</p>
+<pre><code class="language-js">const arr = [1, 2, 3, null, false, 4, 5, '', 'test', 6, 7];
+
+for (let i = 0; i &lt; arr.length; i++) {
+    if (typeof arr[i] !== 'number') {
+        arr[i] = undefined;
+    }
+}
+
+console.log(arr); // [1, 2, 3, undefined, undefined, 4, 5, undefined, undefined, 6, 7];
+</code></pre>
+<p>এখন এখানে সমস্যা হলো এই <code>undefined</code> গুলোকে কিভাবে আমরা বাদ দিবো। আমাদের অন্য ওয়েতে চিন্তা করতে হবে। আমরা এমন করতে পারি যে কোনো পজিশনে ইলেমেন্ট টাইপ যদি নাম্বার না হয় তাহলে আমরা পরবর্তী ভ্যালুকে অ্যাসাইন করে দিতে পারি। যদি আমরা স্টেপগুলো একটু দেখি তাহলে বোঝা যাবে।</p>
+<pre><code class="language-js">// step 1: [1, 2, 3, false, 4, 5, '', 'test', 6, 7, undefined]
+// step 2: [1, 2, 3, 4, 5, '', 'test', 6, 7, undefined, undefined]
+// step 3: [1, 2, 3, 4, 5, 'test', 6, 7, undefined, undefined, undefined]
+// step 4: [1, 2, 3, 4, 5, 6, 7, undefined, undefined, undefined, undefined]
+</code></pre>
+<p>এবার আমাদের আইডিয়াকে আমরা একটু কোডে রূপান্তরিত করে দেখি।</p>
+<pre><code class="language-js">const arr = [1, 2, 3, null, false, 4, 5, '', 'test', 6, 7];
+
+for (let i = 0; i &lt; arr.length; i++) {
+    for (let j = i; j &lt; arr.length - 1; j++) {
+        if (!arr[j] || typeof arr[j] !== 'number') {
+            arr[j] = arr[j + 1];
+            arr[j + 1] = undefined;
+        }
+    }
+}
+
+console.log(arr); // [1, 2, 3, 4, 5, 6, 7, undefined, undefined, undefined, undefined];
+</code></pre>
+<p>আমরা তাহলে আমাদের স্টেপ ৪ পেয়ে গেলাম। এবার এখান থেকে <code>undefined</code> বাদ দিয়ে দিতে হবে। সেটার জন্য আমরা একটা কাজ করতে পারি।</p>
+<pre><code class="language-js">const arr = [1, 2, 3, null, false, 4, 5, '', 'test', 6, 7];
+
+count = 0;
+for (let i = 0; i &lt; arr.length; i++) {
+    for (let j = i; j &lt; arr.length - 1; j++) {
+        if (!arr[j] || typeof arr[j] !== 'number') {
+            arr[j] = arr[j + 1];
+            arr[j + 1] = undefined;
+        }
+    }
+
+    if (arr[i] == undefined) {
+        count++;
+    }
+}
+arr.length -= count;
+
+console.log(arr); // [1, 2, 3, 4, 5, 6, 7];
+</code></pre>
+<p>আমরা করেছি কি? যদি ইলেমেন্ট আনডিফাইন্ড হয় তাহলে কাউন্ট করে সেটা <code>count</code> ভ্যারিয়েবলের মধ্যে রাখবে। শেষে আমরা <code>arr.length</code> থেকে <code>count</code> বিয়োগ করে অ্যারের সাইজ কমিয়ে দিলেই <code>undefined</code> সব বাদ পড়ে যাবে।</p>
+<p>এবার একটু কোডটা এনালাইসিস করার চেষ্টা করি। আমরা ছোট একটা অ্যারে দিয়েই বুঝার চেষ্টা করি।</p>
+<pre><code class="language-txt">const arr = [1, false, true, '', 2, 3]
+When i = 0:
+  j = 0:
+    arr[0] = 1, which is a number
+  j = 1:
+    arr[1] = false, which is not a number
+    so, arr[1] = true
+    arr[2] = undefined
+  j = 2:
+    arr[2] = undefined
+    so arr[2] = ''
+    arr[3] = undefined
+  j = 3:
+    arr[3] = undefined
+    so arr[3] = 2
+    arr[4] = undefined
+  j = 4:
+    arr[4] = undefined
+    so arr[4] = 3
+    arr[5] = undefined
+  count = 1
+After completion of first loop the array becomes like this [1, true, '', 2, 3, undefined]
+After completion of loop the array looks like this [1, 2, 3, undefined, undefined, undefined] and count will be 3. After subtraction count from arr.length (6) we found 3. So the array of length 3 will become like this [1, 2, 3]
+</code></pre>
+<p>এখন যদি এই কাজটা ইম্পেরেটিভ ওয়েতে না করে ডিক্লারেটিভ ওয়েতে করতাম তাহলে অনেক সহজে করতে পারতাম।</p>
+<pre><code class="language-js">const arr = [1, 2, 3, null, false, 4, 5, '', 'test', 6, 7];
+
+const filteredArray = arr.filter((val) =&gt; typeof val === 'number');
+console.log(filteredArray);
+</code></pre>
+<p>কিন্তু এই জায়গায় একটা সমস্যা আছে। কারণ <code>filter</code> মেথড বিহাইন্ড দ্য সীন একটা এক্সট্রা মেমোরি ব্যবহার করে। আমরা যখন ফ্রন্টএন্ড ডেভেলপমেন্ট করি তখন সাধারণত এতো জটিল ইম্পেরেটিভ ওয়েতে করি না। আমরা যে বিল্ট-ইন মেথড আছে সেগুলো ব্যবহার করি। তাই দেখা যায় যে অনেক সময় ডাটা যখন অনেক বেশি হবে তখন অ্যাপ্লিকেশন হ্যাং হয়ে যায়। এখন আমরা কি সবসময় ইম্পেরেটিভ মেথডেই কাজ করবো? বা কখন বুঝবো আমাকে ইম্পেরেটিভ ওয়েতে করতে হবে, কখন ডিক্লারেটিভ ওয়েতে? প্রথম কথা হচ্ছে ৯০-৯৫% সময়ই আমাদের বিল্ট-ইন মেথড ইউজ করে কাজ হয়ে যাবে। কিন্তু কিছু কিছু ক্ষেত্রে আমাদের অ্যাপ্লিকেশনের কমপ্লেক্সিটি এতো বেশি হয় সেসব ক্ষেত্রে আমাদের বিল্ট-ইন মেথডের বাইরে গিয়ে কাজ করতে হতে পারে। ধরেন আমাদের অ্যারেতে এখন জাস্ট নাম্বার, স্ট্রিং এসব ডাটা আছে। কিন্তু যদি এমন হয় যে প্রতিটি ইলেমেন্ট এক একটা জায়ান্ট অবজেক্ট এবং প্রতিটা অবজেক্টের সাইজ প্রায় এক এমবি করে (যদিও এক এমবি ডাটা বানানো অনেক কঠিন, তাও বুঝার সুবিধার্থে উদাহরণ দিচ্ছি), এরকম যদি ১০০ টা অবজেক্ট থাকে তাহলে মোট অ্যারের সাইজ হবে ১০০ এমবি। এখন যদি এই ১০০ এমবি ডাটার অপারেশনের জন্য আমার আরো ১০০ এমবি মেমোরি খরচ হয় তাহলে সেটা অনেক সমস্যা। তাই এই ক্ষেত্রে আমাদের সম্পূর্ণ ইম্পেরেটিভ ওয়েতে গিয়ে কাজ করতে হবে। যদি আমাদের এখানে মেমোরি কনস্ট্রেইন না থাকতো তাহলে আমরা ইম্পেরেটিভ ওয়েতেও অনেক সহজে এই কাজটা করতে পারতাম।</p>
+<pre><code class="language-jsx">const arr = [1, 2, 3, null, false, 4, 5, '', 'test', 6, 7];
+
+const newArr = [];
+for (let i = 0; i &lt; arr.length; i++) {
+    if (typeof arr[i] === 'number') {
+        newArr.push(arr[i]);
+    }
+}
+console.log(newArr);
+</code></pre>
+<p>ফ্রন্টএন্ড অ্যাপ্লিকেশন বানানোর সময় আমাদের খেয়াল রাখতে হবে একজন ইউজার ৬৪ জিবি র‍্যামের পিসিও ইউজ করতে পারে, আবার ২ জিবি র‍্যামের পিসিও ইউজ করতে পারে। ব্যাকএন্ডে যতো ডাটা থাকবে তার জন্য সার্ভার কস্ট আমি বা আমার কোম্পানি বহন করছে। কিন্তু যখন ব্যাপার ফ্রন্টএন্ডের তখন সেটা পুরোপুরি ইউজার কেন্দ্রিক। আমি চাইবো আমার অ্যাপ্লিকেশন যেন ৬৪ জিবি র‍্যামের পিসি থেকেও ইউজ করার যায়, ২ জিবি র‍্যামের পিসি থেকেও ইউজ করা যায় আবার মোবাইল থেকেও যেন ইউজ করা যায়। তাই অনেক ছোট ছোট বিষয় খেয়াল রেখে ফ্রন্টএন্ড ডেভেলপমেন্ট করতে হয়। এখানেই ফ্রন্টএন্ড ডেভেলপমেন্টের চ্যালেঞ্জ।</p>
+<blockquote>
+<p><strong>অ্যারের পরবর্তী ধাপগুলো ভালভাবে বুঝার জন্য অবজেক্ট সম্পর্কে জানা থাকতে হবে। তাই আগে <a href="#object-operations">Object Operations</a>, <a href="#function-vs-method">Function vs Method</a>, <a href="#array">Array</a>, <a href="#object-over-array">Object Over Array</a>, <a href="#comparison-of-object-and-array-operation-costs">Comparison of object and array operation costs</a> এই টপিকগুলো ভালভাবে পড়ে নিন। এরপর পরবর্তী ধাপে যান।</strong></p>
+</blockquote>
+<h3 id="update">Update</h3>
+<p>আপডেটের ক্ষেত্রে ইম্পেরেটিভ ওয়েতে করার কোনো প্রয়োজন নেই। আপডেট অনেক সিম্পল। আমাদের যদি কোনো অ্যারের ইনডেক্স জানা থাকে তাহলে খুব সহজেই আমরা তার ডাটা আপডেট করে ফেলতে পারি। যেমন</p>
+<pre><code class="language-js">const arr = [1, 2, 3, 4, 5];
+
+arr[3] = 300;
+
+console.log(arr); // [1, 2, 3, 300, 5]
+</code></pre>
+<p>এখন যদি ইনডেক্স জানা না থাকে তাহলে প্রথমে আগে ইনডেক্স বের করে নিতে হবে। এরপর আপডেট করা যাবে। যেমন</p>
+<pre><code class="language-js">const arr = [
+    { id: 1, value: 10 },
+    { id: 2, value: 20 },
+    { id: 3, value: 30 },
+    { id: 4, value: 40 },
+    { id: 5, value: 50 },
+];
+
+const index = arr.findIndex((item) =&gt; item.id === 4);
+arr[index].value = 400;
+
+console.log(arr);
+
+// [
+//   { id: 1, value: 10 },
+//   { id: 2, value: 20 },
+//   { id: 3, value: 30 },
+//   { id: 4, value: 400 },
+//   { id: 5, value: 50 }
+// ]
+</code></pre>
+<p>আবার ইনডেক্স বের না করেও আপডেট করা যায়। সেক্ষেত্রে আমাদের <code>find</code> মেথড ব্যবহার করতে হবে। যেমন</p>
+<pre><code class="language-js">const arr = [
+    { id: 1, value: 10 },
+    { id: 2, value: 20 },
+    { id: 3, value: 30 },
+    { id: 4, value: 40 },
+    { id: 5, value: 50 },
+];
+
+const obj = arr.find((val) =&gt; val.id === 4);
+obj.value = 400;
+
+console.log(obj); // { id: 4, value: 400 }
+console.log(arr);
+
+/* 
+[
+  { id: 1, value: 10 },
+  { id: 2, value: 20 },
+  { id: 3, value: 30 },
+  { id: 4, value: 400 },
+  { id: 5, value: 50 }
+]
+*/
+</code></pre>
+<p>এখানে দেখা যাচ্ছে আমি যদি <code>obj</code> এর ভ্যালু পরিবর্তন করি তাহলে <code>arr</code> এর ভ্যালুও পরিবর্তন হবে। কারণ হলো আমরা এখানে যেভাবে অ্যারে দেখতে পাচ্ছি আসলে তা সেরকম নাই। আমরা যতোই ডাটা রাখি অ্যারেতে জাস্ট অ্যারের মধ্যে কয়েকটা অ্যাড্রেস থাকে। ঐ ডাটাগুলোর অ্যড্রেস। মানে ঐ ডাটাগুলো যে অ্যাড্রেসে থাকে তা অ্যারে ভ্যারিয়েবলের মধ্যে জমা থাকে। আমরা যখন <code>obj</code> এর মধ্যে ফাইন্ড করছি তখন অ্যারের ঐ অ্যাড্রেসকে নিয়ে আসছি। তাই অ্যাড্রেস যেখানেই চেইঞ্জ করি না কেন তা অরিজিনাল অ্যারেতেও চেইঞ্জ হয়ে যাচ্ছে। এটা হচ্ছে মিউটেশন। আর <code>find</code> মেথড মিউটেবল।</p>
+<p>এখন একটা উদাহরণ দেখি।</p>
+<pre><code class="language-js">const arr = [
+    { id: 1, value: 10 },
+    { id: 2, value: 20 },
+    { id: 3, value: 30 },
+    { id: 4, value: 40 },
+    { id: 5, value: 50 },
+];
+
+const obj = arr.find((val) =&gt; val.id === 4);
+obj.value = 400;
+
+console.log(arr[3] === obj); // true
+
+const a = { a: 10 };
+const b = { a: 10 };
+const c = a;
+console.log(a === c); // true
+console.log(a === b); // false
+</code></pre>
+<p>যেকোনো বিগিনারের কাছে এটা পুরাই কনফিউশন সৃষ্টি করবে। যখন obj কিছু find করে নিয়ে আসে তখন আসলে অ্যারের রেফারেন্সটা নিয়ে আসে। তাই obj এবং arr[3] এর রেফারেন্স একই এজন্যই সেটা <code>true</code> আউটপুট দিয়েছে। একই ভাবে c আর a রেফারেন্স একই। তাই সেটা true দিয়েছে। কিন্তু a আর b এর রেফারেন্স সম্পূর্ণ আলাদা। দুইটা অবজেক্টে যতই সেইম ভ্যালু থাক, দুইটা অবেজক্টের রেফারেন্স কখনও এক হবে না। দুইটা বিল্ডিং দেখতে যতোই একই হোক, দুইটা বিল্ডিং এর অ্যাড্রেস কখনও একই হবে না। এক্ষেত্রেও তাই। এই কারণে শেষের কন্ডিশন false দিয়েছে।</p>
+<h3 id="delete">Delete</h3>
+<p>এবার আমরা অ্যারে থেকে কিভাবে কোনো ডাটা ডিলিট করতে হয় তা দেখবো। ইম্পেরেটিভ ওয়েতে কিভাবে ডাটা ডিলিট করতে হয় তা আমরা গেই দেখেছি অ্যারে ট্রাভার্সের উদাহরণে। এখানে আমরা দুইটা মেথড ইউজ করে ডিলিট করবো। <code>splice</code> and <code>filter</code>. এদের মধ্যে পার্থক্য হলো splice মেথড মিউটেবল এবং filter ইমমিউটেবল। কিভাবে আমরা একটু দেখি।</p>
+<pre><code class="language-js">const arr = [
+    { id: 1, value: 10 },
+    { id: 2, value: 20 },
+    { id: 3, value: 30 },
+    { id: 4, value: 40 },
+    { id: 5, value: 50 },
+];
+
+const index = arr.findIndex((item) =&gt; item.id === 4);
+const arr1 = arr.splice(index, 1);
+
+console.log(arr1); // [ { id: 4, value: 40 } ]
+console.log(arr);
+/* [
+  { id: 1, value: 10 },
+  { id: 2, value: 20 },
+  { id: 3, value: 30 },
+  { id: 5, value: 50 }
+] */
+</code></pre>
+<p>এখানে দেখা যাচ্ছে splice মেথড সরাসরি অরিজিনাল অ্যারে থেকে ডাটা ডিলিট করে দিয়েছে। তার মানে এখানে মিউটেশন হয়েছে।</p>
+<pre><code class="language-js">const arr = [
+    { id: 1, value: 10 },
+    { id: 2, value: 20 },
+    { id: 3, value: 30 },
+    { id: 4, value: 40 },
+    { id: 5, value: 50 },
+];
+
+const arr2 = arr.filter((item) =&gt; item.id !== 4);
+
+console.log(arr2);
+/* 
+[
+  { id: 1, value: 10 },
+  { id: 2, value: 20 },
+  { id: 3, value: 30 },
+  { id: 5, value: 50 }
+]
+*/
+console.log(arr);
+/* 
+[
+  { id: 1, value: 10 },
+  { id: 2, value: 20 },
+  { id: 3, value: 30 },
+  { id: 4, value: 40 },
+  { id: 5, value: 50 }
+]
+*/
+</code></pre>
+<p>এখানে অরিজিনাল অ্যারে যেমন ছিল তেমনই আছে। কিন্তু ফিল্টার করার পর ফিল্টার মেথড নতুন একটা অ্যারে দিয়েছে যেখানে যেটা ডিলিট করতে চেয়েছিলাম সেটা নেই। তার মানে দাঁড়ালো filter মেথড ইমমিউটেবল।</p>
+<h3 id="mutation">Mutation</h3>
+<p>মিউটেশন নিয়ে অলরেডি আলোচনা হয়েছে। আশা করি ব্যাপারটা সবাই বুঝতে পেরেছেন।</p>
+<h3 id="map">Map</h3>
+<p>ম্যাপ সাধারণত অরিজিনাল অ্যারের ক্লোন ভার্সন তৈরি করে। যদি অরিজিনাল অ্যারেতে ১০টা ডাটা থাকে তাহলে নতুন অ্যারেতেও ১০টা ডাটা থাকবে। এখন সে ডাটা একই হতে পারে বা ডিফারেন্ট হতে পারে। যেমন</p>
+<pre><code class="language-js">const numbers = [1, 2, 3, 4];
+const strs = numbers.map((v) =&gt; v.toString());
+console.log(strs);
+</code></pre>
+<p>সব নাম্বারের স্ট্রিং ভার্সন সে আউটপুট দিবে। একটা জিনিস মাথায় রাখতে হবে ম্যাপ করার পর অ্যারের লেংথের কোনো পরিবর্তন হবে না। শুধু ডাটা পরিবর্তন হবে। ডাটার সংখ্যা একই থাকবে।</p>
+<h3 id="filter">Filter</h3>
+<p>ফিল্টারের কাজ আমরা একটা অ্যারে থেকে যে যে ডাটা চাইছি তা ফিল্টার করে দেয়া। ধরেন আমাদের কাছে একটা অ্যারে আছে।</p>
+<pre><code class="language-js">const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
+</code></pre>
+<p>আমরা চাইছি এখান থেকে সমস্ত falsy value বাদ দিয়ে শুধু truthy ভ্যালু নিবো। সেক্ষেত্রে ফিল্টার মেথড আমাদের ব্যবহার করতে হবে।</p>
+<pre><code class="language-js">const filteredArr = numbers.filter((v) =&gt; v);
+console.log(filteredArr);
+</code></pre>
+<p>এক্ষেত্রে সকল truthy value রিটার্ন করে দিবে। কিন্তু এমন কিছু সিচুয়েশন আসবে যখন আমি truthy value চাইছি কিন্তু রিটার্ন করতে পারবো না সেক্ষেত্রে v এর আগে দুইটা !! বসিয়ে দিলেই truthy value পেয়ে যাবো।</p>
+<h3 id="reduce">Reduce</h3>
+<p>আমরা একটু নিচের উদাহরণটা দেখি।</p>
+<pre><code class="language-js">const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
+const filteredArr = numbers.filter((v) =&gt; v);
+const strs = filteredArr.map((v) =&gt; v.toString());
+console.log(strs);
+</code></pre>
+<p>এক্ষেত্রে কিছু অসুবিধা আছে। যখন ফিল্টার হচ্ছে তখন n সংখ্যকবার সে ট্রাভার্স হচ্ছে। আবার যখন ম্যাপ হচ্ছে তখনও আবার ট্রাভার্স হচ্ছে। এতে করে টাইম কমপ্লেক্সিটি বেড়ে যাচ্ছে। এটা চেইন করেও করা যায়।</p>
+<pre><code class="language-js">const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
+const filteredArr = numbers.filter((v) =&gt; v).map((v) =&gt; v.toString());
+console.log(strs);
+</code></pre>
+<p>এক্ষেত্রে টাইম কমপ্লেক্সিটি কিছুটা কমলেও পুরোপুরি এফিশিয়েন্ট না। সেজন্য আমাদের যেতে হবে reduce মেথডের কাছে।</p>
+<p>ইউটিউবে আমরা যে সকল টিউটোরিয়াল দেখতে পাই তাতে reduce দিয়ে একটা কাজই ঘুরেফিরে করা হয়। সেটা হলো যোগ করা।</p>
+<pre><code class="language-jsx">const numbers = [1, 2, 3, 4, 5, 6];
+const sum = numbers.reduce((a, b) =&gt; a + b);
+console.log(sum);
+</code></pre>
+<p>কিন্তু reduce is way more powerful than summation. reduce এত পাওয়ারফুল যে তা কল্পনা করা যায় না। reduce ঠিকমতো বুঝলে ম্যাপ, ফিল্টার নিয়ে কাজ না করে reduce নিয়েই কাজ করে ফেলা যায়। ম্যাপ আমাদের রিটার্ন করে একই দৈর্ঘ্যের একটা নতুন অ্যারে। ফিল্টার ফিল্টারড ভ্যালুর অ্যারে রিটার্ন করে। এর দৈর্ঘ্য অরিজিনাল অ্যারের সমান হতেও পারে, নাও পারে। কিন্তু রিডিউস কি যে রিটার্ন করবে তা কেউ জানে না। শুধু আমরা জানবো। এখানে স্ট্রিং, নাম্বার, বুলিয়ান ইত্যাদি যেকোনো সম্ভাব্য ভ্যালুই এটা রিটার্ন করতে পারে।</p>
+<p>আমরা একটু reduce এর স্ট্রাকচারটা দেখি</p>
+<pre><code class="language-js">numbers.reduce((acc, cur) =&gt; {
+    return acc;
+}, '');
+</code></pre>
+<p>প্রথম প্যারামিটার হিসেবে আমরা দিয়েছি acc (accumulator / previous value) এবং দ্বিতীয় ভ্যালু হিসেবে দিয়েছি cur (current value)। acc, cur এর পর আমরা চাইলে ইনডেক্স দিতে পারি, চাইলে পুরো অ্যারে দিতে পারি কিন্তু আমাদের সেটা দরকার নেই। reduce মেথডের সুবিধা হলো এখানে আমরা একটা ইনিশিয়াল ভ্যালু প্রোভাইড করতে পারি। '' এর জায়গায় খালি অবজেক্ট {}, খালি অ্যারে [], শূন্য যেকোনো কিছু বসাতে পারি। সেটা আমরা কি চাইছি তার উপর নির্ভর করবে। এর মানে হলো বর্তমানে acc এর ভ্যালু ঐ ইনিশিয়ালাইজার হিসেবে যেটা দিবো সেটা। দিন শেষে আমরা আমাদের acc কে রিটার্ন করবো। যাই করি না কেন আমরা reduce মেথডে acc কেই রিটার্ন করবো। এখন আমরা চাইছি <code>const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];</code> এটা থেকে আমরা <code>1234falseNaN56</code> রিটার্ন করতে। সেটা করতে আমরা reduce মেথডের সাহায্য নিবো।</p>
+<pre><code class="language-js">const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
+const result = numbers.reduce((acc, cur) =&gt; {
+    acc += cur.toString();
+    return acc;
+}, '');
+
+console.log(result); // 1234falseNaN56
+</code></pre>
+<p>আমরা করেছি কি এখানে? acc এর ভ্যালু আমরা ধরে নিয়েছি ''। এরপর ওটার সাথে cur এর toString যোগ করে দিয়েছি। এবং আমাদের রেজাল্টটাকে আমরা একটা ভ্যারিয়েবলের মধ্যে রেখেছি। এরপর যখন আউটপুট দিলো দেখা গেলো আমরা যেটা চাইছি সেটাই পেয়ে গেছি।</p>
+<p>এখন আমরা চাইছি এই অ্যারে থেকে শুধু truthy values নিবো। কোনো falsy ভ্যালু নিবো না। সেক্ষেত্রে আমরা একটা কন্ডিশন বসিয়ে দিতে পারি।</p>
+<pre><code class="language-js">const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
+const result = numbers.reduce((acc, cur) =&gt; {
+    if (cur) {
+        acc += cur.toString();
+    }
+    return acc;
+}, '');
+
+console.log(result); // 123456
+</code></pre>
+<p>আমরা যদি চাই প্রতিটার শেষে কমা (,) যোগ করবো সেটাও করতে পারি।</p>
+<pre><code class="language-js">const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
+const result = numbers.reduce((acc, cur, index) =&gt; {
+    if (cur) {
+        acc += cur.toString() + (index &lt; numbers.length - 1 ? ', ' : '');
+    }
+    return acc;
+}, '');
+
+console.log(result); // 1, 2, 3, 4, 5, 6
+</code></pre>
+<p>আমরা চাইলে অ্যারের একটা শেইপও দিতে পারি। যেমন</p>
+<pre><code class="language-js">const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
+const result = numbers.reduce((acc, cur, i) =&gt; {
+    if (i === 0) {
+        acc += '[';
+    }
+    if (cur) {
+        acc += cur.toString() + (i &lt; numbers.length - 1 ? ', ' : '');
+    }
+    if (i === numbers.length - 1) {
+        acc += ']';
+    }
+    return acc;
+}, '');
+console.log(result); // [1, 2, 3, 4, 5, 6]
+</code></pre>
+<p>তাহলে আমরা reduce এর পাওয়ারটা বুঝতে পারছি কিছুটা। এটা গেলো এক ধরণের পাওয়ার। আরো অনেক পাওয়ার আছে reduce মেথডের। যেমন এখন আমরা acc স্ট্রিং হিসেবে চাইছি না। আমরা চাইছি সকল truthy ভ্যালুর একটা অ্যারে। সেটাও reduce দিয়ে করা যায়।</p>
+<pre><code class="language-js">const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
+const result = numbers.reduce((acc, cur) =&gt; {
+    if (cur) {
+        acc.push(cur.toString());
+    }
+    return acc;
+}, []);
+console.log(result); // [ '1', '2', '3', '4', '5', '6' ]
+</code></pre>
+<p>এখানে আমরা acc হিসেবে একটা ফাঁকা অ্যারে নিয়েছি। এরপর একটা কন্ডিশন লিখেছি truthy ভ্যালু পাওয়ার জন্য। তারপর সেই কন্ডিশন যে সকল ভ্যালুর পূরণ করবে তাদের toString ভার্সন আমরা acc এর মধ্যে push করে দিবো যেহেতু acc একটা অ্যারে। আমরা একই রেজাল্ট পাচ্ছি আরো বেটার সল্যুশনের মাধ্যমে।</p>
+<p>আমরা একটু map/filter অপারেশনের সাথে reduce অপারেশনের টাইম কমপ্লেক্সিটি তুলনা করে দেখি।</p>
+<pre><code class="language-js">const arr = [];
+for (let i = 1; i &lt; 5000000; i++) {
+    arr.push(i);
+}
+
+console.time('not-optimized');
+arr.filter((item) =&gt; item % 2 === 0).map((item) =&gt; item * 2);
+console.timeEnd('not-optimized'); // not-optimized: 325.853ms
+
+console.time('optimized');
+arr.reduce((acc, cur) =&gt; {
+    if (cur % 2 === 0) {
+        acc.push(cur * 2);
+    }
+    return acc;
+}, []);
+console.timeEnd('optimized'); // optimized: 198.256ms
+</code></pre>
+<p>তাহলে দেখা যাচ্ছে reduce method অনেক অপটিমাইজড। এবার আমরা একটু reduce মেথডের ইমপ্লিমেন্টেশনটা দেখি। আমরা আমদের reduce ফুঞ্চতিওন বানিয়ে ফেলতে পারি। যেহেতু আমরা প্রোটোটাইপ নিয়ে আলোচনা করিনি তাই মেথড বানাবো না। আমরা জাস্ট একটা ফাংশন বানাবো।</p>
+<pre><code class="language-js">function myReduce(arr, cb, init) {
+    let acc = init;
+    for (let i = 0; i &lt; arr.length; i++) {
+        acc = cb(acc, arr[i], i, arr);
+    }
+    return acc;
+}
+</code></pre>
+<p>এটাই আমাদের reduce ফাংশন। এখানে কি করেছি একটু ব্যাখ্যা করা যাক। আমরা তিনটা প্যারামিটার নিয়েছি। প্রথম প্যারামিটার হিসেবে থাকবে একটা অ্যারে। দ্বিতীয় প্যারামিটার হিসেবে থাকবে একটা কলব্যাক ফাংশন। আর তৃতীয় প্যারামিটার হিসেবে থাকবে আমাদের ইনিশিয়ালাজার। আমরা যে ইনিশিয়ালাইজার ব্যবহার করেছিলাম reduce মেথডে সেটা। এখন আমরা আমাদের acc হিসেবে init নিয়ে নিলাম। এরপর লুপ চালালাম। লুপের মধ্যে acc আপডেট হচ্ছে কলব্যাক ফাংশন অনুযায়ী। সেই কলব্যাক ফাংশনের প্যারামিটার হিসেবে থাকছে acc, অ্যারের ইলেমেন্ট, ইনডেক্স আর আমাদের অ্যারে। আর এই ফাংশন রিটার্ন করবে আমাদের acc। এবার একটু আমাদের ফাংশনটা টেস্ট করে দেখি।</p>
+<pre><code class="language-js">const sum = myReduce([1, 2, 3, 4], (a, b) =&gt; a + b, 0);
+console.log(sum); // 10
+
+const arr = [1, 2, '', false, 3, NaN, false, 4, 5, NaN, 6];
+const result = myReduce(
+    arr,
+    (acc, cur) =&gt; {
+        if (cur) {
+            acc.push(cur ** 2);
+        }
+        return acc;
+    },
+    []
+);
+console.log(result); // [1, 4, 9, 16, 25, 36]
+</code></pre>
+<p>How amazing is this! জাভাস্ক্রিপ্টের যতোই গভীরে যাবেন এর মজাটা ততোই পাবেন। আমরা আমাদের reduce ফাংশন বানিয়ে সেটা নিয়ে কাজও করে ফেললাম। আর এটাও জানলাম behind the scene redcuce মেথড কিভাবে কাজ করে।</p>
+<p>আমরা আরেকটা উদাহরণ দেখি reduce এর। তার জন্য আমাদের axios প্যাকেজটা ইনস্টল করে নেয়া লাগবে। আমরা ইনস্টল করে নিলাম। এখন আমরা <a href="https://jsonplaceholder.typicode.com/posts">json placeholder</a> এই সাইটে ঢুকলে কিছু ডামী ডাটা পাবো পোস্টের। খেয়াল করলে দেখবো এই ডাটা দেয়া আছে অ্যারে হিসেবে। কিন্তু আমার ট্রাভার্সের চেয়ে গুরুত্বপূর্ণ হলো আপডেট ও ডিলিট করা। ব্যাকএন্ড ডেভেলপার তার সুবিধামতো অ্যারেতে দিয়ে দিলেও আমাদের নিজেদের প্রয়োজনে তা অবজেক্টে রূপান্তরিত করে নেয়া লাগবে। এখানে আমাদের body প্রোপার্টিজ প্রয়োজন নেই। আমাদের দরকার userId, id ও title। আর আমার এতো ডাটার প্রয়োজন নেই আমাদের প্রথম ১০টা ডাটা হলেই হয়ে যাবে। চলুন দেখি।</p>
+<pre><code class="language-js">const axios = require('axios').default;
+const url = 'https://jsonplaceholder.typicode.com/posts';
+
+async function getData() {
+    const { data } = await axios.get(url);
+    const result = data.slice(0, 10).map((item) =&gt; {
+        return {
+            userId: item.userId,
+            id: item.id,
+            title: item.title,
+        };
+    });
+    return result;
+}
+
+getData()
+    .then((data) =&gt; console.log(data))
+    .catch((e) =&gt; console.log(e));
+
+/* 
+[
+    {
+        userId: 1,
+        id: 1,
+        title:
+            'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
+    },
+    { userId: 1, id: 2, title: 'qui est esse' },
+    {
+        userId: 1,
+        id: 3,
+        title: 'ea molestias quasi exercitationem repellat qui ipsa sit aut',
+    },
+    { userId: 1, id: 4, title: 'eum et est occaecati' },
+    { userId: 1, id: 5, title: 'nesciunt quas odio' },
+    { userId: 1, id: 6, title: 'dolorem eum magni eos aperiam quia' },
+    { userId: 1, id: 7, title: 'magnam facilis autem' },
+    { userId: 1, id: 8, title: 'dolorem dolore est ipsam' },
+    {
+        userId: 1,
+        id: 9,
+        title: 'nesciunt iure omnis dolorem tempora et accusantium',
+    },
+    { userId: 1, id: 10, title: 'optio molestias id quia eum' },
+];
+*/
+</code></pre>
+<p>আমরা map ব্যবহার করে প্রথম ১০টি ডাটা পেয়ে গেলাম। এবং বডিও আমরা বাদ দিয়ে দিলাম। কিন্তু এখনও এটা অ্যারে রিটার্ন করছে। map করলে কখনও আমরা অবজেক্ট রিটার্ন করতে পারবো না। কারণ map সবসময় অ্যারেই রিটার্ন করে। এবার আমরা একটু reduce নিয়ে কাজ করি। কারণ reduce এ আমরা কি টাইপের ডাটা চাই তা ইনিশিয়ালাইজের মাধ্যমে দিয়ে দিতে পারি।</p>
+<pre><code class="language-js">const axios = require('axios').default;
+const url = 'https://jsonplaceholder.typicode.com/posts';
+
+async function getData() {
+    const { data } = await axios.get(url);
+    const result = data.slice(0, 10).reduce((acc, cur) =&gt; {
+        acc[cur.id] = {
+            ...cur,
+        };
+        delete acc[cur.id].body;
+        return acc;
+    }, {});
+    return result;
+}
+
+getData()
+    .then((data) =&gt; console.log(data))
+    .catch((e) =&gt; console.log(e));
+
+/* 
+{
+  '1': {
+    userId: 1,
+    id: 1,
+    title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit'
+  },
+  '2': { userId: 1, id: 2, title: 'qui est esse' },
+  '3': {
+    userId: 1,
+    id: 3,
+    title: 'ea molestias quasi exercitationem repellat qui ipsa sit aut'
+  },
+  '4': { userId: 1, id: 4, title: 'eum et est occaecati' },
+  '5': { userId: 1, id: 5, title: 'nesciunt quas odio' },
+  '6': { userId: 1, id: 6, title: 'dolorem eum magni eos aperiam quia' },
+  '7': { userId: 1, id: 7, title: 'magnam facilis autem' },
+  '8': { userId: 1, id: 8, title: 'dolorem dolore est ipsam' },
+  '9': {
+    userId: 1,
+    id: 9,
+    title: 'nesciunt iure omnis dolorem tempora et accusantium'
+  },
+  '10': { userId: 1, id: 10, title: 'optio molestias id quia eum' }
+}
+*/
+</code></pre>
+<p>আমরা এখানে acc হিসেবে নিয়েছি একটা ফাঁকা অবজেক্ট ({})। সেই অবজেক্টের কী হিসেবে থাকবে current ভ্যালুর আইডি। আমরা সেই আইডি ধরে সব current ভ্যালু অবজেক্টে স্টোর করে দিলাম। এখন আমরা তো বডি চাই না। তাই পরের লাইনে সিমপ্লি delete এর মাধ্যমে বডি ডিলিট করে দিলাম। আর দিনশেষে তো acc ই রিটার্ন করবে। সব শেষে যখন রান করালাম, ওয়াও, আমাদের অবজেক্ট আমরা পেয়ে গেলাম। reduce এর পাওয়ার অন্য লেভেলের। এর পাওয়ার বলে শেষ করা যায় না।</p>
+<p>লাস্ট আরেকটা এক্সাম্পল আমরা দেখি এই reduce মেথডের। ধরুন আমাদের কাছে একটা অ্যারে আছে নামের।</p>
+<pre><code class="language-js">const names = [
+    'Ayman',
+    'Abu Rayhan',
+    'Anik',
+    'Elias Emon',
+    'Engr. Sabbir',
+    'Fahim Faisal',
+    'Feroz Khan',
+    'Habib',
+    'HM Azizul',
+    'Hridoy Saha',
+    'Jahid Hassan',
+    'Johir',
+    'Md Al-Amin',
+    'Md Arafatul',
+    'Md Ashraful',
+    'Parvez',
+];
+</code></pre>
+<p>আমরা এটাকে নিচের মতো করে আউটপুট পেতে চাইছি।</p>
+<pre><code class="language-txt">----------- A -----------
+Ayman
+Abu Rayhan
+Anik
+
+----------- E -----------
+Elias Emon
+Engr. Sabbir
+
+----------- F -----------
+Fahim Faisal
+Feroz Khan
+
+----------- H -----------
+Habib
+HM Azizul
+Hridoy Saha
+
+----------- J -----------
+Jahid Hassan
+Johir
+
+----------- M -----------
+Md Al-Amin
+Md Arafatul
+Md Ashraful
+
+----------- P -----------
+Parvez
+</code></pre>
+<p>এটা আমরা কিভাবে পেতে পারি। আমাদের আছে অ্যারে। আমরা যদি এই কাজটাকে নিচের স্ট্রাকচার হিসেবে কল্পনা করি তাহলে অনেক সহজ হয়ে যাবে।</p>
+<pre><code class="language-js">const namesGroup = {
+    A: ['Ayman', 'Abu Rayhan', 'Anik'],
+    E: ['Elias Emon', 'Engr. Sabbir'],
+    F: ['Fahim Faisal', 'Feroz Khan'],
+};
+</code></pre>
+<p>এখন অ্যারে থেকে আমাদের এভাবে অবজেক্টে পরিণত করতে হবে। আর এই কাজটা করতে পারে reduce. তাহলে চলুন করা যাক।</p>
+<pre><code class="language-js">const namesGrouped = names.reduce((acc, cur) =&gt; {
+    const firstLetter = cur[0].toUpperCase();
+    if (firstLetter in acc) {
+        acc[firstLetter].push(cur);
+    } else {
+        acc[firstLetter] = [cur];
+    }
+    return acc;
+}, {});
+console.log(namesGrouped);
+
+/* 
+{
+  A: [ 'Ayman', 'Abu Rayhan', 'Anik' ],
+  E: [ 'Elias Emon', 'Engr. Sabbir' ],
+  F: [ 'Fahim Faisal', 'Feroz Khan' ],
+  H: [ 'Habib', 'HM Azizul', 'Hridoy Saha' ],
+  J: [ 'Jahid Hassan', 'Johir' ],
+  M: [ 'Md Al-Amin', 'Md Arafatul', 'Md Ashraful' ],
+  P: [ 'Parvez' ]
+}
+*/
+</code></pre>
+<p>আমরা প্রথমে আমাদের acc কে একটা ফাঁকা অবজেক্ট হিসেবে নিয়ে নিলাম। এরপর আমরা প্রথম লেটার ধরে চেক করবো তা acc তে আছে কিনা। যদি থাকে কি করবো আর না থাকলে কি করবো। তাহলে প্রথমে আমরা current ভ্যালুর প্রথম লেটারের আপারকেইস নিয়ে একটা ভ্যারিয়েবলে স্টোর করে রাখলাম। এবার একটা কন্ডিশন লিখলাম। যদি firstLetter acc এর মধ্যে না থাকে firstLetter দিয়ে একটা কী তৈরি করবে এবং ঐ কী এর মধ্যে current ভ্যালুর একটা অ্যারে নিবে। যদি firstLetter acc এর মধ্যে থাকে তাহলে জাস্ট কারেন্ট ভ্যালুর যে অ্যারে তাতে push করে দিবে। এবার যদি আমরা একটু আউটপুট দেখি তাহলে দেখবো আমরা যে স্ট্রাকচারটা কল্পনা করেছিলাম সেটা পেয়ে গেছি। এবার এখান থেকে আমাদের রিকোয়ার্ড আউটপুট কিভাবে প্রিন্ট করবো, যেটা শুরুতে দেখিয়েছিলাম, তা একটু দেখি।</p>
+<pre><code class="language-js">Object.keys(namesGrouped).forEach((groupKey) =&gt; {
+    console.log('-----------', groupKey, '-----------');
+    namesGrouped[groupKey].forEach((name) =&gt; console.log(name));
+    console.log();
+});
+</code></pre>
+<p>এটা আশা করি বুঝানোর কিছু নেই। সিম্পল forEach মেথড যা আগে দেখেছিলাম। রান করলে দেখবেন আমাদের ডিজায়ার্ড আউটপুট আমরা পেয়ে গেছি।</p>
+<p>যদি আমাদের filter, map, reduce জানা থাকে ভালভাবে তাহলে অন্যান্য ডাটা স্ট্রাকচার এবং অ্যালগরিদম ব্যবহার না করেও আমরা কিছু কিছু ক্ষেত্রে অপটিমাইজড অ্যাপ্লিকেশন বানিয়ে ফেলতে পারবো।</p>
+<h2 id="object-deep-dive">Object Deep Dive</h2>
+<h3 id="object-operations">Object Operations</h3>
+<p>আমাদের চারপাশে আমরা যা দেখি তাই অবজেক্ট। ধরে আমাদের সামনে একটি মাইক্রোফোন আছে। এটাও একটা অবজেক্ট। কিভাবে চলুন একটু দেখি।</p>
+<pre><code class="language-js">const microphone = {
+    brand: 'Fifine',
+    indictor: true,
+    price: 8000,
+    color: 'Black',
+    startRecording() {
+        console.log('recording started');
+    },
+    stopRecording() {
+        console.log('recording stopped');
+    },
+};
+</code></pre>
+<p>যখন আমাদের কোনো একটা বিষয় বা বস্তুকে রিপ্রেজেন্ট করার জন্য একাধিক ইনফরমেশন দরকার, তখনই আমাদের প্রয়োজন অবজেক্ট। একটা ইনফরমেশন হলে আমরা ভ্যারিয়েবল নিয়ে কাজ সেরে ফেলতে পারতাম। কিন্তু যেহেতু একের অধিক তাই আমাকে ঐ বিষয় বা বস্তু রিপ্রেজেন্ট করার জন্য প্রয়োজন অবজেক্ট। সেইম জিনিস জাভাতে বলে ক্লাস, পাইথনে বলে ডিকশনারি, সি তে সেটা হলো স্ট্রাকচার। এখন অবজেক্ট মানেই অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং না। অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং হলো এই অবজেক্টকেই কিভাবে সুন্দর করে অর্গানাইজড ওয়েতে রিপ্রেজেন্ট করা যায় সেটার থিওরাম হচ্ছে অবজেক্ট অরিয়েন্টেড প্রোগ্রামিং। এই টার্মটা আমাদের এখন প্রয়োজন নেই। আমরা বেসিক অবজেক্ট নিয়ে কথা বলছি, তাই ফোকাসটা আপাতত অবজেক্টের দিকেই দিই।</p>
+<p>আমরা জানি যে, অবজেক্টের মধ্যে এর অনেকগুলো প্রোপার্টি রাখতে পারি। অবজেক্টের প্রোপার্টিজকে দুই ভাগে ভাগ করা যায়। যথাঃ</p>
+<ol>
+<li>Noun / Adjective (State/data/property/field) - যে প্রোপার্টি দ্বারা আমাদের ডাটা রিপ্রেজেন্ট করতে পারি সেগুলোই এর আলোচ্য বিষয়। উপরের উদাহরণে brand, indicator, price, color এগুলো সবই প্রোপার্টি। কারণ এগুলো ডাটা রিপ্রেজেন্ট করছে। এই ডাটাগুলো স্ট্রিং, নাম্বার, বুলিয়ান যেকোনো ডাটা টাইপের হতে পারে।</li>
+<li>Verb (functionalities -&gt; start, stop) - যেমন আমাদের মাইক্রোফোনে কিছু ফাংশনালিটিজ থাকে। যেমন, start button, stop button, recording button etc. যেমন উপরের উদাহরণে startRecording, stopRecording।</li>
+</ol>
+<p>তাহলে অবজেক্টের দুইটা অংশের একটা আমাদের ডাটাকে রিপ্রেজেন্ট করবে, আরেকটা অংশ ডাটার সাথে রিলেটেড কাজগুলো করবে। এই দুইটা অংশ মিলেই আমাদের একটা অবজেক্ট তৈরি হয়।</p>
+<p>এখন এখানে যেসব প্রোপার্টি আমরা লিখলাম এর বাইরেও অনেক প্রোপার্টি আছে যেগুলো হিডেন আছে। যেমন আমরা যদি লিখি <code>microphone.toString()</code> তাহলে আউটপুট আসবে <code>[object Object]</code>। কিন্তু <code>toString</code> মেথড তো আমরা এখানে কোথাও লিখিনি। তাহলে এটা আসলো কোথা থেকে। এটা এসেছে <code>Object</code> থেকে। এই <code>Object</code> কে বলা হয় অবজক্ট কন্সট্রাকটর।</p>
+<p>আমরা যেভাবে অবজেক্ট তৈরি করেছিলাম সেটা ছাড়াও অন্যভাবে অবজেক্ট তৈরি করা যায়। আমরা একটু সেই প্রসেসটাও দেখি।</p>
+<pre><code class="language-js">const testObj = new Object();
+testObj.name = 'Test Object';
+testObj.time = new Date();
+console.log(testObj); // { name: 'Test Object', time: 2022-06-16T07:09:01.373Z }
+</code></pre>
+<p>আউটপুটে আমরা দেখতে পাচ্ছি একটা অবজেক্ট ক্রিয়েট হয়ে গিয়েছে। তার মানে আমরা দুইভাবেই অবজেক্ট ক্রিয়েট করতে পারি। প্রথমে যেভাবে তৈরি করেছি সেটাকে বলে <code>Object Literal</code> এবং পরে যেভাবে তৈরি করেছি সেটাকে বলে <code>Constructor Function</code>। আমরা যেভাবেই তৈরি করি না কেন সবকিছুর পিছনে ঐ <code>Object</code> কনস্ট্রাক্টরই কাজ করছে। এই <code>Object</code> এর মধ্যে কিছু ্ প্রোপার্টিজ আছে যা আমরা দুনিয়ায় যতো অবজেক্টই বানাবো সবকিছুতে ইনহেরিট হয়ে যাবে। আমরা একটু সেসব প্রোপার্টিজ দেখার চেষ্টা করি। এর জন্য আমাদের একটু ব্রাউজারের কনসোলে যেতে হবে। নিচের স্ক্রিনশটটি একটু খেয়াল করুন আপনারা।</p>
+<p><img alt="Object methods" src="Screenshot_1.png" /></p>
+<p>প্রথমে আছে কনস্ট্রাকটর। আমরা <code>Object</code> এর আগে <code>new</code> লাগিয়ে যে অবজেক্ট তৈরি করেছিলাম সেটাকে সেজন্য কন্সট্রাক্টর বলে। এরপর আছে <code>hasOwnProperty</code> এটা দিয়ে আমরা কোনো প্রোপার্টি ঐ অবজেক্টের নিজস্ব প্রোপার্টি কিনা তা চেক করতে পারবো। এছাড়াও <code>toString</code>, <code>valueOf</code>, <code>toLocaleString</code> ইত্যাদি প্রোপার্টিজ আছে। যেগুলো আমরা অবজেক্টে ডিফাইন না করলেও তারা প্রয়োজনে সেই মেথডগুলো ব্যবহার করতে পারবে। এগুলো মূলত আমরা যখন অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং করতে যাবো তখন এসব দরকার পড়বে। এখন অবশ্য ES6 আসার পরে অতো ডিপলি অবজেক্ট অরিয়েন্টেড প্রোগ্রামিং করার দরকার পড়ে না। তারপরও যতটুকু দরকার আমরা শিখে নিবো।এই মুহূর্তে সেটা নিয়ে মাথা না ঘামালেও চলবে। আমরা যদি <code>Oboject</code> লিখে একটা ডট (.) দিই তাহলে অনেক প্রোপার্টিজ আসবে। এখন এদের মধ্যে কোন কোন প্রোপার্টিজ ইনহেরিট হবে বা এক্সটেন্ডেড হবে এবং কোন কোন প্রোপার্টিজ হবে না। উপরের ছবিটি খেয়াল করুন। প্রোটটাইপের মধ্যে যে সকল প্রোপার্টিজ আছে সেগুলো ইনহেরিট বা এক্সটেন্ডেড হবে। আর যেগুলো নেই সেগুলো হবে না।</p>
+<p>এই প্রোপার্টিজগুলোর মধ্যে আমরা একটু <code>freeze</code> প্রোপার্টিটা দেখি। ধরেন আমরা আমাদের microphone অবজেক্টে নতুন একটা প্রোপার্টি অ্যাড করতে চাইছি। তাহলে আমাদের নিচের কোডটা লিখতে হবে।]</p>
+<pre><code class="language-js">const microphone = {
+    brand: 'Fifine',
+    indictor: true,
+    price: 8000,
+    color: 'Black',
+    startRecording() {
+        console.log('recording started');
+    },
+    stopRecording() {
+        console.log('recording stopped');
+    },
+};
+
+microphone.newProperty = 'New Property';
+console.log(microphone);
+/* {
+  brand: 'Fifine',
+  indictor: true,
+  price: 8000,
+  color: 'Black',
+  startRecording: [Function: startRecording],
+  stopRecording: [Function: stopRecording],
+  newProperty: 'New Property'
+} */
+</code></pre>
+<p>কিন্তু অনেক সময় এমন অবজেক্ট নিয়ে আমরা কাজ করতে পারি যেখানে আমরা ডাটা এন্ট্রি রেস্ট্রিক্ট করে দিতে চাইছি। সোজা কথায় আমরা এখানে ডাটা ইনপুট দিতে দিবো না। সেই ক্ষেত্রে <code>freeze</code> মেথডটা অনেক কাজে আসে।</p>
+<pre><code class="language-js">const microphone = {
+    brand: 'Fifine',
+    indictor: true,
+    price: 8000,
+    color: 'Black',
+    startRecording() {
+        console.log('recording started');
+    },
+    stopRecording() {
+        console.log('recording stopped');
+    },
+};
+
+Object.freeze(microphone);
+microphone.newProperty = 'New Property';
+console.log(microphone);
+/* {
+  brand: 'Fifine',
+  indictor: true,
+  price: 8000,
+  color: 'Black',
+  startRecording: [Function: startRecording],
+  stopRecording: [Function: stopRecording],
+} */
+</code></pre>
+<p>খেয়াল করুন এখানে আমাদের অবজেক্ট কিন্তু আপডেট হয়নি। এই মেথড ব্যবহার করে আমরা অবজেক্টকে লক করে দিতে পারি। আরো দুইটা মেথড দেখি আমরা। একটা <code>keys</code> এবং অন্যটা <code>values</code>।</p>
+<pre><code class="language-js">console.log(Object.keys(microphone)); // ['brand', 'indictor', 'price', 'color', 'startRecording', 'stopRecording'];
+console.log(Object.values(microphone));
+
+/* 
+[
+  'Fifine',
+  true,
+  8000,
+  'Black',
+  [Function: startRecording],
+  [Function: stopRecording]
+]
+*/
+</code></pre>
+<p><code>Object.keys()</code> অবজেক্টের সব keys অ্যারে আকারে রিটার্ন করবে এবং <code>Object.values()</code> অবজেক্টের সব values অ্যারে আকারে রিটার্ন করবে। এখন এগুলো আমাদের কি দরকার? আমরা তো এগুলো ছাড়াও লুপ চালিয়ে কী এবং ভ্যালু বের করে আনতে পারি এভাবে-</p>
+<pre><code class="language-js">for (let k in microphone) {
+    console.log(k, microphone[k]);
+}
+
+/* 
+brand Fifine
+indictor true
+price 8000
+color Black
+startRecording [Function: startRecording]
+stopRecording [Function: stopRecording]
+*/
+</code></pre>
+<p>এখানে ভ্যালু বের করার জন্য যে অবজেক্ট নোটেশন ব্যবহার করা হয়েছে তাকে বলে অ্যারে নোটেশন। অবজেক্ট থেকে ভ্যালু দুইটা নোটেশন ইউজ করে বের করা যায়।</p>
+<ul>
+<li>Dot notation (microphone.brand)</li>
+<li>Array notation (microphone['brand])</li>
+</ul>
+<p>যখন আমরা ডায়নামিক্যালি কোনো কী নিবো তখন আমরা জানি না সেটা কিরকম। তাই আমরা এক্ষেত্রে সবসময় অ্যারে নোটেশন ইউজ করবো। এবার মূলকথায় ফিরে যায়। আমরা তো এভাবেও কী আর ভ্যালু পাচ্ছি। তাহলে ঐ দুইটা মেথডের কাজ কি? আমরা একটু দেখি।</p>
+<pre><code class="language-js">const empty = {};
+console.log(empty); // {}
+console.log(Boolean(empty)); // true
+</code></pre>
+<p>আমরা যদি জানতে চাই আমাদের অবজেক্টটা সত্যিই ফাঁকা কিনা তাহলে এভাবে পারবো না। কারণ ফাঁকা অবজেক্ট, ফাঁকা অ্যারে সবসময় true রিটার্ন করবে। সেক্ষেত্রে আমরা <code>Object.keys()</code> এর সাহায্য নিবো।</p>
+<pre><code class="language-js">const empty = {};
+console.log(Object.keys(empty)); // []
+</code></pre>
+<p>এখন ফাঁকা অ্যারেও তো true রিটার্ন করবে কারণ ফাঁকা অ্যারেও একটা truthy value. আমাদের অবজেক্ট প্রোপারলি ফাঁকা কিনা তা জানার জন্য আমাদেরকে নিচের কাজটা করতে হবে।</p>
+<pre><code class="language-js">const empty = {};
+console.log(Object.keys(empty).length === 0); // true
+</code></pre>
+<p>তার মানে যদি লেংথ ০ হয় তাহলে আমাদের অবজেক্টটা ফাঁকা বলে ধরে নিতে পারি।</p>
+<p>এছাড়াও আছে <code>Object.entries()</code> মেথড। এটার কাজটা আমরা দেখি একটু।</p>
+<pre><code class="language-js">console.log(Object.entries(microphone));
+/*
+[
+  [ 'brand', 'Fifine' ],
+  [ 'indictor', true ],
+  [ 'price', 8000 ],
+  [ 'color', 'Black' ],
+  [ 'startRecording', [Function: startRecording] ],
+  [ 'stopRecording', [Function: stopRecording] ]
+]
+*/
+</code></pre>
+<p>ছিল অবজেক্ট। হয়ে গেলো কী আর ভ্যালু এর জন্য আলাদা আলাদা অ্যারে। এটা আমাদের ভবিষ্যতে অনেক কাজে লাগবে।</p>
+<p>এখন ধরেন আমাদের কাছে একটা অ্যারে আছে। আমরা চাইছি সেটা থেকে অবজেক্ট বানাতে। তা জন্য আমাদের ব্যবহার করতে হবে <code>fromEntries</code> মেথডটি।</p>
+<pre><code class="language-js">const arr = [
+    ['brand', 'Fifine'],
+    ['indictor', true],
+    ['price', 8000],
+    ['color', 'Black'],
+];
+
+console.log(Object.fromEntries(arr)); // { brand: 'Fifine', indictor: true, price: 8000, color: 'Black' }
+</code></pre>
+<h3 id="function-vs-method">Function vs Method</h3>
+<p>যখন একটা ফাংশন একটা অবজেক্টের মধ্যে থাকে তখন আমরা সেটাকে বলি মেথড। তাহলে আমরা যে array.filter(), array.push(), array.map(), array.splice() ব্যবহার করেছি এগুলো সবগুলোই হচ্ছে মেথড। এরা ফাংশন না। ফাংশন আর মেথডের মধ্যে একটাই পার্থক্য। ফাংশন স্বাধীনভাবে যেকোনো জায়গায় কল করা যায় কিন্তু মেথড পারা যায় না। একটা উদাহরণ দিলে আমরা ভালভাবে বুঝতে পারবো।</p>
+<pre><code class="language-js">const microphone = {
+    brand: 'Fifine',
+    indictor: true,
+    price: 8000,
+    color: 'Black',
+    startRecording() {
+        console.log('recording started');
+    },
+    stopRecording() {
+        console.log('recording stopped');
+    },
+};
+
+function startRecording() {
+    console.log('recording started');
+}
+
+startRecording();
+
+microphone.startRecording();
+</code></pre>
+<p>এখানে <code>startRecording</code> ফাংশনটা অবজেক্টের ভিতরেও আছে, আবার বাইরেও আছে। এখন বাইরের ফাংশনকে চাইলে আমরা এমনিই কল করতে পারবো। কিছু ছাড়াই। কিন্তু অবজেক্টের ফাংশনকে যদি কল করতে চাই তাহলে অবশ্যই <code>microphone.startRecording()</code> লিখতে হবে। এটাই বেসিক পার্থক্য। তাহলে আমরা কোনোকিছুর পর ডট দিয়ে যাই লিখবো অর্থাৎ অবজেক্টের মধ্যে কোনো ফাংশন থাকলে সেগুলো সবগুলো হলো মেথড। আর ইন্ডিপেন্ডেন্টলি যা লিখবো সেগুলো হচ্ছে ফাংশন।</p>
+<h2 id="object-as-a-data-structure">Object as a Data Structure</h2>
+<p>আমরা চাইছি কয়েকজন ছাত্রের ইনফরমেশন স্টোর করতে। সেখানে থাকবে একজন ছাত্রের একটা ইউনিক আইডি, তার নাম এবং তার ইমেইল। এখন আমরা প্রথমে একটা ইউনিক আইডি জেনারেট করার ফাংশন তৈরি করে ফেলি।</p>
+<pre><code class="language-js">function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) =&gt; {
+        const r = (Math.random() * 16) | 0;
+        const v = c == 'x' ? r : (r &amp; 0x3) | 0x8;
+        return v.toString(16);
+    });
+}
+</code></pre>
+<p>এই ফাংশনটা গুগল থেকে নেয়া। এখন আমরা এই ছাত্রদের ইনফরমেশন অ্যারে দিয়েও স্টোর করতে পারি আবার অবজেক্ট দিয়েও পারি। প্রথমেই বলে রাখি সব কাজের জন্য অ্যারে ভাল না আবার সব কাজের জন্য অবজেক্টও ভাল না। আমাদেরকে আমাদের কাজের উপর ভিত্তি করে সিদ্ধান্ত নিতে হবে কখন আমরা অ্যারে ইউজ করবো আর কখন অবজেক্ট। প্রথমে আমরা একটু অ্যারে নিয়ে কাজ করে দেখি। এরপর অবজেক্ট নিয়ে করবো।</p>
+<h3 id="array">Array</h3>
+<p>আমাদের সমস্ত ছাত্রের ইনফরমেশন আমরা অ্যারেতে স্টোর করে রাখি এখন।</p>
+<pre><code class="language-js">const students = [
+    {
+        id: uuidv4(),
+        name: 'Md Al-Amin',
+        email: 'alamin@test.com',
+    },
+    {
+        id: uuidv4(),
+        name: 'Akib Ahmed',
+        email: 'akib@test.com',
+    },
+    {
+        id: uuidv4(),
+        name: 'Elias Emon',
+        email: 'elias@test.com',
+    },
+];
+</code></pre>
+<p>যেহেতু আমরা UI নিয়ে কাজ করছি না তাই আমরা চাইবো না বারবার আইডি চেইঞ্জ হোক। আমরা একবার প্রোগ্রাম রান করে যে আউটপুট জেনারেট হবে সেটাকেই স্টোর করে রাখবো। বারবার আইডি চেইঞ্জ হলে আমরা আমাদের যে অপারেশন তা ঠিকভাবে করতে পারবো না। সুতরাং আমরা প্রথমবার রান করার পর সেই আউটপুটকে স্টোর করে নিই আগে।</p>
+<pre><code class="language-js">const students = [
+    {
+        id: '67de71e5-0eac-474f-ab51-850ba9b31ed5',
+        name: 'Md Al-Amin',
+        email: 'alamin@test.com',
+    },
+    {
+        id: 'ebdf6b78-c32b-4b1d-8574-e8c655b05c1e',
+        name: 'Akib Ahmed',
+        email: 'akib@test.com',
+    },
+    {
+        id: 'ee729e84-a84e-4adf-b32c-4647a7114d5b',
+        name: 'Elias Emon',
+        email: 'elias@test.com',
+    },
+];
+</code></pre>
+<p>অ্যারেতে স্টোর করে রাখলে আমরা কিছু সুবিধা পাবো। সেগুলো হলোঃ</p>
+<ol>
+<li>Create a new one</li>
+<li>Update</li>
+<li>Delete</li>
+<li>Filter</li>
+<li>Easily Traverse</li>
+</ol>
+<p>এবার আমরা এক এক করে এই কাজগুলো দেখি।</p>
+<ul>
+<li>Create a new one</li>
+</ul>
+<p>এটা সবচেয়ে সহজ কাজ। আমরা জানি আমরা যখন অ্যারেতে একটা ডাটা ইনসার্ট করতে চাই দুইটা মেথড আমরা ইউজ করতে পারি। যদি সবার শেষে ইনসার্ট করতে চাই তাহলে <code>push</code> মেথড ব্যবহার করবো, আর যদি সবার প্রথমে ইনসার্ট করতে চাই তাহলে <code>unshift</code> মেথড ব্যবহার করবো। কিন্তু <code>unshift</code> অনেক এক্সপেন্সিভ। কেন এক্সপেন্সিভ? কারণ আমাকে প্রতিটা ইলেমেন্ট এক ঘর করে ডান পাশে শিফট করতে হচ্ছে। যার কারনে অনেক বেশি অপারেশন ঘটাতে হচ্ছে। অর্থাৎ এর কমপ্লেক্সিটি O(n)। অন্যদিকে <code>push</code> মেথডে আমার কাউকে সরাতে হচ্ছে না। শুধু শেষে ডাটাটা বসিয়ে দিলেই হলো। অর্থাৎ এর কমপ্লেক্সিটি O(1)। O(n) হলো ডাটা সাইজের উপর এর এক্সিকিউশন টাইম নির্ভর করে। সাইজ ছোট হলে কম সময় আর সাইজ বড় হলে বেশি সময়। এটার সমস্যা হলো আমরা এখানে বিগ অ্যামাউন্টের ডাটা স্টোর করে রাখতে পারবো না। আর O(1) হলো ডাটার সাইজ কতো বড় বা ছোট সেটা বিবেচ্য না। সেটা একটা নির্দিষ্ট সময়েই এক্সিকিউট হবে তা বড় সাইজের ডাটা হোক বা ছোট সাইজের। তার এক্সিকিউশন টাইম কন্সট্যান্ট। এক্ষেত্রে ডাটা ইনসার্টের জন্য আমরা <code>push</code> মেথড ব্যবহার করবো।</p>
+<pre><code class="language-js">students.push({
+    id: '0a2c956c-a9f4-48b9-83fa-551b432dfb2b',
+    name: 'Fahim Faisal',
+    email: 'fahim@test.com',
+});
+</code></pre>
+<p>এখন আমাদের প্রোগ্রাম রান করালে দেখা যাবে আমাদের অ্যারেতে নতুন ডাটা ক্রিয়েট হয়ে গেছে।</p>
+<ul>
+<li>Update</li>
+</ul>
+<p>আমরা দুইভাবে আপডেট করতে পারি। একটা হচ্ছে যাকে আপডেট করতে হবে find মেথডের মাধ্যমে সেই অবজেক্টকে বের করে তাকে আপডেট করা। আরেকটা হলো ঐ অবজেক্টের ইনডেক্সকে findIndex মেথডের মাধ্যমে বের করে সেটা ধরে আপডেট করা। অবজেক্ট ধরে যদি আপডেট করতে চাই সেক্ষেত্রে একটা সমস্যা আছে। সেটা একটু আমরা দেখি।</p>
+<pre><code class="language-js">const idToUpdate = 'ee729e84-a84e-4adf-b32c-4647a7114d5b';
+const updatedData = {
+    name: 'Habiba Akhtar',
+    email: 'habiba@test.com',
+};
+
+let updatedObj = students.find((item) =&gt; item.id === idToUpdate);
+updatedObj = {
+    id: idToUpdate,
+    ...updatedObj,
+};
+console.log('Updated', students);
+/* 
+Updated [
+  {
+    id: '67de71e5-0eac-474f-ab51-850ba9b31ed5',
+    name: 'Md Al-Amin',
+    email: 'alamin@test.com'
+  },
+  {
+    id: 'ebdf6b78-c32b-4b1d-8574-e8c655b05c1e',
+    name: 'Akib Ahmed',
+    email: 'akib@test.com'
+  },
+  {
+    id: 'ee729e84-a84e-4adf-b32c-4647a7114d5b',
+    name: 'Elias Emon',
+    email: 'elias@test.com'
+  },
+  {
+    id: '0a2c956c-a9f4-48b9-83fa-551b432dfb2b',
+    name: 'Fahim Faisal',
+    email: 'fahim@test.com'
+  }
+]
+*/
+</code></pre>
+<p>কিছুই আপডেট হলো না। কারণ আমরা অবজেক্ট অ্যাসাইন করছি। আর যেহেতু অ্যাসাইন করছি সেহেতু এর রেফারেন্সও আলাদা হয়ে গেছে। আলাদা রেফারেন্সের কারণে আমার আপডেট কাজ করছে না। এবার আসি ইনডেক্স বের করে কিভাবে আপডেট করতে পারি সেটা নিয়ে।</p>
+<pre><code class="language-js">const idToUpdate = 'ee729e84-a84e-4adf-b32c-4647a7114d5b';
+const updatedData = {
+    name: 'Habiba Akhtar',
+    email: 'habiba@test.com',
+};
+
+const updatedIndex = students.findIndex((item) =&gt; item.id === idToUpdate);
+students[updatedIndex] = {
+    ...students[updatedIndex],
+    ...updatedData,
+};
+console.log('Updated', students);
+</code></pre>
+<p>তিনটা ডট দেয়াকে জাভাস্ক্রিপ্টে বলে স্প্রেড অপারেটর। এর মানে হলো অরিজিনাল অবজেক্টে যা যা আছে সবই থাকবে। আর নতুন ডাটা অনুযায়ী সেটা আপডেট হবে। যখন কোনো কিছু রিঅ্যাসাইনের কাজ আসবে তখন আমরা find ব্যবহার না করে findIndex ব্যবহার করবো। এই আপডেট করা মোটামুটি রকমের কমপ্লেক্স। তাই এর কমপ্লেক্সিটি আমরা O(n) হিসেবে ধরতে পারি।</p>
+<ul>
+<li>Delete</li>
+</ul>
+<p>ডিলিট করাটা তুলনামূলক সহজ। কিন্তু আমরা ডিলিটের জন্য দুইটা মেথড ইউজ করতে পারি <code>splice</code> এবং <code>filter</code>। এই দুইটা মেথডের কমপ্লেক্সিটি O(n)। এখানে আমরা splice নিয়ে কাজ করছি। পরের ধাপে আমরা filter অপারেশন দেখাবো। আমরা যদি আমাদের upodatedIndex ডিলিট করতে চাই তাহলে এভাবে লিখতে হবে।</p>
+<pre><code class="language-js">students.splice(updatedIndex, 1);
+</code></pre>
+<ul>
+<li>Filter</li>
+</ul>
+<pre><code class="language-js">const filteredStudents = students.filter((item) =&gt; item.id !== idToUpdate);
+console.log(filteredStudents);
+</code></pre>
+<ul>
+<li>Easily Traverse</li>
+</ul>
+<p>অ্যারের ক্ষেত্রে ট্রাভার্স করা অনেক সহজ। ধরি আমরা ছাত্রদের নাম জানতে চাইছি। তিনভাবে আমরা অ্যারে ট্রাভার্সের মাধ্যমে নাম বের করে আনতে পারি। এগুলো হলো। <code>for</code> loop, <code>for in</code> loop, <code>for of</code> loop। নিচে তিনটারই উদাহরণ দেয়া হলো।</p>
+<pre><code class="language-js">for (let i = 0; i &lt; students.length; i++) {
+    console.log(students[i].name);
+}
+
+for (let i in students) {
+    console.log(students[i].name);
+}
+
+for (let student of students) {
+    console.log(student.name);
+}
+</code></pre>
+<p>এছাড়াই কিছু বিল্ট-ইন মেথড রয়েছে অ্যারে ট্রাভার্সের জন্য। যেমন <code>forEach</code>, <code>map</code>, <code>filter</code>, <code>every</code>, <code>reduce</code>, <code>some</code>, <code>find</code>, <code>findIndex</code> ইত্যাদি। তাহলে আমরা বুঝলাম যে অ্যারে অনেক সহজে ট্রাভার্স করা যায়। এটার কমপ্লেক্সিটি O(n)।</p>
+<h3 id="object-over-array">Object Over Array</h3>
+<p>এবার আমরা আমাদের ছাত্রদের অ্যারেকে একটা অবজেক্টে রূপান্তরিত করি এবং একে একে অ্যারের ক্ষেত্রে যে যে অপারেশন করেছি সেই সেই অপারেশন করার চেষ্টা করি।</p>
+<pre><code class="language-js">const students = {
+    '67de71e5-0eac-474f-ab51-850ba9b31ed5': {
+        id: '67de71e5-0eac-474f-ab51-850ba9b31ed5',
+        name: 'Md Al-Amin',
+        email: 'alamin@test.com',
+    },
+    'ebdf6b78-c32b-4b1d-8574-e8c655b05c1e': {
+        id: 'ebdf6b78-c32b-4b1d-8574-e8c655b05c1e',
+        name: 'Akib Ahmed',
+        email: 'akib@test.com',
+    },
+    'ee729e84-a84e-4adf-b32c-4647a7114d5b': {
+        id: 'ee729e84-a84e-4adf-b32c-4647a7114d5b',
+        name: 'Elias Emon',
+        email: 'elias@test.com',
+    },
+};
+</code></pre>
+<p>আমাদের অবজেক্ট রেডি। এবার আমরা অপারেশনগুলো দেখি এক এক করে।</p>
+<ul>
+<li>Create a new one</li>
+</ul>
+<p>অ্যারেতে আমরা সহজেই push মেথড ইউজ করে ডাটা ইনসার্ট করেছিলাম। কিন্তু অবজেক্টে তো এরকম কিছু নেই। তাহলে আমরা কিভাবে এই অপারেশন চালাবো। দেখি একটু কিভাবে করা যায়।</p>
+<pre><code class="language-js">const std = {
+    id: uuidv4(),
+    name: 'Feroz Khan',
+    email: 'feroz@test.com',
+};
+
+students[std.id] = std;
+</code></pre>
+<p>একটাই উপায়। এবং সবচেয়ে সহজ উপায়। এই উপায়ে আপনি যতো চান ততো ডাটা ক্রিয়েট করতে পারবেন। খুব সহজ। আর এর কমপ্লেক্সিটি হলো O(1)।</p>
+<ul>
+<li>Update</li>
+</ul>
+<p>যেহেতু এটা অ্যারে না সেহেতু এখানে find বা findIndex কিছুই কাজ করবে না। তাহলে কিভাবে আপডেট করবো। খুব সহজ। চলুন দেখা যাক।</p>
+<pre><code class="language-js">const idToBeUpdated = 'ee729e84-a84e-4adf-b32c-4647a7114d5b';
+const updatedData = {
+    name: 'HM Azizul',
+    email: 'azizul@test.com',
+};
+students[idToBeUpdated] = {
+    ...students[idToBeUpdated],
+    ...updatedData,
+};
+</code></pre>
+<p>এখন যদি আপনি প্রোগ্রাম রান করান দেখবেন আপনার ডাটা আপডেট হয়ে গেছে। কিন্তু যেহেতু এখানে কোনো ধরণের বিল্ট-ইন মেথড লাগেনি তাই এর কমপ্লেক্সিটি হবে O(1)।</p>
+<ul>
+<li>Delete</li>
+</ul>
+<p>অবজেক্ট থেকে ডিলিট করা খুব সহজ।মানে এত সহজ হওয়া সম্ভব না। জাস্ট একটা কীওয়ার্ড ব্যবহার করলে ডিলিট হয়ে যাবে।</p>
+<pre><code class="language-js">delete students[idToBeUpdated];
+</code></pre>
+<p>কাজ শেষ। কমপ্লেক্সিটি O(1)।</p>
+<ul>
+<li>Get anything if you have the key</li>
+</ul>
+<p>যদি আমাদের কোনো অবজেক্টের কী জানা থাকে তাহলে ১ সেকেন্ডের মধ্যে আমরা সেই অবজেক্টকে পেয়ে যাবো। কিভাবে&gt; দেখুন তাহলে-</p>
+<pre><code class="language-js">console.log(students['67de71e5-0eac-474f-ab51-850ba9b31ed5']);
+</code></pre>
+<p>জাস্ট এটুকুই। আর এটার কমপ্লেক্সিটিও O(1)।</p>
+<ul>
+<li>Traverse</li>
+</ul>
+<p>আমরা for in লুপ ব্যবহার করে খুব সহজেই অবজেক্ট ট্রাভার্স করতে পারি। যেমন যদি আমরা অবজেক্টে থাকা সবার নাম বের করে আনতে চাই তাহলে কিভাবে করবো?</p>
+<pre><code class="language-js">for (let key in students) {
+    console.log(students[key].name);
+}
+</code></pre>
+<p>কিন্তু এটা একটা ইম্পেরেটিভ ওয়ে। আমরা যখন রিয়্যাক্ট নিয়ে কাজ করবো তখন jsx এ কিন্তু for in ব্যবহার করতে পারবো না। আমাদের দরকার একটা ডিক্লারেটিভ ওয়ে। সেটার জন্য আমরা অবজেক্টের আলোচনায় দুইটা মেথডের কথা বলেছিলাম। একটা ছিল <code>Object.keys()</code> এবং অন্যটা হলো <code>Object.values()</code>। চলুন দেখি এগুলো কিভাবে অ্যাপ্লাই করতে পারি।</p>
+<pre><code class="language-js">Object.keys(students).forEach((key) =&gt; {
+    const student = students[key];
+    console.log(student.name);
+});
+</code></pre>
+<p>এখানে key না নিয়েও আমরা সরাসরি value নিয়ে কাজ করতে পারতাম। যেমন</p>
+<pre><code class="language-js">Object.values(students).forEach((student) =&gt; {
+    console.log(student.name);
+});
+</code></pre>
+<p>এটার মাধ্যমে আমরা অবজেক্ট থেকে অ্যারে বানিয়ে অ্যারের সমস্ত কাজ আমরা করতে পারি। এতে কিন্তু আমাদের কোনো এক্সট্রা মেমোরি লাগছে না। কারণ আমরা এটাকে কোথাও স্টোর করে রাখছি না। এটা তার কাজ শেষ করে গার্বেজ কালেক্ট করে ক্লিয়ার করে ফেলবে।</p>
+<p>তাহলে দেখা যাচ্ছে যে যে কাজ আমরা অ্যারে দিয়ে করতে পারতাম সেগুলো আমরা অবজেক্ট দিয়েও করতে পারি। এবং অনেক ক্ষেত্রে অনেক সহজেই করতে পারি।</p>
+<h2 id="comparison-of-object-and-array-operation-costs">Comparison of object and array operation costs</h2>
+<pre><code class="language-js">const arr = [];
+const arrToObj = {};
+for (let i = 0; i &lt; 5000000; i++) {
+    const o = {
+        id: i,
+        value: i,
+    };
+    arr.push(o);
+    arrToObj[i] = o;
+}
+
+console.time('array');
+let id = 4999999;
+const obj = arr.find((item) =&gt; item.id === id);
+obj.value = 555;
+console.timeEnd('array'); // 104.901ms
+
+console.time('obj');
+arrToObj[id].value = 999;
+console.timeEnd('obj'); // 0.019ms
+</code></pre>
+<p>অ্যারের অপারেশনে সময় লেগেছে ১০৪.৯০১ মিলিসেকেন্ড আর অবজেক্টের অপারেশনে লেগেছে ০.০১৯ মিলিসেকেন্ড।</p>
+<pre><code class="language-js">console.time('array');
+arr.unshift({
+    id: 5000000,
+    value: 5000000,
+});
+console.timeEnd('array'); // 15.084ms
+
+console.time('obj');
+arrToObj[5000000] = {
+    id: 5000000,
+    value: 5000000,
+};
+console.timeEnd('obj'); // 0.018ms
+</code></pre>
+<p>অ্যারের জন্য লেগেছে ১৫.০৮৪ মিলিসেকেন্ড আর অবজেক্টের ক্ষেত্রে লেগেছে ০.০১৮ মিলিসেকেন্ড।</p>
+<pre><code class="language-js">console.time('array');
+const index = arr.findIndex((item) =&gt; item.id === 4000000);
+arr.splice(index, 1);
+console.timeEnd('array'); // 93.135ms
+
+console.time('obj');
+delete arrToObj[4000000];
+console.timeEnd('obj'); // 0.015ms
+</code></pre>
+<p>অ্যারের ক্ষেত্রে লেগেছে ৯৩.১৩৫ মিলিসেকেন্ড আর অবজেক্টের ক্ষেত্রে লেগেছে ০.০১৫ মিলিসেকেন্ড।</p>
+<p>সবক্ষেত্রে দেখা যাচ্ছে তাহলে অবজেক্ট বিজয়ী। তবে কিছু কিছু ক্ষেত্রে অ্যারে নিয়ে কাজ করা লাগে। যেমন যখন আমার অর্ডারড ডাটা লাগবে, অর্থাৎ সিকোয়েন্স মেইনটেইন করতে হবে তখন অ্যারে মাস্ট।</p>
+<h2 id="resource-for-this-lecture">Resource for this lecture</h2>
+<p>এই লেকচারের সমস্ত রিসোর্স <a href="../../resources/lecture-05/">লেকচার ৫</a> এবং <a href="../../resources/lecture-06/">লেকচার ৬</a> এ পাবেন।</p>
+<h2 id="author">AUTHOR</h2>
+<p><a href="https://github.com/adityackr">Aditya Chakraborty</a></p>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../Lecture-04/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lecture 04 - Programming Fundamentals using JavaScript" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Lecture 04 - Programming Fundamentals using JavaScript
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Lecture-07/" class="md-footer__link md-footer__link--next" aria-label="Next: Lecture 7 - QNA 1 - Don&#39;t Miss The Last Part" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Lecture 7 - QNA 1 - Don't Miss The Last Part
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
