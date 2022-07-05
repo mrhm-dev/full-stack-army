@@ -1,0 +1,4297 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Create a branded static site from a set of Markdown files to host the documentation of your Open Source or commercial project">
+      
+      
+        <meta name="author" content="Martin Donath">
+      
+      
+        <link rel="canonical" href="https://squidfunk.github.io/Class%20Overview/Fundamentals/03.Programming%20Language%20Foundation/Overview/">
+      
+      <link rel="icon" href="../../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Overview - Full Stack Army</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind+Siliguri:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Hind Siliguri";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="pink">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lecture-3-programming-language-foundation-a-bigger-landscape" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Full Stack Army" class="md-header__button md-logo" aria-label="Full Stack Army" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Full Stack Army
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mrhm-dev/full-stack-army.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mrhm-dev/full-stack-army
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../.." class="md-tabs__link">
+      FullStack Army - The Most Advanced MERN Stack Resources
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../" class="md-tabs__link md-tabs__link--active">
+        Class Overview
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../articles/" class="md-tabs__link">
+        Articles
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../examples/" class="md-tabs__link">
+        Examples
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../live-classes/" class="md-tabs__link">
+        Live classes
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../projects/" class="md-tabs__link">
+        Projects
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../references/" class="md-tabs__link">
+        References
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../resources/" class="md-tabs__link">
+        Resources
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../src/" class="md-tabs__link">
+        Src
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../timestamp/Class%20-%207/" class="md-tabs__link">
+        Timestamp
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Full Stack Army" class="md-nav__button md-logo" aria-label="Full Stack Army" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    Full Stack Army
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mrhm-dev/full-stack-army.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mrhm-dev/full-stack-army
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        FullStack Army - The Most Advanced MERN Stack Resources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../">Class Overview</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Class Overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Class Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Fundamentals
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Fundamentals" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Fundamentals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1" type="checkbox" id="__nav_2_2_1" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_1">
+          01.Welcome Decision Making
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="01.Welcome Decision Making" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          01.Welcome Decision Making
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.Welcome%20Decision%20Making/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.Welcome%20Decision%20Making/resource/" class="md-nav__link">
+        Resource
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_2">
+          02.We Need Freedom, We have to Stop Technology War
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="02.We Need Freedom, We have to Stop Technology War" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          02.We Need Freedom, We have to Stop Technology War
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02.We%20Need%20Freedom%2C%20We%20have%20to%20Stop%20Technology%20War/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02.We%20Need%20Freedom%2C%20We%20have%20to%20Stop%20Technology%20War/resource/" class="md-nav__link">
+        Resource
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" type="checkbox" id="__nav_2_2_3" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_3">
+          03.Programming Language Foundation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="03.Programming Language Foundation" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          03.Programming Language Foundation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Overview
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lecture-3-programming-language-foundation-a-bigger-landscape" class="md-nav__link">
+    Lecture 3 - Programming Language Foundation - A Bigger Landscape
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programming-language-landscaping" class="md-nav__link">
+    Programming Language Landscaping
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualize-programming-syntax" class="md-nav__link">
+    Visualize Programming Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weird-language" class="md-nav__link">
+    জাভাস্ক্রিপ্টকে Weird Language বলার কারণ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    ফাংশন আমরা কেন ব্যবহার করবো
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    শেষ কথা
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-for-this-lecture" class="md-nav__link">
+    Resource for this lecture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    AUTHOR
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource/" class="md-nav__link">
+        Resource
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_4" type="checkbox" id="__nav_2_2_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_4">
+          04.Programming Language Foundation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="04.Programming Language Foundation" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          04.Programming Language Foundation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04.Programming%20Language%20Foundation/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04.Programming%20Language%20Foundation/resource/" class="md-nav__link">
+        Resource
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_5" type="checkbox" id="__nav_2_2_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_5">
+          05.Array Operations   Imperative vs Declarative
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="05.Array Operations   Imperative vs Declarative" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          05.Array Operations   Imperative vs Declarative
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05.Array%20Operations%20-%20Imperative%20vs%20Declarative/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05.Array%20Operations%20-%20Imperative%20vs%20Declarative/resource/" class="md-nav__link">
+        Resource
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_5_3" type="checkbox" id="__nav_2_2_5_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_5_3">
+          Source Code
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Source Code" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_2_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Source Code
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05.Array%20Operations%20-%20Imperative%20vs%20Declarative/Source%20Code/SourceCode/" class="md-nav__link">
+        SourceCode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05.Array%20Operations%20-%20Imperative%20vs%20Declarative/Source%20Code/task/" class="md-nav__link">
+        Task
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_5_3_3" type="checkbox" id="__nav_2_2_5_3_3" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_5_3_3">
+          Array Traverse
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Array Traverse" data-md-level="5">
+        <label class="md-nav__title" for="__nav_2_2_5_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Array Traverse
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05.Array%20Operations%20-%20Imperative%20vs%20Declarative/Source%20Code/Array%20Traverse/SourceCode/" class="md-nav__link">
+        SourceCode
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_6" type="checkbox" id="__nav_2_2_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_6">
+          06.JavaScript Array and Object Deep Dive
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="06.JavaScript Array and Object Deep Dive" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          06.JavaScript Array and Object Deep Dive
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06.JavaScript%20Array%20and%20Object%20Deep%20Dive/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06.JavaScript%20Array%20and%20Object%20Deep%20Dive/resource/" class="md-nav__link">
+        Resource
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_6_3" type="checkbox" id="__nav_2_2_6_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_6_3">
+          Source Code
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Source Code" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_2_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Source Code
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06.JavaScript%20Array%20and%20Object%20Deep%20Dive/Source%20Code/SourceCode/" class="md-nav__link">
+        SourceCode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06.JavaScript%20Array%20and%20Object%20Deep%20Dive/Source%20Code/task/" class="md-nav__link">
+        Task
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_6_3_3" type="checkbox" id="__nav_2_2_6_3_3" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_6_3_3">
+          Array Traverse
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Array Traverse" data-md-level="5">
+        <label class="md-nav__title" for="__nav_2_2_6_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Array Traverse
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06.JavaScript%20Array%20and%20Object%20Deep%20Dive/Source%20Code/Array%20Traverse/SourceCode/" class="md-nav__link">
+        SourceCode
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_7" type="checkbox" id="__nav_2_2_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_7">
+          07. QNA 1   Don't Miss The Last Part
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="07. QNA 1   Don't Miss The Last Part" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          07. QNA 1   Don't Miss The Last Part
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07.%20QNA%201%20-%20Don%27t%20Miss%20The%20Last%20Part/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07.%20QNA%201%20-%20Don%27t%20Miss%20The%20Last%20Part/resource/" class="md-nav__link">
+        Lecture 7 - QNA 1 - Don't Miss The Last Part
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_8" type="checkbox" id="__nav_2_2_8" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_8">
+          08.Understand JavaScript Functions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="08.Understand JavaScript Functions" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          08.Understand JavaScript Functions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08.Understand%20JavaScript%20Functions/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08.Understand%20JavaScript%20Functions/Resources/" class="md-nav__link">
+        Resources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08.Understand%20JavaScript%20Functions/SourceCode/" class="md-nav__link">
+        SourceCode
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_9" type="checkbox" id="__nav_2_2_9" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_9">
+          09. Functional Programming in JavaScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="09. Functional Programming in JavaScript" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          09. Functional Programming in JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09.%20Functional%20Programming%20in%20JavaScript/OverView/" class="md-nav__link">
+        OverView
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09.%20Functional%20Programming%20in%20JavaScript/Resource/" class="md-nav__link">
+        Resource
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09.%20Functional%20Programming%20in%20JavaScript/SourceCode/" class="md-nav__link">
+        SourceCode
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-10/">Lecture 10</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 10" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-11/">Lecture 11</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 11" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 11
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-12/">Lecture 12</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 12" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 12
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-13/">Lecture 13</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 13" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 13
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-14/">Lecture 14</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 14" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 14
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-15/">Lecture 15</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 15" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 15
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-16/">Lecture 16</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 16" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 16
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-17/">Lecture 17</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 17" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 17
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_11" type="checkbox" id="__nav_2_11" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-18/">Lecture 18</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 18" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_11">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 18
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_12" type="checkbox" id="__nav_2_12" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-19/">Lecture 19</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 19" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_12">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 19
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_13" type="checkbox" id="__nav_2_13" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-20/">Lecture 20</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 20" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_13">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 20
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_14" type="checkbox" id="__nav_2_14" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-21/">Lecture 21</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 21" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_14">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 21
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_15" type="checkbox" id="__nav_2_15" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-23/">Lecture 23</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 23" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_15">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 23
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_16" type="checkbox" id="__nav_2_16" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-24/">Lecture 24</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 24" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_16">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 24
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_17" type="checkbox" id="__nav_2_17" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-25/">Lecture 25</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 25" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_17">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 25
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_18" type="checkbox" id="__nav_2_18" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-26/">Lecture 26</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 26" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_18">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 26
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_19" type="checkbox" id="__nav_2_19" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-27/">Lecture 27</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 27" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_19">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 27
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_20" type="checkbox" id="__nav_2_20" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-28/">Lecture 28</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 28" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_20">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 28
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_21" type="checkbox" id="__nav_2_21" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Lecture-29/">Lecture 29</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 29" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_21">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 29
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../articles/">Articles</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Articles" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Articles
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../articles/application-requirements-and-landscape/">Application requirements and landscape</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Application requirements and landscape" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Application requirements and landscape
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../articles/understand-programming-languages/">Understand programming languages</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Understand programming languages" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Understand programming languages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../articles/we-need-freedom/">We need freedom</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="We need freedom" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          We need freedom
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../examples/">Examples</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Examples" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Icon box
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Icon box" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Icon box
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/icon-box/REDME/" class="md-nav__link">
+        Dependency
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../live-classes/">Live classes</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Live classes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Live classes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../projects/">Projects</a>
+          
+            <label for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Projects" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6_2">
+          Raffle draw
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Raffle draw" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Raffle draw
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../projects/raffle-draw/requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../references/">References</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="References" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../resources/">Resources</a>
+          
+            <label for="__nav_8">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Resources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" type="checkbox" id="__nav_8_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../resources/lecture-0/">Lecture 0</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 0" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3" type="checkbox" id="__nav_8_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../resources/lecture-10/">Lecture 10</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 10" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_3">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_4" type="checkbox" id="__nav_8_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../resources/lecture-11/">Lecture 11</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 11" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_4">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 11
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_5" type="checkbox" id="__nav_8_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../resources/lecture-12/">Lecture 12</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 12" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_5">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 12
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_6" type="checkbox" id="__nav_8_6" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../resources/lecture-13/">Lecture 13</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 13" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_6">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 13
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_7" type="checkbox" id="__nav_8_7" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../resources/lecture-14/">Lecture 14</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 14" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_7">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 14
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_8" type="checkbox" id="__nav_8_8" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../resources/lecture-15/">Lecture 15</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 15" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_8">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 15
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_9" type="checkbox" id="__nav_8_9" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../resources/lecture-16/">Lecture 16</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 16" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_9">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 16
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_10" type="checkbox" id="__nav_8_10" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../resources/lecture-17/">Lecture 17</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 17" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_10">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 17
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_11" type="checkbox" id="__nav_8_11" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../resources/lecture-18/">Lecture 18</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 18" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_11">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 18
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_12" type="checkbox" id="__nav_8_12" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../resources/lecture-19/">Lecture 19</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 19" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_12">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 19
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_13" type="checkbox" id="__nav_8_13" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../resources/lecture-20/">Lecture 20</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 20" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_13">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 20
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_14" type="checkbox" id="__nav_8_14" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../resources/lecture-22/">Lecture 22</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Lecture 22" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_14">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 22
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../src/">Src</a>
+          
+            <label for="__nav_9">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Src" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Src
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" type="checkbox" id="__nav_9_2" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9_2">
+          Lecture 05
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 05" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_2">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../src/lecture-05/task/" class="md-nav__link">
+        Task
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3" type="checkbox" id="__nav_9_3" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9_3">
+          Lecture 29
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lecture 29" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_3">
+          <span class="md-nav__icon md-icon"></span>
+          Lecture 29
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3_1" type="checkbox" id="__nav_9_3_1" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9_3_1">
+          React app
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="React app" data-md-level="3">
+        <label class="md-nav__title" for="__nav_9_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          React app
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3_1_1" type="checkbox" id="__nav_9_3_1_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../src/lecture-29/react-app/first-app/">First app</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="First app" data-md-level="4">
+        <label class="md-nav__title" for="__nav_9_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          First app
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9_4">
+          Raffle draw
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Raffle draw" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_4">
+          <span class="md-nav__icon md-icon"></span>
+          Raffle draw
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../src/raffle-draw/requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Timestamp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Timestamp" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Timestamp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../timestamp/Class%20-%207/" class="md-nav__link">
+        Class   7
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../timestamp/Class%20-%208/" class="md-nav__link">
+        Class   8
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../timestamp/Class%20-%209/" class="md-nav__link">
+        Class   9
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../timestamp/Class%2010/" class="md-nav__link">
+        Class 10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../timestamp/class%20-%200/" class="md-nav__link">
+        Class   0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../timestamp/class%20-%201/" class="md-nav__link">
+        Class   1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../timestamp/class%20-%204/" class="md-nav__link">
+        Class   4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../timestamp/class%20-%205/" class="md-nav__link">
+        Class   5
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lecture-3-programming-language-foundation-a-bigger-landscape" class="md-nav__link">
+    Lecture 3 - Programming Language Foundation - A Bigger Landscape
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programming-language-landscaping" class="md-nav__link">
+    Programming Language Landscaping
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualize-programming-syntax" class="md-nav__link">
+    Visualize Programming Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weird-language" class="md-nav__link">
+    জাভাস্ক্রিপ্টকে Weird Language বলার কারণ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    ফাংশন আমরা কেন ব্যবহার করবো
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    শেষ কথা
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-for-this-lecture" class="md-nav__link">
+    Resource for this lecture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    AUTHOR
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/mrhm-dev/full-stack-army.git/edit/master/docs/Class Overview/Fundamentals/03.Programming Language Foundation/Overview.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+  <h1>Overview</h1>
+
+<h2 id="lecture-3-programming-language-foundation-a-bigger-landscape">Lecture 3 - Programming Language Foundation - A Bigger Landscape<a class="headerlink" href="#lecture-3-programming-language-foundation-a-bigger-landscape" title="Permanent link">&para;</a></h2>
+<p>আজকের লেকচারটা আগের দুইটার তুলনায় অনেক গুরুত্বপূর্ণ হতে যাচ্ছে। কারণ আজ আমরা আমাদের অস্ত্র রেডি করতে যাচ্ছি। ডেভেলপমেন্টে আমাদের অস্ত্র কি হতে পারে? একটু ভাবুন তো। অবশ্যই ল্যাঙ্গুয়েজ। গত ক্লাসে সব প্রোগ্রামিং ল্যাঙ্গুয়েজ নিয়ে একটা আলোচনা করা হয়েছিল। আমরা বুঝতে পেরেছিলাম যে কোনো ল্যাঙ্গুয়েজ কেউ কারো শত্রু না। আজকে আমরা আরেকটা বড় ল্যান্ডস্কেপ নিয়ে আলোচনা করবো। এই ল্যান্ডস্কেপ যদি মাথায় বসিয়ে ফেলা যায় তাহলে যেকোনো ল্যাঙ্গুয়েজ খুব সহজ মনে হবে।</p>
+<p>যেকোনো কিছু শিখতে গেলে আগে পুরোটা ম্যাপ করে ফেলে এরপর অল্প অল্প করে শেখা উচিৎ। মানে আপনি যা শিখতে চাইছেন তা সেক্টরে সেক্টরে ক্লাসিফাই করে ফেলুন। এটা যদি করতে পারেন তাহলে আপনার জন্য যেকোনো কিছু শেখা সহজ হয়ে যাবে।</p>
+<p>আজ আমাদের কাজ হলো কিভাবে সহজে নতুন নতুন টেকনোলজি শেখা যায়। আমাদের আজকের এজেন্ডা হলো:</p>
+<ul>
+<li>Programming Language Landscaping</li>
+<li>Visualize Programming Syntax</li>
+</ul>
+<h2 id="programming-language-landscaping">Programming Language Landscaping<a class="headerlink" href="#programming-language-landscaping" title="Permanent link">&para;</a></h2>
+<p>এই টপিক বুঝার জন্য আমাদের নিচের ডায়াগ্রামটা বুঝতে হবে।</p>
+<p><img alt="Programming Language Landscaping" src="../Programming%20Language%20Landscape.png" /></p>
+<p>প্রোগ্রামিং ল্যাঙ্গুয়েজের কি কি জিনিস আছে? এই প্রশ্নটা যদি করা হয় আর সব উত্তর যদি লিস্ট করা হয় তাহলে এর শুরু এবং শেষ খুঁজে পাওয়া যাবে না। সেক্ষেত্রে প্রতিটা জিনিস যদি আমি ক্যাটাগরিতে ভাগ করে ফেলতে পারি তাহলে আমাদের জন্য রোডম্যাপ তৈরি করাটা সহজ হয়ে যাবে। একটা প্রোগ্রামিং ল্যাঙ্গুয়েজের কোর কম্পোনেন্ট মূলত ৩টি। কোর কম্পোনেন্ট মানে হলো যা ছাড়া প্রোগ্রামিং ল্যাঙ্গুয়েজ কল্পনা করা যায় না। এই ৩টি কম্পোনেট হলো:</p>
+<ul>
+<li>
+<p><strong>ইনপুটঃ</strong> ইনপুট অনেকভাবে দেয়া যায়। আমি কীবোর্ডে কিছু লিখছি সেটা ইনপুট, ফর্ম সাবমিট ইনপুট, ব্রাউজারে কিছু সার্চ করা ইনপুট। প্রোগ্রামিং ল্যাঙ্গুয়েজে অসংখ্য ইনপুট থাকতে পারে। কিন্তু আমরা যখন ল্যাঙ্গুয়েজ শেখা শুরু করবো আমাদের বাছাই করে নিতে হবে স্ট্যান্ডার্ড ইনপুট কোনটা। এর মানে হলো আমাদের টার্মিনাল ওপেন থাকবে, আমরা কীবোর্ড দিয়ে ইনপুট দিবো। একেই বলে স্ট্যান্ডার্ড ইনপুট।</p>
+</li>
+<li>
+<p><strong>প্রসেসিংঃ</strong> ইনপুট দেয়ার পর কোনো না কোনোভাবে সেটা প্রসেসিং করবে। এই কাজটা অনেক বড়। এই প্রসেসিংকে আবার দুই ভাগে ভাগ করা যায়ঃ</p>
+</li>
+<li>
+<p><strong>ফাউন্ডেশনালঃ</strong> একটা অ্যাপ্লিকেশনের মেইন প্রব্লেম সলভ করার জন্য যা যা লাগে তাদের এই ক্যাটাগরিতে ফেলা হয়। এখানে কিছু গুরুত্বপূর্ন টপিক আছে।</p>
+<ul>
+<li>
+<p><strong>ভ্যারিয়েবলঃ</strong> একটা প্রোগ্রামিং ল্যাঙ্গুয়েজের অন্যতম গুরুত্বপূর্ণ বিষয় হলো ভ্যারিয়েবল। এটাকে আমরা তেমন একটা পাত্তা দিই না, কিন্তু এটা খুবই গুরুত্বপূর্ণ কোথায় ভ্যারিয়েবল নিতে হবে কোথায় নিতে হবে না। কোনো অপ্রয়োজনীয় ভ্যারিয়েবল নিলে হবে না, কারণ মেমোরি লিক হওয়ার চান্স থাকে। তাই এই টপিকটা বুঝার ব্যাপার আছে।</p>
+</li>
+<li>
+<p><strong>স্টেটমেন্ট / এক্সপ্রেশনঃ</strong></p>
+</li>
+<li>
+<p><strong>অপারেটরঃ</strong></p>
+</li>
+<li>
+<p><strong>লজিকঃ</strong> এর মধ্যে লজিক্যাল অপারেশন্স বা লজিক বিল্ডিং যেমন কন্ডিশন, লুপ এসব কিছুই চলে যায়।</p>
+</li>
+<li>
+<p><strong>ফাংশনঃ</strong> কোড পুনরায় ব্যবহার করার জন্য এটা খুবই অসাধারণ কম্পোনেন্ট। এই বিষয়ে আমরা বিস্তারিত জানবো।</p>
+</li>
+<li>
+<p><strong>অ্যারে, কী-ভ্যালু পেয়ার ডাটা স্ট্রাকচারঃ</strong> অনেক ধরণের ডাটা স্ট্রাকচার আছে। কিন্তু সবগুলো প্রব্লেম সলভ করতে লাগে না। কিন্তু দুইটা ডাটা স্ট্রাকচার আছে যেগুলো ছাড়া প্রব্লেম সলভ কল্পনাই করা যায় না। প্রতিটা প্রোগ্রামিং ল্যাঙ্গুয়েজ এই দুইটা ডাটা স্ট্রাকচার বাই ডিফল্ট দিয়ে দেয়। বাকিগুলো অনেক কমপ্লেক্স, সেটা আমাদের প্রয়োজনে আমরা ইমপ্লিমেন্ট করে থাকি। এই দুইটা ডিএসের মধ্যে একটা হলো অ্যারে। দ্য মোস্ট ইগ্নোরড ডাটা স্ট্রাকচার। অ্যারে যে একটা ডাটা স্ট্রাকচার এটা আমরা অনেকেই জানিনা। আপনি যদি <a href="https://www.geeksforgeeks.org/array-data-structure/">Array Data Structure - GeeksForGeeks</a> লিংকে যান, তাহলে দেখবেন এক অ্যারে নিয়ে কি পরিমাণ অ্যালগরিদম আছে। এগুলো আমাদের জানা লাগবে। আরেকটা ডাটা স্ট্রাকচার যেটা হলো কী-ভ্যালু পেয়ার। অ্যারে এবং কী-ভ্যালু পেয়ার একে অন্যের পরিপূরক। অ্যারেতে আমরা নাম দিতে পারি না, ইনডেক্স ধরে ধরে কাজ করতে হয়। কিন্তু কী-ভ্যালু পেয়ারে আমরা ডেটার নামকরণ করতে পারি। এটা জাভাস্ক্রিপ্টে বলে অবজেক্ট, সি তে বলে স্ট্রাকচার, পাইথনে বলে ডিকশনারি, ডার্টে বলে ম্যাপ, জাভাতে একটু ডিফারেন্ট যেহেতু অবজেক্ট অরিয়েন্টেড ল্যাঙ্গুয়েজে তাই ক্লাস তৈরি করে দুইটা কী আর ভ্যালু দিয়ে দিলেই কী-ভ্যালু পেয়ার হয়ে যাচ্ছে। এদের মধ্যে সবচেয়ে শক্তিশালী হলো জাভাস্ক্রিপ্টের অবজেক্ট। সব ল্যাঙ্গুয়েজে কী-ভ্যালু পেয়ারের মধ্যে কিছু কিছু ভিন্নতা আছে। কিন্তু যেটা মূল ব্যাপার, সেটা হলো কী এবং ভ্যালু থাকবে।</p>
+</li>
+</ul>
+<p>এই যে ছয়টা কম্পোনেন্ট দেখছেন এগুলো হলো পাজল। পৃথিবীতে যতো ছোট বড় অ্যাপ্লিকেশন আছে সব তৈরি করা হয়েছে এগুলো দিয়ে। এদের মধ্যে লাস্টেরটা প্রয়োজনভেদে অ্যাডভান্স ডাটা স্ট্রাকচার দিয়ে রিপ্লেস করা যায়। কিন্তু প্রথম ৫টা রিপ্লেসের কোনো সুযোগ নেই।</p>
+<p>সি এর যে চাইল্ড ল্যাঙ্গুয়েজগুলো আছে যেমন সি++, জাভা, জাভাস্ক্রিপ্ট, পিএইচপি এগুলোতে সিনট্যাক্স অনেক কাছাকাছি। ফাউন্ডেশনাল কম্পোনেন্টগুলো ল্যাঙ্গুয়েজ ভেদে শুধু সিনট্যাক্সে ভিন্ন হয়। অন্য কোনো থট প্রসেসে ভিন্ন হয় না। থট প্রসেস একই। শুধুমাত্র সিনট্যাক্স আলাদা।</p>
+</li>
+<li>
+<p><strong>স্ট্রাকচারালঃ</strong> কোড লেখার চেয়ে কোড বছরের পর বছর ধরে মেইনটেইন করাটা হচ্ছে সবচাইতে কঠিন কাজ। একটা অ্যাপ্লিকেশন যদি সুন্দরভাবে স্ট্রাকচার করা না যায় তাহলে সেটা মেইনটেইন করা দুরূহ ব্যাপার হয়ে যাবে। সেই স্ট্রাকচারাল প্রব্লেম সলভ করার জন্য আমরা এই স্ট্রাকচারাল প্রসেসিং ব্যবহার করি। এতে আছে</p>
+<ul>
+<li>OOP: এটা ল্যাঙ্গুয়েজ স্পেসিফিক বিষয় না। গত ক্লাসে আমরা এটা নিয়ে বিষদ আলোচনা করেছিলাম। এটা একটা থিওরাম। যদিও সি অবজেক্ট অরিয়েন্টেড প্রোগ্রামিং ল্যাঙ্গুয়েজ না, কিন্তু আমরা সি তে অবজেক্ট অরিয়েন্টেড থিওরি অ্যাপ্লাই করে OOP এর কাজ করতে পারি। তাহলে দেখা যাচ্ছে যে ল্যাঙ্গুয়েজ আমাকে OOP এর সাপোর্ট দিচ্ছে সেখানেও আমরা OOP ব্যবহার করতে পারছি, যেখানে সাপোর্ট দিচ্ছে না সেখানেও আমরা পারছি।</li>
+<li>Functional: এটাও কোনো ল্যাঙ্গুয়েজ স্পেসিফিক না। কারণ এটা একটা থিওরাম। আর এটা ব্যবহার করে আমরা ফাংশনকে ভ্যালু হিসেবে ইউজ করতে পারি, এবং ফাংশন দিয়েই আমরা দুনিয়ার সবকিছু বানিয়ে ফেলতে পারি। এক্ষেত্রেও যে ল্যাঙ্গুয়েজ আমাকে ফাংশনাল এর সাপোর্ট দিচ্ছে সেখানেও আমরা ফাংশনাল ব্যবহার করতে পারছি, যেখানে সাপোর্ট দিচ্ছে না সেখানেও আমরা পারছি।</li>
+<li>Design Pattern: এটা কোনো প্রোগ্রামিং ল্যাঙ্গুয়েজ ডিপেন্ডেন্ট না। যেহেতু OOP প্রোগ্রামিং ল্যাঙ্গুয়েজ ডিপেন্ডেন্ট না, আমরা OOP বিভিন্ন ওয়েতে ব্যবহার করে ডিজাইন প্যাটার্ন বানিয়ে থাকি। তাই এটিও প্রোগ্রামিং ল্যাঙ্গুয়েজ ডিপেন্ডেন্ট না।</li>
+<li>Design Principles: এটাও কোনো প্রোগ্রামিং ল্যাঙ্গুয়েজের উপর ডিপেন্ড করে না। এতে আছে SOLID (Single responsibility, Open-closed, Liskov substitution, Interface Segregation, and Dependency inversion), DRY (Don't Repeat Yourself), KISS (Keep It Simple, Stupid), YAGNI (You Aren’t Gonna Need It), SoC (Separation of Concerns), Avoid Premature Optimization, Law of Demeter, Clean Code Architecture. মোটামুটি এই ৭/৮ ধরণের প্রিন্সিপাল জানলে যেকোনো কিছু করতে পারবো। এই বিষয়গুলোর আইডিয়া পেতে এই <a href="https://www.geeksforgeeks.org/7-common-programming-principles-that-every-developer-must-follow/">লিংক</a> ভিজিট করতে পারেন।</li>
+<li>DSA: এখানে একটা প্রশ্ন আসে, ডিএসএ কোনো ল্যাঙ্গুয়েজ ব্যবহার করে শিখা বেটার। আমরা আসলে বুঝিই না ডিএসএ কি জিনিস? ডিএসএ হচ্ছে একধরণের ম্যাথমেটিক্স। গণিতের একটা শাখা আছে ডিসক্রিট ম্যাথমেটিক্স। ডাটা স্ট্রাকচার এবং অ্যালগরিদম এই শাখার অন্তর্ভুক্ত। প্রোগ্রামিং ল্যাঙ্গুয়েজ আসার অনেক আগে থেকে ডিএসএ পৃথিবীতে রয়েছে। যেকোনো ল্যাঙ্গুয়েজ ব্যবহার করেই তা প্রয়োগ করা যায়। ডাটা স্ট্রাকচার হলো আমার ডাটাকে কোনো একটা উপায়ে স্ট্রাকচার করে রাখা, যেন আমি সহজে ডাটা ইনসার্ট করতে পারি, ডাটা বের করে আনতে পারি, প্রয়োজনবোধে ডাটা আপডেট এবং ডিলিট করতে পারি। এখন কোন কাজটা করবো সেই অনুযায়ী আমরা ডাটা স্ট্রাকচার সিলেক্ট করবো। তবে একটা কথা পরিষ্কার মনে রাখতে হবে যে ডিএসএর সাথে প্রোগ্রামিং ল্যাঙ্গুয়েজের কোন সম্পর্ক নাই।</li>
+</ul>
+</li>
+</ul>
+<p>কিন্তু অ্যাপ্লিকেশনের যে মেইন প্রব্লেম সেটা সলভ করা যায় না স্ট্রাকচারাল প্রসেসিং দিয়ে। তার জন্য কিছু টপিক লাগে যেগুলোকে বলা হয় কম্পিউটার ফান্ডামেন্টালস। যেগুলো ফাউন্ডেশনাল প্রসেসিং এ আলোচনা করা হয়েছে।</p>
+<p>উপরের দুইটা কম্পোনেন্টের মধ্যে সবচেয়ে গুরুত্বপূর্ণ হলো ফাউন্ডেশনাল কম্পোনেন্ট। পৃথিবীর যত সমস্যা আছে সব সলভ করা হয়েছে এটা দিয়ে। স্ট্রাকচারাল লাগে ডেভেলপমেন্টের উদ্দেশ্যে। যতক্ষণ ফাউন্ডেশনালে আমরা কমফোর্টেবল না ততক্ষণ আমরা স্ট্রাকচারালে যাওয়া উচিৎ না। ফাউন্ডেশনালে আমরা কাজ করবো ইম্পেরেটিভ ওয়েতে।</p>
+<ul>
+<li><strong>আউটপুটঃ</strong> প্রসেসিং এর পর আমাদের কাছে একটা আউটপুট আসবে। আউটপুট হতে পারে মনিটর, জাভাস্ক্রিপ্ট ডম, প্রিন্টার, সাউন্ডবক্স ইত্যাদি। কিন্তু যখন আমরা প্রথম প্রোগ্রামিং ল্যাঙ্গুয়েজ শিখবো তখন আমরা স্ট্যান্ডার্ড আউটপুট নিয়ে কাজ করবো। পরবর্তীতে কাজ করতে করতে বাকিগুলো শিখে নিবো</li>
+</ul>
+<h2 id="visualize-programming-syntax">Visualize Programming Syntax<a class="headerlink" href="#visualize-programming-syntax" title="Permanent link">&para;</a></h2>
+<p>আমাদের প্রোগ্রাম করতে গেলে ভয় লাগে কেন? কারণ মানুষ যখন চিন্তা করে তখন সে একটা ইমেজ দিয়ে চিন্তা করে। কিন্তু প্রোগ্রামিং এর ক্ষেত্রে আমাদের ইমেজ নিয়ে চিন্তা করতে সমস্যা হয়। আমরা শুধু সিনট্যাক্স নিয়েই ভাবি। সেক্ষেত্রে সমস্ত সিনট্যাক্স আমাদের মাথায় গিয়ে প্যাঁচ খেয়ে যায়। তখন আমরা অনেক সমস্যার মধ্যে পড়ি। যদি আমরা প্রোগ্রামিং সিনট্যাক্সগুলোকে ইমেজের মতো করে কল্পনা করতে পারি তাহলে আমাদের জন্য অনেকটা সহজ হয়ে যায়। এর জন্য একটা ওয়েবসাইট আছে যার নাম <a href="https://scratch.mit.edu/">Scratch</a>। যারা বিগিনার তারা এখানে গিয়ে পাজলের মতো মিলিয়ে মিলিয়ে সুন্দরভাবে শিখতে পারবেন। এটা নিয়ে তামিম শাহরিয়ার সুবিন ভাইয়ের <a href="https://youtube.com/playlist?list=PLym69wpbTIIEkUnqkOznZfQU6lRxebpO3">Scratch Programming in Bangla</a> প্লেলিস্টটি দেখতে পারেন। যারা বিগিনার না প্রোগ্রামিং এ তাদের জন্যও স্ক্র্যাচ ভিজ্যুয়ালাইজেশনের জন্য খুব উপকারী হবে।</p>
+<h2 id="weird-language">জাভাস্ক্রিপ্টকে Weird Language বলার কারণ<a class="headerlink" href="#weird-language" title="Permanent link">&para;</a></h2>
+<p>জাভাস্ক্রিপ্টকে এমনটা বলার কারণ হলো এখানে OOP আর functional এমনভাবে আছে যেটাতে বিগিনাররা কনফিউজ হয়ে যায়। এখানে যেমন OOP এর কাজ করা যায়, তেমনি যখন মেথড লিখবো সেখানে আবার ফাংশনের সমস্ত বিষয় ব্যবহার করতে পারবো। এটা ক্লিয়ার করতে হহবে খুব ভালভাবে। আরেকটা প্রব্লেম আছে যেটা হলো সেটা হলো জাভাস্ক্রিপ্ট ডাইনামিক এবং উইকলি টাইপড ল্যাঙ্গুয়েজ। জাভাস্ক্রিপ্ট এক ডাটা টাইপকে অন্য ডাটা টাইপে কনভার্ট করার চেষ্টা করে যেটা একটা প্রব্লেম। উদাহরণস্বরূপঃ</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ab&#39;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">a</span><span class="p">));</span><span class="w"> </span><span class="c1">// NaN</span><span class="w"></span>
+</code></pre></div>
+<p>এটা যদি পাইথনে হতো সে এরর দিতো। কিন্তু জাভাস্ক্রিপ্ট সেটাকে কনভার্ট করার চেষ্টা করে, এবং ফলস্বরূপ আউটপুট দেয় <code>Nan</code>। এসব কারণে জাভাস্ক্রিপ্টকে উইয়ার্ড ল্যাঙ্গুয়েজ বলা হয়।</p>
+<h2 id="_1">ফাংশন আমরা কেন ব্যবহার করবো<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>ধরেন আমাদের একটা রিকোয়ারমেন্ট আছে দুইটা সংখ্যা যোগ করার। টোটাল ছয়টা ক্যালকুলেশন হবে এই যোগের। আমরা ইম্পেরেটিভ ওয়েতে লেখা শুরু করলাম।</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">20</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">30</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">40</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">50</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">20</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kd">let</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">30</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="kd">let</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">40</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">50</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>এরপর হঠাৎ ক্লায়েন্ট এসে বললো ভাই এখানে যে যোগ করার কথা বলেছিলাম, সেটা যোগ হবে না সেটা হবে বিয়োগ। এবার আপনি আবার বসে বসে সব চেইঞ্জ করলেন এভাবে।</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">20</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">30</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">40</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">50</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">20</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kd">let</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">30</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kd">let</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">40</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">50</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>এবার আবার ক্লায়েন্ট এসে বললো ভাই ঐ যে বলেছিলাম বিয়োগ হবে সেটা আমি ভুল করেছি। সেটা বিয়োগ হবে না, যোগই হবে কিন্তু প্রতিটা থেকে এক বিয়োগ হবে। মাথা আপনার ফায়ার। কিন্তু কিছু করার নাই আবার আপনি করলেন এভাবে।</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">20</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">40</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">50</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">20</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="kd">let</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="kd">let</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">40</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">50</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>এবার আপনি চিন্তা করলেন ক্লায়েন্ট সুবিধার না। সে এসে বিভিন্ন সময় বিভিন্ন চেইঞ্জ দিচ্ছে। আর এখানে ছয়টার জায়গায় ছয় হাজার যদি হয় তখন তো পাগল হয়ে যেতে হবে। আপনি করলেন কি বুদ্ধি করে একটা ফাংশন বানিয়ে নিলেন এভাবে।</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>আর ভ্যারিয়েবলগুলোকে লিখলেন এভাবে।</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">(</span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">(</span><span class="mf">40</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="kd">let</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">(</span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="kd">let</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">(</span><span class="mf">40</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>এবার যদি ক্লায়েন্ট এসে বলে ভাই ১ বিয়োগ হবে না। তাহলে আপনি শুধু একটা জায়গায় চেইঞ্জ করবেন। সেটা হলো ফাংশন থেকে <code>- 1</code> কেটে দিবেন। তাহলে ফাংশন দাঁড়াবে এরকম।</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>এরপর যদি সে বলে আমি আসলে চাইছি প্রতিটা সংখ্যার বর্গের যোগফল। কোনো সমস্যা নাই। ফাংশন বডি চেইঞ্জ করুন।</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>তাহলে দেখা যাচ্ছে ফাংশনের মাধ্যমে আমাদের কাজ কমে যাচ্ছে, ডিবাগিং এ সুবিধা হচ্ছে, মেইনটেইন করতে সুবিধা হচ্ছে কোড, এবং কোড রিইউজও করতে পারছি। যখন দেখবো কোনো কোড আমাদের দুইবার লিখতে হচ্ছে সেখানেই আমরা ফাংশন ইউজ করবো। যেখানেই কোড রিপিটেশন সেখানেই ফাংশন।</p>
+<p>আমাদের বিগিনারদের দুই জায়গায় মূলত প্রব্লেম হয়। একটা হচ্ছে ভ্যারিয়েবল ডিক্লেয়ার করা। আরেকটা হচ্ছে ফাংশন ডিক্লেয়ার করা। এর সমাধান হচ্ছে-</p>
+<ul>
+<li>যখনই দেখবো আমার কাছে একটা ডেটা আছে, আমরা সেই ডেটার জন্য একটা ভ্যারিয়েবল বানিয়ে ফেলবো।</li>
+<li>প্রথমে আমাদের যা কাজ আছে আমরা করতে থাকবো। করতে করতে যখন দেখবো যে একই কাজ আমরা একের অধিক করেছি, সাথে সাথে আমরা তার জন্য একটা ফাংশন লিখে ফেলবো। এখানে আমরা আমাদের অজান্তে একটা ডিজাইন প্রিন্সিপাল অ্যাপ্লাই করে ফেলেছি। সেটা হলো DRY।</li>
+</ul>
+<h2 id="_2">শেষ কথা<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>স্ট্রাকচারাল কম্পোনেন্টকে যদি ধরেন বিল্ডিং এর ডিজাইন, রঙ তাহলে ফাউন্ডেশনাল হলো ইট, বালি, সিমেন্ট, রড। আপনার বিল্ডিং যতোই সুন্দর হোক না কেন ইট, বালি, সিমেন্ট, রড যদি ভাল না হয় তাহলে সে বিল্ডিং টিকবে না। তাই আমাদের ফাউন্ডেশনাল ক্লিয়ার করেই স্ট্রাকচারালে যাওয়া উচিৎ। ফাউন্ডেশনালে কোনো ধরণের ল্যাকিংস রাখা উচিৎ না।</p>
+<h2 id="resource-for-this-lecture">Resource for this lecture<a class="headerlink" href="#resource-for-this-lecture" title="Permanent link">&para;</a></h2>
+<p>এই লেকচারের সমস্ত রিসোর্স এই <a href="../resource/">লিংক</a> এ পাবেন।</p>
+<h2 id="author">AUTHOR<a class="headerlink" href="#author" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/adityackr">Aditya Chakraborty</a></p>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../../02.We%20Need%20Freedom%2C%20We%20have%20to%20Stop%20Technology%20War/resource/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Resource" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Resource
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../resource/" class="md-footer__link md-footer__link--next" aria-label="Next: Resource" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Resource
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy;  2022 Stack Learner
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>

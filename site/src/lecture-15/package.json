@@ -1,0 +1,15 @@
+{
+	"name": "lecture-15",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"devDependencies": {
+		"nodemon": "^2.0.16"
+	},
+	"dependencies": {
+		"express": "^4.18.1"
+	},
+	"scripts": {
+		"start": "nodemon server.js"
+	}
+}
