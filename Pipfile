@@ -9,6 +9,6 @@ mkdocs-material = "*"
 [dev-packages]
 
 [requires]
-python_version = "3.10"
+python_version = "3.7"
 
 PIPENV_IGNORE_VIRTUALENVS=1
