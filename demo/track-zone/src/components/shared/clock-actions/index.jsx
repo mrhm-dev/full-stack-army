@@ -1,29 +1,64 @@
 import { useState } from 'react';
+import ClockForm from '../clock-form';
 
-const defaultOffsets = [
-	-11.5, -11, -10.5, -10, -9.5, -9, -8.5, -8, 0, 1, 2, 3, 4, 5, 5.5, 6, 6.5,
-];
-
-const ClockActions = ({ local = false, clock, updateClock }) => {
+const ClockActions = ({
+	local = false,
+	clock,
+	updateClock,
+	createClock,
+	deleteClock,
+}) => {
 	const [isEdit, setIsEdit] = useState(false);
+	const [isCreate, setIsCreate] = useState(false);
 
-	const handleChange = (e) => {
-		let { name, value } = e.target;
-		if (name === 'offset') {
-			value = parseInt(value) * 60;
-		}
-		updateClock({
-			[name]: value,
-		});
-		console.log('Timezone Changed', name, value);
+	// const handleChange = (e) => {
+	// 	let { name, value } = e.target;
+	// 	if (name === 'offset') {
+	// 		value = Number(value) * 60;
+	// 	}
+	// 	updateClock({
+	// 		[name]: value,
+	// 	});
+	// 	console.log('Timezone Changed', name, value);
+	// };
+
+	const handleClock = (values) => {
+		createClock(values);
 	};
 
 	return (
 		<div>
 			<button onClick={() => setIsEdit(!isEdit)}>Edit</button>
-			{local ? <button>Create</button> : <button>Delete</button>}
+			{local ? (
+				<button onClick={() => setIsCreate(!isCreate)}>Create</button>
+			) : (
+				<button onClick={() => deleteClock(clock.id)}>Delete</button>
+			)}
 			{isEdit && (
-				<div>
+				<>
+					<h3>Edit Clock</h3>
+					<ClockForm
+						values={clock}
+						handleClock={updateClock}
+						title={!local}
+						edit={true}
+					/>
+				</>
+			)}
+			{isCreate && (
+				<>
+					<h3>Create A New Clock</h3>
+					<ClockForm handleClock={handleClock} />
+				</>
+			)}
+		</div>
+	);
+};
+
+export default ClockActions;
+
+/*
+<div>
 					<input
 						type='text'
 						name='title'
@@ -57,9 +92,4 @@ const ClockActions = ({ local = false, clock, updateClock }) => {
 						</select>
 					)}
 				</div>
-			)}
-		</div>
-	);
-};
-
-export default ClockActions;
+*/
