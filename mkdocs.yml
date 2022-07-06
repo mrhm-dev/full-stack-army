@@ -7,7 +7,7 @@ site_description: >-
   documentation of your Open Source or commercial project
 # Repository
 repo_name: taraldinn/full-stack-army
-repo_url: https://github.com/taraldinn/full-stack-army.git
+repo_url: https://github.com/taraldinn/full-stack-army
 copyright: Copyright &copy;  2022 Stack Learner
 
 # Configuration
@@ -46,6 +46,8 @@ theme:
     - search.suggest
     - toc.follow
     - toc.integrate
+  icon:
+    repo: fontawesome/brands/git-alt 
   palette:
     - scheme: default
       primary: blue
@@ -71,26 +73,66 @@ plugins:
   - search
   - minify:
       minify_html: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - git-revision-date-localized:
+      type: date
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - git-revision-date-localized:
+        fallback_to_build_date: true
+  - git-committers:
+      repository: taraldinn/full-stack-army
+      branch: master
+      token: !ENV ["MKDOCS_GIT_COMMITTERS_APIKEY"]
 
 
+
+
+
+
+edit_uri: edit/master/docs/
 
 
 # Customization
 extra:
-  analytics:
-    provider: google
-    property: !ENV GOOGLE_ANALYTICS_KEY
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/taraldinn
-    - icon: fontawesome/brands/gitter
-      link: https://gitter.im/squidfunk/mkdocs-material
-    - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/r/squidfunk/mkdocs-material/
-    - icon: fontawesome/brands/python
-      link: https://pypi.org/project/mkdocs-material/
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/taraldinn
+    analytics: 
+      feedback:
+        title: Was this page helpful?
+        ratings:
+          - icon: material/emoticon-happy-outline
+            name: This page was helpful
+            data: 1
+            note: >-
+              Thanks for your feedback!
+          - icon: material/emoticon-sad-outline
+            name: This page could be improved
+            data: 0
+            note: >- 
+              Thanks for your feedback! Help us improve this page by
+              using our <a href="..." target=_blank>feedback form</a>.
+
+    social:
+        - icon: fontawesome/brands/github
+          link: https://github.com/taraldinn
+        - icon: fontawesome/brands/gitter
+          link: https://gitter.im/squidfunk/mkdocs-material
+        - icon: fontawesome/brands/docker
+          link: https://hub.docker.com/r/squidfunk/mkdocs-material/
+        - icon: fontawesome/brands/python
+          link: https://pypi.org/project/mkdocs-material/
+        - icon: fontawesome/brands/twitter
+          link: https://twitter.com/taraldinn
+
+
+    consent:
+      title: Cookie consent
+      description: >- 
+        We use cookies to recognize your repeated visits and preferences, as well
+        as to measure the effectiveness of our documentation and whether users
+        find what they're searching for. With your consent, you're helping us to
+        make our documentation better.
+
 
 
 
@@ -132,7 +174,7 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
-
+  
 
 extra_css:
   - stylesheets/extra.css
@@ -249,3 +291,5 @@ nav:
       - blog/2021/the-past-present-and-future.md
       - blog/2021/excluding-content-from-search.md
       - blog/2021/search-better-faster-smaller.md
+
+

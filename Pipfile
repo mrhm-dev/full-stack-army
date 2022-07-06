@@ -8,6 +8,9 @@ mkdocs-material = "*"
 mkdocs-redirects = "*"
 mkdocs-minify-plugin = "*"
 typing-extensions = "*"
+mkdocs-git-authors-plugin = "*"
+mkdocs-git-revision-date-localized-plugin = "*"
+mkdocs-git-committers-plugin-2 = "*"
 
 [dev-packages]
 
