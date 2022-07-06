@@ -73,18 +73,22 @@ plugins:
   - search
   - minify:
       minify_html: true
-  - git-revision-date-localized:
-      enable_creation_date: true
-  - git-revision-date-localized:
-      type: date
-  - git-revision-date-localized:
-      enable_creation_date: true
-  - git-revision-date-localized:
-        fallback_to_build_date: true
   - git-committers:
       repository: taraldinn/full-stack-army
       branch: master
-      token: !ENV ["MKDOCS_GIT_COMMITTERS_APIKEY"]
+      token: !!python/object/apply:os.getenv ["MKDOCS_GIT_COMMITTERS_APIKEY"]
+  # - git-revision-date-localized:
+  #     enable_creation_date: true
+  # - git-revision-date-localized:
+  #     type: date
+  # - git-revision-date-localized:
+  #     enable_creation_date: true
+  # - git-revision-date-localized:
+  #       fallback_to_build_date: true
+  # - git-committers:
+  #     repository: taraldinn/full-stack-army
+  #     branch: master
+  #     token: !ENV ["MKDOCS_GIT_COMMITTERS_APIKEY"]
 
 
 
@@ -136,6 +140,8 @@ extra:
 
 
 
+
+
 markdown_extensions:
   - abbr
   - admonition
@@ -183,8 +189,9 @@ extra_css:
 
 nav:
   - Home: index.md
-  - Getting started:
-      - Fundamental:
+  - Getting started: 
+      # Nested every section Fundamental, Frontend, Backend, Authentication
+      - Fundamental: 
           - Welcome Decision Making: 
               - Overview: ./Lectures/Fundamentals/01/Overview.md
               - Resource: Lectures/Fundamentals/01/resource.md
@@ -196,7 +203,6 @@ nav:
           - Programming Language Foundation - A Bigger Landscape: 
               - Overview: Lectures/Fundamentals/03/Overview.md
               - Resource: Lectures/Fundamentals/03/resource.md
-          
           
           - Programming Fundamentals using JavaScript: 
               - Overview: Lectures/Fundamentals/04/Overview.md
@@ -237,8 +243,60 @@ nav:
           - Create Models, Write Pseudo Code and Adda: 
               - Overview: Lectures/Fundamentals/13/Overview.md
               - Resource: Lectures/Fundamentals/13/resource.md
-            
-       
+    
+      - Backend:
+          - Course Planning and Discussion: 
+              - Overview: ./Lectures/Backend/14/Overview.md
+              - Resource: Lectures/Backend/14/resource.md
+          - Introduction to Backend Development: 
+              - Overview: ./Lectures/Backend/15/Overview.md
+              - Resource: Lectures/Backend/15/resource.md
+          - Understand Express Middleware: 
+              - Overview: ./Lectures/Backend/16/Overview.md
+              - Resource: Lectures/Backend/16/resource.md
+          - Raffle Draw Project: 
+              - Overview: ./Lectures/Backend/17/Overview.md
+              - Resource: Lectures/Backend/17/resource.md
+          - Understand The Concepts of Database: 
+              - Overview: ./Lectures/Backend/18/Overview.md
+              - Resource: Lectures/Backend/18/resource.md
+          - Adda with Random Topics: 
+              - Overview: ./Lectures/Backend/19/Overview.md
+              - Resource: Lectures/Backend/19/resource.md
+          - Start Working with Mongoose: 
+              - Overview: ./Lectures/Backend/20/Overview.md
+              - Resource: Lectures/Backend/20/resource.md
+          - QNA on Express 101 and Books: 
+              - Overview: ./Lectures/Backend/21/Overview.md
+              # - Resource: Lectures/Backend/21/resource.md
+      - Authentication:
+          - Authentication System from Pseudo Code to Real Code: 
+              - Overview: ./Lectures/Authentication/22/Overview.md
+              - Resource: Lectures/Authentication/22/resource.md
+
+          - Implement JWT and Refactor The Project Structure: 
+              - Overview: ./Lectures/Authentication/23/Overview.md
+
+          - Implement User CRUD Operations: 
+              - Overview: ./Lectures/Authentication/24/Overview.md
+
+          - QNA on 5 Recorded Courses and Motivational ADDA: 
+              - Overview: ./Lectures/Authentication/25/Overview.md
+
+          - Implement Attendance System Main Functionalities: 
+              - Overview: ./Lectures/Authentication/26/Overview.md
+      - Frontend:
+          - Frontend Core Concepts and Communication: 
+              - Overview: ./Lectures/Frontend/27/Overview.md
+              # - Resource: Lectures/Frontend/27/resource.md
+          - Frontend Course Planning & Discussion: 
+              - Overview: ./Lectures/Frontend/28/Overview.md
+              # - Resource: Lectures/Frontend/27/resource.md
+          - Understand React in A Different Way: 
+              - Overview: ./Lectures/Frontend/29/Overview.md
+              # - Resource: Lectures/Frontend/27/resource.md
+          
+      
 
   - Setup:
     - Changing the colors: setup/changing-the-colors.md
