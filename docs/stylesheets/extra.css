@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "RuhulAminX";
+    src: url("https://res.cloudinary.com/aldinn/raw/upload/v1654881987/blog/Ruhul-Amin-Unicode.woff2");
+  }
+  @font-face {
+    font-family: "Kohinoor";
+    src: url("https://res.cloudinary.com/aldinn/raw/upload/v1655044285/blog/KohinoorBangla-Medium.woff2");
+
+  }
+  :root {
+    --md-text-font: "Kohinoor";
+    --md-text-font-size: 2rem;
+
+  }
+
+  

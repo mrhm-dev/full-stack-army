@@ -5,10 +5,11 @@ name = "pypi"
 
 [packages]
 mkdocs-material = "*"
+mkdocs-redirects = "*"
+mkdocs-minify-plugin = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.7"
-
 PIPENV_IGNORE_VIRTUALENVS=1
