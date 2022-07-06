@@ -7,6 +7,7 @@ name = "pypi"
 mkdocs-material = "*"
 mkdocs-redirects = "*"
 mkdocs-minify-plugin = "*"
+typing-extensions = "*"
 
 [dev-packages]
 
