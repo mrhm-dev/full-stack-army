@@ -1,0 +1,267 @@
+# Project information
+site_name: Full Stack Army
+site_url: https://fullstackarmy.taraldinn.me/
+site_author: Stack Learner
+site_description: >-
+  Create a branded static site from a set of Markdown files to host the
+  documentation of your Open Source or commercial project
+# Repository
+
+
+repo_name: taraldinn/full-stack-army
+repo_url: https://github.com/taraldinn/full-stack-army
+edit_uri: full-stack-army/edit/master/docs
+
+
+
+copyright: Copyright &copy;  2022 Stack Learner
+
+
+extra_css:
+  - stylesheets/extra.css
+
+
+
+theme:
+  name: material
+  docs_dir: docs
+  # Static files
+  static_templates:
+    - 404.html  
+  search_index_only: true
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  features:
+    - search.highlight
+    - search.share
+    - search.suggest
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    - header.autohide
+    - navigation.indexes
+    - navigation.instant
+    - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
+
+
+  icon:
+    repo: fontawesome/brands/git-alt 
+    logo: logo
+  palette:
+    - scheme: default
+      primary: blue
+      accent: pink
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: pink
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text:  Hind Siliguri
+    code: Fira Code
+  favicon: assets/favicon.png
+
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+extra:
+
+    social:
+        - icon: fontawesome/brands/github
+          link: https://github.com/taraldinn
+        - icon: fontawesome/brands/gitter
+          link: https://gitter.im/squidfunk/mkdocs-material
+        - icon: fontawesome/brands/docker
+          link: https://hub.docker.com/r/squidfunk/mkdocs-material/
+        - icon: fontawesome/brands/python
+          link: https://pypi.org/project/mkdocs-material/
+        - icon: fontawesome/brands/twitter
+          link: https://twitter.com/taraldinn
+
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+
+
+nav:
+  - Home:
+    - index.md
+    - references.md
+    - ClassLink.md
+  - Getting started: 
+      # Nested every section Fundamental, Frontend, Backend, Authentication
+      - Fundamental: 
+          - Welcome Decision Making: 
+              - Overview: Lectures/Fundamentals/01/Overview.md
+              - Resource: Lectures/Fundamentals/01/resource.md
+
+          - We Need Freedom, We have to Stop Technology War : 
+              - Overview: Lectures/Fundamentals/02/Overview.md
+              - Resource: Lectures/Fundamentals/02/resource.md
+
+          - Programming Language Foundation - A Bigger Landscape: 
+              - Overview: Lectures/Fundamentals/03/Overview.md
+              - Resource: Lectures/Fundamentals/03/resource.md
+          
+          - Programming Fundamentals using JavaScript: 
+              - Overview: Lectures/Fundamentals/04/Overview.md
+              - Resource: Lectures/Fundamentals/04/resource.md
+
+          - Array Operations - Imperative vs Declarative: 
+              - Overview: Lectures/Fundamentals/05/Overview.md
+              - Resource: Lectures/Fundamentals/05/resource.md
+          
+          - JavaScript Array and Object Deep Dive: 
+              - Overview: Lectures/Fundamentals/06/Overview.md
+              - Resource: Lectures/Fundamentals/06/resource.md
+          
+          - QNA 1 - Don't Miss The Last Part: 
+              - Overview: Lectures/Fundamentals/07/Overview.md
+              - Resource: Lectures/Fundamentals/07/resource.md
+          
+          - Understand JavaScript Functions: 
+              - Overview: Lectures/Fundamentals/08/Overview.md
+              - Resource: Lectures/Fundamentals/08/resource.md
+          
+          - Functional Programming in JavaScript: 
+              - Overview: Lectures/Fundamentals/09/Overview.md
+              - Resource: Lectures/Fundamentals/09/resource.md
+
+          - Asynchronous Programming in JavaScript: 
+              - Overview: Lectures/Fundamentals/10/Overview.md
+              - Resource: Lectures/Fundamentals/10/resource.md
+          
+          - Async Iterator & Generator in JavaScript: 
+              - Overview: Lectures/Fundamentals/11/Overview.md
+              - Resource: Lectures/Fundamentals/11/resource.md
+          
+          - Attendance System Requirement Analysis: 
+              - Overview: Lectures/Fundamentals/12/Overview.md
+              - Resource: Lectures/Fundamentals/12/resource.md
+          
+          - Create Models, Write Pseudo Code and Adda: 
+              - Overview: Lectures/Fundamentals/13/Overview.md
+              - Resource: Lectures/Fundamentals/13/resource.md
+    
+      - Backend:
+          - Course Planning and Discussion: 
+              - Overview: Lectures/Backend/14/Overview.md
+              - Resource: Lectures/Backend/14/resource.md
+          - Introduction to Backend Development: 
+              - Overview: Lectures/Backend/15/Overview.md
+              - Resource: Lectures/Backend/15/resource.md
+          - Understand Express Middleware: 
+              - Overview: Lectures/Backend/16/Overview.md
+              - Resource: Lectures/Backend/16/resource.md
+          - Raffle Draw Project: 
+              - Overview: Lectures/Backend/17/Overview.md
+              - Resource: Lectures/Backend/17/resource.md
+          - Understand The Concepts of Database: 
+              - Overview: Lectures/Backend/18/Overview.md
+              - Resource: Lectures/Backend/18/resource.md
+          - Adda with Random Topics: 
+              - Overview: Lectures/Backend/19/Overview.md
+              - Resource: Lectures/Backend/19/resource.md
+          - Start Working with Mongoose: 
+              - Overview: Lectures/Backend/20/Overview.md
+              - Resource: Lectures/Backend/20/resource.md
+          - QNA on Express 101 and Books: 
+              - Overview: Lectures/Backend/21/Overview.md
+              # - Resource: Lectures/Backend/21/resource.md
+      - Authentication:
+          - Authentication System from Pseudo Code to Real Code: 
+              - Overview: Lectures/Authentication/22/Overview.md
+              - Resource: Lectures/Authentication/22/resource.md
+
+          - Implement JWT and Refactor The Project Structure: 
+              - Overview: Lectures/Authentication/23/Overview.md
+
+          - Implement User CRUD Operations: 
+              - Overview: Lectures/Authentication/24/Overview.md
+
+          - QNA on 5 Recorded Courses and Motivational ADDA: 
+              - Overview: Lectures/Authentication/25/Overview.md
+
+          - Implement Attendance System Main Functionalities: 
+              - Overview: ./Lectures/Authentication/26/Overview.md
+      - Frontend:
+          - Frontend Core Concepts and Communication: 
+              - Overview: ./Lectures/Frontend/27/Overview.md
+              # - Resource: Lectures/Frontend/27/resource.md
+          - Frontend Course Planning & Discussion: 
+              - Overview: ./Lectures/Frontend/28/Overview.md
+              # - Resource: Lectures/Frontend/27/resource.md
+          - Understand React in A Different Way: 
+              - Overview: ./Lectures/Frontend/29/Overview.md
+              # - Resource: Lectures/Frontend/27/resource.md
+          
+    
+  - Blog:
+    - blog/index.md
+    - 2022:
+      - blog/articles/we-need-freedom.md
+      - blog/articles/application-requirements-and-landscape.md
+      - blog/articles/understand-programming-languages.md
+
+
+  - "Hosting and Deployment":
+      - "Combinations": "hosting-and-deployment/combinations.md"
+      - "Netlify": "hosting-and-deployment/netlify.md"
+      - "GitHub Pages": "hosting-and-deployment/github-pages.md"
+      - "GitLab Pages": "hosting-and-deployment/gitlab-pages.md"
+      - "AWS Amplify Console": "hosting-and-deployment/aws-amplify-console.md"

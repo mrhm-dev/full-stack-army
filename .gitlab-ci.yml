@@ -1,0 +1,12 @@
+image:
+  name: ghcr.io/peaceiris/mkdocs-material:latest
+
+pages:
+  script:
+    - mkdocs build --config-file ./mkdocs-sample.yml
+    - mv site public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
