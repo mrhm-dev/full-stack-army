@@ -1,0 +1,118 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "**.md"
+  pull_request:
+    paths-ignore:
+      - "**.md"
+  release:
+    types: [published]
+
+jobs:
+  hadolint:
+    runs-on: ubuntu-20.04
+    container:
+      image: "ghcr.io/hadolint/hadolint:v2.4.1-alpine"
+    steps:
+      - uses: actions/checkout@v3
+      - run: hadolint ./Dockerfile
+
+  pipenv:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.8"
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pipenv
+          key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pipenv-
+
+      - run: python3 -m pip install --upgrade pip pipenv
+      - run: pipenv sync --dev
+      - run: pipenv run mkdocs build --config-file ./mkdocs-sample.yml
+
+  netlify:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.8"
+
+      - name: Upgrade pip
+        run: python3 -m pip install --upgrade pip
+
+      - name: Get pip cache dir
+        id: pip-cache
+        run: echo "::set-output name=dir::$(pip cache dir)"
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pip-cache.outputs.dir }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: python3 -m pip install -r ./requirements.txt
+
+      - run: npx netlify-cli build
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+  docker:
+    runs-on: ubuntu-20.04
+    env:
+      DOCKER_BASE_NAME: ghcr.io/peaceiris/mkdocs-material
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set env
+        run: |
+          if [ "${{ github.event_name }}" = 'release' ]; then
+            export TAG_NAME="${{ github.event.release.tag_name }}"
+          else
+            export TAG_NAME="latest"
+          fi
+          echo "PKG_TAG=${DOCKER_BASE_NAME}:${TAG_NAME}" >> ${GITHUB_ENV}
+
+      - name: Build
+        run: |
+          docker build . -t "${PKG_TAG}"
+
+      - run: docker images
+
+      - name: Get mkdocs-material version
+        id: get-version
+        run: |
+          export MKDOCS_MATERIAL_VERSION=$(docker run --rm --entrypoint=bash "${PKG_TAG}" -c 'pip show mkdocs-material | grep -E ^Version')
+          echo "::set-output name=version::${MKDOCS_MATERIAL_VERSION}"
+
+      - run: echo "${{ steps.get-version.outputs.version }}"
+
+      - name: mkdocs build
+        run: docker-compose run --rm mkdocs mkdocs build --config-file ./mkdocs-sample.yml
+
+      - name: Login to Registries
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u peaceiris --password-stdin
+
+      - name: Push to GitHub Packages
+        if: ${{ github.event_name != 'pull_request' }}
+        run: docker push "${PKG_TAG}"

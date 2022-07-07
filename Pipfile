@@ -11,9 +11,18 @@ typing-extensions = "*"
 mkdocs-git-authors-plugin = "*"
 mkdocs-git-revision-date-localized-plugin = "*"
 mkdocs-git-committers-plugin-2 = "*"
+<<<<<<< HEAD
+=======
+mkdocs-rss-plugin = "*"
+
+>>>>>>> bugfix
 
 [dev-packages]
 
 [requires]
 python_version = "3.7"
+<<<<<<< HEAD
 PIPENV_IGNORE_VIRTUALENVS=1
+=======
+PIPENV_IGNORE_VIRTUALENVS=1
+>>>>>>> bugfix

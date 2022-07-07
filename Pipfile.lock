@@ -1,7 +1,11 @@
 {
     "_meta": {
         "hash": {
+<<<<<<< HEAD
             "sha256": "9b28eebe19bdf8b84302874d23ba3c5deb6a1c90bf61c46499c8d442ec7fdd85"
+=======
+            "sha256": "37f4ce977ce4de7d1c42f37024a37986fcfa0ff3fca796b93afaefe3d81f90f0"
+>>>>>>> bugfix
         },
         "pipfile-spec": 6,
         "requires": {
@@ -105,7 +109,11 @@
                 "sha256:637245b8bab2b6502fcbc752cc4b7a6f6243bb02b31c5c26156ad103d3d45670",
                 "sha256:7401a975809ea1fdc658c3aa4f78cc2195a0e019c5cbc4c06122884e9ae80c23"
             ],
+<<<<<<< HEAD
             "markers": "python_version >= '3.7'",
+=======
+            "markers": "python_version < '3.10'",
+>>>>>>> bugfix
             "version": "==4.12.0"
         },
         "jinja2": {
@@ -247,6 +255,17 @@
             "index": "pypi",
             "version": "==1.0.4"
         },
+<<<<<<< HEAD
+=======
+        "mkdocs-rss-plugin": {
+            "hashes": [
+                "sha256:50671e2030188da4bc01ff421d979903a01cd87b02e2ec5f430fd05d5ed55825",
+                "sha256:536efc35c2f62ea1eac4bae23532e07f0a19b9044291a12960f47be7d3aaf99e"
+            ],
+            "index": "pypi",
+            "version": "==1.1.0"
+        },
+>>>>>>> bugfix
         "packaging": {
             "hashes": [
                 "sha256:dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb",
@@ -284,7 +303,11 @@
                 "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86",
                 "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"
             ],
+<<<<<<< HEAD
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+=======
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2'",
+>>>>>>> bugfix
             "version": "==2.8.2"
         },
         "pytz": {
@@ -354,7 +377,11 @@
                 "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926",
                 "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"
             ],
+<<<<<<< HEAD
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+=======
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2'",
+>>>>>>> bugfix
             "version": "==1.16.0"
         },
         "smmap": {
