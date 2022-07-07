@@ -1,0 +1,79 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #212121;
+}
+
+.day-card {
+	width: 300px;
+	padding: 1rem;
+	background-color: antiquewhite;
+	border-radius: 0.25rem;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.title {
+	font-size: 1.5rem;
+	font-weight: 600;
+	text-align: center;
+}
+
+.sub-title {
+	font-size: 1.2rem;
+	font-weight: 500;
+	text-align: center;
+	margin-top: 0.5rem;
+}
+
+.tag-ul {
+	padding: 1rem;
+}
+
+.tag-ul li {
+	list-style-type: none;
+}
+
+.line {
+	width: 5rem;
+	height: 2px;
+	background-color: #212121;
+}
+
+.notes {
+	line-height: 1.5;
+	margin-top: 1rem;
+}
+
+.comments {
+	margin-top: 1rem;
+}
+
+.comment-item h3 {
+	font-weight: 600;
+	font-size: 1.2rem;
+}
+.comment-item p {
+	font-size: 0.9rem;
+	margin-top: 0.5rem;
+}
+
+.tasks {
+	margin-top: 1rem;
+	padding: 1rem;
+}
+
+.tasks li {
+	list-style-type: none;
+	margin-bottom: 0.5rem;
+}
+
+.cards-group {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+}

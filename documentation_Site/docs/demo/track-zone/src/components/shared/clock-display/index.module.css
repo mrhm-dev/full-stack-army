@@ -1,0 +1,14 @@
+.card {
+	background-color: #ddd;
+	border-radius: 5px;
+	border: 1px solid #999;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.card h1 {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 1.2rem;
+	margin-bottom: 0.5rem;
+	color: #212121;
+}
