@@ -4,14 +4,14 @@ In this repository, you will find source codes, explanations, and other resource
 
 ## Quick Links
 
-- [Live Classes](live-classes/README.md)
-- [Articles](articles/README.md)
-- [Examples](examples/README.md)
-- [Projects](projects/README.md)
-- [References](references/README.md)
-- [Resources](resources/README.md)
-- [Source Code](src/README.md)
-- [Class Overview](./class-overview/README.md)
+- [Live Classes](live-classes/README.md) - You will find all class links.
+- [Articles](articles/README.md) - You will find many articles related to this course.
+- [Examples](examples/README.md) - You will find some examples in this directory.
+- [Projects](projects/README.md) - You will find all the class projects and other projects in this directory.
+- [References](references/README.md) - You will find all references related to this course in this directory.
+- [Resources](resources/README.md) - You will find all resources related to this course.
+- [Source Code](src/README.md) - You will find all source codes of all classes in this folder.
+- [Class Overview](./class-overview/README.md) - You will find the overviews of all classes in this directory
 
 ### Our Contributors
 
