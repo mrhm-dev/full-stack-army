@@ -1206,7 +1206,7 @@ const updatedData = {
 let updatedObj = students.find((item) => item.id === idToUpdate);
 updatedObj = {
 	id: idToUpdate,
-	...updatedObj,
+	...updatedData,
 };
 console.log('Updated', students);
 /* 
