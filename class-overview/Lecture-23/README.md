@@ -627,7 +627,7 @@ const registerService = async ({ name, email, password }) => {
 	let user = await findUserByProperty('email', email);
 	if (user) {
 		const error = new Error('User already exists');
-		error.status(400);
+		error.status = 400;
 		throw error;
 	}
 
@@ -659,7 +659,7 @@ const registerService = async ({ name, email, password }) => {
 	let user = await findUserByProperty('email', email);
 	if (user) {
 		const error = new Error('User already exists');
-		error.status(400);
+		error.status = 400;
 		throw error;
 	}
 
@@ -673,14 +673,14 @@ const loginService = async ({ email, password }) => {
 
 	if (!user) {
 		const error = new Error('Invalid Credential');
-		error.status(400);
+		error.status = 400;
 		throw error;
 	}
 
 	const isMatch = await bcrypt.compare(password, user.password);
 	if (!isMatch) {
 		const error = new Error('Invalid Credential');
-		error.status(400);
+		error.status = 400;
 		throw error;
 	}
 
