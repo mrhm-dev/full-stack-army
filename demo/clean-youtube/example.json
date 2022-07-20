@@ -1,0 +1,54 @@
+{
+    "kind": "youtube#playlistItem",
+    "etag": "W8n90QeJ4OSbgiPvDimYRiH3YPU",
+    "id": "UExfWHh1WnFOMHhWRHIwOFFnUUhsakNlY1d0QTRqQkxuUy41NkI0NEY2RDEwNTU3Q0M2",
+    "snippet": {
+        "publishedAt": "2020-09-16T13:20:35Z",
+        "channelId": "UCrmHQdRbYKFsB602Duho4Tw",
+        "title": "1.1 Why Do We Need Array | Make Fun Of Javascript Array in Bangla | Stack Learner",
+        "description": "In this lecture, we are going to introduce the Array in Javascript. Also, we are talking about our course module and planning. We are going to explore everything about javascript Array.\n\nআপনাদের সাহায্য এবং সহযোগিতা ছাড়া আমরা কোন ভাবেই এগিয়ে যেতে পারব না। তাই ভিডিওটি যদি ভাল লেগে থাকে, লাইক, কমেন্ট এবং শেয়ার করবেন। চ্যানেলে নতুন হয়ে থাকলে অবশ্যই সাবস্ক্রাইব করবেন এবং বেল আইকনে ক্লিক করতে ভুলবেন না। আর আমাদের সাথে থেকে সাপোর্ট করার জন্য আপনাকে অসংখ্য ধন্যবাদ। \n\n\nআমাদের সাথে যোগাযোগ করুনঃ \n--------------------------------------------------- \nফেসবুক পেজঃ fb.me/stacklearner\nফেসবুক গ্রুপঃ fb.com/groups/stacklearner\nLinkedIn পেজঃ linkedin.com/company/stacklearner\n\nEmails: \nadmin@stackschool.co\nsupport@stackschool.co\ninfo@stackschool.co\ncontact@stackschool.co\n\nনোটঃ যে কোন সেবা গ্রহণের পূর্বে আমাদের সাপোর্টে যোগাযোগ করবেন। \n\nLecture: Hasan Mahmud Nayem (HM Nayem)\n\nFacebook: https://fb.com/mrhm.dev\nLinkedIn: https://www.linkedin.com/in/mrhm/\nTwitter: https://twitter.com/mrhm_dev\nEmail: hasan.m.nayem@gmail.com\nGitHub: https://github.com/mrhm-dev\nInstagram: @mrhm.dev\n\n#array #Stack_Learner #Stack_School #Javascript_Array",
+        "thumbnails": {
+            "default": {
+                "url": "https://i.ytimg.com/vi/1tnv99373J0/default.jpg",
+                "width": 120,
+                "height": 90
+            },
+            "medium": {
+                "url": "https://i.ytimg.com/vi/1tnv99373J0/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+            },
+            "high": {
+                "url": "https://i.ytimg.com/vi/1tnv99373J0/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+            },
+            "standard": {
+                "url": "https://i.ytimg.com/vi/1tnv99373J0/sddefault.jpg",
+                "width": 640,
+                "height": 480
+            },
+            "maxres": {
+                "url": "https://i.ytimg.com/vi/1tnv99373J0/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+            }
+        },
+        "channelTitle": "Stack Learner",
+        "playlistId": "PL_XxuZqN0xVDr08QgQHljCecWtA4jBLnS",
+        "position": 0,
+        "resourceId": {
+            "kind": "youtube#video",
+            "videoId": "1tnv99373J0"
+        },
+        "videoOwnerChannelTitle": "Stack Learner",
+        "videoOwnerChannelId": "UCrmHQdRbYKFsB602Duho4Tw"
+    },
+    "contentDetails": {
+        "videoId": "1tnv99373J0",
+        "videoPublishedAt": "2020-09-16T16:42:29Z"
+    },
+    "status": {
+        "privacyStatus": "public"
+    }
+}
