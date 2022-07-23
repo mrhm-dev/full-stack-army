@@ -7,53 +7,32 @@ const usePlaylists = () => {
 		recentPlaylists: [],
 		favorites: [],
 	});
+	const [error, setError] = useState('');
+	const [loading, setLoading] = useState(false);
 
 	const getPlaylistById = async (playlistId, force = false) => {
 		if (state.playlists[playlistId] && !force) {
 			return;
 		}
 
-		let result = await getPlaylist(playlistId);
-
-		let cid, ct;
-
-		result = result.map((item) => {
-			const {
-				channelId,
-				title,
-				description,
-				thumbnails: { medium },
-				channelTitle,
-			} = item.snippet;
-
-			if (!cid) {
-				cid = channelId;
-			}
-
-			if (!ct) {
-				ct = channelTitle;
-			}
-
-			return {
-				title,
-				description,
-				thumbnail: medium,
-				contentDetails: item.contentDetails,
-			};
-		});
-
-		setState((prev) => ({
-			...prev,
-			playlists: {
-				...prev.playlists,
-				[playlistId]: {
-					items: result,
-					playlistId: playlistId,
-					channelId: cid,
-					channelTitle: ct,
+		setLoading(true);
+		try {
+			const playlist = await getPlaylist(playlistId);
+			setError('');
+			setState((prev) => ({
+				...prev,
+				playlists: {
+					...prev.playlists,
+					[playlistId]: playlist,
 				},
-			},
-		}));
+			}));
+		} catch (e) {
+			setError(
+				e.response?.data?.error?.message || 'Something went wrong'
+			);
+		} finally {
+			setLoading(false);
+		}
 	};
 
 	const addToFavorites = (playlistId) => {
@@ -78,6 +57,8 @@ const usePlaylists = () => {
 		playlists: state.playlists,
 		favorites: getPlaylistsByIds(state.favorites),
 		recentPlaylists: getPlaylistsByIds(state.recentPlaylists),
+		error,
+		loading,
 		getPlaylistById,
 		addToRecent,
 		addToFavorites,
