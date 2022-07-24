@@ -30,3 +30,4 @@ In this repository you will find all class overviews.
 - [Lecture 27 - Frontend Core Concepts and Communication](./Lecture-27/README.md)
 - [Lecture 28 - Frontend 1 - Frontend Course Planning & Discussion](./Lecture-28/README.md)
 - [Lecture 29 - Frontend 2 - Understand React in A Different Way](./Lecture-29/README.md)
+- [Lecture 30 - Frontend 3 - Understand React Functional Component](./Lecture-30/README.md)
