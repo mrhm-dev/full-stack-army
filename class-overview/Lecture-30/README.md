@@ -410,3 +410,228 @@ export default InputGroup;
 ```
 
 যদি তাই করি তাহলে আমাদের আউটপুটে দেখবো খুব সুন্দরভাবে এই লেবেলগুলো শো করছে।
+
+![UI](./images/UI-04.png)
+
+এবার আমরা type এর জন্য কাজটা করি।
+
+```jsx
+// InputGroup
+
+const InputGroup = (props) => {
+	const label = props.label;
+	const type = props.type;
+	const id = props.id;
+
+	return (
+		<div
+			style={{
+				display: 'flex',
+				flexDirection: 'column',
+				gap: '0.5rem',
+				marginBottom: '1rem',
+			}}
+		>
+			<label
+				style={{
+					fontFamily: 'Arial',
+					fontSize: '1rem',
+					color: '#424242',
+					fontWeight: 'bold',
+				}}
+				htmlFor={id}
+			>
+				{label}
+			</label>
+			<input
+				style={{
+					padding: '0.5rem 1rem',
+					outline: 'none',
+					border: '1px solid #ddd',
+					borderRadius: '0.15rem',
+					fontFamily: 'Arial',
+					fontSize: '0.9rem',
+					color: '#666',
+				}}
+				type={type}
+				id={id}
+			/>
+		</div>
+	);
+};
+
+export default InputGroup;
+```
+
+```jsx
+// App
+
+<form>
+	<InputGroup label="What is your name?" type="text" id="name" />
+	<InputGroup label="What is your email?" type="email" id="email" />
+	<InputGroup label="What is your password?" type="password" id="password" />
+
+	<div>
+		<button type="reset">Reset</button>
+		<button type="submit">Submit</button>
+	</div>
+</form>
+```
+
+এবার আমরা বাটনের জন্য কম্পোনেন্ট বানাবো। তার জন্য components ফোল্ডারে button নামে একটা ফোল্ডার নিবো। এর ভিতর Button.jsx নামে একটা ফাইল নিবো। আমরা ৫টা ভ্যারিয়েন্টের জন্য বাটন কম্পোনেন্ট বানাবো। এই ভ্যারিয়েন্টগুলোকে আমরা একটা অবজেক্টের মধ্যে রাখলাম।
+
+```jsx
+// Button
+
+const variant = {
+	primary: {
+		backgroundColor: '#2196f3',
+		color: '#fff',
+	},
+	success: {
+		backgroundColor: '#4caf50',
+		color: '#000',
+	},
+	error: {
+		backgroundColor: '#f44336',
+		color: '#fff',
+	},
+	warning: {
+		backgroundColor: '#ff9800',
+		color: '#000',
+	},
+	info: {
+		backgroundColor: '#80d8ff',
+		color: '#000',
+	},
+};
+
+const Button = (props) => {
+	const userVariant = variant[props.variant];
+	return (
+		<button
+			type={props.type}
+			style={{
+				padding: '1rem 2rem',
+				fontSize: '0.9rem',
+				fontWeight: '700',
+				textTransform: 'uppercase',
+				letterSpacing: '1px',
+				border: 'none',
+				marginRight: '1rem',
+				cursor: 'pointer',
+				borderRadius: '0.15rem',
+				...userVariant,
+			}}
+		>
+			{props.text}
+		</button>
+	);
+};
+
+export default Button;
+```
+
+এখানে বাটন তৈরি করবো একটা। কিন্তু তা দিয়ে আমরা ৫ রকমের ভিন্ন ভিন্ন কাজ করতে পারবো। এখন যদি App.jsx এ আমরা বাটন কম্পোনেন্টকে ইম্পোর্ট করে ব্যবহার করি তাহলে কেমন হয় দেখি।
+
+```jsx
+// App
+import Button from './components/button/Button';
+
+<form>
+	<InputGroup label="What is your name?" type="text" id="name" />
+	<InputGroup label="What is your email?" type="email" id="email" />
+	<InputGroup label="What is your password?" type="password" id="password" />
+
+	<div>
+		<Button type="reset" text="Reset" variant="warning" />
+		<Button type="submit" text="Submit" variant="primary" />
+		<Button type="button" text="Cancel" variant="error" />
+	</div>
+</form>;
+```
+
+এবার যদি আমাদের আউটপুট দেখি দেখবো তা এরকম দেখাচ্ছে।
+
+![UI](./images/UI-05.png)
+
+এবার আমরা ভ্যারিয়েন্টের মতো করে যদি আমাদের বাটনের সাইজের জন্য একটা অবজেক্ট বানিয়ে তা আমাদের মতো করে চেইঞ্জ করার ক্ষমতা রাখি তাহলে কেমন হয়? চলুন কাজটা করে ফেলি।
+
+```jsx
+// Button
+
+const variant = {
+	primary: {
+		backgroundColor: '#2196f3',
+		color: '#fff',
+	},
+	success: {
+		backgroundColor: '#4caf50',
+		color: '#000',
+	},
+	error: {
+		backgroundColor: '#f44336',
+		color: '#fff',
+	},
+	warning: {
+		backgroundColor: '#ff9800',
+		color: '#000',
+	},
+	info: {
+		backgroundColor: '#80d8ff',
+		color: '#000',
+	},
+};
+
+const sizes = {
+	small: { padding: '0.5rem 1rem' },
+	medium: { padding: '1rem 2rem' },
+	large: { padding: '1.5rem 3rem' },
+};
+
+const Button = (props) => {
+	const userVariant = variant[props.variant];
+	const userSize = sizes[props.size];
+	return (
+		<button
+			type={props.type}
+			style={{
+				fontSize: '0.9rem',
+				fontWeight: '700',
+				textTransform: 'uppercase',
+				letterSpacing: '1px',
+				border: 'none',
+				marginRight: '1rem',
+				cursor: 'pointer',
+				borderRadius: '0.15rem',
+				...userVariant,
+				...userSize,
+			}}
+		>
+			{props.text}
+		</button>
+	);
+};
+
+export default Button;
+```
+
+```jsx
+// App
+
+<form>
+	<InputGroup label="What is your name?" type="text" id="name" />
+	<InputGroup label="What is your email?" type="email" id="email" />
+	<InputGroup label="What is your password?" type="password" id="password" />
+
+	<div>
+		<Button type="reset" text="Reset" variant="warning" size="small" />
+		<Button type="submit" text="Submit" variant="primary" size="medium" />
+		<Button type="button" text="Cancel" variant="error" size="large" />
+	</div>
+</form>
+```
+
+![UI](./images/UI-06.png)
+
+তার মানে আমরা বলতে পারি যখন আমাদের কোড রিইউজের প্রয়োজন হবে তখন আমাদের নতুন কম্পোনেন্ট বানাতে হবে। আমরা অন্তত বুঝতে পারলাম কেন কোড রিইউজ করতে হয় এবং কিভাবে করতে হয়।

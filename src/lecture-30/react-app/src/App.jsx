@@ -1,3 +1,4 @@
+import Button from './components/button/Button';
 import InputGroup from './components/input-group/InputGroup';
 
 function App() {
@@ -29,13 +30,18 @@ function App() {
 			</div>
 
 			<form>
-				<InputGroup label="What is your name?" />
-				<InputGroup label="What is your email?" />
-				<InputGroup label="What is your password?" />
+				<InputGroup label="What is your name?" type="text" id="name" />
+				<InputGroup label="What is your email?" type="email" id="email" />
+				<InputGroup
+					label="What is your password?"
+					type="password"
+					id="password"
+				/>
 
 				<div>
-					<button type="reset">Reset</button>
-					<button type="submit">Submit</button>
+					<Button type="reset" text="Reset" variant="warning" size="small" />
+					<Button type="submit" text="Submit" variant="primary" size="medium" />
+					<Button type="button" text="Cancel" variant="error" size="large" />
 				</div>
 			</form>
 		</div>

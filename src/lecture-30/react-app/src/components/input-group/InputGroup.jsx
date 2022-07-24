@@ -1,5 +1,7 @@
 const InputGroup = (props) => {
 	const label = props.label;
+	const type = props.type;
+	const id = props.id;
 
 	return (
 		<div
@@ -17,7 +19,7 @@ const InputGroup = (props) => {
 					color: '#424242',
 					fontWeight: 'bold',
 				}}
-				htmlFor="name"
+				htmlFor={id}
 			>
 				{label}
 			</label>
@@ -31,8 +33,8 @@ const InputGroup = (props) => {
 					fontSize: '0.9rem',
 					color: '#666',
 				}}
-				type="text"
-				id="name"
+				type={type}
+				id={id}
 			/>
 		</div>
 	);
