@@ -1010,6 +1010,167 @@ export default About;
 
 useState হলো রিয়্যাক্টের একটা ফাংশন যেটা একটা অ্যারে রিটার্ন করবে এবং যার আর্গুমেন্ট হিসেবে থাকবে ইনিশিয়াল ভ্যালু। এই অ্যারের প্রথম এলিমেন্ট হলো ডাটা বা স্টেট এবং সেকেন্ড এলিমেন্ট হলো আপডেটার ফাংশন। স্টেট আমরা যেকোনো জায়গায় ব্যবহার করতে পারি, কিন্তু তা আপডেট করতে হবে অবশ্যই আপডেটার ফাংশনের মাধ্যমে। এবং স্টেট আপডেট হলে UI চেইঞ্জ হবে।
 
+## বাইরের কম্পোনেন্টে স্টেট ব্যবহার
+
+ধরি আমাদের একটা আলাদা কম্পোনেন্ট আছে DisplayCount নামে। এর কাজ হলো আমাদের কাউন্টারকে শো করা। এখন এখানে আমরা আমাদের স্টেট কিভাবে ব্যবহার করবো? আমরা প্রপ্সের মাধ্যমে সেটা করতে পারি। চলুন দেখি।
+
+```jsx
+const DisplayCount = ({ count }) => {
+	return <h1>COUNT: {count}</h1>;
+};
+
+export default DisplayCount;
+```
+
+```jsx
+import { useState } from 'react';
+import DisplayCount from '../components/display-count/DisplayCount';
+import Layout from '../components/layout/Layout';
+
+const About = () => {
+	const [count, setCount] = useState(0);
+
+	function increment() {
+		setCount(count + 1);
+	}
+	return (
+		<Layout>
+			<h1>Hello, I am About page</h1>
+			<DisplayCount count={count} />
+			<button onClick={increment}>Increase by 1</button>
+		</Layout>
+	);
+};
+
+export default About;
+```
+
+দেখা যাবে আমাদের কাউন্টার আপডেট হবে ঠিকঠাকভাবে। এর কারণ হলো প্রপ্স চেইঞ্জ হচ্ছে। আমরা বলেছিলাম প্রপ্স চেইঞ্জ হলে রিরেন্ডার হবে। যদিও count স্টেট শুধুমাত্র About কম্পোনেন্টের কাছেই সীমাবদ্ধ, কিন্তু সে চাইলে প্রপ্স আকারে তার চাইল্ড কম্পোনেন্টের কাছে এই ডাটা পাস করতে পারে।
+
+এখন যদি বাটন কম্পোনেন্ট অন্য জায়গায় থাকে তবে সেখান থেকে কি আমরা আমাদের স্টেট আপডেট করতে পারবো না? পারবো, তবে সেটা একটু ভিন্ন উপায়ে। সেটাতে পরে যাচ্ছি। আগে আমরা আমাদের বাটন কম্পোনেন্ট বানিয়ে ফেলি।
+
+```jsx
+const Buttons = ({ increment, decrement }) => {
+	return (
+		<div>
+			<button onClick={increment}>Increment</button>
+			<button onClick={decrement}>Decrement</button>
+		</div>
+	);
+};
+
+export default Buttons;
+```
+
+```jsx
+import { useState } from 'react';
+import Buttons from '../components/buttons/Buttons';
+import DisplayCount from '../components/display-count/DisplayCount';
+import Layout from '../components/layout/Layout';
+
+const About = () => {
+	const [count, setCount] = useState(0);
+
+	function increment() {
+		setCount(count + 1);
+	}
+
+	function decrement() {
+		setCount(count - 1);
+	}
+
+	return (
+		<Layout>
+			<DisplayCount count={count} />
+			<Buttons increment={increment} decrement={decrement} />
+		</Layout>
+	);
+};
+
+export default About;
+```
+
+আমরা আমাদের UI এ গেলে দেখবো ইনক্রিমেন্ট বাটনে ক্লিক করলে ১ করে বৃদ্ধি পাচ্ছে এবং ডিক্রিমেন্ট বাটনে ক্লিক করলে এক করে হ্রাস পাচ্ছে। এখানে জাস্ট প্রপ্স আকারে ফাংশনটা পাস করে দিচ্ছি। কিন্তু আপডেট হচ্ছে About কম্পোনেন্টেই।
+
+এখানে আমরা এবার একটা ট্যুইস্ট আনবো। সেটা হলো কতো করে বাড়বে বা কমবে তা ইউজার ইনপুটের মাধ্যমে হবে। আমরা দুইটা ইনপুট ফিল্ড নিবো। একটা ইনক্রিমেন্টের জন্য, আরেকটা ডিক্রিমেন্টের জন্য। তার আগে আমাদের দুইটা স্টেট নিতে হবে। পরে কম্পোনেন্ট বানাতে হবে।
+
+```jsx
+const UpdateIncrementDecrement = ({
+	incrementValue,
+	decrementValue,
+	handleIncrementChange,
+	handleDecrementChange,
+}) => {
+	return (
+		<div>
+			<label>Increment</label>
+			<input
+				type="number"
+				value={incrementValue}
+				onChange={handleIncrementChange}
+			/>
+			<label>Decrement</label>
+			<input
+				type="number"
+				value={decrementValue}
+				onChange={handleDecrementChange}
+			/>
+		</div>
+	);
+};
+
+export default UpdateIncrementDecrement;
+```
+
+```jsx
+import { useState } from 'react';
+import Buttons from '../components/buttons/Buttons';
+import DisplayCount from '../components/display-count/DisplayCount';
+import Layout from '../components/layout/Layout';
+import UpdateIncrementDecrement from '../components/update-incre-decre/UpdateIncrementDecrement';
+
+const About = () => {
+	const [count, setCount] = useState(0);
+	const [incrementValue, setIncrementValue] = useState(10);
+	const [decrementValue, setDecrementValue] = useState(5);
+
+	function increment() {
+		setCount(count + incrementValue);
+	}
+
+	function decrement() {
+		setCount(count - decrementValue);
+	}
+
+	function handleIncrementChange(event) {
+		setIncrementValue(parseInt(event.target.value));
+	}
+
+	function handleDecrementChange(event) {
+		setDecrementValue(parseInt(event.target.value));
+	}
+
+	return (
+		<Layout>
+			<DisplayCount count={count} />
+			<UpdateIncrementDecrement
+				incrementValue={incrementValue}
+				decrementValue={decrementValue}
+				handleIncrementChange={handleIncrementChange}
+				handleDecrementChange={handleDecrementChange}
+			/>
+			<Buttons increment={increment} decrement={decrement} />
+		</Layout>
+	);
+};
+
+export default About;
+```
+
+এবার আমরা যেভাবে ইনপুট দিবো সেভাবেই ডাটা আপডেট হবে।
+
+আশা করি সবাই কনসেপ্টটা বুঝতে পেরেছেন কম্পোনেন্ট কিভাবে রিরেন্ডার হয়।
+
 ## সোর্স কোড
 
 এই লেকচারে সব সোর্স কোড এই [লিংক](../../src/lecture-31/) এ পাবেন।
