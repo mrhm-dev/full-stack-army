@@ -462,7 +462,7 @@ router.patch('/:userId', usersController.patchUserById);
 // service.user.js
 
 const updateUser = async (id, data) => {
-	const user = await findUserByProperty('email', email);
+	const user = await findUserByProperty('email', data.email);
 
 	if (user) {
 		throw error('Email already in use', 400);

@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { generate } from 'shortid';
 import ClockList from './components/clock-list';
 import LocalClock from './components/local-clock';
 import ClockDisplay from './components/shared/clock-display';
 import useClock from './hooks/useClock';
+import useEvents from './hooks/useEvents';
+import useTimer from './hooks/useTimer';
 
 const LOCAL_CLOCK_INIT = {
 	title: 'My Clock',

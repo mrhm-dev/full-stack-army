@@ -32,3 +32,5 @@
 - [Lecture 27 - Frontend Core Concepts and Communication](https://youtu.be/0T7YagglhFY)
 - [Lecture 28 [Frontend 1] - Frontend Course Planning & Discussion](https://youtu.be/FppAFtsxICk)
 - [Lecture 29 [Frontend 2] - Understand React in A Different Way](https://youtu.be/vmw-sSTFwAk)
+- [Lecture 30 [Frontend 3] - Understand React Functional Component](https://youtu.be/KB5Ym33BvPc)
+- [Lecture 31 [Frontend 4] - React Component Tree and State](https://youtu.be/ehGPlQzn8Rc)
