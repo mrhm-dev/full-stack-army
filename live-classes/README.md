@@ -34,3 +34,4 @@
 - [Lecture 29 [Frontend 2] - Understand React in A Different Way](https://youtu.be/vmw-sSTFwAk)
 - [Lecture 30 [Frontend 3] - Understand React Functional Component](https://youtu.be/KB5Ym33BvPc)
 - [Lecture 31 [Frontend 4] - React Component Tree and State](https://youtu.be/ehGPlQzn8Rc)
+- [Lecture 32 [Frontend 5] - React State and Its Lifecycle](https://youtu.be/F7zCmo7XM4Q)
