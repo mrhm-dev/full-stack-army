@@ -32,3 +32,4 @@ In this repository you will find all class overviews.
 - [Lecture 29 - Frontend 2 - Understand React in A Different Way](https://stacklearner.com/lecture-29-frontend-2-understand-react-in-a-different-way)
 - [Lecture 30 - Frontend 3 - Understand React Functional Component](https://stacklearner.com/lecture-30-frontend-3-understand-react-functional-component)
 - [Lecture 31 - Frontend 4 - React Component Tree and State](https://stacklearner.com/lecture-31-frontend-4-react-component-tree-and-state)
+- [Lecture 32 - Frontend 5 - React State and Its Lifecycle](https://stacklearner.com/lecture-32-frontend-5-react-state-and-its-lifecycle)
