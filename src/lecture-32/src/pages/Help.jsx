@@ -1,15 +1,18 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Layout from '../components/layout/Layout';
 
 const Help = () => {
-	const [name, setName] = useState('');
-	// const [state, setState] = useState({});
+	// const [name, setName] = useState('');
+	const [state, setState] = useState({ name: '' });
 
-	// setTimeout(() => {
-	// 	setState({ name: 'HM Nayem' });
-	// }, 1 * 1000);
+	useEffect(() => {
+		setTimeout(() => {
+			setState({ name: 'HM Nayem' });
+		}, 3000);
+		console.log('Set timeout');
+	}, []);
 
-	// console.log('Rendering');
+	console.log('Rendering');
 
 	const data = [
 		{
@@ -24,26 +27,40 @@ const Help = () => {
 			name: 'Fahim Faisal',
 			email: 'fahim@test.com',
 		},
+		{
+			name: 'Faruk Ahmed',
+			email: 'faruk@test.com',
+		},
+		{
+			name: 'Firoz Ahmed',
+			email: 'firoz@test.com',
+		},
 	];
+
+	// const data = [];
 
 	return (
 		<Layout>
 			{/* {name && <h1>Hello {name}, I am Help page</h1>}
 			{!name && <h1>Hello Guest, I am Help page</h1>} */}
 
-			{name ? (
-				<h1>Hello {name}, I am Help page</h1>
+			{state.name ? (
+				<h1>Hello {state.name}, I am Help page</h1>
 			) : (
 				<h1>Hello Guest, I am Help page</h1>
 			)}
 
-			<ul>
-				{data.map((item) => (
-					<li>
-						{item.name}, ({item.email})
-					</li>
-				))}
-			</ul>
+			{data.length > 0 ? (
+				<ul>
+					{data.map((item) => (
+						<li>
+							{item.name}, ({item.email})
+						</li>
+					))}
+				</ul>
+			) : (
+				<p>There is no data</p>
+			)}
 		</Layout>
 	);
 };
