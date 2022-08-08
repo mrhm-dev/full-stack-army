@@ -33,3 +33,5 @@ In this repository you will find all class overviews.
 - [Lecture 30 - Frontend 3 - Understand React Functional Component](https://stacklearner.com/lecture-30-frontend-3-understand-react-functional-component)
 - [Lecture 31 - Frontend 4 - React Component Tree and State](https://stacklearner.com/lecture-31-frontend-4-react-component-tree-and-state)
 - [Lecture 32 - Frontend 5 - React State and Its Lifecycle](https://stacklearner.com/lecture-32-frontend-5-react-state-and-its-lifecycle)
+- [Lecture 33 - Frontend 6 - Understand The Data From A Different Perspective](https://stacklearner.com/lecture-33-frontend-6-understand-the-data-from-a-different-perspective)
+- [Lecture 34 - Frontend 7 - Adda in Random Topics](https://stacklearner.com/lecture-34-frontend-7-adda-in-random-topics)
