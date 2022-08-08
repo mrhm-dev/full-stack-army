@@ -35,3 +35,4 @@ In this repository you will find all class overviews.
 - [Lecture 32 - Frontend 5 - React State and Its Lifecycle](https://stacklearner.com/lecture-32-frontend-5-react-state-and-its-lifecycle)
 - [Lecture 33 - Frontend 6 - Understand The Data From A Different Perspective](https://stacklearner.com/lecture-33-frontend-6-understand-the-data-from-a-different-perspective)
 - [Lecture 34 - Frontend 7 - Adda in Random Topics](https://stacklearner.com/lecture-34-frontend-7-adda-in-random-topics)
+- [Lecture 35 - Frontend 8 - JSON to JSX | Importance of Structuring Data](https://stacklearner.com/lecture-35-frontend-8-json-to-jsx-importance-of-structuring-data)
