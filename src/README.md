@@ -19,3 +19,5 @@ In this directory, you will find all the necessary source codes that came with t
 - [Lecture 29 - Frontend 2 - Understand React in A Different Way](./lecture-29/)
 - [Lecture 30 - Frontend 3 - Understand React Functional Component](./lecture-30/)
 - [Lecture 31 - Frontend 4 - React Component Tree and State](./lecture-31/)
+- [Lecture 32 - Frontend 5 - React State and Its Lifecycle](./lecture-32/)
+- [Lecture 35 - Frontend 8 - JSON to JSX | Importance of Structuring Data](./lecture-35/)
