@@ -34,3 +34,7 @@
 - [Lecture 29 [Frontend 2] - Understand React in A Different Way](https://youtu.be/vmw-sSTFwAk)
 - [Lecture 30 [Frontend 3] - Understand React Functional Component](https://youtu.be/KB5Ym33BvPc)
 - [Lecture 31 [Frontend 4] - React Component Tree and State](https://youtu.be/ehGPlQzn8Rc)
+- [Lecture 32 [Frontend 5] - React State and Its Lifecycle](https://youtu.be/F7zCmo7XM4Q)
+- [Lecture 33 [Frontend 6] - Understand The Data From A Different Perspective](https://youtu.be/Vzg78nNw5UI)
+- [Lecture 34 [Frontend 7] - Adda in Random Topics](https://youtu.be/f0Th4QKYQkM)
+- [Lecture 35 [Frontend 8] - JSON to JSX | Importance of Structuring Data](https://youtu.be/rp97rUwOcjs)
