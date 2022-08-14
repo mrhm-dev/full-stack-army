@@ -36,3 +36,4 @@ In this repository you will find all class overviews.
 - [Lecture 33 - Frontend 6 - Understand The Data From A Different Perspective](https://stacklearner.com/lecture-33-frontend-6-understand-the-data-from-a-different-perspective)
 - [Lecture 34 - Frontend 7 - Adda in Random Topics](https://stacklearner.com/lecture-34-frontend-7-adda-in-random-topics)
 - [Lecture 35 - Frontend 8 - JSON to JSX | Importance of Structuring Data](https://stacklearner.com/lecture-35-frontend-8-json-to-jsx-importance-of-structuring-data)
+- [Lecture 36 - React Functional Component, Props and State ](https://stacklearner.com/lecture-36-react-functional-component-props-and-state)
