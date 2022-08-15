@@ -38,3 +38,4 @@
 - [Lecture 33 [Frontend 6] - Understand The Data From A Different Perspective](https://youtu.be/Vzg78nNw5UI)
 - [Lecture 34 [Frontend 7] - Adda in Random Topics](https://youtu.be/f0Th4QKYQkM)
 - [Lecture 35 [Frontend 8] - JSON to JSX | Importance of Structuring Data](https://youtu.be/rp97rUwOcjs)
+- [Lecture 36 [Frontend 9] - React Functional Component, Props and State](https://youtu.be/4X1GkVnoECY)
