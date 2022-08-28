@@ -39,3 +39,5 @@
 - [Lecture 34 [Frontend 7] - Adda in Random Topics](https://youtu.be/f0Th4QKYQkM)
 - [Lecture 35 [Frontend 8] - JSON to JSX | Importance of Structuring Data](https://youtu.be/rp97rUwOcjs)
 - [Lecture 36 [Frontend 9] - React Functional Component, Props and State](https://youtu.be/4X1GkVnoECY)
+- [Lecture 37 [Frontend 10] - Thinking in React](https://youtu.be/6PyLbaIn0tI)
+- [Lecture 38 [Frontend 11] - JSON to JSX to JSON Thinking with A Small Project](https://youtu.be/3JUvn3uoUBI)
