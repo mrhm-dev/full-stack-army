@@ -38,3 +38,4 @@ In this repository you will find all class overviews.
 - [Lecture 35 - Frontend 8 - JSON to JSX | Importance of Structuring Data](https://stacklearner.com/lecture-35-frontend-8-json-to-jsx-importance-of-structuring-data)
 - [Lecture 36 - React Functional Component, Props and State](https://stacklearner.com/lecture-36-react-functional-component-props-and-state)
 - [Lecture 37 - Thinking in React](https://stacklearner.com/lecture-37-thinking-in-react)
+- [Lecture 38 - JSON to JSX to JSON Thinking with A Small Project](https://stacklearner.com/lecture-38-json-to-jsx-to-json-thinking-with-a-small-project)
