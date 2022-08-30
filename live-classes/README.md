@@ -41,3 +41,5 @@
 - [Lecture 36 [Frontend 9] - React Functional Component, Props and State](https://youtu.be/4X1GkVnoECY)
 - [Lecture 37 [Frontend 10] - Thinking in React](https://youtu.be/6PyLbaIn0tI)
 - [Lecture 38 [Frontend 11] - JSON to JSX to JSON Thinking with A Small Project](https://youtu.be/3JUvn3uoUBI)
+- [Lecture 39 [Frontend 12] - Refactor The Operation and History Project](https://youtu.be/6Q6CrZQY5go)
+
