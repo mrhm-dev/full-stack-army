@@ -24,3 +24,4 @@ In this directory, you will find all the necessary source codes that came with t
 - [Lecture 36 - React Functional Component, Props and State](./lecture-36/)
 - [Lecture 37 - Thinking in React](./lecture-37/)
 - [Lecture 38 - JSON to JSX to JSON Thinking with A Small Project](./lecture-38/)
+- [Lecture 39 - Refactor The Operation and History Project](./lecture-39/)
