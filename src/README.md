@@ -25,3 +25,4 @@ In this directory, you will find all the necessary source codes that came with t
 - [Lecture 37 - Thinking in React](./lecture-37/)
 - [Lecture 38 - JSON to JSX to JSON Thinking with A Small Project](./lecture-38/)
 - [Lecture 39 - Refactor The Operation and History Project](./lecture-39/)
+- [Lecture 40 - State Lifting and Filtering Techniques](./lecture-40/)
