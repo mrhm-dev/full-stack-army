@@ -6,7 +6,7 @@ const STORAGE_KEY = 'cy__playlist__state';
 
 const INIT_STATE = {
 	playlists: {},
-	recentPlaylists: [],
+	recents: [],
 	favorites: [],
 };
 
@@ -65,7 +65,7 @@ const usePlaylists = () => {
 	const addToRecent = (playlistId) => {
 		setState((prev) => ({
 			...prev,
-			recentPlaylists: [...prev, playlistId],
+			recents: [...prev, playlistId],
 		}));
 	};
 
@@ -76,7 +76,7 @@ const usePlaylists = () => {
 	return {
 		playlists: state.playlists,
 		favorites: getPlaylistsByIds(state.favorites),
-		recentPlaylists: getPlaylistsByIds(state.recentPlaylists),
+		recents: getPlaylistsByIds(state.recents),
 		error,
 		loading,
 		getPlaylistById,
