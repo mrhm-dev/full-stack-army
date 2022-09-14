@@ -392,3 +392,286 @@ export default App;
 ```
 
 আমরা নেক্সট বাটনে ক্লিক করলে পরের ইউজারের ডিটেইল পাবো এবং previous বাটনে ক্লিক করলে আগের ইউজারের ডিটেইল পাবো।
+
+এখন এক একটা ডাটা লোড হতে একটু সময় নিচ্ছে দেখতে পাচ্ছি। সেক্ষেত্রে আমরা একটা লোডিং স্পিনার দিয়ে দিতে পারি।
+
+```jsx
+import { useEffect, useState } from 'react';
+
+const App = () => {
+	const [user, setUser] = useState({});
+	const [loading, setLoading] = useState(false);
+	const [id, setId] = useState(1);
+	const max = 10;
+
+	useEffect(() => {
+		setLoading(true);
+		fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+			.then((res) => res.json())
+			.then((data) => setUser(data))
+			.finally(() => setLoading(false));
+	}, [id]);
+
+	const nextHandler = () => {
+		if (id < max) {
+			setId(id + 1);
+		}
+	};
+
+	const prevHandler = () => {
+		if (id > 1) {
+			setId(id - 1);
+		}
+	};
+
+	return (
+		<div>
+			<h1>User Detail: {id}</h1>
+			{loading && <p>loading...</p>}
+			{!loading && user && (
+				<div>
+					name: {user.name}
+					<br />
+					email: {user.email}
+					<br />
+					phone: {user.phone}
+				</div>
+			)}
+			<div>
+				<button disabled={id === 1} onClick={prevHandler}>
+					previous
+				</button>
+				<button disabled={id === max} onClick={nextHandler}>
+					next
+				</button>
+			</div>
+		</div>
+	);
+};
+
+export default App;
+```
+
+এবার দেখা যাবে ডাটা লোড হওয়ার সময় `loading...` দেখাবে।
+
+এবার আমরা এমন একটা সিস্টেম করবো, যদি কোনো ডাটা একবার লোড হয়ে যায় তাহলে সেটা কোনো একটা জায়গায় স্টোর হয়ে থাকবে এবং যতক্ষণ এই অ্যাপ্লিকেশন রানিং থাকবে ততক্ষণ আর সেই ডাটা লোড হবে না, ঐ স্টোর থেকে নিয়ে আসবে।
+
+```jsx
+import { useEffect, useState } from 'react';
+
+const cacheData = {};
+
+const App = () => {
+	const [user, setUser] = useState({});
+	const [loading, setLoading] = useState(false);
+	const [id, setId] = useState(1);
+	const max = 10;
+
+	useEffect(() => {
+		if (cacheData[`user-${id}`]) {
+			setUser(cacheData[`user-${id}`]);
+			return;
+		}
+		setLoading(true);
+		fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+			.then((res) => res.json())
+			.then((data) => {
+				setUser(data);
+				cacheData[`user-${id}`] = data;
+			})
+			.finally(() => setLoading(false));
+	}, [id]);
+
+	const nextHandler = () => {
+		if (id < max) {
+			setId(id + 1);
+		}
+	};
+
+	const prevHandler = () => {
+		if (id > 1) {
+			setId(id - 1);
+		}
+	};
+
+	return (
+		<div>
+			<h1>User Detail: {id}</h1>
+			{loading && <p>loading...</p>}
+			{!loading && user && (
+				<div>
+					name: {user.name}
+					<br />
+					email: {user.email}
+					<br />
+					phone: {user.phone}
+				</div>
+			)}
+			<div>
+				<button disabled={id === 1} onClick={prevHandler}>
+					previous
+				</button>
+				<button disabled={id === max} onClick={nextHandler}>
+					next
+				</button>
+			</div>
+		</div>
+	);
+};
+
+export default App;
+```
+
+এখন যদি আমরা বাটনে ক্লিক করে নেটওয়ার্ক ট্যাবের দিকে তাকাই তাহলে দেখবো প্রথমবার একটা fetch রিকোয়েস্ট যাচ্ছে। কিন্তু পরবর্তীতে ঐ ডাটা লোড হতে আর কোনো রিকোয়েস্ট যাচ্ছে না। সেটা `cacheData` থেকে আমরা পেয়ে যাচ্ছি।
+
+আমরা এবার একটা ফাংশন বানাবো।
+
+```js
+const fetchUser = (id) => {
+	return fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+		.then((res) => res.json())
+		.then((data) => {
+			cacheData[`user-${id}`] = data;
+			return data;
+		});
+};
+```
+
+এবার এই ফাংশনকে আমরা আমাদের `useEffect` ফাংশনের মধ্যে ব্যবহার করবো।
+
+```jsx
+useEffect(() => {
+	if (cacheData[`user-${id}`]) {
+		setUser(cacheData[`user-${id}`]);
+		return;
+	}
+	setLoading(true);
+	fetchUser(id)
+		.then((data) => {
+			setUser(data);
+		})
+		.finally(() => setLoading(false));
+}, [id]);
+```
+
+এবার আমরা ডাটা লোড হওয়ার সময় যে flickering বা loading... লেখা দেখি সেটা দেখতে চাই না। তার জন্য আমরা আরেকটা `useEffect` হুক ব্যবহার করবো।
+
+```jsx
+useEffect(() => {
+	if (!cacheData[`user-${id + 1}`] && id < max) {
+		fetchUser(id + 1);
+	}
+}, [id]);
+```
+
+নেটওয়ার্ক ট্যাবের দিকে তাকালে দেখবেন যখন আমরা অ্যাপ্লিকেশন লোড করলাম তখন প্রথম ও দ্বিতীয় ডাটা লোড হয়ে আছে। এরপর যখন আমরা নেক্সট বাটনে ক্লিক করে দ্বিতীয় ডাটাকে আনলাম সেই মুহূর্তে তৃতীয় ডাটা লোড হয়ে গেলো। এভাবে প্রতি ক্লিকে পরবর্তী ডাটা লোড হয়ে যাওয়ায় আমাদের আর ডাটা দেখার জন্য অপেক্ষা করতে হচ্ছে না।
+
+এবার আমরা একটা নতুন প্যাটার্ন দেখবো। এই প্যাটার্নে বর্তমানে বেশিরভাগ অ্যাপ্লিকেশন তৈরি হয়। সেটা হলো কাস্টম হুকের মাধ্যমে।
+
+আমরা `App_Hook.jsx` নামে একটা ফাইল ক্রিয়েট করবো। এবং সেখানে নিচের কোডগুলো রাখবো।
+
+```jsx
+import { useEffect, useState } from 'react';
+
+const cacheData = {};
+
+const useApp = () => {
+	const [user, setUser] = useState({});
+	const [loading, setLoading] = useState(false);
+	const [id, setId] = useState(1);
+	const max = 10;
+
+	useEffect(() => {
+		if (cacheData[`user-${id}`]) {
+			setUser(cacheData[`user-${id}`]);
+			return;
+		}
+		setLoading(true);
+		fetchUser(id)
+			.then((data) => {
+				setUser(data);
+			})
+			.finally(() => setLoading(false));
+	}, [id]);
+
+	useEffect(() => {
+		if (!cacheData[`user-${id + 1}`] && id < max) {
+			fetchUser(id + 1);
+		}
+	}, [id]);
+
+	const fetchUser = (id) => {
+		return fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+			.then((res) => res.json())
+			.then((data) => {
+				cacheData[`user-${id}`] = data;
+				return data;
+			});
+	};
+
+	const nextHandler = () => {
+		if (id < max) {
+			setId(id + 1);
+		}
+	};
+
+	const prevHandler = () => {
+		if (id > 1) {
+			setId(id - 1);
+		}
+	};
+
+	return {
+		user,
+		id,
+		loading,
+		max,
+		prevHandler,
+		nextHandler,
+	};
+};
+
+export default useApp;
+```
+
+আর `App.jsx` এর মধ্যে আমাদের `jsx` কোড এবং `App_Hook.jsx` থেকে `useApp` ফাংশনকে ইমপোর্ট করে নিবো।
+
+```jsx
+import useApp from './App_Hook';
+
+const App = () => {
+	const { user, id, loading, max, prevHandler, nextHandler } = useApp();
+
+	return (
+		<div>
+			<h1>User Detail: {id}</h1>
+			{loading && <p>loading...</p>}
+			{!loading && user && (
+				<div>
+					name: {user.name}
+					<br />
+					email: {user.email}
+					<br />
+					phone: {user.phone}
+				</div>
+			)}
+			<div>
+				<button disabled={id === 1} onClick={prevHandler}>
+					previous
+				</button>
+				<button disabled={id === max} onClick={nextHandler}>
+					next
+				</button>
+			</div>
+		</div>
+	);
+};
+
+export default App;
+```
+
+অ্যাপ্লিকেশন আগে যেমন রান করেছিল সেরকমই রান করবে। কোনো সমস্যা হবে না।
+
+## Source Code
+
+এই লেকচারের সমস্ত সোর্স কোড এই [লিংক](https://github.com/mrhm-dev/full-stack-army/tree/master/src/lecture-41) এ পাবেন।

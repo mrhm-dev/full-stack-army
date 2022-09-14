@@ -41,3 +41,4 @@ In this repository you will find all class overviews.
 - [Lecture 38 - JSON to JSX to JSON Thinking with A Small Project](https://stacklearner.com/lecture-38-json-to-jsx-to-json-thinking-with-a-small-project)
 - [Lecture 39 - Refactor The Operation and History Project](https://stacklearner.com/lecture-39-refactor-the-operation-and-history-project)
 - [Lecture 40 - State Lifting and Filtering Techniques](https://stacklearner.com/lecture-40-state-lifting-and-filtering-techniques)
+- [Lecture 41 - Understand The Usage of useEffect Hook](https://stacklearner.com/lecture-41-understand-the-usage-of-useeffect-hook)
