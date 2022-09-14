@@ -1,32 +1,13 @@
-import { useEffect, useState } from 'react';
+import useApp from './App_Hook';
 
 const App = () => {
-	const [user, setUser] = useState({});
-	const [id, setId] = useState(1);
-	const max = 10;
-
-	useEffect(() => {
-		fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
-			.then((res) => res.json())
-			.then((data) => setUser(data));
-	}, [id]);
-
-	const nextHandler = () => {
-		if (id < max) {
-			setId(id + 1);
-		}
-	};
-
-	const prevHandler = () => {
-		if (id > 1) {
-			setId(id - 1);
-		}
-	};
+	const { user, id, loading, max, prevHandler, nextHandler } = useApp();
 
 	return (
 		<div>
 			<h1>User Detail: {id}</h1>
-			{user && (
+			{loading && <p>loading...</p>}
+			{!loading && user && (
 				<div>
 					name: {user.name}
 					<br />
