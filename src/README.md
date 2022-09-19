@@ -27,3 +27,4 @@ In this directory, you will find all the necessary source codes that came with t
 - [Lecture 39 - Refactor The Operation and History Project](./lecture-39/)
 - [Lecture 40 - State Lifting and Filtering Techniques](./lecture-40/)
 - [Lecture 41 - Understand The Usage of useEffect Hook](./lecture-41/)
+- [Lecture 42 - React Custom Hooks](./lecture-42/)
