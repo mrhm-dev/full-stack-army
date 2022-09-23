@@ -42,4 +42,8 @@
 - [Lecture 37 [Frontend 10] - Thinking in React](https://youtu.be/6PyLbaIn0tI)
 - [Lecture 38 [Frontend 11] - JSON to JSX to JSON Thinking with A Small Project](https://youtu.be/3JUvn3uoUBI)
 - [Lecture 39 [Frontend 12] - Refactor The Operation and History Project](https://youtu.be/6Q6CrZQY5go)
+- [Lecture 40 [Frontend 13] - State Lifting and Filtering Techniques](https://youtu.be/Fyr62IfXd-Q)
+- [Lecture 41 [Frontend 14] - Understand The Usage of useEffect Hook](https://youtu.be/AjEC_i3JZ5A)
+- [Lecture 42 [Frontend 15] - React Custom Hooks](https://youtu.be/OqwJZIk0Oxw)
+- [Lecture 43 [Frontend 16] - React Styling Options , Styled Component and Project Structures](https://youtu.be/0jBAGrnLFOo)
 
