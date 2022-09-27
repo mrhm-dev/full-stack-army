@@ -22,7 +22,7 @@ const init = {
 };
 
 const App = () => {
-	const [state, setState] = useState({ ...init });
+	const [state, setState] = useState(deepClone(init));
 
 	const mapStateToValues = (state) => {
 		return Object.keys(state).reduce((acc, cur) => {
