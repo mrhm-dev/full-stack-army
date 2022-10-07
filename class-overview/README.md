@@ -45,3 +45,4 @@ In this repository you will find all class overviews.
 - [Lecture 42 - React Custom Hooks](https://stacklearner.com/lecture-42-react-custom-hooks)
 - [Lecture 43 - React Styling Options , Styled Component and Project Structures](https://stacklearner.com/lecture-43-react-styling-options-styled-component-and-project-structures)
 - [Lecture 44 - Create A React Custom Form Part 1](https://stacklearner.com/lecture-44-create-a-react-custom-form-part-1)
+- [Lecture 45 - React Custom Form Part 2](https://stacklearner.com/lecture-45-react-custom-form-part-2)
