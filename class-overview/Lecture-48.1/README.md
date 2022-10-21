@@ -86,3 +86,39 @@ _উত্তর_ - যেকোনো একটা হতে পারে। �
 আমরা ui এর একটা ওয়্যারফ্রেম বানাবো। তার জন্য আমরা [wireframe.cc](https://wireframe.cc/) তে গিয়ে সহজেই সেটা বানাতে পারি।
 
 ## Component Tree
+
+### App Component
+
+![app.jpg](https://cdn.hashnode.com/res/hashnode/image/upload/v1666361105359/qYcHsXUfO.jpg)
+
+### Reusable components
+
+![shared.jpg](https://cdn.hashnode.com/res/hashnode/image/upload/v1666361210554/Enxr__Lh3.jpg)
+
+### UI Components
+
+![ui.jpg](https://cdn.hashnode.com/res/hashnode/image/upload/v1666361295889/xZp23vZgg.jpg)
+
+### Clock Display Component
+
+![clock-display.jpg](https://cdn.hashnode.com/res/hashnode/image/upload/v1666361350686/NJGDn-2CR.jpg)
+
+### Clock Form Component
+
+![clock-form.jpg](https://cdn.hashnode.com/res/hashnode/image/upload/v1666361406489/EmwuVPdmE.jpg)
+
+### Clock Actions Component
+
+![clock-actions.jpg](https://cdn.hashnode.com/res/hashnode/image/upload/v1666361479586/i1H4iQ9XJ.jpg)
+
+### Create Event Form Component
+
+![create-event-form.jpg](https://cdn.hashnode.com/res/hashnode/image/upload/v1666361528283/656X1EuAB.jpg)
+
+## Hooks
+
+![hooks.jpg](https://cdn.hashnode.com/res/hashnode/image/upload/v1666361563559/jV4KNrNwN.jpg)
+
+## Data Flow
+
+![data-flow.jpg](https://cdn.hashnode.com/res/hashnode/image/upload/v1666361597873/57EMROBND.jpg)
