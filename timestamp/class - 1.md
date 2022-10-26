@@ -12,4 +12,4 @@
 
 1:50:47 - data driven explain
 
-2:04:43 - if requirements change continiously
+2:04:43 - if requirements change continuously
