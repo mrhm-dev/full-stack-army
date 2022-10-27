@@ -18,5 +18,5 @@
 2:13:30 – DevOps & Clouds  
 2:22:06 – Overview  
 2:28:06 – Why This Journey  
-2:34:13 – Timeframes  
+2:34:13 – Time frames  
 2:38:07 - Discussion Part  

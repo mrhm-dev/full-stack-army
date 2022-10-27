@@ -4,7 +4,7 @@
 15:00 - forEach function
 32:00 - Solve a Array Problem
 1:27:00 - Question and Answer
-1:30:00 - calculate fibonnacci number
+1:30:00 - calculate fibonacci number
 1:37:00 - Update
 1:49:30 - Delete
 1:56:00 - Break
