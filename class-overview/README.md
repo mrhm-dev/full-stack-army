@@ -51,3 +51,4 @@ In this repository you will find all class overviews.
 - [Lecture 47 - Track Zone Project Review and Discussion](https://stacklearner.com/lecture-47-track-zone-project-review-and-discussion)
 - [Lecture 48.1 - Track Zone Project Breakdown | Component Tree and Clock Logic](https://stacklearner.com//lecture-481-track-zone-project-breakdown-component-tree-and-clock-logic)
 - [Lecture 48.2 - Track Zone Project Breakdown | Component Tree and Clock Logic](https://stacklearner.com/lecture-482-track-zone-project-breakdown-component-tree-and-clock-logic)
+- [Lecture 49 - Track Zone Project | Display and Edit Local Time](https://stacklearner.com/lecture-49-track-zone-project-display-and-edit-local-time)
