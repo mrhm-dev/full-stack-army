@@ -32,3 +32,4 @@ In this directory, you will find all the necessary source codes that came with t
 - [Lecture 44 - Create A React Custom Form Part 1](./lecture-44/)
 - [Lecture 45 - React Custom Form Part 2](./lecture-45/)
 - [Lecture 48.2 - Track Zone Project Breakdown | Component Tree and Clock Logic](./lecture-48.2/track-zone/)
+- [Lecture 49 - Track Zone Project | Display and Edit Local Time](./lecture-49/track-zone/)
