@@ -53,3 +53,4 @@ In this repository you will find all class overviews.
 - [Lecture 48.2 - Track Zone Project Breakdown | Component Tree and Clock Logic](https://stacklearner.com/lecture-482-track-zone-project-breakdown-component-tree-and-clock-logic)
 - [Lecture 49 - Track Zone Project | Display and Edit Local Time](https://stacklearner.com/lecture-49-track-zone-project-display-and-edit-local-time)
 - [Lecture 50 - Track Zone Project | Reusable Clock Form](https://stacklearner.com/lecture-50-track-zone-project-reusable-clock-form)
+- [Lecture 51 - Track Zone Project | Create, Edit & List Custom Clock](https://stacklearner.com/lecture-51-track-zone-project-create-edit-list-custom-clock)
