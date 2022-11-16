@@ -35,3 +35,4 @@ In this directory, you will find all the necessary source codes that came with t
 - [Lecture 49 - Track Zone Project | Display and Edit Local Time](./lecture-49/track-zone/)
 - [Lecture 50 - Track Zone Project | Reusable Clock Form](./lecture-50/track-zone/)
 - [Lecture 51 - Track Zone Project | Create, Edit & List Custom Clock](./lecture-51/track-zone/)
+- [Lecture 52 - Track zone project | create events functionality and useTimer hook](./lecture-52/track-zone/)
