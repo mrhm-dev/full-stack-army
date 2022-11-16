@@ -54,3 +54,4 @@ In this repository you will find all class overviews.
 - [Lecture 49 - Track Zone Project | Display and Edit Local Time](https://stacklearner.com/lecture-49-track-zone-project-display-and-edit-local-time)
 - [Lecture 50 - Track Zone Project | Reusable Clock Form](https://stacklearner.com/lecture-50-track-zone-project-reusable-clock-form)
 - [Lecture 51 - Track Zone Project | Create, Edit & List Custom Clock](https://stacklearner.com/lecture-51-track-zone-project-create-edit-list-custom-clock)
+- [Lecture 52 - Track zone project | create events functionality and useTimer hook](https://stacklearner.com/lecture-52-track-zone-project-create-events-functionality-and-usetimer-hook)
