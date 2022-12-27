@@ -1,0 +1,40 @@
+/*=============================================
+=            Mixins                           =
+=============================================*/
+
+/**
+ *
+ * Helpful reusable function-like things that will be used to implement
+ * styles for components.
+ *
+ */
+
+@mixin tablet {
+	@media (min-width: map-get($breakpoints, 'md')) {
+		@content;
+	}
+}
+
+@mixin laptop {
+	@media (min-width: map-get($breakpoints, 'lg')) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: map-get($breakpoints, 'xl')) {
+		@content;
+	}
+}
+
+@mixin padding($space) {
+	padding: map-get($spacing, $space);
+}
+
+@mixin margin($space) {
+	margin: map-get($spacing, $space);
+}
+
+@mixin shadow($key) {
+	box-shadow: map-get($shadows, $key);
+}
