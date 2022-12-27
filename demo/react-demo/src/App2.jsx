@@ -64,15 +64,25 @@ const App = () => {
 	);
 
 	const incrementQuantity = (id) => {
-		setProducts(
-			products.map((product) => {
-				if (id === product.id && product.stock > product.quantity) {
-					product.quantity++;
-					product.total = product.quantity * product.price;
-				}
-				return product;
-			})
-		);
+		const newProducts = [...products];
+		const product = newProducts.find((product) => product.id === id);
+
+		if (id === product.id && product.stock > product.quantity) {
+			product.quantity++;
+			product.total = product.quantity * product.price;
+		}
+
+		setProducts(newProducts);
+		
+		// setProducts(
+		// 	products.map((product) => {
+		// 		if (id === product.id && product.stock > product.quantity) {
+		// 			product.quantity++;
+		// 			product.total = product.quantity * product.price;
+		// 		}
+		// 		return product;
+		// 	})
+		// );
 	};
 
 	const decrementQuantity = (id) => {
