@@ -17,7 +17,7 @@
 - **Must Read**
   - [Computer Science Distilled (For non CSE person)](./images/computer-science-distilled.jpg) --> [Download PDF](https://code.energy/wp-content/uploads/computer-science-distilled-sample.pdf)
   - [Elements of Programming Interviews](./images/elements-of-programming-interviews.jpg)
-  - [Introduction to Algorithms](./images/introduction-to-algorithms.jpg)
+  - [Introduction to Algorithms](./images/introduction-to-algorithms.jpg) --> [Download PDF](https://pd.daffodilvarsity.edu.bd/course/material/book-430/pdf_content)
 - **For JavaScript**
   - [You Don't Know JS Series](./images/you-dont-know-js.jpg)
   - [Javascript: The Good Parts](./images/js-the-good-parts.jpg)
