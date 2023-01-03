@@ -15,7 +15,7 @@
 ### Book list
 
 - **Must Read**
-  - [Computer Science Distilled (For non CSE person)](./images/computer-science-distilled.jpg) [Download PDF](https://code.energy/wp-content/uploads/computer-science-distilled-sample.pdf)
+  - [Computer Science Distilled (For non CSE person)](./images/computer-science-distilled.jpg) --> [Download PDF](https://code.energy/wp-content/uploads/computer-science-distilled-sample.pdf)
   - [Elements of Programming Interviews](./images/elements-of-programming-interviews.jpg)
   - [Introduction to Algorithms](./images/introduction-to-algorithms.jpg)
 - **For JavaScript**
