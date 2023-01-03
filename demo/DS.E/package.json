@@ -9,11 +9,12 @@
   "workspaces": {
     "packages": [
       "packages/*",
-      "playgrounds/*"
+      "playgrounds"
     ]
   },
   "private": true,
   "scripts": {
-    "build": "yarn lerna run build"
+    "build": "yarn lerna run build",
+    "dev": "yarn lerna run dev"
   }
 }

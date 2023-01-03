@@ -122,19 +122,82 @@
  * styles for components.
  *
  */
-.btn {
-  border: none;
-  border-radius: 0.25rem;
-  font-family: var(--dse-body-font-family, "Playfair Display", serif);
-  font-size: var(--dse-body-font-size, 0.875rem);
-  padding: 0.5rem 1rem;
+.dse-width-none {
+  width: 0;
 }
 
-.btn-primary {
-  background-color: var(--dse-btn-primary-bg-color, #5ece7b);
-  color: var(--dse-btn-primary-color, #fff);
+.dse-height-none {
+  height: 0;
 }
 
-.btn:hover {
-  background-color: var(--dse-btn-primary-bg-hover, #9ee2b0);
+.dse-width-xxxs {
+  width: 0.25rem;
+}
+
+.dse-height-xxxs {
+  height: 0.25rem;
+}
+
+.dse-width-xxs {
+  width: 0.5rem;
+}
+
+.dse-height-xxs {
+  height: 0.5rem;
+}
+
+.dse-width-xs {
+  width: 0.75rem;
+}
+
+.dse-height-xs {
+  height: 0.75rem;
+}
+
+.dse-width-sm {
+  width: 1rem;
+}
+
+.dse-height-sm {
+  height: 1rem;
+}
+
+.dse-width-md {
+  width: 1.5rem;
+}
+
+.dse-height-md {
+  height: 1.5rem;
+}
+
+.dse-width-lg {
+  width: 2rem;
+}
+
+.dse-height-lg {
+  height: 2rem;
+}
+
+.dse-width-xl {
+  width: 3rem;
+}
+
+.dse-height-xl {
+  height: 3rem;
+}
+
+.dse-width-xxl {
+  width: 4.5rem;
+}
+
+.dse-height-xxl {
+  height: 4.5rem;
+}
+
+.dse-width-xxxl {
+  width: 6rem;
+}
+
+.dse-height-xxxl {
+  height: 6rem;
 }

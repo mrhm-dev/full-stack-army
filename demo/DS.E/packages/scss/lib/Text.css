@@ -122,19 +122,28 @@
  * styles for components.
  *
  */
-.btn {
-  border: none;
-  border-radius: 0.25rem;
+.dse-text {
+  margin: 0;
   font-family: var(--dse-body-font-family, "Playfair Display", serif);
-  font-size: var(--dse-body-font-size, 0.875rem);
-  padding: 0.5rem 1rem;
+  color: #f1f2f3;
 }
 
-.btn-primary {
-  background-color: var(--dse-btn-primary-bg-color, #5ece7b);
-  color: var(--dse-btn-primary-color, #fff);
+.dse-text-xs {
+  font-size: 0.75rem;
 }
 
-.btn:hover {
-  background-color: var(--dse-btn-primary-bg-hover, #9ee2b0);
+.dse-text-sm {
+  font-size: 0.875rem;
+}
+
+.dse-text-base {
+  font-size: 1rem;
+}
+
+.dse-text-lg {
+  font-size: 1.125rem;
+}
+
+.dse-text-xl {
+  font-size: 1.5rem;
 }
