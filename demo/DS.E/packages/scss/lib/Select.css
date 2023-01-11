@@ -170,6 +170,9 @@
   background-color: var(--dse-form-bg-option-selected, #5ece7b);
   color: var(--dse-form-color-option-selected, #fff);
 }
+.dse-select__option--highlighted {
+  background-color: var(--dse-form-bg-color-hover, #f1f2f3);
+}
 .dse-select__option--selected:hover {
   background-color: var(--dse-form-bg-option-selected, #5ece7b);
 }

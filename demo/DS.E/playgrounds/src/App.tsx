@@ -12,24 +12,36 @@ const colorOptions = [
 const App = () => {
 	return (
 		<div className='app'>
-			<h1>Hello MonoRepo</h1>
 			<Margin>
-				<Text size='lg'> Hello World </Text>
-			</Margin>
-			<Color hexCode='#f1f1f1' width='xxxl' height='xxxl' />
-			<Button
-				title='I am a cute little button'
-				onClick={() => alert('Hello World')}
-			>
-				Click Me
-			</Button>
-			<Margin>
-				<Text>This is a Select Component</Text>
+				{/* <Text>This is a Select Component</Text> */}
 				<Margin top bottom space='xs'>
 					<Select
 						label='Select A Color'
 						options={colorOptions}
 						onOptionSelected={console.log}
+						// renderOption={({
+						// 	option,
+						// 	getOptionRecommendedProps,
+						// 	isSelected,
+						// }) => (
+						// 	<li
+						// 		{...getOptionRecommendedProps({
+						// 			className: `custom-select-option ${
+						// 				isSelected
+						// 					? 'custom-select-option--selected'
+						// 					: ''
+						// 			}`,
+						// 		})}
+						// 	>
+						// 		<div style={{ display: 'flex' }}>
+						// 			<input
+						// 				type='checkbox'
+						// 				checked={isSelected}
+						// 			/>
+						// 			<Text>{option.label}</Text>
+						// 		</div>
+						// 	</li>
+						// )}
 					/>
 				</Margin>
 				<Text>End Of Select</Text>
