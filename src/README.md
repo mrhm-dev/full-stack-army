@@ -39,3 +39,4 @@ In this directory, you will find all the necessary source codes that came with t
 - [Lecture 54 - Clean YouTube Project | Custom Hook and API Call](./lecture-54/clean-youtube/)
 - [Lecture 55 - Clean YouTube Project | Display a List of Playlists](./lecture-55/clean-youtube/)
 - [Lecture 56 - Clean YouTube Project | React Router Dom and API Bug Fixing](./lecture-56/clean-youtube/)
+- [Lecture 59 - Understand Redux, React Redux and EasyPeasy](./lecture-59/redux-demo/)
