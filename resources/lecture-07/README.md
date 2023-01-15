@@ -18,6 +18,7 @@
   - [Computer Science Distilled (For non CSE person)](./images/computer-science-distilled.jpg)
   - [Elements of Programming Interviews](./images/elements-of-programming-interviews.jpg)
   - [Introduction to Algorithms](./images/introduction-to-algorithms.jpg)
+  - [Grokking algorithms](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRD76REsIURQERkOroo5AGRCmuvn-PoVHLgj3aanR-FdvbGxcJL)
 - **For JavaScript**
   - [You Don't Know JS Series](./images/you-dont-know-js.jpg)
   - [Javascript: The Good Parts](./images/js-the-good-parts.jpg)
