@@ -23,8 +23,20 @@ router.get('/u/:username', (req, res) => {
 	const tickets = db.findByUser(username);
 	res.status(200).json(tickets);
 });
-router.patch('/u/:username', () => {});
-router.delete('/u/:username', () => {});
+router.patch('/u/:username', (req, res) => {
+  const username = req.params.username;
+  const updatedTicket = db.updateByUserName(username, req.body);
+  res
+    .status(200)
+    .json({ message: 'update Successfully by username', updatedTicket });
+});
+router.delete('/u/:username', (req, res) => {
+  const username = req.params.username;
+  const deletedTickets = db.deleteByUserName(username);
+  res
+    .status(203)
+    .json({ message: 'Deleted Successfully by username', deletedTickets });
+});
 
 router.post('/sell', (req, res) => {
 	const { username, price } = req.body;
