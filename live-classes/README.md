@@ -68,3 +68,5 @@
 - [Lecture 61 - Overview of React All Features](https://youtu.be/z-LuVF6B2yU)
 - [Lecture 62 - Clean YouTube Project | Implement The EasyPeasy Store](https://youtu.be/i2Md8PgI8Ds)
 - [Lecture 63 - Clean YouTube Project | Complete Store | Assignments and Discussion](https://youtu.be/KPvnW-5HcxQ)
+- [Lecture 64 - QNA on Clean YouTube Project](https://youtu.be/JO_yMBcM2_k)
+- [Lecture 65 - Introduction to Headless CMS | Strapi First Look](https://youtu.be/4Kabwl0VeJU)
