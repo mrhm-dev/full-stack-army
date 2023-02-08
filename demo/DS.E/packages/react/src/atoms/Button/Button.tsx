@@ -1,10 +1,10 @@
 import React from 'react';
 import '@ds.e/scss/lib/Button.css';
 
-interface ButtonProps {
+export interface ButtonProps {
 	title: string;
 	children: React.ReactNode;
-	onClick: () => void;
+	onClick?: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({ title, onClick, children }) => {

@@ -16,18 +16,18 @@ const KEY_CODES = {
 	ESC: 27,
 };
 
-interface SelectOption {
+export interface SelectOption {
 	label: string;
 	value: string;
 }
 
-interface RenderOptionProps {
+export interface RenderOptionProps {
 	isSelected: boolean;
 	option: SelectOption;
 	getOptionRecommendedProps: (overrideProps?: Object) => Object;
 }
 
-interface SelectProps {
+export interface SelectProps {
 	label?: string;
 	options?: Array<SelectOption>;
 	onOptionSelected?: (option: SelectOption, optionIndex: number) => void;
@@ -73,9 +73,8 @@ const Select: React.FC<SelectProps> = ({
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 	const [overlayTop, setOverlayTop] = useState<number>(0);
 	const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-	const [highlightedIndex, setHighlightedIndex] = useState<number | null>(
-		null
-	);
+	const [highlightedIndex, setHighlightedIndex] =
+		useState<number | null>(null);
 	const [optionRefs, setOptionRefs] = useState<
 		React.RefObject<HTMLLIElement>[]
 	>([]);
