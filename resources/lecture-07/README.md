@@ -2,6 +2,8 @@
 
 ## [Recommended Books](./books.md)
 
+## [Online Judges](./judges.md)
+
 ## Important Links
 
 - For Development Essentials
