@@ -80,3 +80,4 @@
 - [Lecture 73 - Discussion About Project Problems Part 2](https://youtu.be/t86E_4UW8_Q)
 - [Lecture 74 - Discussion About Project Problems Part 3](https://youtu.be/jRinfJCku_k)
 - [Lecture 75 - Project Review Part 1](https://youtu.be/G9iV2fFkE7Y)
+- [Lecture 76 - Project Review Part 2](https://youtu.be/GixXnDSA3kw)
