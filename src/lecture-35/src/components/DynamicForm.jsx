@@ -49,7 +49,7 @@ const transformObject = (obj) => {
 };
 
 const mapObjectToArray = (obj) => {
-	return Object.keys(obj).map((key) => ({ name: key, value: '', ...obj[key] }));
+	return Object.keys(obj).map((key) => ({ name: key, ...obj[key] }));
 };
 
 const DynamicForm = () => {
