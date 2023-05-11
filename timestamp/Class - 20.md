@@ -4,7 +4,7 @@
 10:37 – ORM discussion(Object Relational Maping)
 14:15 – Database discussion  
 16:52 – Docker install and download and use discussion
-26:32 – Mongodb discustion  
+26:32 – Mongodb discussion  
 28:17 – Running mongodb in a docker  
 31:10 - Database discussion  
 42:11 - Entity diagram discussion
