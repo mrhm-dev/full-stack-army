@@ -1,7 +1,7 @@
 0:00 – Class start
 02:08 – Question and answer  
 09:57 – Mongodb setup and discussion
-10:37 – ORM discussion(Object Relational Maping)
+10:37 – ORM discussion(Object Relational Mapping)
 14:15 – Database discussion  
 16:52 – Docker install and download and use discussion
 26:32 – Mongodb discussion  
