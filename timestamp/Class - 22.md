@@ -16,9 +16,3 @@
 2:43:00 - show vs code extension    
 2:50:40 - Question and answer   
 3:02:02 - Class End
-
-
-
-
-
-
