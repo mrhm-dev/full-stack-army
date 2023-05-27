@@ -12,7 +12,12 @@
 45:09 - One two many database discussion
 45:54 - Many to many database discussion
 46:56 - Mongoose JS discussion
-1:13:50 - Mongoose Guides overview
+1:02:04 Mongoose connection timeout
+1:13:35 - Mongoose Guides overview
 1:19:08 - Mongoose Schemas discussion
-1:23:33 - Making a Schema
-2:00:00 - Random topic discussion
+1:23:25 - Making a Schema
+1:27:02 - Making a Model 
+1:37:39 - Mongoose Queries
+1:39:08 - Person Schema Validation
+1:53:35 - Solution architect 
+2:00:00 - Random topic discussion (devops, system design and others)
