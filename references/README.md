@@ -37,4 +37,6 @@ Feel free to update this `README.md` file to add additional resources like youtu
 **Others:**
 
 - `Monorepo` [Monorepo Tools](https://monorepo.tools/)
+- `swaggerhub` [swaggerhub](https://app.swaggerhub.com/)
+- `OpenAPI Specification` [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md)
 
