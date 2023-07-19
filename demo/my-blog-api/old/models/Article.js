@@ -1,15 +1,6 @@
-const connection = require('../db');
-
 class Article {
-	constructor() {
-		this.articles = [];
-		// this.init();s
-	}
-
-	async init() {
-		const db = await connection.getDB();
-		console.log('DB', db.articles);
-		this.articles = db.articles;
+	constructor(articles) {
+		this.articles = articles;
 	}
 
 	async find() {
@@ -53,6 +44,18 @@ class Article {
 			hasNext: page < totalPage,
 			hasPrev: page > 1,
 		};
+	}
+
+	async create(article, databaseConnection) {
+		article.id = this.articles[this.articles.length - 1].id + 1;
+		article.createdAt = new Date().toISOString();
+		article.updatedAt = new Date().toISOString();
+
+		this.articles.push(article);
+		databaseConnection.db.articles = this.articles;
+		await databaseConnection.write();
+
+		return article;
 	}
 
 	async #sortAsc(articles, sortBy) {

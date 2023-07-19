@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon --ignore ./db --exec node index.js"
+    "start": "node app.js",
+    "dev": "nodemon --ignore ./old/db --exec node app.js"
   },
   "keywords": [],
   "author": "",
@@ -15,10 +15,12 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-openapi-validator": "^5.0.4",
+    "mongoose": "^7.3.4",
     "swagger-ui-express": "^4.6.3",
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
     "nodemon": "^2.0.22"
   }
 }

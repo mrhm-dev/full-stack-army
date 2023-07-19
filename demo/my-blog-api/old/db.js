@@ -7,7 +7,7 @@ class DatabaseConnection {
 		this.dbURL = dbURL;
 	}
 
-	async read() {
+	async connect() {
 		const dbStr = await fs.readFile(this.dbURL, { encoding: 'utf-8' });
 		this.db = JSON.parse(dbStr);
 	}
@@ -17,15 +17,9 @@ class DatabaseConnection {
 			await fs.writeFile(this.dbURL, JSON.stringify(this.db));
 		}
 	}
-
-	async getDB() {
-		if (this.db) {
-			return this.db;
-		}
-		await this.read();
-		return this.db;
-	}
 }
 
-const connection = new DatabaseConnection(path.resolve(process.env.DB_URL));
-module.exports = connection;
+const databaseConnection = new DatabaseConnection(
+	path.resolve(process.env.DB_URL)
+);
+module.exports = databaseConnection;
