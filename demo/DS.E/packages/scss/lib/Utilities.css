@@ -1,0 +1,200 @@
+/*=============================================
+    #Variables
+=============================================*/
+/**
+ * TABLE OF CONTENTS
+ * 
+ * COLORS
+ * Brand colors...................These are the main brand colors. They will be used the most
+ * Neutral colors.................White and black, gray scale, secondary colors.
+ * Utility colors.................Other colors to represent states: info, warning, success, etc.
+ * 
+ * TYPOGRAPHY
+ * Font families..................The fonts used in the design system.
+ * Font weights...................Font weights
+ * Sizes..........................Font sizing for body text, paragraphs, inputs
+ * Heading sizes..................Font sizing for page headings
+ *
+ * BREAKPOINTS
+ * Breakpoints....................Global responsive breakpoints definitions.
+ *
+ * SPACING
+ * Spacing........................Global fixed set of spacing variables
+ * 
+ * SHADOW
+ * Shadows........................Global fixed set of shadows
+ */
+/*=============================================
+=            Colors                           =
+=============================================*/
+/* Brand Color */
+/* Neutral Colors */
+/* Utility Colors */
+/*=====  End of Colors  ======*/
+/*=============================================
+=                 Typography                  =
+=============================================*/
+/* Font Families */
+/**
+ *
+ * 1) The playfair font. We'll use this for headings mostly.
+ *     https://fonts.google.com/specimen/Playfair+Display
+ *
+ * 2) The raleway font. We'll use this for the body text.
+ *     https://fonts.google.com/specimen/Raleway
+ */
+/* 1 */
+/* 2 */
+/* Font Sizes */
+/* Heading Font Sizes */
+/* Font Weights */
+/*=====  End of Typography  ======*/
+/*=============================================
+=                 Breakpoints                 =
+=============================================*/
+/*=====  End of Breakpoints  ======*/
+/*=============================================
+=            Spacing                          =
+=============================================*/
+/*=====  End of Spacing  ======*/
+/*=============================================
+=                  Shadows                    =
+=============================================*/
+/*=====  End of Shadows  ======*/
+/*=============================================
+=            Foundation - colors              =
+=============================================*/
+/**
+ * This file defines the actual colors that will be used for styling. They will default to the palette
+ * we defined in the _variable.scss file. This is our default palette, and devs can override this
+ * with their own variables.
+ */
+/**
+ *
+ * Defining a SCSS Variable: [Instructions]
+ * 1. define a name
+ * 2. value of the variable will be a css var, 
+ *    so the consumer of the design system won't have to use scss
+ * 3. default value will be a scss variable that we declared previously
+ * 4. added !default flag so consumer of the design system can override the scss variable 
+ * 5. the --dse prefix of the variable name is a namespace (project name)
+ * [dse - design system for engineering]
+ */
+/*=============================================
+=            Global text colors               =
+=============================================*/
+/*=====  End of Text Color  ======*/
+/*=============================================
+=                   Buttons                   =
+=============================================*/
+/*=====  End of Buttons  ======*/
+/*=============================================
+=                    Forms                    =
+=============================================*/
+/*=============================================
+=        Foundation - Typography              =
+=============================================*/
+/**
+ * This file defines the default font sizes to be used on headings and texts. The defaults come
+ * from the palette defined in _variables.scss.
+ */
+/*=============================================
+=            Body font family                  =
+=============================================*/
+/*=============================================
+=            Body font sizes                  =
+=============================================*/
+/*=============================================
+=            Heading font sizes               =
+=============================================*/
+/*=============================================
+=            Head font weights                =
+=============================================*/
+/*=============================================
+=            Mixins                           =
+=============================================*/
+/**
+ *
+ * Helpful reusable function-like things that will be used to implement
+ * styles for components.
+ *
+ */
+.dse-width-none {
+  width: 0;
+}
+
+.dse-height-none {
+  height: 0;
+}
+
+.dse-width-xxxs {
+  width: 0.25rem;
+}
+
+.dse-height-xxxs {
+  height: 0.25rem;
+}
+
+.dse-width-xxs {
+  width: 0.5rem;
+}
+
+.dse-height-xxs {
+  height: 0.5rem;
+}
+
+.dse-width-xs {
+  width: 0.75rem;
+}
+
+.dse-height-xs {
+  height: 0.75rem;
+}
+
+.dse-width-sm {
+  width: 1rem;
+}
+
+.dse-height-sm {
+  height: 1rem;
+}
+
+.dse-width-md {
+  width: 1.5rem;
+}
+
+.dse-height-md {
+  height: 1.5rem;
+}
+
+.dse-width-lg {
+  width: 2rem;
+}
+
+.dse-height-lg {
+  height: 2rem;
+}
+
+.dse-width-xl {
+  width: 3rem;
+}
+
+.dse-height-xl {
+  height: 3rem;
+}
+
+.dse-width-xxl {
+  width: 4.5rem;
+}
+
+.dse-height-xxl {
+  height: 4.5rem;
+}
+
+.dse-width-xxxl {
+  width: 6rem;
+}
+
+.dse-height-xxxl {
+  height: 6rem;
+}

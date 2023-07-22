@@ -1,0 +1,174 @@
+/*=============================================
+    #Variables
+=============================================*/
+
+/**
+ * TABLE OF CONTENTS
+ * 
+ * COLORS
+ * Brand colors...................These are the main brand colors. They will be used the most
+ * Neutral colors.................White and black, gray scale, secondary colors.
+ * Utility colors.................Other colors to represent states: info, warning, success, etc.
+ * 
+ * TYPOGRAPHY
+ * Font families..................The fonts used in the design system.
+ * Font weights...................Font weights
+ * Sizes..........................Font sizing for body text, paragraphs, inputs
+ * Heading sizes..................Font sizing for page headings
+ *
+ * BREAKPOINTS
+ * Breakpoints....................Global responsive breakpoints definitions.
+ *
+ * SPACING
+ * Spacing........................Global fixed set of spacing variables
+ * 
+ * SHADOW
+ * Shadows........................Global fixed set of shadows
+ */
+
+/*=============================================
+=            Colors                           =
+=============================================*/
+
+/* Brand Color */
+
+$green: #5ece7b;
+$green-light: #9ee2b0;
+
+$dark: #1d1f22;
+$dark-light: #737680;
+
+/* Neutral Colors */
+
+$gray: #a3a5ad;
+$gray-light: #bebfc4;
+
+$white: #fff;
+$white-dark: #f1f2f3;
+
+/* Utility Colors */
+
+$red: #d12727;
+$red-light: #f8dedf;
+
+$blue: #0468db;
+$blue-light: #b4d2f4;
+
+/*=====  End of Colors  ======*/
+
+/*=============================================
+=                 Typography                  =
+=============================================*/
+
+/* Font Families */
+
+/**
+ *
+ * 1) The playfair font. We'll use this for headings mostly.
+ *     https://fonts.google.com/specimen/Playfair+Display
+ *
+ * 2) The raleway font. We'll use this for the body text.
+ *     https://fonts.google.com/specimen/Raleway
+ */
+
+$playfair: 'Playfair Display', serif; /* 1 */
+$raleway: 'Raleway', 'HelveticaNeue', 'Helvetica', sans-serif; /* 2 */
+
+/* Font Sizes */
+
+$fs-xs: 0.75rem; // 12px
+$fs-sm: 0.875rem; // 14px
+$fs-base: 1rem; // 16px
+$fs-lg: 1.125rem; // 18px
+$fs-xl: 1.5rem; // 24px
+
+$fs: (
+	xs: 0.75rem,
+	sm: 0.875rem,
+	base: 1rem,
+	lg: 1.125rem,
+	xl: 1.5rem,
+);
+
+/* Heading Font Sizes */
+
+$h-1: 1.5rem; // 24px
+$h-2: 1.375rem; // 22px
+$h-3: 1.125rem; // 18px
+$h-4: 1rem; // 16px
+$h-5: 0.75rem; // 12px
+$h-6: 0.75rem; // 12px
+
+$h: (
+	1: 1.5rem,
+	2: 1.375rem,
+	3: 1.125rem,
+	4: 1rem,
+	5: 0.875rem,
+	6: 0.75rem,
+);
+
+/* Font Weights */
+
+$fw-light: 300;
+$fw-normal: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-extrabold: 800;
+$fw-black: 900;
+
+/*=====  End of Typography  ======*/
+
+/*=============================================
+=                 Breakpoints                 =
+=============================================*/
+
+$breakpoints: (
+	md: 48rem,
+	// 768px
+	lg: 64rem,
+	// 1024px
+	xl: 80rem,
+	// 1280px
+);
+
+/*=====  End of Breakpoints  ======*/
+
+/*=============================================
+=            Spacing                          =
+=============================================*/
+
+$spacing: (
+	none: 0,
+	xxxs: 0.25rem,
+	// 4px
+	xxs: 0.5rem,
+	// 8px
+	xs: 0.75rem,
+	// 12px
+	sm: 1rem,
+	// 16px
+	md: 1.5rem,
+	// 24px
+	lg: 2rem,
+	// 32px
+	xl: 3rem,
+	// 48px
+	xxl: 4.5rem,
+	// 72px
+	xxxl: 6rem,
+	// 96px
+) !default;
+
+/*=====  End of Spacing  ======*/
+
+/*=============================================
+=                  Shadows                    =
+=============================================*/
+
+$shadows: (
+	base: 0 4px 11px rgba(157, 157, 157, 0.21),
+);
+
+/*=====  End of Shadows  ======*/

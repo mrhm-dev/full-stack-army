@@ -137,7 +137,7 @@ app.get('/', (req, res) => {
 
 যদি ব্রাউজারে রান করি তাহলে আমাদের অবজেক্টটা json আকারে দেখাবে। তো আমাদের বেসিক ওয়েব সার্ভার রেডি।
 
-এবার ধরে নিলাম আমাদের অ্যাপ্লিকেশনে ডাটাবেইজ আছে। মডেলের সাথে ডাটাবেইজের কমিউকেশন করার জন্য একটা সুন্দর ORM (Object Relational Mapping) আছে যার নাম [Mongoose](https://mongoosejs.com/). যদি আমরা mongodb নিয়ে কাজ করতে চাই তাহলে mongoose ইউজ করবো। আমরা mongoose ইনস্টল করে ফেলি।
+এবার ধরে নিলাম আমাদের অ্যাপ্লিকেশনে ডাটাবেইজ আছে। মডেলের সাথে ডাটাবেইজের কমিউকেশন করার জন্য অনেক ORM (Object Relational Mapping) আছে যাদের মধ্যে কয়েকটা জনপ্রিয় ORM হচ্ছে [Mongoose](https://mongoosejs.com/), [Sequelize](https://sequelize.org/), [TypeORM](https://typeorm.io/), [Prisma](https://www.prisma.io/). যদি আমরা [MongoDB](https://www.mongodb.com/) নিয়ে কাজ করতে চাই তাহলে আমরা [Mongoose](https://mongoosejs.com/) ব্যবহার করবো। আমরা [Mongoose](https://mongoosejs.com/) ইনস্টল করে ফেলি।
 
 ```sh
 yarn add mongoose
