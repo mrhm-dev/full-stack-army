@@ -1,44 +1,47 @@
 const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 
-const productSchema = new Schema(
-	{
-		name: {
-			type: String,
-			unique: true,
-			required: true,
-			minLength: [10, 'Name is too short'],
-			maxLength: [75, 'Name is too long'],
-			validate: {
-				validator: (v) => {
-					// write your validation logic here
-					return true;
-				},
-				message: 'Custom validation failed',
+const productSchema = new Schema({
+	name: {
+		type: String,
+		unique: true,
+		required: true,
+		minLength: [10, 'Name is too short'],
+		maxLength: [75, 'Name is too long'],
+		validate: {
+			validator: (v) => {
+				// write your validation logic here
+				return true;
 			},
-			index: true,
+			message: 'Custom validation failed',
 		},
-		price: {
-			type: Number,
-			required: true,
-			validate: {
-				validator: (v) => {
-					return v > 0;
-				},
-				message: 'Price can not be zero or negative',
+		index: true,
+	},
+	price: {
+		type: Number,
+		required: true,
+		validate: {
+			validator: (v) => {
+				return v > 0;
 			},
-		},
-		tags: {
-			type: [String],
-		},
-		color: {
-			type: String,
-			enum: ['Silver', 'Gray', 'Black'],
-			default: 'Silver',
+			message: 'Price can not be zero or negative',
 		},
 	},
-	{ id: false }
-);
+	tags: {
+		type: [String],
+	},
+	color: {
+		type: String,
+		enum: ['Silver', 'Gray', 'Black'],
+		default: 'Silver',
+	},
+	reviews: [
+		{
+			type: Schema.ObjectId,
+			ref: 'Review',
+		},
+	],
+});
 
 productSchema.virtual('tagCount').get(function () {
 	return this.tags.length;
@@ -50,3 +53,18 @@ productSchema.methods.findAllWithSameName = function (cb) {
 
 const Product = model('Product', productSchema);
 module.exports = Product;
+
+/**
+ * Car - basic information
+ * Engine
+ * Tier
+ * Doors
+ *
+ *
+ * Car {
+ * 	info {}
+ * 	engine {}
+ * 	tiers [{}]
+ * 	doors [{}]
+ * }
+ */

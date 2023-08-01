@@ -1,23 +1,21 @@
 require('dotenv').config();
+const mongoose = require('mongoose');
 const connect = require('./db');
 const Product = require('./Product');
+const Review = require('./Review');
 
 const main = async () => {
 	// database connection
 	await connect();
 
-	// main codes
-	const product = new Product({
-		name: 'Microsoft Surface Pro',
-		price: 1000,
-		tags: ['microsoft', 'laptop'],
-		color: 'Gray',
-	});
 	try {
-		await product.save();
-		console.log('new product crated with id -', product._id);
-		// await Product.deleteMany({});
-		// console.log('Done');
+		const products = await Product.find({})
+			.populate({
+				path: 'reviews',
+				select: 'user rating text -_id',
+			})
+			.select(['-__v', '-tags', '-color']);
+		console.log(JSON.stringify(products, null, 4));
 	} catch (e) {
 		console.log(e.message);
 	}
