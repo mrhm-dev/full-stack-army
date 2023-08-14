@@ -9,8 +9,8 @@ router
 router
 	.route('/api/v1/articles/:id')
 	.get(articleController.findSingleItem)
-	.put(() => {})
-	.patch(() => {})
-	.delete(() => {});
+	.put(articleController.updateItem)
+	.patch(articleController.updateItemPatch)
+	.delete(articleController.removeItem);
 
 module.exports = router;
