@@ -15,7 +15,7 @@ const articleSchema = new Schema(
 			ref: 'User',
 		},
 	},
-	{ timestamps: true, id: true }
+	{ timestamps: true, id: true, strict: false }
 );
 
 const Article = model('Article', articleSchema);
