@@ -70,6 +70,21 @@ class MyDB {
 		);
 		return tickets;
 	}
+	  /**
+   * update ticket by username
+   * @param {string} username
+   * @param {{username:string, price: number}} ticketBody
+   * @returns {Array<Ticket>}
+   */
+  updateByUserName(username, ticketBody) {
+    const tickets = this.findByUserName(username);
+    tickets.forEach((ticket) => {
+      ticket.username = ticketBody.username ?? ticket.username;
+      ticket.price = ticketBody.price ?? ticket.price;
+      ticket.updatedAt = new Date();
+    });
+    return tickets;
+  }
 
 	/**
 	 * update ticket by id
@@ -104,6 +119,18 @@ class MyDB {
 			return false;
 		}
 	}
+	  /**
+   * delete ticket by username
+   * @param {string} username
+   * @returns {Array<Ticket>}
+   */
+  deleteByUserName(username) {
+    const tickets = this.findByUserName(username);
+    tickets.forEach((ticket) => {
+      this.deleteById(ticket.id);
+    });
+    return tickets;
+  }
 
 	/**
 	 * find winners

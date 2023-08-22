@@ -1,0 +1,1 @@
+GET http://localhost:4000/api/calculate?name=fibonacci&value=50
