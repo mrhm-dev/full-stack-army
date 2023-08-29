@@ -20,7 +20,7 @@ tags:
   - name: User
     description: User Endpoints (admin only)
 paths:
-  "/auth/signup":
+  "/auth/register":
     post:
       description: create a new account
       tags: [Auth]
@@ -76,7 +76,7 @@ paths:
           $ref: "#/components/responses/400"
         "500":
           "$ref": "#/components/responses/500"
-  "/auth/signin":
+  "/auth/login":
     post:
       description: Login to your account
       tags: [Auth]

@@ -15,7 +15,7 @@ const create = async (req, res, next) => {
 		const response = {
 			code: 201,
 			message: 'Article Created Successfully',
-			data: { ...article._doc },
+			data: { ...article },
 			links: {
 				self: `/articles/${article.id}`,
 				author: `/articles/${article.id}/author`,
