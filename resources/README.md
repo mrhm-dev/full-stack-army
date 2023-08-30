@@ -26,3 +26,4 @@ In this repository you can find all the lecture resources in markdown format.
 - [Lecture 19 - Backend 6 | Adda with Random Topics | You can Skip](./lecture-19/README.md)
 - [Lecture 20 - Backend 7 | Start Working with Mongoose](./lecture-20/README.md)
 - [Lecture 22 - Authentication System from Pseudo Code to Real Code](./lecture-22/README.md)
+- [Lecture 101 - Introduction to API Design](./lecture-101/README.md)
