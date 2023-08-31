@@ -14,7 +14,7 @@
 
 2. [<b>HTTP Basics</b>](#2)
    <ol type="a">
-   <li>Understanding HTTP methods (GET, POST, PUT, DELETE)</li>
+   <li>Understanding HTTP methods (GET, POST, PUT, PATCH, DELETE)</li>
    <li>Status codes and their meanings</li>
    <li>Request and response headers</li>
    <li>URI (Uniform Resource Identifier) structure</li>
@@ -34,12 +34,12 @@
 
 ## Introduction to REST API
 
-REST stands for Representational State Transfer. It is a set of architectural principles for designing web services. RESTful APIs are designed to be easy to use, scalable, and maintainable.
+REST stands for <b>Representational State Transfer</b>. It is a set of architectural principles for designing <b>web services</b>. RESTful APIs are designed to be easy to use, scalable, and maintainable.
 
 <b>The six REST principles are:</b>
 
 1.  <b>Uniform Interface</b>
-    <p>The uniform interface principle states that all resources should be accessed using the same HTTP methods <b>(GET, POST, PUT, DELETE)</b>. This makes it easy for clients to learn how to use the API.</p>
+    <p>The uniform interface principle states that all resources should be accessed using the same HTTP methods <b>(GET, POST, PUT, PATCH, DELETE)</b>. This makes it easy for clients to learn how to use the API.</p>
 
     <p>For example - To get a list of all users, a client would use the GET method on the URL "<code>/users</code>". To create a new user, a client would use the POST method on the URL "<code>/users</code>". To update an existing user, a client would use the PUT method on the URL "<code>/users/123</code>". To delete an existing user, a client would use the DELETE method on the URL "<code>/users/123</code>".</p>
 
@@ -74,7 +74,7 @@ REST stands for Representational State Transfer. It is a set of architectural pr
 
 1.  Identify the resources.The first step is to identify the resources that will be exposed by the API. A resource can be anything that can be named, such as a user, a product, or an order.
 
-2.  Determine the HTTP methods. The next step is to determine the HTTP methods that will be used to access the resources. The most common HTTP methods are GET, POST, PUT and DELETE.
+2.  Determine the HTTP methods. The next step is to determine the HTTP methods that will be used to access the resources. The most common HTTP methods are GET, POST, PUT, PATCH and DELETE.
 
 3.  Create URLs for the resources. Each resource should have a unique URL. URIs should be consistent and easy to remember.
 
@@ -92,53 +92,13 @@ REST stands for Representational State Transfer. It is a set of architectural pr
 
 - The Google Maps API allows developers to access information about maps and directions.
 
-<b>Benefits of REST Architecture:</b>
-
-1.  Scalability and Performance:
-
-    - RESTful APIs are stateless, allowing them to handle a large number of concurrent requests efficiently.
-
-    - Load balancing techniques can be applied to distribute traffic across multiple servers, improving scalability.
-
-    - Caching mechanisms can be employed to reduce server load and enhance performance.
-
-2.  Simplicity and Ease of Use:
-
-    - REST leverages familiar HTTP protocols and methods making it easy for developers to understand and use.
-
-    - It has a lightweight and intuitive design, which promotes simplicity in API development.
-
-    - RESTful APIs can be accessed using standard web technologies and tools.
-
-3.  Flexibility and Modifiability:
-
-    - REST allows for loose coupling between the client and server, enabling independent evolution of both.
-
-    - It facilitates the addition, modification, or removal of resources without impacting existing clients.
-
-    - Changes in representations and business logic can be implemented without affecting the API interface.
-
-4.  Compatibility and Interoperability:
-
-    - RESTful APIs are platform-independent, enabling communication between heterogeneous systems.
-
-    - They can be consumed by a variety of clients, including web browsers, mobile apps and other services.
-
-    - REST promotes the use of standard data formats like JSON and XML, enhancing interoperability.
-
-5.  Security and Reliability:
-
-    - REST supports various security mechanisms, such as SSL/TLS encryption and token-based authentication.
-
-    - It integrates well with existing security infrastructures, providing robust security measures.
-
-    - RESTful APIs are designed to be reliable, with build-in mechanisms for error handling and retying.
+<br>
 
 <b>Key Components of a REST API</b>
 
 1.  Resources:
 
-    -Resources represent the key entities or objects in your system that are exposed through the API.
+    - Resources represent the key entities or objects in your system that are exposed through the API.
 
     - Each resource should have a unique identifier (URI) and can have multiple representations.
 
@@ -214,6 +174,50 @@ REST stands for Representational State Transfer. It is a set of architectural pr
 
     - Clients can dynamically navigate the API by following these hypermedia links.
 
+<br>
+
+<b>Benefits of REST Architecture:</b>
+
+1.  Scalability and Performance:
+
+    - RESTful APIs are stateless, allowing them to handle a large number of concurrent requests efficiently.
+
+    - Load balancing techniques can be applied to distribute traffic across multiple servers, improving scalability.
+
+    - Caching mechanisms can be employed to reduce server load and enhance performance.
+
+2.  Simplicity and Ease of Use:
+
+    - REST leverages familiar HTTP protocols and methods making it easy for developers to understand and use.
+
+    - It has a lightweight and intuitive design, which promotes simplicity in API development.
+
+    - RESTful APIs can be accessed using standard web technologies and tools.
+
+3.  Flexibility and Modifiability:
+
+    - REST allows for loose coupling between the client and server, enabling independent evolution of both.
+
+    - It facilitates the addition, modification, or removal of resources without impacting existing clients.
+
+    - Changes in representations and business logic can be implemented without affecting the API interface.
+
+4.  Compatibility and Interoperability:
+
+    - RESTful APIs are platform-independent, enabling communication between heterogeneous systems.
+
+    - They can be consumed by a variety of clients, including web browsers, mobile apps and other services.
+
+    - REST promotes the use of standard data formats like JSON and XML, enhancing interoperability.
+
+5.  Security and Reliability:
+
+    - REST supports various security mechanisms, such as SSL/TLS encryption and token-based authentication.
+
+    - It integrates well with existing security infrastructures, providing robust security measures.
+
+    - RESTful APIs are designed to be reliable, with build-in mechanisms for error handling and retying.
+
 <a id="2"></a>
 
 ## HTTP Basics
@@ -226,23 +230,23 @@ REST stands for Representational State Transfer. It is a set of architectural pr
     <th>Usage</th>
   </tr>
   <tr>
-    <td>GET</td>
+    <td><b>GET</b></td>
     <td>Retrieve a representation of a resource or a resource collection</td>
   </tr>
   <tr>
-    <td>POST</td>
+    <td><b>POST</b></td>
     <td>Create a new resource or perform a specific action</td>
   </tr>
   <tr>
-    <td>PUT</td>
+    <td><b>PUT</b></td>
     <td>Replace and entire resource with a new representation</td>
   </tr>
   <tr>
-    <td>PATCH</td>
+    <td><b>PATCH</b></td>
     <td>Update a specific part of a resource</td>
   </tr>
   <tr>
-    <td>DELETE</td>
+    <td><b>DELETE</b></td>
     <td>Delete a resource or a resource collection</td>
   </tr>
   <tr>
@@ -263,11 +267,11 @@ REST stands for Representational State Transfer. It is a set of architectural pr
     <th>Usage</th>
   </tr>
   <tr>
-    <td>200</td>
+    <td><b>200</b></td>
     <td>OK - The request was successful and the response contains data</td>
   </tr>
   <tr>
-    <td>201</td>
+    <td><b>201</b></td>
     <td>Created - A new resource was successfully created</td>
   </tr>
   <tr>
@@ -279,7 +283,7 @@ REST stands for Representational State Transfer. It is a set of architectural pr
     <td>Not Modified - The requested resource has not been modified</td>
   </tr>
   <tr>
-    <td>400</td>
+    <td><b>400</b></td>
     <td>Bad Request - The request is malformed or has invalid data</td>
   </tr>
   <tr>
@@ -287,11 +291,11 @@ REST stands for Representational State Transfer. It is a set of architectural pr
     <td>Unauthorized - Authentication is required for the request</td>
   </tr>
   <tr>
-    <td>403</td>
+    <td><b>403</b></td>
     <td>Forbidden - The server understood the request, but refused it</td>
   </tr>
   <tr>
-    <td>404</td>
+    <td><b>404</b></td>
     <td>Not Found - The requested resource does not exist</td>
   </tr>
   <tr>
@@ -301,6 +305,10 @@ REST stands for Representational State Transfer. It is a set of architectural pr
   <tr>
     <td>500</td>
     <td>Internal Server Error - An unexpected error occurred</td>
+  </tr>
+  <tr>
+    <td><b>503</b></td>
+    <td>Service Unavailable - The server is currently unavailable</td>
   </tr>
 </table>
 
@@ -518,7 +526,7 @@ REST stands for Representational State Transfer. It is a set of architectural pr
 
     - Use nouns or noun phrases to represent resources.
 
-    - Examples: Users, Products, Orders.
+    - Examples: User, Product, Order.
 
 4.  Design Resource URIs:
 
@@ -549,7 +557,7 @@ REST stands for Representational State Transfer. It is a set of architectural pr
 
     - Decide on the structure and format of the resource representations.
 
-    - Use commonly accepted formats like JSON or XML.
+    - Use commonly accepted formats like <b>JSON</b> or XML.
 
     - Include relevant attributes and relationships in the representations.
 
