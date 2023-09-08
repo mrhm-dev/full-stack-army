@@ -29,3 +29,4 @@ In this repository you can find all the lecture resources in markdown format.
 - [Lecture 101 - Introduction to API Design](./lecture-101/README.md)
 - [Lecture 102 - API Design Methods, Errors and Response Structures](./lecture-102/README.md)
 - [Lecture 103 - API Authentication Methods](./lecture-103/README.md)
+- [Lecture 105 - REST API Theory Final Summary](./lecture-105/README.md)
