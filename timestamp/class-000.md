@@ -1,3 +1,5 @@
+# Class - 0
+
 0:00 – Intro  
 1:55 – Why Full-Stack Army  
 3:10 – What You Get and What You Don't Get  
