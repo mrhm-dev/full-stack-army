@@ -173,6 +173,16 @@ const removeItem = async (id) => {
 	return Article.findByIdAndDelete(id);
 };
 
+const checkOwnership = async ({ resourceId, userId }) => {
+	const article = await Article.findById(resourceId);
+	if (!article) throw notFound();
+
+	if (article._doc.author.toString() === userId) {
+		return true;
+	}
+	return false;
+};
+
 module.exports = {
 	findAll,
 	create,
@@ -182,4 +192,5 @@ module.exports = {
 	updateProperties,
 	removeItem,
 	updateArticleV2,
+	checkOwnership,
 };
