@@ -1,3 +1,5 @@
+# Class 8
+
 0:00 - Class Start  
 1:55 - Class Topic  
 5:38 - What is Function and Why Function  
@@ -10,7 +12,7 @@
 1:17:24 - Function Return Concept  
 1:27:52 - Discussion About Return  
 1:32:38 - Concept Summary  
-1:34:16 - Functional Programming   
+1:34:16 - Functional Programming
 1:36:47 - Benefits of Functional Programming  
 1:41:08 - Prove Function is a Value  
 1:50:32 - Meta Programming  
