@@ -24,17 +24,19 @@ Feel free to update this `README.md` file to add additional resources like youtu
 - `FullStack` [FullStack Development - Connecting The Dots](https://www.rokomari.com/book/211527/fullstack-development)
 - `Algorithms` [Introduction to Algorithms](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844)
 
-**Design**
+**Design:**
 
 - `Polaris shopify` [Polaris shopify](https://polaris.shopify.com/)
 - `Carbon Design System` [Carbon Design System](https://carbondesignsystem.com/)
 - `Fluent UI` [Fluent UI](https://developer.microsoft.com/en-us/fluentui#/)
 
-**Tools**
+**Tools:**
+
 - `Atomizer` [Atomizer](https://acss.io/)
 - `BEM` [BEM](https://getbem.com/)
 
 **Others:**
 
 - `Monorepo` [Monorepo Tools](https://monorepo.tools/)
-
+- `swaggerhub` [swaggerhub](https://app.swaggerhub.com/)
+- `OpenAPI Specification` [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md)
