@@ -1,3 +1,5 @@
+# Class 24
+
 0:00:00 - Class Joining
 0:02:00 - Random Topic
 0:37:00 - Implement user CRUD Operation

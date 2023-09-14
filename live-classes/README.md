@@ -114,3 +114,7 @@
 - [Lecture 108 - API Endpoints and Introduction to Swagger](https://youtu.be/0TQKgG0P_3s)
 - [Lecture 109 - API Design Practical using Swagger and OAS Part 1](https://youtu.be/22J7AsQ2gA8)
 - [Lecture 110 - API Design Express Server and Swagger Part 2](https://youtu.be/dc9tWtZgnvg)
+- [Lecture - 111 | API Design Implement Find Articles Controller](https://youtu.be/75ALc9hGEXs?si=0fXP_OMS9VLqefDa)
+- [Lecture - 112 | QNA OOP Interface Explained](https://youtu.be/G2TJipousnY?si=33NR8Abs3Ly198dk)
+- [Lecture - 113 | API Design The File Structure Responsibility and Post Method](https://youtu.be/jcT9K9W_rPM?si=s8HYlO7GjeyJSsQg)
+- [Lecture - 114 | MongoDB Atlas, Mongoose and Models](https://youtu.be/zU8ighWdDyY?si=HXyBxSeSHLT8otCE)

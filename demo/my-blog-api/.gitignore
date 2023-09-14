@@ -1,3 +1,4 @@
+### Node ###
 # Logs
 logs
 *.log
@@ -102,7 +103,6 @@ dist
 
 # vuepress v2.x temp and cache directory
 .temp
-.cache
 
 # Docusaurus cache and generated files
 .docusaurus
@@ -129,17 +129,11 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
+### Node Patch ###
+# Serverless Webpack directories
+.webpack/
 
-# Local History for Visual Studio Code
-.history/
+# Optional stylelint cache
 
-# Built Visual Studio Code Extensions
-*.vsix
-
-practice-projects
+# SvelteKit build / generate output
+.svelte-kit

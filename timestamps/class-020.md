@@ -1,3 +1,5 @@
+# Class 20
+
 0:00 – Class start
 02:08 – Question and answer  
 09:57 – Mongodb setup and discussion
@@ -16,8 +18,8 @@
 1:13:35 - Mongoose Guides overview
 1:19:08 - Mongoose Schemas discussion
 1:23:25 - Making a Schema
-1:27:02 - Making a Model 
+1:27:02 - Making a Model
 1:37:39 - Mongoose Queries
 1:39:08 - Person Schema Validation
-1:53:35 - Solution architect 
+1:53:35 - Solution architect
 2:00:00 - Random topic discussion (devops, system design and others)
