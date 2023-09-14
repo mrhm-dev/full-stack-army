@@ -1,6 +1,6 @@
 # Lecture 109 - API Design Practice using Swagger and OAS Part 1
 
-#### my-blog-api.yaml
+#### my-blog-api.yaml (swagger api documentation)
 
 ```yaml
 openapi: 3.0.0
