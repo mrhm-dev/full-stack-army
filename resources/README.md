@@ -32,3 +32,4 @@ In this repository you can find all the lecture resources in markdown format.
 - [Lecture 105 - REST API Theory Final Summary](./lecture-105/README.md)
 - [Lecture 106 - API Project SRS, Check List & YAML](./lecture-106/README.md)
 - [Lecture 107 - API Project Entity Relationship Diagram](./lecture-107/README.md)
+- [Lecture 108 - API Endpoints and Introduction to Swagger](./lecture-108/README.md)
