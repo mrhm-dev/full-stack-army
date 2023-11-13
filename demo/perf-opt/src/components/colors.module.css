@@ -1,0 +1,17 @@
+.parent {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	padding: 2rem;
+}
+
+.color {
+	width: 6rem;
+	height: 6rem;
+	border-radius: 0.25rem solid gray;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	cursor: pointer;
+}

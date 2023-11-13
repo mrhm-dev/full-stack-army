@@ -71,7 +71,7 @@ To learn above 4 topics we need to learn some another topics:
 - Get one book - /books/bookId
 - POST new book - /books
 - Update Book - /books/bookId
-- Delete Book - /book/booksId
+- Delete Book - /books/bookId
 
 #### Pipeline
 

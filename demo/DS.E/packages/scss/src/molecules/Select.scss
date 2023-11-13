@@ -65,6 +65,10 @@
 		color: $form-color-option-selected;
 	}
 
+	&__option--highlighted {
+		background-color: $form-bg-color-hover;
+	}
+
 	&__option--selected:hover {
 		background-color: $form-bg-option-selected;
 	}

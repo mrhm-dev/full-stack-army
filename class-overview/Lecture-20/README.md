@@ -242,7 +242,10 @@ mongoose
 	.connect('mongodb://loclhost:27017/mongo-demo')
 	.then(async () => {
 		console.log('Database connected');
-		const person = new Person({});
+		const person = new Person({
+		        firstName: 'Aditya',
+       			lastName: 'Chakraborty'
+		});
 		await person.save();
 		console.log('Person created');
 	})

@@ -1,0 +1,13 @@
+{
+  "name": "jest-demo",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^29.4.2"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch-all"
+  }
+}

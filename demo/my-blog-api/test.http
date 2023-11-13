@@ -1,0 +1,48 @@
+PATCH http://localhost:4000/api/v2/articles/64cbd568ad09a17656a2505d
+Content-Type: application/json
+
+[
+  { "op": "replace", "path": "title", "value": "JSON Patch" },
+  { "op": "replace", "path": "body", "value": "Updated body using json patch" },
+  { "op": "add", "path": "test", "value": "Test Property" },
+  { "op": "add", "path": "test2", "value": "Funny" },
+  { "op": "add", "path": "test3", "value": "Test" },
+  { "op": "add", "path": "test4", "value": 1000 }
+]
+
+###
+
+POST http://localhost:4000/api/v1/auth/register
+Content-Type:  application/json
+
+{
+  "name": "Ariful",
+  "email": "ariful2@gmail.com",
+  "password": "pass123"
+}
+
+### 
+
+POST http://localhost:4000/api/v1/auth/login
+Content-Type:  application/json
+
+{
+  "email": "ariful2@gmail.com",
+  "password": "pass123"
+}
+
+### 
+POST http://localhost:4000/api/v1/articles
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZWUxZmZlZWNlZTg5MzFjMzc4ODNkMSIsIm5hbWUiOiJBcmlmdWwiLCJlbWFpbCI6ImFyaWZ1bDJAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE2OTMzMzAwMTMsImV4cCI6MTY5MzMzMzYxM30.hQBELPoPgbFlJFuzqc-CsMfM4J0GkJKdnUwKJ8DTKTY
+
+{
+  "title": "Ariful Islam's New Post",
+  "body": "Test body"
+}
+
+###
+
+DELETE http://localhost:4000/api/v1/articles/64cbd568ad09a17656a2505d
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZWUxZmZlZWNlZTg5MzFjMzc4ODNkMSIsIm5hbWUiOiJBcmlmdWwiLCJlbWFpbCI6ImFyaWZ1bDJAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE2OTMzMzAwMTMsImV4cCI6MTY5MzMzMzYxM30.hQBELPoPgbFlJFuzqc-CsMfM4J0GkJKdnUwKJ8DTKTY
