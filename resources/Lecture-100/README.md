@@ -1,4 +1,4 @@
-# Develop Backend Application | REST API Checklist | Lecture 100
+# Lecture 100 - Develop Backend Application | REST API Checklist
 
 ## Main Components of Backend Application
 
