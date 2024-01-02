@@ -44,19 +44,19 @@ REST stands for <b>Representational State Transfer</b>. It is a set of architect
     <p>For example - To get a list of all users, a client would use the GET method on the URL "<code>/users</code>". To create a new user, a client would use the POST method on the URL "<code>/users</code>". To update an existing user, a client would use the PUT method on the URL "<code>/users/123</code>". To delete an existing user, a client would use the DELETE method on the URL "<code>/users/123</code>".</p>
 
 2.  <b>Client-Server</b>
-    <p>The client-server principle states that the client and server should be independent of each other. This means that the client should not need to know anything about the serve's implementation in order to use the API.</p>
+    <p>The client-server principle states that the client and server should be independent of each other. This means that the client should not need to know anything about the server’s implementation in order to use the API.</p>
 
     <p>For example - A client that uses a RESTful API to get a list of users should not need to know how the server stores the users' data. The client should only need to know the URL of the resource (in this case, "<code>/users</code>").</p>
 
 3.  <b>Statelessness</b>
-    <p>The statelessness principle states that each request form the client should be independent of the previous requests. This means that the server does not need to maintain any state information about the client.</p>
+    <p>The statelessness principle states that each request from the client should be independent of the previous requests. This means that the server does not need to maintain any state information about the client.</p>
 
-    <p>For example - A client that uses a RESTful API to get a list of users should not need to provide any authentication information. The serer should be able to return the list of users without knowing anything about the client.</p>
+    <p>For example - A client that uses a RESTful API to get a list of users should not need to provide any authentication information. The server should be able to return the list of users without knowing anything about the client.</p>
 
 4.  <b>Cacheability</b>
     <p>The cacheability principle states that resources can be cached by the client or by intermediary systems. This can improve performance by reducing the number of request that need to b made to the server.</p>
 
-    <p>For example - A client that uses a RESTful API to get a list of users can cache the list of users. This means that the client does not need to make a request to the server every time it need to get a list of users.</p>
+    <p>For example - A client that uses a RESTful API to get a list of users can cache the list of users. This means that the client does not need to make a requests to the server every time it need to get a list of users.</p>
 
 5.  <b>Layered System</b>
     <p>The layered system principle states that the API can be implemented as a layered system. This means that the API can be divided into different layers, each of which can be implemented independently.</p>
@@ -70,17 +70,17 @@ REST stands for <b>Representational State Transfer</b>. It is a set of architect
 
 <b>Step-by-step Guidelines</b>
 
-<p>Here are some step-by-step guidelines fr designing a RESTful API:</p>
+<p>Here are some step-by-step guidelines for designing a RESTful API:</p>
 
-1.  Identify the resources.The first step is to identify the resources that will be exposed by the API. A resource can be anything that can be named, such as a user, a product, or an order.
+1.  Identify the resources. The first step is to identify the resources that will be exposed by the API. A resource can be anything that can be named, such as a user, a product, or an order.
 
 2.  Determine the HTTP methods. The next step is to determine the HTTP methods that will be used to access the resources. The most common HTTP methods are GET, POST, PUT, PATCH and DELETE.
 
 3.  Create URLs for the resources. Each resource should have a unique URL. URIs should be consistent and easy to remember.
 
-4.  Define the payloads. The payload is the data that is sent to the server or returned form the server. The payload format should be consistent for all resources.
+4.  Define the payloads. The payload is the data that is sent to the server or returned from the server. The payload format should be consistent for all resources.
 
-5.  Test the APi. Once tha API is designed, it should be tested to make sure that is works as expected.
+5.  Test the API. Once the API is designed, it should be tested to make sure that it works as expected.
 
 <b>Example</b>
 
@@ -112,7 +112,7 @@ REST stands for <b>Representational State Transfer</b>. It is a set of architect
 
     - HTTP methods define the actions that can be performed on resources.
 
-    - Commonly used methods in RESTful APIs incudes GET, POST, PUT, PATCH and DELETE.
+    - Commonly used methods in RESTful APIs include GET, POST, PUT, PATCH and DELETE.
 
 4.  Headers:
 
@@ -136,7 +136,7 @@ REST stands for <b>Representational State Transfer</b>. It is a set of architect
 
     - HTTP status codes indicate the outcome of a client's request.
 
-    - Common status codes include 200 (OK), 201 (Created), 400 (BAd REquest), 404 (Not Found), 500 (Internal Server Error), etc.
+    - Common status codes include 200 (OK), 201 (Created), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error), etc.
 
 8.  Parameters:
 
@@ -216,7 +216,7 @@ REST stands for <b>Representational State Transfer</b>. It is a set of architect
 
     - It integrates well with existing security infrastructures, providing robust security measures.
 
-    - RESTful APIs are designed to be reliable, with build-in mechanisms for error handling and retying.
+    - RESTful APIs are designed to be reliable, with built-in mechanisms for error handling and retying.
 
 <a id="2"></a>
 
@@ -239,7 +239,7 @@ REST stands for <b>Representational State Transfer</b>. It is a set of architect
   </tr>
   <tr>
     <td><b>PUT</b></td>
-    <td>Replace and entire resource with a new representation</td>
+    <td>Replace an entire resource with a new representation</td>
   </tr>
   <tr>
     <td><b>PATCH</b></td>
@@ -395,7 +395,7 @@ REST stands for <b>Representational State Transfer</b>. It is a set of architect
   </tr>
   <tr>
     <td>Last-Modified</td>
-    <td>Indicates tha last modified date of the response content</td>
+    <td>Indicates the last modified date of the response content</td>
   </tr>
   <tr>
     <td>Location</td>
@@ -419,7 +419,7 @@ REST stands for <b>Representational State Transfer</b>. It is a set of architect
   </tr>
   <tr>
     <td>Server</td>
-    <td>Identifies tha server software/version in the response</td>
+    <td>Identifies the server software/version in the response</td>
   </tr>
   <tr>
     <td>X-Powered-By</td>
@@ -462,7 +462,7 @@ REST stands for <b>Representational State Transfer</b>. It is a set of architect
 
 1.  Scheme:
 
-    - The scheme indicates the protocol or mechanism use dto access the resource.
+    - The scheme indicates the protocol or mechanism used to access the resource.
 
     - Examples: <code>"http://", "https://", "ftp://", "file://", "milto:"</code>
 
@@ -512,13 +512,13 @@ REST stands for <b>Representational State Transfer</b>. It is a set of architect
 
     - Examples: Users, products, orders, blog posts.
 
-2.  Determine Resource RElationships:
+2.  Determine Resource Relationships:
 
     - Identify the relationships and associations between the entities.
 
     - Determine how these relationships can be represented in the API.
 
-    - Examples: A use can have multiple orders, a product can belong to a category.
+    - Examples: A user can have multiple orders, a product can belong to a category.
 
 3.  Define Resource URIs:
 
@@ -659,7 +659,7 @@ REST stands for <b>Representational State Transfer</b>. It is a set of architect
 
     - Examples:
 
-      - <code>/users/123</code> for a specific usr with ID 123
+      - <code>/users/123</code> for a specific user with ID 123
       - <code>/products/456</code> for a specific product with ID 456
 
 <br>
