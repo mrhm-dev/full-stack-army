@@ -32,14 +32,14 @@
 
 - Use GET to retrieve a representation of a resource or a collection of resources.
 - Use query parameters for filtering, sorting, and pagination.
-- Avoid making modifications to the state of the server or the resources with a GET request.
+- Avoid making modifications to the state of the server (database) or the resources with a GET request.
 - Ensure idempotence: Multiple identical GET requests should produce the same result.
   <br>
   In the context of the GET method, it implies that sending identical GET requests to retrieve a resource or a collection of resources should consistently return the same response. The server should not modify the state of the resources or have any side effects as a result of the GET request.
   <br>
   Here's why this property is important:
   - It allows clients to safely retry GET requests without worrying about unintended consequences or modifications to the resources.
-  - It enables caching mechanisms to work effectively. Caches can store an serve the response of aGET request, knowing that subsequent identical requests will yield the same result.
+  - It enables caching mechanisms to work effectively. Caches can store and serve the response of a GET request, knowing that subsequent identical requests will yield the same result.
   - It aligns with the principles of idempotence in HTTP, promoting predictability and reliability in client-server interactions.
 - Use appropriate caching mechanisms to improve performance for frequently accessed resources.
 
@@ -50,8 +50,9 @@
 - Use POST to create a new resource or submit data to be processed.
 - Include the request payload containing the data for creating the resource.
 - Respond with a 201 (Created) status code and include the URI of the newly created resource in the response headers.
+- Or respond with a 200 (OK) status code if nothing new created.
 - Avoid including sensitive information in the response body, as it may be cached or stored.
-- Consider implementing input validation and sanitization to ensure data integrity.
+- **Consider implementing input validation and sanitization to ensure data integrity.**
 
 <br>
 
@@ -84,7 +85,7 @@
 
 - Use DELETE to remove a resource from the server.
 - Use caution, as this operation permanently deletes the resource.
-- Respond with a 200 (OK) ro 204 (No Content) status code to indicate a successful deletion.
+- Respond with a 200 (OK) or 204 (No Content) status code to indicate a successful deletion.
 - Consider implementing additional authorization or access control mechanisms to ensure only authorized clients can delete resources.
 - Use appropriate error handling to handle cases where the resource to be deleted does not exist.
 
@@ -97,13 +98,13 @@
 - Provide meaningful error responses with relevant error codes and messages.
 - Implement proper authentication and authorization mechanisms to secure sensitive operations and resources.
 - Use versioning strategies to handle backward compatibility and API evolution.
-- Follow established naming conventions and URl structures to improve API consistency and usability.
+- Follow established naming conventions and URL structures to improve API consistency and usability.
 - Use PATCH when the client wants to modify specific attributes or properties of a resource without sending the complete representation.
 - Clearly define the semantics and behavior of the PATCH method in your API documentation.
 - Validate and sanitize the patch payload to ensure data integrity and security.
 - Consider logging or auditing patch operations for tracking changes to resources.
 - Follow established conventions and patterns for patch formats, such as RFC 6902 (JSON Patch) or RFC 7396 (JSON Merge Patch).
-- Provide through and clear documentation on how to construct valid patch requests for your resources.
+- Provide thorough and clear documentation on how to construct valid patch requests for your resources.
 
 <br>
 
@@ -206,7 +207,7 @@
 
 1.  Granular Updates: JSON Patch allows for fine-grained control over updates by specifying individual operations (add, remove, replace) at specific paths in the JSON document.
 2.  Idempotence: JSON Patch operations are idempotent, meaning that applying the same patch multiple times will yield the same result.
-3.  Efficiency: JSON Patch is typically more efficient in terms fo network payload and processing, as it only sends the necessary changes instead of the entire representation of the resource.
+3.  Efficiency: JSON Patch is typically more efficient in terms of network payload and processing, as it only sends the necessary changes instead of the entire representation of the resource.
 
 #### JSON Patch Cons:
 
@@ -217,14 +218,14 @@
 
 #### JSON Merge Patch Pros:
 
-1.  Simplicity: JSON Merge Patch is simpler in terms fo syntax ad usage compared to JSON Patch. It allows for straightforward merging of the provided patch into the existing JSON document.
+1.  Simplicity: JSON Merge Patch is simpler in terms of syntax and usage compared to JSON Patch. It allows for straightforward merging of the provided patch into the existing JSON document.
 2.  Flexibility: JSON Merge Patch enables updates at various levels of the JSON document, allowing for partial updates or complete replacement.
 3.  Robustness: JSON Patch handles mission fields more gracefully by retaining existing values, making it suitable for cases where partial updates or optional fields are common.
 
 #### JSON Merge Patch Cons:
 
 1.  Lack of Granularity: JSON Merge Patch operates at the document level, making it less suitable for fine-grained updates. It replaces entire values or objects, potentially overwriting existing fields.
-2.  Limited Control: JSON Merge Patch does not provide explicit control over individual operations like add or remove. It relies on merging the provided patch with the existing document, which may not suit al use cases.
+2.  Limited Control: JSON Merge Patch does not provide explicit control over individual operations like add or remove. It relies on merging the provided patch with the existing document, which may not suit all use cases.
 3.  Complexity with Arrays: JSON Merge Patch can be more complex when dealing with arrays, as it replaces entire arrays instead of allowing precise modifications at specific indices.
 
 <br>
@@ -246,7 +247,7 @@ In this example:
 
 <a id="2"></a>
 
-## Request and REsponse Payloads
+## Request and Response Payloads
 
 #### Structuring request payloads (POST and PUT)
 
@@ -277,7 +278,7 @@ In this example:
 3.  Include Relevant Nested Structures:
 
     - If the resource has nested or complex structures, represent them appropriately in the request payload.
-    - Use objects ro arrays to encapsulate nested data.
+    - Use objects or arrays to encapsulate nested data.
       <br>
       Example:
       <br>
@@ -297,7 +298,7 @@ In this example:
 
     - Implement server-side validation to ensure the integrity and validity of the request payload data.
     - Validate required fields, data types, formats, and any other specific validation rules.
-    - Sanitize input data to prevent security vulnerabilities like SQL injection ro cross-site scripting (XSS) attacks.
+    - Sanitize input data to prevent security vulnerabilities like SQL injection or cross-site scripting (XSS) attacks.
 
 <br>
 
@@ -354,14 +355,14 @@ In this example:
 
     - Organize the response object in a clear and logical structure that reflects the resource being returned.
     - Use meaningful field names that accurately describe the data being returned.
-    - Consider using nested objects ro arrays for representing complex or hierarchical data structures.
+    - Consider using nested objects or arrays for representing complex or hierarchical data structures.
 
 <br>
 
 4.  Minimize Data Redundancy:
 
-    - Only include tha necessary data in the response object to avoid redundancy and optimize network bandwidth usage.
-    - Exclude sensitive or unnecessary information that is not requited by the client.
+    - Only include the necessary data in the response object to avoid redundancy and optimize network bandwidth usage.
+    - Exclude sensitive or unnecessary information that is not required by the client.
 
 <br>
 
@@ -386,7 +387,7 @@ In this example:
 
 8.  Document the Response Format:
 
-    - Clearly document the structure and contents fo the response object in your API documentation.
+    - Clearly document the structure and contents of the response object in your API documentation.
     - Provide examples and explanations to help clients understand and consume the response data effectively.
 
           {
@@ -564,14 +565,14 @@ In this example:
 4.  Follow a Consistent Response Structure:
 
     - Maintain a consistent structure for error responses across your API.
-    - Use consistent field names ans structure to make it easier for clients to handle and process error responses.
+    - Use consistent field names and structure to make it easier for clients to handle and process error responses.
 
 <br>
 
 5.  Provide Guidance or Next Steps:
 
     - Include any guidance or next steps that the client can take to resolve the error.
-    - Suggestions for corrective actions ro links to relevant documentation can be included if appropriate.
+    - Suggestions for corrective actions or links to relevant documentation can be included if appropriate.
 
           {
             "status": 404,
@@ -591,7 +592,7 @@ Content negotiation is the process by which a client and a server communicate to
 
 1.  Accept Header:
 
-    - The client includes the "Accept" header in the equest to indicate the preferred media types (content types) it can understand.
+    - The client includes the "Accept" header in the request to indicate the preferred media types (content types) it can understand.
     - The server examines the "Accept" header and determines the most appropriate representation to send back to the client based on its capabilities.
       <br>
       Example:

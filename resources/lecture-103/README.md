@@ -24,13 +24,13 @@ Possible solutions for authentication include:
 - Token-based authentication: Clients obtain a token (such as JSON Web Tokens - JWT) after successful authentication and include it in subsequent requests.
 - Session-Cookies-based authentication: clients provide credentials (username/password) and receive a session identifier that is stored on the server.
 - API Key based authentication: Clients provide x-api-key in the header or as a query params.
-- OAuth 2.0: A protocol that allows clients to obtain access tokens from an authorization server, typically use3d for third-party authentication.
+- OAuth 2.0: A protocol that allows clients to obtain access tokens from an authorization server, typically used for third-party authentication.
 
 <br>
 
 #### Token Based Authentication:
 
-Token-based authentication is a popular approach to authenticate clients in a distributed system, including RESTful APIs. It involves the use fo tokens (such as JSON Web Tokens - JWTs) to verify the identity of a client and grant access to protected resources. Here's a breakdown of token-based authentication and different techniques:
+Token-based authentication is a popular approach to authenticate clients in a distributed system, including RESTful APIs. It involves the use of tokens (such as JSON Web Tokens - JWTs) to verify the identity of a client and grant access to protected resources. Here's a breakdown of token-based authentication and different techniques:
 
 1. JSON Web Tokens (JWT): <https://jwt.io/introduction>
 
@@ -48,13 +48,13 @@ Token-based authentication is a popular approach to authenticate clients in a di
    - The authentication server verifies the credentials and issues a token (JWT) to the client.
    - The client stores the token (e.g., in local storage or a cookie) and includes it in the headers of subsequent requests.
    - The server validates the token on each request to ensure its authenticity and integrity.
-   - It the token is valid and not expired, the server grants access to the requested resource.
+   - If the token is valid and not expired, the server grants access to the requested resource.
 
 <br>
 
 3.  Stateless Authentication:
 
-    - In token-based authentication, the server does not store session state for each client.
+    - In token-based authentication, the server does not store the session state for each client.
     - This allows the server to be stateless and eliminates the need for session management.
     - The server can validate the token independently without relying on any session information.
 
@@ -64,16 +64,16 @@ Token-based authentication is a popular approach to authenticate clients in a di
 
     - To handle longer-lived sessions and improve security, refresh tokens can be used.
     - After authentication, the server can issue an additional token called a refresh token alongside the access token.
-    - The refresh token is use to obtain a new access token when the current one expires, without requiring the user to provide credentials again.
+    - The refresh token is used to obtain a new access token when the current one expires, without requiring the user to provide credentials again.
     - The server validates the refresh token and issues a new access token if it is valid.
 
 <br>
 
-5.  Token Revocation and EXpiration:
+5.  Token Revocation and Expiration:
 
-    - Tokens can have an expiration time, after which they are not longer valid.
+    - Tokens can have an expiration time, after which they are no longer valid.
     - Tokens can also be revoked by the server, for example, if a user logs out or if the token is compromised.
-    - Revocation ca be implemented by maintaining a blacklist or using token introspection mechanisms.
+    - Revocation can be implemented by maintaining a blacklist or using token introspection mechanisms.
 
 <br>
 
@@ -85,26 +85,25 @@ Token-based authentication is a popular approach to authenticate clients in a di
 
 <br>
 
-Token-based authentication provides a scalable and secure approach for authentication clients in distributed systems. It offers flexibility, statelessness, and decoupling or the authentication server from the application server. Implementing token-abased authentication with JWTs can simplify authentication and authorization processes in RESTful APIs.
+Token-based authentication provides a scalable and secure approach for authentication clients in distributed systems. It offers flexibility, statelessness, and decoupling of the authentication server from the application server. Implementing token-based authentication with JWTs can simplify authentication and authorization processes in RESTful APIs.
 
 <br>
 
 #### Session Based Authentication
 
-Session-based authentication is a traditional approach to authenticate clients in web applications. It involves the use of sessions to maintain the state of a user's authentication across multiple requests. Hee's a breakdown of session-based authentication and different techniques:
+Session-based authentication is a traditional approach to authenticate clients in web applications. It involves the use of sessions to maintain the state of a user's authentication across multiple requests. Here’s a breakdown of session-based authentication and different techniques:
 
 1.  Session Management:
 
     - When a user authenticates, the server creates a session for the user and assign a unique session identifier.
-    - The session identifier is typically stored in a cookie or sent as aresponse header to the client.
+    - The session identifier is typically stored in a cookie or sent as a response header to the client.
     - The server associates the session identifier with the user's authenticated state and relevant session data.
 
 <br>
 
 2.  Cookies:
 
-    - Sessions are often implemented using HTTP cookies, which are small pieces of data stored on the client
-      s browser.
+    - Sessions are often implemented using HTTP cookies, which are small pieces of data stored on the client's browser.
     - A session cookie contains the session identifier that the server uses to identify and retrieve the associated session data.
     - The cookie is sent automatically by the client with each subsequent request to the server.
 
@@ -148,9 +147,9 @@ Session-based authentication is commonly used in web applications and provides a
 
 Token-Based Authentication Pros:
 
-1.  Stateless: Token are self-contained and do not require the serve to store session state. This simplifies server-side management and allows for easy scalability.
+1.  Stateless: Tokens are self-contained and do not require the serve to store session state. This simplifies server-side management and allows for easy scalability.
 2.  Scalability: Token-based authentication is highly scalable since the server does not need to track and manage sessions for each client.
-3.  Cross-Domain: Tokens can be easily used for authentication across different domain or services.
+3.  Cross-Domain: Tokens can be easily used for authentication across different domains or services.
 4.  Mobile-Friendly: Tokens are well-suited for mobile applications and APIs because they can be stored on the client side (e.g., in local storage or mobile app storage).
 5.  Fine-Grained Control: Tokens can carry additional information (claims) about the user, such as roles or permissions, allowing for fine-grained access control.
 
@@ -166,7 +165,7 @@ Token-Based Authentication Cons:
 
 Session-Based Authentication Pros:
 
-1.  Simplicity: Session-based authentication is relatively simple to implement, especially with server-side session management tolls or frameworks.
+1.  Simplicity: Session-based authentication is relatively simple to implement, especially with server-side session management tools or frameworks.
 2.  Granular Control: Sessions allow for fine-grained control over session expiration, session invalidation, and managing session data on the server-side.
 3.  Standard Approach: Session-based authentication has been a widely adopted and understood authentication mechanism in web applications for many years.
 
@@ -209,9 +208,9 @@ API Key-based authentication is a simple and commonly used method to authenticat
 
 <br>
 
-4.  API Key Rotation and EXpiration:
+4.  API Key Rotation and Expiration:
 
-    - API Key can have an expiration time, after which they become invalid and require renewal or regeneration.
+    - API Keys can have an expiration time, after which they become invalid and require renewal or regeneration.
     - Regularly rotating API Keys enhances security by minimizing the impact of compromised keys.
 
 <br>
@@ -230,7 +229,7 @@ API Key-based authentication is a simple and commonly used method to authenticat
 
 API Key-based authentication provides a lightweight and straightforward method to authenticate clients in APIs. It requires clients to include a valid API Key in their requests, allowing the server to verify their authenticity. It is often use for public APIs, where authentication and access control requirements are less stringent compared to user-specific authentication methods like OAuth.
 <br>
-While API Key-based authentication is simple to implement, it mey lack the granular control and identity management features provided by more robust authentication mechanisms like OAuth. Therefore, it is typically used in scenarios where a basic level of authentication is sufficient.
+While API Key-based authentication is simple to implement, it may lack the granular control and identity management features provided by more robust authentication mechanisms like OAuth. Therefore, it is typically used in scenarios where a basic level of authentication is sufficient.
 
 <br>
 
@@ -241,7 +240,7 @@ OAuth 2.0 (Open Authorization 2.0) is an authorization framework that allows thi
 OAuth 2.0 involves several key entities:
 
 1.  Resource Owner: The user who owns the protected resources (e.g,. a website user or an application user).
-2.  Client: The application or service that want sto access the user's protected resources.
+2.  Client: The application or service that wants to access the user's protected resources.
 3.  Authorization Server: The server that hosts the protected resources the client wants to access.
 4.  Resource Server: The server that hosts the protected resources the client wants to access.
 
@@ -253,10 +252,10 @@ The OAuth 2.0 flow typically involves the following steps:
 2.  Authorization Request: The client redirects the user to the authorization server, requesting authorization to access the user's resources.
 3.  User Authentication: The user authenticates themselves with the authorization server,
     verifying their identity.
-4.  Authorization Grant: The user grants permissions to the client to access their resources. This is often dene by the user explicitly approving the request.
+4.  Authorization Grant: The user grants permissions to the client to access their resources. This is often done by the user explicitly approving the request.
 5.  Access Token Request: The client sends an authorization grant and client credentials to the authorization server, requesting an access token.
-6.  Access Token Issuance: The authorization server validates the request, and if successful, issues and access token to the client.
-7.  Resource Access: The client presents the access token to the resource server to access the protected resources on behalf of the client.
+6.  Access Token Issuance: The authorization server validates the request, and if successful, issues an access token to the client.
+7.  Resource Access: The client presents the access token to the resource server to access the protected resources on behalf of the user.
     <br><br>
     OAuth 2.0 provides several grant types for different scenarios, such as authorization code flow, implicit flow, client credentials flow, and resource owner password credentials flow. Each grant type has its own specific use cases and security considerations.
     <br><br>
@@ -287,7 +286,7 @@ Token-Based Authentication:
 - It is not specific to the OAuth2 framework and can be used independently for various authentication scenarios.
 - Token-based authentication involves the issuance of token (usually a JWT) upon successful authentication.
 - The client includes the token in subsequent requests to authenticate itself and access protected resources.
-- Tokens can be self-contained and carry information about the user (claims) or simply serve as a prof of authentication.
+- Tokens can be self-contained and carry information about the user (claims) or simply serve as a proof of authentication.
 - Token-based authentication can be used for both user-specific authentication and client authentication in APIs.
   <br><br>
   In summary, OAuth2 is primarily focused on authorization, granting access permissions to third-party applications, and delegating user permissions. It involves multiple entities and follows a specific authorization flow. On the other hand, token-based authentication is a more general authentication approach that uses tokens to verify the identity of a client. It can be used independently of OAuth2 and is commonly employed for user-specific authentication in APIs.
