@@ -1,32 +1,35 @@
-const articleService = require('../../../../lib/article');
-const { query } = require('../../../../utils');
 const defaults = require('../../../../config/defaults');
+const userService = require('../../../../lib/user');
+const { query } = require('../../../../utils');
 
 const findAllItems = async (req, res, next) => {
+  // extract query params
   const page = req.query.page || defaults.page;
   const limit = req.query.limit || defaults.limit;
   const sortType = req.query.sort_type || defaults.sortType;
   const sortBy = req.query.sort_by || defaults.sortBy;
-  const search = req.query.search || defaults.search;
+  const name = req.query.name || '';
+  const email = req.query.email || '';
 
   try {
     // data
-    const articles = await articleService.findAllItems({
+    const users = await userService.findAllItems({
       page,
       limit,
       sortType,
       sortBy,
-      search,
+      name,
+      email,
     });
 
     const data = query.getTransformedItems({
-      items: articles,
-      selection: ['id', 'title', 'cover', 'author', 'updatedAt', 'createdAt'],
-      path: '/articles',
+      items: users,
+      selection: ['id', 'name', 'email', 'updatedAt', 'createdAt'],
+      path: '/users',
     });
 
     // pagination
-    const totalItems = await articleService.count({ search });
+    const totalItems = await userService.count({ name, email });
     const pagination = query.getPagination({ totalItems, limit, page });
 
     // HATEOAS Links
@@ -39,6 +42,7 @@ const findAllItems = async (req, res, next) => {
       page,
     });
 
+    // generate response
     res.status(200).json({
       data,
       pagination,
