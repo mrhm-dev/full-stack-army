@@ -38,3 +38,4 @@ In this repository you can find all the lecture resources in markdown format.
 - [Lecture 107 - API Project Entity Relationship Diagram](./lecture-107/README.md)
 - [Lecture 108 - API Endpoints and Introduction to Swagger](./lecture-108/README.md)
 - [Lecture 109 - API Design Practice using Swagger and OAS Part 1](./lecture-109/README.md)
+- [Lecture 110 - API Design Express Server and Swagger Part 2](./lecture-110/README.md)
