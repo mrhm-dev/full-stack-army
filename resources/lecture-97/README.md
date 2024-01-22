@@ -1,11 +1,13 @@
 # Lecture 97 - Advanced Backend Journey Begins
 
 ## What is the Backend?
+
 The backend is a piece of code that executes and solves a problem.
 
 ## Client-server architecture
 
 - Create any backend application that is:
+
     - [ ] High performant
     - [ ] Fault tolerant
     - [ ] Easy to deploy
