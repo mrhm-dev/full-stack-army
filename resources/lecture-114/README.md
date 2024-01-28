@@ -6,6 +6,7 @@
 - [Mongoose](https://mongoosejs.com/)
 - [Mongoose Models](https://mongoosejs.com/docs/models.html)
 - [Mongoose Schema](https://mongoosejs.com/docs/guide.html)
+- [Faker.js](https://fakerjs.dev/)
 
 
 ## Backend File Structure
