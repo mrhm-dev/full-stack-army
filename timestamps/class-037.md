@@ -12,7 +12,6 @@
 56:16 - Break 
 01:03:10 - Welcome Back 
 01:05:55 - Students answer 
-01:21:22 - Solution, The Answer 
 01:23:28 - Making JSON
 01:33:05 - Using JSON in Component
 02:02:29 - Restructuring JSX
