@@ -15,4 +15,3 @@
 1:30:57 - React 
 1:50:00 - QNA & next plan
 1:56:58 - discussion
-
