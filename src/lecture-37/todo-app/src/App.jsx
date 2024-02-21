@@ -103,12 +103,12 @@ const tasks = [
 				icon: 'T',
 			},
 			{
-				id: 'tag-001',
+				id: 'tag-002',
 				text: 'Its done',
 				icon: 'T',
 			},
 			{
-				id: 'tag-001',
+				id: 'tag-003',
 				text: 'Its done',
 				icon: 'T',
 			},
