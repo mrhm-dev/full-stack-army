@@ -58,7 +58,7 @@
 
 3.  403 Forbidden:
 
-    - The client is authenticated, but does nto have sufficient permissions to access the requested resource.
+    - The client is authenticated, but does not have sufficient permissions to access the requested resource.
     - Common scenarios: Accessing restricted resources, performing unauthorized actions.
 
 <br>
@@ -97,11 +97,11 @@
 1.  Use a Consistent Error Object Structure:
 
     - Define a consistent structure for error objects across your API to ensure uniformity and ease of handling for clients.
-    - Use consistent field names to represent different aspects fo the error.
+    - Use consistent field names to represent different aspects of the error.
 
 <br>
 
-2.  Include and Error Status Code:
+2.  Include an Error Status Code:
 
     - Include and 'status' or 'code' field to indicate the specific error status or code.
     - Use standard HTTP status codes whenever possible to convey the nature of the error.
@@ -110,7 +110,7 @@
 
 3.  Provide a Clear Error Message:
 
-    - Include an informative and human-readable error message the describes the error concisely.
+    - Include an informative and human-readable error message that describes the error concisely.
     - The error message should provide enough detail to assist clients in understanding the nature of the error.
 
 <br>
@@ -151,7 +151,7 @@
 
 <br>
 
-2.  Return Consistent Error REsponses:
+2.  Return Consistent Error Responses:
 
     - When an exception occurs, return consistent and standardized error responses to clients.
     - Structure the error responses as discussed earlier, including the appropriate HTTP status code, error message, and any relevant details.
@@ -163,13 +163,13 @@
 
     - Implement a robust logging mechanism to capture and log errors that occur during API execution.
     - Log relevant details such as the error message, stack trace, request details (URL method, headers), and any additional contextual information.
-    - Consider logging the severity level of the error to differentiate between informational, warming, and critical errors.
+    - Consider logging the severity level of the error to differentiate between informational, warning, and critical errors.
 
 <br>
 
 4.  Include Error Codes:
 
-    - Assign unique error codes to different types fo errors encountered in your API.
+    - Assign unique error codes to different types of errors encountered in your API.
     - Use these error codes consistently in error responses and log entries to identify specific error scenarios.
     - Maintain a centralized error code reference for easy reference and understanding.
 
@@ -208,7 +208,7 @@ HATEOAS (Hypermedia as the Engine of Application State) is a principle of RESTfu
 2.  Self-Descriptive API:
 
     - A HATEOAS-compliant API includes metadata and links within its responses, providing information on available actions and possible next steps.
-    - Clients can discover and understand tha available resources, actions, and transitions by examining the hypermedia links and associated metadata.
+    - Clients can discover and understand the available resources, actions, and transitions by examining the hypermedia links and associated metadata.
 
 <br>
 
@@ -290,7 +290,7 @@ API Versioning:
 1.  URL-Based Versioning:
 
     - Include the version number in the URL path, such as <code>/v1/resource</code>.
-    - Ths approach allows for clear separation of different API versions and makes it explicit in the API endpoint.
+    - This approach allows for clear separation of different API versions and makes it explicit in the API endpoint.
 
 <br>
 
@@ -341,7 +341,7 @@ API Deprecation:
 4.  Versioning and Deprecation Policy:
 
     - Establish a clear versioning and deprecation policy that outlines the support and lifespan of each API version.
-    - Define tha duration of support for each version and how long deprecated versions will be maintained.
+    - Define the duration of support for each version and how long deprecated versions will be maintained.
 
 <br>
 
@@ -371,6 +371,7 @@ Best Practices -
     - Use plural nouns to represent collections (e.g., <code>/users</code>).
     - Use singular nouns to represent individual resources (e.g., <code>/users/{id}</code>).
     - Use nested resources to represent hierarchical relationships (e.g., <code>/users/{id}/orders</code>)
+    - Use sub-resources (noun+ verb combination) for any specific action (e.g., <code>/mail/send</code>)
 
 <br>
 
@@ -397,7 +398,7 @@ Best Practices -
 
 <br>
 
-6.  IMplement Pagination:
+6.  Implement Pagination:
 
     - If a collection of resources is potentially large, implement pagination to return results in manageable chunks.
     - Use query parameters to specify the page size, current page, and other pagination parameters.
@@ -406,7 +407,7 @@ Best Practices -
 
 7.  Support Filtering, Sorting and Searching:
 
-    - Allow clients to filer resources based on specific criteria.
+    - Allow clients to filter resources based on specific criteria.
     - Support sorting resources based on specific fields and in ascending or descending order.
 
 <br>
@@ -445,7 +446,7 @@ Best Practices -
 
     - Provide comprehensive and up-to-date API documentation.
     - Include clear usage instructions, endpoint descriptions, request/response examples, and error handling guidelines.
-    - Consider using tools like Swagger/OpenAPI fo generating interactive and consistent documentation.
+    - Consider using tools like Swagger/OpenAPI for generating interactive and consistent documentation.
 
 <br><br>
 

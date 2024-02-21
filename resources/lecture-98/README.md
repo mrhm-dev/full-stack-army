@@ -1,6 +1,7 @@
 # Lecture 98 - What is Server and How to Create an HTTP Server
 
 ## What is Server?
+
 **A server is a computer program or device that provides a service to another computer program and its user, also known as the client**. In a data Center, the physical Computer a server program runs on is also frequently referred to as a server.
 
 ## Types of Server Applications

@@ -1,6 +1,7 @@
 # Lecture 99 - Understand REST API# Lecture 99 - Understand REST API
 
 ## Table of Contents
+
 1. [Responsibility of a Backend Application Developer](#the-responsibility-of-a-backend-application-developer)
 2. [Express JS](#express-js)
 3. [Why Data Structure needed?](#why-data-structure-needed)
