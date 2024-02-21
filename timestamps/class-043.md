@@ -15,7 +15,7 @@
 01:06:50 New Project setup  
 01:09:52 Project Structure  
 01:19:10 Form  
-01:36:28 Design System (with many examples)
+01:36:28 Design System (with many examples)  
 01:41:58 QNA (about Enterprise, don't miss)  
 01:46:45 Storybook  
 01:52:13 Back to code, Making Form  
