@@ -9,6 +9,6 @@
 01:05:46 Updating seconds  
 01:12:14 error & debug  
 01:30:38 useTImer hook  
-01:43:05 Error is Opportunity
+01:43:05 Error is Opportunity  
 01:45:52 Next Task  
 01:51:10 Discussion
