@@ -15,4 +15,4 @@
 1:13:08 Sass-Lang  
 1:18:32 BEM  
 1:22:39 Next class topic  
-1:23:43 Discussion & QNA
+1:23:43 Discussion & QNA  
