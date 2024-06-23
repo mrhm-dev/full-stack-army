@@ -6,13 +6,13 @@ PS Caffe is an imaginary online coffee delivery service. This business is design
 
 **Functional Requirements (Mostly client requirements):**
 
-- Local Authentication:
+- Local Authentication</br>
   At the beginning we don't want to spend more on authentication services. Just keep it simple by implementing a local authentication using email & password. But make sure, we can extend local AUTH to OAuth2 anytime in future. We need the following features -
   - Hashed password
   - Email verification
   - Forget password
   - Block users if necessary
-- Multiple Roles (Role Based Access Control):
+- Multiple Roles (Role Based Access Control)</br>
   There will be mainly five roles:
   - Admin: Admin can create and manage everything including sales data
   - Manager: Manager can't be able to create anything but can see sales data, inventory and products
@@ -34,6 +34,8 @@ PS Caffe is an imaginary online coffee delivery service. This business is design
 - High availability (not main concern for MVP)
 - Scalability (not main concern for MVP)
 
-### 99.999999999% **(11-9 concept - most available)**
+### 11 Nines (99.999999999%) Availability 
+This means that the system is guaranteed to be available 99.999999999% of the time - most available.
 
-### 99.99% **(available but not up to the mark)**
+### 4 Nines (99.99%) Availability
+This means that the system is guaranteed to be available 99.99% of the time - available but not up to the mark.

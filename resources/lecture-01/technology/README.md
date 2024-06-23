@@ -14,7 +14,7 @@ Sample : [http://itest.sourceforge.net/documentation/developer/Software_Requirem
     - Monolithic (Layered)
       - Easy to develop, but very complex to maintain when application grows
     - Microservice
-      - very hard to develop, but easy to maintain
+      - Very hard to develop, but easy to maintain
     - Server less (FAAS - Function as a service)
   - Select Database
     - SQL
