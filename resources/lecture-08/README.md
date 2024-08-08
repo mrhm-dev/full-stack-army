@@ -107,7 +107,7 @@ function name_of_the_function(/* Input something*/) {
 // Job_Holder_Lifecycle -> 'Bipon'
 ```
 
-- Function code of above psuedocode
+- Function code of the above pseudocode
 
 ```js
 function sleep(name) {
@@ -173,11 +173,11 @@ function studentsLifecycle(name) {
 
     - Invoke a function
 
-    ```js
-    testFunction();
-    ```
+       ```js
+       testFunction();
+       ```
 
-There are some problems in above defined function. We can't use the function for any value. For this reason we need to use the parameters.
+There are some problems with the defined function above. We can't use the function for any value. For this reason, we need to use the parameters.
 
 ```js
 function testFunction(a = 10, b = 20) {
@@ -186,7 +186,7 @@ function testFunction(a = 10, b = 20) {
 }
 ```
 
-a and b are parameters. 10 and 20 are default values. If we don't pass any arguments in the function, it will take the default values as arguments. Now, what is arguments? Please see the below to learn that:
+a and b are parameters. 10 and 20 are default values. If we don't pass any arguments in the function, it will take the default values as arguments. Now, what are arguments? Please see the below to learn that:
 
 ```js
 testFunction(100, 200); // Here 100 and 200 are arguments
@@ -218,7 +218,7 @@ function times(a, b) {
   console.log(r);
   ```
 
-Function is a first class citizen. Because we can treat function as a value.
+Function is a first-class citizen. Because we can treat function as a value.
 
 - Benefits of a function treat as a value:
 
@@ -234,7 +234,7 @@ console.log(fn.toString());
 fn();
 ```
 
-- we can store function inside an object / array
+- we can store functions inside an object / array
 
 ```js
     const arr = [fn, testFunction];
@@ -277,7 +277,7 @@ const newFn = new Function(
 console.log(newFn('HM Nayem'));
 ```
 
-On the above code, we can pass arguments as many as we want. But last argument must be the function body. If we don't pass the body as last argument it will throw an error.
+On the above code, we can pass arguments as much as we want. But the last argument must be the function body. If we don't pass the body as last argument it will throw an error.
 
 More examples of function construction:
 
