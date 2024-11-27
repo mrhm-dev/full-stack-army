@@ -1,14 +1,15 @@
-00:00 Intro  
-00:51 Start  
-07:11 4 Structures of Events  
-27:29 useEvents hook  
-38:28 Delete & Update event  
-45:30 Using useEvents hook  
-53:18 Urgent break  
-57:16 getEvents Continued  
-01:05:46 Updating seconds  
-01:12:14 error & debug  
-01:30:38 useTImer hook  
-01:43:05 Error is Opportunity  
-01:45:52 Next Task  
-01:51:10 Discussion
+# Class 52
+
+00:00 Intro
+07:53 Start  
+13:43 Previous Code  
+16:26 clock-form  
+37:27 Testing & Debugging  
+41:55 Reusable form  
+45:33 Dynamic Offset  
+54:48 Constants  
+01:14:01 Create clock  
+01:25:28 Big task  
+01:28:39 Discussion  
+01:42:44 Toptal  
+01:57:56 QNA

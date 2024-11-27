@@ -1,4 +1,4 @@
-## Class 26 
+# Class 26
 
 00:00 - Class Joining  
 02:12 - Class Start  

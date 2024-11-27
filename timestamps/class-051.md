@@ -1,11 +1,13 @@
 00:00 Intro  
-00:26 Start  
-07:13 Fundamentals is Important  
-22:40 Making beginner's course is hard  
-48:03 Coding start - New clock  
-01:03:12 Clock List  
-01:16:11 css for clocks  
-01:19:40 update clock  
-01:35:24 delete clock  
-01:42:42 Time difference  
-01:52:47 Component tree
+00:40 Start  
+07:05 Re-writing code  
+19:08 Local Clock  
+31:20 Clock-display  
+41:14 not using regex  
+55:48 Testing clocks  
+01:05:26 Editing clock  
+01:09:27 Formatting  
+01:15:00 Clock actions  
+01:34:45 Debug  
+01:39:52 Editing Clocks  
+02:03:16 Discussion

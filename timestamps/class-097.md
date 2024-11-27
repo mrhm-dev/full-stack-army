@@ -1,4 +1,6 @@
-0:00 Intro  
+# Class 097
+
+0:00 Intro
 4:04 Starts  
 7:59 Coding  
 22:55 Calculation in Parent Element  

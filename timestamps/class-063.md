@@ -1,3 +1,5 @@
+# Class 063
+
 00:00 Intro  
 01:25 Starts  
 06:03 Todays Plan  
@@ -15,7 +17,7 @@
 1:00:18 QNA  
 1:02:47 Portals  
 1:03:59 Profiler  
-01:04:10 without 
+01:04:10 without
 01:04:31 Reconciliation  
 01:05:29 Render Props  
 01:08:41 Static Type Checking & TS  

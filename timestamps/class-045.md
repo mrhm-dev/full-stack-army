@@ -1,4 +1,4 @@
-## Class 45
+# Class 45
 
 0:00 Intro  
 00:33 Start  
@@ -9,7 +9,7 @@
 16:13 one minute urgent break  
 17:06 continue  
 23:13 helper function  
-30:34 validate   
+30:34 validate
 35:27 update State  
 39:20 handleTouched Focus Blur  
 44:29 handleSubmit  

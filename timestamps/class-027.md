@@ -1,4 +1,4 @@
-## Class 27 
+# Class 27 
 
 0:00 - intro & joining  
 5:43 - what is client?  
