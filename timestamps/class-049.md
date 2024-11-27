@@ -1,13 +1,15 @@
+# Class 49
+
 00:00 Intro  
-00:40 Start  
-07:05 Re-writing code  
-19:08 Local Clock  
-31:20 Clock-display  
-41:14 not using regex  
-55:48 Testing clocks  
-01:05:26 Editing clock  
-01:09:27 Formatting  
-01:15:00 Clock actions  
-01:34:45 Debug  
-01:39:52 Editing Clocks  
-02:03:16 Discussion
+00:53 Start  
+02:14 Todays topic  
+06:37 Project requirement  
+13:59 Writing breakdown  
+27:20 Mock UI  
+31:02 Component design  
+47:31 QNA  
+55:13 Break  
+57:18 UI Components  
+01:17:39 QNA  
+01:23:19 Data  
+01:34:21 Vite app

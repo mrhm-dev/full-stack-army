@@ -1,4 +1,4 @@
-## Class 44
+# Class 44
 
 00:00 Intro  
 00:34 Start  
@@ -6,7 +6,7 @@
 10:53 Form  
 24:39 Error Handling  
 38:30 showing error  
-43:25 better UX for error   
+43:25 better UX for error
 54:00 testing and bug fix  
 01:00:00 phone call break  
 01:01:03 class continued  

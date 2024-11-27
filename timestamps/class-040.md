@@ -1,4 +1,4 @@
-## Class 40 
+# Class 40 
 
 00:00 intro  
 09:15 vscode open  
