@@ -1,4 +1,4 @@
-# SDLC Models
+# SDLC Models (Software Development Life Cycle)
 
 ### Waterfall Model (Use when requirements do not change frequently)
 

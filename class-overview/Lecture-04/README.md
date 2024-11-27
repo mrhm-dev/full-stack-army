@@ -487,7 +487,7 @@ console.log(generateRandomNumber(1000));
 
 ```js
 function generateRandomNumber(min, max) {
-	const randomNumber = Math.floor(Math.random() * min + (max - min));
+	const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
 	return randomNumber;
 }
 
