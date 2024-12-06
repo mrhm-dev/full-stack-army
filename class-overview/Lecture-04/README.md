@@ -16,14 +16,14 @@
 আমরা জানি ভ্যারিয়েবল মানে চলক। বিগিনারদের একটা সমস্যা হয় যে কোন জায়গায় ভ্যারিয়েবল নিতে হবে আর কোন জায়গায় নিতে হবে না। এর জন্য কিছু ট্রিকস আছে। তার আগে আমাদের জানা দরকার ভ্যারিয়েবলের কাজটা কি? সহজ ভাষায় বলতে গেলে ভ্যারিয়েবল আমাদের যেকোনো কিছু ডায়নামিক করতে সাহায্য করে। এটাই একমাত্র কাজ। এটা ছাড়া ভ্যারিয়েবলের আর কোনো কাজ নেই। এটা অনেকটা পাত্রের মতো। পাত্র যতো বেশি লাগবে জায়গা ততো বেশি লাগবে। মানে বেশি মেমোরি লাগবে। তাহলে এক্সট্রা মেমোরির দরকার কি? ভ্যারিয়েবল কম নিলেই তো হয়। তাহলে আমাদের অ্যাপ্লিকেশন অনেক হালকা হবে। কিন্তু তা সত্ত্বেও আমাদের ভ্যারিয়েবল নিতে হয়। যেমন ধরেন আমরা পানি খাবো। এই পানি কিভাবে আমাদের কাছে আসবে? প্রথমে মাটির নিচ থেকে পানি পাইপ এবং পাম্পের মাধ্যমে বাসার নিচে একটা ট্যাংকে জমা হয়। এরপর আরেকটা পাম্পের মাধ্যমে তা ছাদের উপর গিয়ে আরেকটা ট্যাংকে জমা হয়। ওখানে থেকে পাইপিং এর মাধ্যমে বাসায় বাসায় ডিস্ট্রিবিউট করা হয়। বাসায় ট্যাপের মাধ্যমে সেই পানি আমরা ফিল্টারের মধ্যে জমা করি। ফিল্টার হওয়ার পর সেই পানি আমরা জগ বা বোতলে নিয়ে রাখি। এরপর যখন পানি খাওয়ার প্রয়োজন হয় তখন আমরা জগ বা বোতল থেকে গ্লাসে ঢেলে পানি খাই। আমাদের উদ্দেশ্য কিন্তু পানি খাওয়া তাহলে মাঝখানে এত জায়গায় পানি জমা করে রাখার প্রয়োজন কি? যদি ট্যাংকে জমা রাখতে না পারতাম তাহলে সবার ঘরে ঘরে ডিস্ট্রিবিউট করা সম্ভব হতো না। যদি ফিল্টারে না রাখতাম তাহলে পানি বিশুদ্ধ করতে পারতাম না। সুতরাং ভ্যারিয়েবলও এরকম। এরা ডাটা স্টোর করে রাখে। ভ্যারিয়েবল যদি আমরা না নিই তাহলে আমরা ডাটা দ্বিতীয়বার ইউজ করতে পারতাম না।
 
 ```js
-console.log('Abu Rayhan', 'Abu Rayhan'.length); // Abu Rayhan 10
+console.log("Abu Rayhan", "Abu Rayhan".length); // Abu Rayhan 10
 ```
 
 উপরের উদাহরণে যদি আমরা অন্য কোনো নাম দিয়ে করতে চাই তাহলে সেটা সম্ভব না। সেটা করতে গেলে বর্তমান নামকে বাদ দিতে হবে। কারণ স্ট্যাটিক কোডের ক্ষেত্রে রানটাইমে কোনো কিছু চেইঞ্জ করা যায় না। এখন প্রশ্ন আসতে পারে রানটাইম আর কম্পাইল টাইম কি?
 
 ```js
-console.log('Abu Rayhan', 'Abu Rayhan'.length); // Abu Rayhan 10
-throw new Error('Something wrong'); // Error
+console.log("Abu Rayhan", "Abu Rayhan".length); // Abu Rayhan 10
+throw new Error("Something wrong"); // Error
 ```
 
 এখানে প্রোগ্রামে কোনো ভুল নেই। কিন্তু প্রোগ্রাম রান করতে গিয়ে দেখা যাচ্ছে একটা এরর আছে। একে বলে রানটাইম এরর। প্রোগ্রাম রান করার সময়কে বলা হচ্ছে রানটাইম।
@@ -38,7 +38,7 @@ console.log('Abu Rayhan', 'Abu Rayhan'.length);
 এখন রানটাইমে আমরা ডায়নামিক্যালি অনেক কিছু চেইঞ্জ করতে পারি। যেমন কিছু ইনপুট দিতে পারি, ইন্টারনেট থেকে কিছু নিয়ে আসতে পারি, মাউস দিয়ে ক্লিক করতে পারি। এসব কিছুই রানটাইমে হয়। কিন্তু যখন আমরা প্রথম উদাহরণের মতো স্ট্যাটিক ডাটা নিয়ে কাজ করবো তখন আমরা কোনোভাবেই লগের ভিতরে থাকা ডাটা চেইঞ্জ করতে পারবো না। এজন্য আমাদের ভ্যারিয়েবল নিতে হবে। যখনই আমরা দেখবো ডাটা তখনই আমরা একটা ভ্যারিয়েবল নিয়ে নিবো।
 
 ```js
-let name = 'Abu Rayhan';
+let name = "Abu Rayhan";
 console.log(name, name.length); // Abu Rayhan 10
 ```
 
@@ -48,23 +48,23 @@ console.log(name, name.length); // Abu Rayhan 10
 
 ```js
 const names = [
-	'HM Nayeem',
-	'Aditya Chakraborty',
-	'Abu Rayhan',
-	'Shaker Hossain',
-	'Akib Ahmad',
-	'Alvi Chowdhury',
+  "HM Nayeem",
+  "Aditya Chakraborty",
+  "Abu Rayhan",
+  "Shaker Hossain",
+  "Akib Ahmad",
+  "Alvi Chowdhury",
 ];
 let index = -1;
 let person = names[++index];
 
 setInterval(() => {
-	person = names[index++];
-	console.log(person, person.length);
+  person = names[index++];
+  console.log(person, person.length);
 
-	if (index === names.length) {
-		index = 0;
-	}
+  if (index === names.length) {
+    index = 0;
+  }
 }, 1000);
 ```
 
@@ -94,19 +94,19 @@ lessThan();
 
 ```js
 if (studyBasic) {
-	wontJoin();
+  wontJoin();
 }
 
 if (studyAdvanced) {
-	join();
+  join();
 }
 
 if (teacherSpeaks) {
-	silent();
+  silent();
 }
 
 if (!teacherSpeaks) {
-	shout();
+  shout();
 }
 ```
 
@@ -118,27 +118,27 @@ if (!teacherSpeaks) {
 // Scenario 1 - Single branch
 // if condition
 if (hasMoney) {
-	buyPhone();
+  buyPhone();
 }
 
 // Scenario 2 - Two branches
 // if else condition
-if (toss === 'head') {
-	win();
+if (toss === "head") {
+  win();
 } else {
-	loss();
+  loss();
 }
 
 // Scenario 3 - Multiple branches
 // else if
 let a = 1,
-	b = 2;
+  b = 2;
 if (a > b) {
-	big();
+  big();
 } else if (a < b) {
-	small();
+  small();
 } else {
-	same();
+  same();
 }
 ```
 
@@ -155,14 +155,14 @@ if (a > b) {
 লুপের একটাই কাজ। একই কাজ বারবার করা। যেমন আমাদের একজন ক্লায়েন্ট এসে বললেন বাংলাদেশ তো এবার ৫১ বছরে পা দিলো। আমরা আমাদের অ্যাপ্লিকেশনে এমন কিছু করবো যেন ৫১ বার 'We love Bangladesh' লেখা আসে। আমরা অনেক বুদ্ধিমান আমরা ১ ঘন্টা ধরে গুণে গুণে ৫১ বার `console.log('We love Bangladesh')` লিখে ক্লায়েন্টকে দেখালাম। ক্লায়েন্ট বললো না ভাই ৫১ বার না। যেহেতু ১৯৭১ সালে বাংলাদেশ স্বাধীন হয়েছিল আমরা ১৯৭১ বার চাইছি। এবার আমি ৩ দিন ধরে গুণে গুণে সেই একই কোড লিখে বিধ্বস্ত অবস্থায় ক্লায়েন্টের কাছে নিয়ে দেখালাম। ক্লায়েন্ট বললো, নাহ্‌। এভাবে না। আমরা ৩০ লাখ শহীদকে সম্মান দেখিয়ে ৩০ লক্ষ বার এটা প্রিন্ট করবো এবার আমি বেহুঁশ। আমি গিয়ে রিসার্চ করে দেখলাম জাভাস্ক্রিপ্টে `repeat()` নামক একটি ফাংশন আছে। এবার তো ইজি। ক্লায়েন্ট যতবার চায় ততবার লিখে দিতে পারবো জাস্ট এক লাইন কোড লিখে। আমিও নিচের কোড লিখে ক্লায়েন্টের কাছে খুব গর্ব নিয়ে গেলাম জাস্ট ১০ মিনিটের মধ্যে।
 
 ```js
-console.log('We love Bangladesh\n'.repeat(3000000));
+console.log("We love Bangladesh\n".repeat(3000000));
 ```
 
 আমি তো আকাশে উড়ছি। মনে মনে জাভাস্ক্রিপ্টকে ধন্যবাদ দিচ্ছি এই ফাংশনের জন্য। এবার ক্লায়েন্ট দেখে খুব খুশি হলেন। কিন্তু কিছুক্ষণ পরে বললেন, আচ্ছা ৩০ লক্ষ বার তো প্রিন্ট হলো। ইউজার কিভাবে বুঝবে এটা ৩০ লক্ষ বার হয়েছে। প্রতিটার আগে একটা নাম্বার দিয়ে দিলে বিষয়টা আরো ভাল হয়। এবার তো মাথায় হাত। ডায়নামিক্যালি এত নাম্বার কিভাবে করবো? তার জন্য সহজ সমাধান নিয়ে এসেছে প্রোগ্রামিং ল্যাঙ্গুয়েজ। সেটা হলো লুপ। লুপের মাধ্যমে আমরা সহজেই একই কাজ বারবার করাতে পারি যতবার খুশি।
 
 ```js
 for (let i = 1; i <= 3000000; i++) {
-	console.log(i, 'We love Bangladesh');
+  console.log(i, "We love Bangladesh");
 }
 ```
 
@@ -187,9 +187,9 @@ While loop দিয়েও আমরা for, do while এর কাজ করত
 
 ```js
 while (true) {
-	let num = Math.ceil(Math.random() * 100);
-	console.log(num, 'We love Bangladesh');
-	if (num === 71) break;
+  let num = Math.ceil(Math.random() * 100);
+  console.log(num, "We love Bangladesh");
+  if (num === 71) break;
 }
 ```
 
@@ -201,7 +201,7 @@ Do While দিয়ে আমরা কিন্তু for বা do while এর
 
 ```js
 do {
-	console.log('It will run at least once');
+  console.log("It will run at least once");
 } while (false);
 ```
 
@@ -212,11 +212,11 @@ do {
 সবচেয়ে অবহেলিত ডাটা স্ট্রাকচার এবং সবচেয়ে শক্তিশালী ডাটা স্ট্রাকচারের মধ্যে অন্যতম। অ্যারে ব্যবহার করে আমরা অনেক কমপ্লেক্স ডাটা স্ট্রাকচার তৈরি করে ফেলতে পারি। যেমন গ্রাফ, হীপ, স্ট্যাক, কিউ। ২/৩ লক্ষ ডাটা নিয়ে কাজ করার জন্য অ্যারে অনেক পাওয়ারফুল এবং পারফেক্ট ডাটা স্ট্রাকচার। প্রশ্ন হলো অ্যারে কেন আসছে আর অ্যারের কাজ কি? আমরা কয়েকজন মানুষের নাম স্টোর করে রাখতে চাইছি। সেটা আমরা ভ্যারিয়েবল দিয়ে করতে পারি।
 
 ```js
-const name1 = 'Rayhan';
-const name2 = 'Alvi';
-const name3 = 'Anik';
-const name4 = 'Arjun';
-const name5 = 'Ayman';
+const name1 = "Rayhan";
+const name2 = "Alvi";
+const name3 = "Anik";
+const name4 = "Arjun";
+const name5 = "Ayman";
 ```
 
 এখন আমি চাইছি এই নামগুলোকে লোয়ারকেসে কনভার্ট করবো। সেটার জন্য আমাদের প্রত্যেকটা ধরে ধরে কনভার্ট করতে হবে।
@@ -232,7 +232,7 @@ console.log(name5, name5.toLowerCase());
 এখন এখানে তো ৫টা নাম না থেকে তো ৫ লক্ষ নাম থাকতে পারতো। সেগুলোকে যদি প্রত্যেকটা ধরে ধরে কনভার্ট করতে হয় তাহলে সেটা তো একটা অসম্ভব ব্যাপার। তার জন্য আমাদের এমন একটা উপায় দরকার যাতে করে আমরা সব নামকে একটা ভ্যারিয়েবলের মধ্যে রাখতে পারি। এখন একটা ভ্যারিয়েবলের মধ্যে রেখে দেখি।
 
 ```js
-const persons = 'Rayhan, Alvi, Anik, Arjun, Ayman';
+const persons = "Rayhan, Alvi, Anik, Arjun, Ayman";
 ```
 
 এখন এখানে প্রব্লেম হলো এগুলো সব মিলে একটা বড় স্ট্রিং এ পরিণত হয়ে গেছে। এখানে থেকে আলাদা করবো কিভাবে? আলাদা আলাদা ভাবে স্টোর করে দেখা যাক।
@@ -244,13 +244,13 @@ const persons = 'Rayhan', 'Alvi', 'Anik', 'Arjun', 'Ayman';
 কিন্তু এখন প্রোগ্রাম রান করাতে গেলে অনেক বড়সড় একটা এরর খেয়ে বসে থাকবো আমরা। এই সমস্যা সমাধানের জন্য আমাদের কাছে একটা ডাটা স্ট্রাকচার আছে যার নামে অ্যারে। কিছু না জাস্ট উপরের উদাহরণের আগে আর পরে `[]` বসিয়ে দিলেই অ্যারে হয়ে যাবে।
 
 ```js
-const persons = ['Rayhan', 'Alvi', 'Anik', 'Arjun', 'Ayman'];
+const persons = ["Rayhan", "Alvi", "Anik", "Arjun", "Ayman"];
 ```
 
 এবার এখান থেকে ডাটা কিভাবে বের করা যায়? প্রতিটা অ্যারে এলিমেন্টের পজিশনের একটা নাম্বার আছে। একে বলে ইনডেক্স। ইনডেক্স শুরু হয় ০ থেকে। তাহলে ১ম পজিশনের ইনডেক্স ০, ২য় পজিশনের ইনডেক্স ১, ৩য় পজিশনের ইনডেক্স ২ এভাবে করে ইনডেক্সিং করা যায়। তাহলে আমরা অ্যারের একটা নাম পেলাম আর নাম্বার পেলাম। নাম্বার পাওয়ার কারণে সুবিধা হলো আমরা এখানে সহজেই ক্যালকুলেশন করতে পারবো। আর এটাই অ্যারের পাওয়ার। এখন কিভাবে অ্যারে থেকে ডাটা বের করা যায় সেটা দেখি।
 
 ```js
-const persons = ['Rayhan', 'Alvi', 'Anik', 'Arjun', 'Ayman'];
+const persons = ["Rayhan", "Alvi", "Anik", "Arjun", "Ayman"];
 console.log(persons[0]);
 console.log(persons[1]);
 console.log(persons[2]);
@@ -261,30 +261,30 @@ console.log(persons[4]);
 এভাবে আমরা সব নাম বের করে আনতে পারি। এখন এখানে দেখা যাচ্ছে সব একই শুধু ইনডেক্সটা ভিন্ন। মানে একই কাজ বারবার চলছে। তাহলে এখানে আমরা একটা লুপ চালাতে পারি।
 
 ```js
-const persons = ['Rayhan', 'Alvi', 'Anik', 'Arjun', 'Ayman'];
+const persons = ["Rayhan", "Alvi", "Anik", "Arjun", "Ayman"];
 
 for (let i = 0; i < 5; i++) {
-	console.log(persons[i]);
+  console.log(persons[i]);
 }
 ```
 
 এবার যদি প্রোগ্রাম রান করা হয় তাহলে দেখা যাবে সব নাম সুন্দর করে প্রিন্ট হয়ে যাবে। এখানে একটা প্রব্লেম আছে। প্রব্লেমটা বুঝার জন্য আমরা আরো দুইটা নাম অ্যাড করি।
 
 ```js
-const persons = ['Rayhan', 'Alvi', 'Anik', 'Arjun', 'Ayman', 'Ayuub', 'Bidyut'];
+const persons = ["Rayhan", "Alvi", "Anik", "Arjun", "Ayman", "Ayuub", "Bidyut"];
 
 for (let i = 0; i < 5; i++) {
-	console.log(persons[i]);
+  console.log(persons[i]);
 }
 ```
 
 এখন যদি প্রোগ্রাম চালাই দেখা যাবে `Ayman` পর্যন্ত এসেই লুপ থেমে যাবে। কারণ আমার লুপের রেঞ্জে দেয়া আছে ইনডেক্স ৫ এর কম হতে হবে। এই সমস্যা সমাধানের জন্য আমরা ৫ এর জায়গায় ডায়নামিক্যালি `persons.length` বসিয়ে দিলেই হয়ে যাবে। তাহলে অ্যারের লেংথ যতোই বাড়ুক সে ডায়নামিক্যালি আপডেট হয়ে যাবে। এবার প্রথম উদাহরণটা যদি আমরা অ্যারে এবং লুপ দিয়ে করি তাহলে কেমন দেখাবে?
 
 ```js
-const persons = ['Rayhan', 'Alvi', 'Anik', 'Arjun', 'Ayman', 'Ayuub', 'Bidyut'];
+const persons = ["Rayhan", "Alvi", "Anik", "Arjun", "Ayman", "Ayuub", "Bidyut"];
 
 for (let i = 0; i < 5; i++) {
-	console.log(students[i], students[i].toLowerCase());
+  console.log(students[i], students[i].toLowerCase());
 }
 ```
 
@@ -298,11 +298,11 @@ const bools = [true, true, false, false];
 const nulls = [null, null, null];
 const undefineds = [undefined, undefined, undefined];
 const arrayOfArray = [
-	[1, 2, 3],
-	[4, 5, 6],
-	[7, 8, 9],
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
 ];
-const mixed = [true, null, 'Str', 5, [12, 2, 4]];
+const mixed = [true, null, "Str", 5, [12, 2, 4]];
 ```
 
 এছাড়াও অ্যারেতে অবজেক্ট এবং ফাংশনও স্টোর করা যায়। যেহেতু আমরা এখনও অবজেক্ট ও ফাংশন নিয়ে আলোচনা করিনি তাই আমরা এখানে সেটা দেখালাম না। একটা অ্যারেতে ভিন্ন ডাটা টাইপের ডাটা স্টোর করা গেলেও আমরা একটা অ্যারেতে শুধু একই ডাটা টাইপের ডাটা স্টোর করবো। কারণ হলো ধরেন আপনি ছাত্রছাত্রীর নামের একটা অ্যারে বানালেন। এখন সেখানে যদি আপনি তাদের ঠিকানা, ফোন নাম্বার সব দিয়ে রাখেন তাহলে নাম খুঁজে বের করতে কষ্ট হয়ে যাবে। তাই একটা অ্যারেতে একই টাইপের ডাটা স্টোর করে রাখা উচিৎ।
@@ -314,11 +314,11 @@ const mixed = [true, null, 'Str', 5, [12, 2, 4]];
 অ্যারেতে আমরা কিছু ছাত্রের নাম লিখলাম। কিন্তু এখন যদি আমরা তাদের ইমেইল, বয়স এবং সে কি বর্তমান ক্লাসে উপস্থিত আছে কিনা সে ইনফরমেশন স্টোর করতে চাই তাহলে অ্যারে দিয়ে করলে একটা প্রব্লেম আছে। কি প্রব্লেম সেটা আমরা একটু দেখার চেষ্টা করি।
 
 ```js
-const student = ['Abu', 'Rayhan', 'rayhan@example.com', 25, true];
+const student = ["Abu", "Rayhan", "rayhan@example.com", 25, true];
 sendEMail(students[0]);
 
 function sendEmail(email) {
-	console.log('Sending Email to ', email);
+  console.log("Sending Email to ", email);
 }
 ```
 
@@ -326,17 +326,17 @@ function sendEmail(email) {
 
 ```js
 const student = {
-	firstName: 'Abu',
-	secondName: 'Rayhan',
-	email: 'rayhan@example.com',
-	age: 25,
-	attend: true,
+  firstName: "Abu",
+  secondName: "Rayhan",
+  email: "rayhan@example.com",
+  age: 25,
+  attend: true,
 };
 
 sendEMail(students.email);
 
 function sendEmail(email) {
-	console.log('Sending Email to ', email);
+  console.log("Sending Email to ", email);
 }
 ```
 
@@ -346,37 +346,37 @@ function sendEmail(email) {
 
 ```js
 const student1 = {
-	firstName: 'Abu',
-	secondName: 'Rayhan',
-	email: 'rayhan@example.com',
-	age: 25,
-	attend: true,
+  firstName: "Abu",
+  secondName: "Rayhan",
+  email: "rayhan@example.com",
+  age: 25,
+  attend: true,
 };
 
 const student2 = {
-	firstName: 'Alvi',
-	secondName: 'Chowdhury',
-	email: 'alvi@example.com',
-	age: 25,
-	attend: true,
+  firstName: "Alvi",
+  secondName: "Chowdhury",
+  email: "alvi@example.com",
+  age: 25,
+  attend: true,
 };
 
 const student3 = {
-	firstName: 'Akib',
-	secondName: 'Ahmad',
-	email: 'akib@example.com',
-	age: 25,
-	attend: true,
+  firstName: "Akib",
+  secondName: "Ahmad",
+  email: "akib@example.com",
+  age: 25,
+  attend: true,
 };
 
 const allStudents = [student1, student2, student3];
 
 for (let i = 0; i < allStudents.length; i++) {
-	sendEmail(allStudents[i].email);
+  sendEmail(allStudents[i].email);
 }
 
 function sendEmail(email) {
-	console.log('Sending email to', email);
+  console.log("Sending email to", email);
 }
 ```
 
@@ -390,8 +390,8 @@ function sendEmail(email) {
 
 ```js
 for (let i = 0; i < allStudents.length; i++) {
-	// sendEmail(allStudents[i].email);
-	console.log('Sending email to', allStudents[i].email);
+  // sendEmail(allStudents[i].email);
+  console.log("Sending email to", allStudents[i].email);
 }
 
 // function sendEmail(email) {
@@ -402,9 +402,9 @@ for (let i = 0; i < allStudents.length; i++) {
 আমরা ফাংশন না লিখেও সেইম কাজ করতে পারতাম। কিন্তু লুপের ভিতরের লাইনটা লুপের বাইরে অন্য কোথাও কাজ করবে না। কিন্তু ফাংশন যেকোনো জায়গায় কল করা যাবে। আবার ধরেন আমার অন্য জায়গায় দরকার পুরো নাম সেটা কি আবার সেই লুপ চালিয়ে করবো। না, আমরা ফাংশন দিয়ে করবো। এক্ষেত্রে আমরা একটা বিল্ড ইন ফাংশন ব্যবহার করে দেখি।
 
 ```js
-allStudents.forEach((item) => console.log('Email ', item.email));
+allStudents.forEach((item) => console.log("Email ", item.email));
 allStudents.forEach((item) =>
-	console.log('Full Name ', item.firstName, item.secondName)
+  console.log("Full Name ", item.firstName, item.secondName)
 );
 ```
 
@@ -416,7 +416,7 @@ allStudents.forEach((item) =>
 
 ```js
 function nameOfFunction() {
-	console.log('Hello', 'Elias');
+  console.log("Hello", "Elias");
 }
 
 nameOfFunction(); // Hello Elias
@@ -428,11 +428,11 @@ nameOfFunction(); // Hello Elias
 
 ```js
 function nameOfFunction(name) {
-	console.log('Hello', name);
+  console.log("Hello", name);
 }
 
-nameOfFunction('Murshed'); // Hello Murshed
-nameOfFunction('Fahim'); // Hello Fahim
+nameOfFunction("Murshed"); // Hello Murshed
+nameOfFunction("Fahim"); // Hello Fahim
 nameOfFunction(); // Hello undefined
 ```
 
@@ -440,15 +440,15 @@ nameOfFunction(); // Hello undefined
 
 ```js
 function nameOfFunction(name) {
-	if (!name) {
-		console.log('Please provide your name');
-	} else {
-		console.log('Hello', name);
-	}
+  if (!name) {
+    console.log("Please provide your name");
+  } else {
+    console.log("Hello", name);
+  }
 }
 
-nameOfFunction('Murshed'); // Hello Murshed
-nameOfFunction('Fahim'); // Hello Fahim
+nameOfFunction("Murshed"); // Hello Murshed
+nameOfFunction("Fahim"); // Hello Fahim
 nameOfFunction(); // Please provide your name
 ```
 
@@ -474,8 +474,8 @@ const randomNumber = Math.floor(Math.random() * 1000);
 
 ```js
 function generateRandomNumber(max) {
-	const randomNumber = Math.floor(Math.random() * max);
-	return randomNumber;
+  const randomNumber = Math.floor(Math.random() * max);
+  return randomNumber;
 }
 
 console.log(generateRandomNumber(10));
@@ -487,13 +487,15 @@ console.log(generateRandomNumber(1000));
 
 ```js
 function generateRandomNumber(min, max) {
-	const randomNumber = Math.floor(Math.random() * min + (max - min));
-	return randomNumber;
+  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  return randomNumber;
 }
 
 console.log(generateRandomNumber(5, 10));
 console.log(generateRandomNumber(85, 100));
 ```
+
+এখানে ফাংশনটি সর্বচ্ছ max - min + 1 পর্যন্ত রেনডম নাম্বার দেখায় সাথে min যোগ করায় min এ উপরের সংখ্যা গুলোকে দেখায় ।
 
 তাহলে বুঝুন ফাংশন আমাদের কাজকে কতটা সহজ করে দেয়।
 
@@ -502,20 +504,20 @@ console.log(generateRandomNumber(85, 100));
 এই বিষয় বুঝার আগে আমরা একটু কিছু উদাহরণ দেখি
 
 ```js
-const name1 = 'Rayhan'; // Statement
-const name2 = 'Alvi'; // Statement
-const name3 = 'Anik'; // Statement
-const name4 = 'Arjun'; // Statement
-const name5 = 'Ayman'; // Statement
+const name1 = "Rayhan"; // Statement
+const name2 = "Alvi"; // Statement
+const name3 = "Anik"; // Statement
+const name4 = "Arjun"; // Statement
+const name5 = "Ayman"; // Statement
 
 const students = [
-	'Rayhan',
-	'Alvi',
-	'Anik',
-	'Arjun',
-	'Ayman',
-	'Ayuub',
-	'Bidyut',
+  "Rayhan",
+  "Alvi",
+  "Anik",
+  "Arjun",
+  "Ayman",
+  "Ayuub",
+  "Bidyut",
 ]; // Statement
 
 console.log(students[0]); // Expression
@@ -525,7 +527,7 @@ console.log(students[3]); // Expression
 console.log(students[4]); // Expression
 
 for (let i = 0; i < students.length; i++) {
-	console.log(students[i], students[i].toLowerCase()); // Expression
+  console.log(students[i], students[i].toLowerCase()); // Expression
 } // Statement
 
 name1.sendEmail(); // Expression
@@ -539,66 +541,66 @@ const bools = [true, true, false, false]; // Statement
 const nulls = [null, null, null]; // Statement
 const undefineds = [undefined, undefined, undefined]; // Statement
 const arrayOfArray = [
-	[1, 2, 3],
-	[4, 5, 6],
-	[7, 8, 9],
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
 ]; // Statement
-const mixed = [true, null, 'Str', 5, [12, 2, 4]]; // Statement
+const mixed = [true, null, "Str", 5, [12, 2, 4]]; // Statement
 
 const student1 = {
-	firstName: 'Abu',
-	secondName: 'Rayhan',
-	email: 'rayhan@example.com',
-	age: 25,
-	attend: true,
+  firstName: "Abu",
+  secondName: "Rayhan",
+  email: "rayhan@example.com",
+  age: 25,
+  attend: true,
 }; // Statement
 
 const student2 = {
-	firstName: 'Alvi',
-	secondName: 'Chowdhury',
-	email: 'alvi@example.com',
-	age: 25,
-	attend: true,
+  firstName: "Alvi",
+  secondName: "Chowdhury",
+  email: "alvi@example.com",
+  age: 25,
+  attend: true,
 }; // Statement
 
 const student3 = {
-	firstName: 'Akib',
-	secondName: 'Ahmad',
-	email: 'akib@example.com',
-	age: 25,
-	attend: true,
+  firstName: "Akib",
+  secondName: "Ahmad",
+  email: "akib@example.com",
+  age: 25,
+  attend: true,
 }; // Statement
 
 const allStudents = [student1, student2, student3]; // Statement
 
 for (let i = 0; i < allStudents.length; i++) {
-	sendMail(allStudents[i].email); // Expression
+  sendMail(allStudents[i].email); // Expression
 } // Statement
 
 function sendMail(email) {
-	console.log('Sending email to', email);
+  console.log("Sending email to", email);
 } // Statement
 
-allStudents.forEach((item) => console.log('Email ', item.email)); // Expression
+allStudents.forEach((item) => console.log("Email ", item.email)); // Expression
 allStudents.forEach((item) =>
-	console.log('Full Name ', item.firstName, item.secondName)
+  console.log("Full Name ", item.firstName, item.secondName)
 ); // Expression
 
 function nameOfFunction(name) {
-	if (!name) {
-		console.log('Please provide your name');
-	} else {
-		console.log('Hello', name);
-	}
+  if (!name) {
+    console.log("Please provide your name");
+  } else {
+    console.log("Hello", name);
+  }
 } // Statement
 
-nameOfFunction('Murshed'); // Expression
-nameOfFunction('Fahim'); // Expression
+nameOfFunction("Murshed"); // Expression
+nameOfFunction("Fahim"); // Expression
 nameOfFunction(); // Expression
 
 function generateRandomNumber(min = 1, max) {
-	const randomNumber = Math.floor(Math.random() * min + (max - min)); // Statement
-	return randomNumber; // Expression
+  const randomNumber = Math.floor(Math.random() * min + (max - min)); // Statement
+  return randomNumber; // Expression
 } // Statement
 
 console.log(generateRandomNumber(5, 10)); // Expression
