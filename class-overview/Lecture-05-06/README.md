@@ -57,7 +57,7 @@
 const numbers = [2, 5, 6, 7, 89, 100];
 
 for (let i = 0; i < numbers.length; i++) {
-	console.log(numbers[i]);
+  console.log(numbers[i]);
 }
 ```
 
@@ -67,7 +67,7 @@ for (let i = 0; i < numbers.length; i++) {
 const numbers = [2, 5, 6, 7, 89, 100];
 
 for (let i = 0; i < numbers.length; i++) {
-	console.log(numbers[i] * 2);
+  console.log(numbers[i] * 2);
 }
 ```
 
@@ -78,7 +78,7 @@ const numbers = [2, 5, 6, 7, 89, 100];
 
 let sum = 0;
 for (let i = 0; i < numbers.length; i++) {
-	sum += numbers[i];
+  sum += numbers[i];
 }
 
 console.log(sum);
@@ -94,7 +94,7 @@ console.log(sum);
 const numbers = [2, 5, 6, 7, 89, 100];
 
 numbers.forEach(function () {
-	console.log('Hello World');
+  console.log("Hello World");
 });
 ```
 
@@ -104,7 +104,7 @@ numbers.forEach(function () {
 const numbers = [2, 5, 6, 7, 89, 100];
 
 numbers.forEach(function () {
-	console.log(arguments);
+  console.log(arguments);
 });
 
 /* * Output
@@ -123,7 +123,7 @@ numbers.forEach(function () {
 const numbers = [2, 5, 6, 7, 89, 100];
 
 numbers.forEach(function (value, index, array) {
-	console.log(value, index, array);
+  console.log(value, index, array);
 });
 
 /* * Output
@@ -138,6 +138,8 @@ numbers.forEach(function (value, index, array) {
 
 দেখা যাচ্ছে আমরা যে আউটপুট পেয়েছিলাম আর্গুমেন্টস এর বেলায় ঠিক সেই আউটপুটই পেয়েছি। `arguments` অনেক কাজের। আপনি যখন কোনো লাইব্রেরি বা ফ্রেমওয়ার্ক নিয়ে কাজ করবেন তখন যদি কোনো মেথডের আর্গুমেন্ট জানার প্রয়োজন হয় সহজেই তা বের করে নিতে পারবেন।
 
+**arguments:** এটি একটি জাভাস্ক্রিপ্টের একটি বিশেষ ধরনের অবজেক্ট। যখন আপনি কোনো ফাংশন কল করেন, তখন সেই ফাংশনের ভিতরে arguments নামে একটি অবজেক্ট তৈরি হয়। এই অবজেক্টে ফাংশনকে পাস করা সকল আর্গুমেন্টের একটি তালিকা থাকে।
+
 এবার আসি আবার `forEach` এর কথায়। এটা দিয়ে ফর লুপের যাবতীয় যা যা কাজ আমরা করি সবই করতে পারি। এবার আমরা ফর লুপ দিয়ে যোগফলের যে কাজটি করেছিলাম সেটা একটু `forEach` দিয়ে করে দেখি।
 
 ```js
@@ -145,7 +147,7 @@ const numbers = [2, 5, 6, 7, 89, 100];
 
 let sum = 0;
 numbers.forEach(function (value) {
-	sum += value;
+  sum += value;
 });
 console.log(sum); // 209
 ```
@@ -156,9 +158,9 @@ console.log(sum); // 209
 const numbers = [2, 5, 6, 7, 89, 100];
 
 numbers.forEach(function (value) {
-	if (value % 2 === 0) {
-		console.log(value);
-	}
+  if (value % 2 === 0) {
+    console.log(value);
+  }
 });
 ```
 
@@ -171,9 +173,9 @@ const numbers = [2, 5, 6, 7, 89, 100];
 
 let sum = 0;
 numbers.forEach(function (value, index) {
-	if (index <= 3) {
-		sum += value;
-	}
+  if (index <= 3) {
+    sum += value;
+  }
 });
 console.log(sum);
 ```
@@ -183,7 +185,7 @@ console.log(sum);
 ধরি আমাদের একটা অ্যারে আছে নিচের মতো।
 
 ```js
-const arr = [1, 2, 3, null, false, 4, 5, '', 'test', 6, 7];
+const arr = [1, 2, 3, null, false, 4, 5, "", "test", 6, 7];
 ```
 
 এখন আমরা চাইছি এখান থেকে নাম্বার ছাড়া বাকি যা আছে সেগুলো বাদ দিয়ে শুধু নাম্বারগুলো ফিল্টার করে নিতে। সেটা আমরা ডিক্লারেটিভ ওয়েতে করতে চাইছি না। আমরা চাইছি ইম্পেরেটিভ ওয়েতে করতে। কিভাবে করতে পারি?
@@ -191,12 +193,12 @@ const arr = [1, 2, 3, null, false, 4, 5, '', 'test', 6, 7];
 আমরা এভাবে শুরু করতে পারি।
 
 ```js
-const arr = [1, 2, 3, null, false, 4, 5, '', 'test', 6, 7];
+const arr = [1, 2, 3, null, false, 4, 5, "", "test", 6, 7];
 
 for (let i = 0; i < arr.length; i++) {
-	if (typeof arr[i] !== 'number') {
-		arr[i] = undefined;
-	}
+  if (typeof arr[i] !== "number") {
+    arr[i] = undefined;
+  }
 }
 
 console.log(arr); // [1, 2, 3, undefined, undefined, 4, 5, undefined, undefined, 6, 7];
@@ -214,37 +216,56 @@ console.log(arr); // [1, 2, 3, undefined, undefined, 4, 5, undefined, undefined,
 এবার আমাদের আইডিয়াকে আমরা একটু কোডে রূপান্তরিত করে দেখি।
 
 ```js
-const arr = [1, 2, 3, null, false, 4, 5, '', 'test', 6, 7];
+const arr = [1, 2, 3, null, false, 4, 5, "", "test", 6, 7];
 
 for (let i = 0; i < arr.length; i++) {
-	for (let j = i; j < arr.length - 1; j++) {
-		if (!arr[j] || typeof arr[j] !== 'number') {
-			arr[j] = arr[j + 1];
-			arr[j + 1] = undefined;
-		}
-	}
+  for (let j = i; j < arr.length - 1; j++) {
+    if (!arr[j] || typeof arr[j] !== "number") {
+      arr[j] = arr[j + 1];
+      arr[j + 1] = undefined;
+    }
+  }
 }
 
 console.log(arr); // [1, 2, 3, 4, 5, 6, 7, undefined, undefined, undefined, undefined];
 ```
 
+### কাজটি সহজ করে এভাবে ভেঙে ভেঙে ও করা যেতে পারে।
+
+```js
+let index = 0;
+
+for (let i = 0; i < arr.length; i++) {
+  if (typeof arr[i] === "number") {
+    arr[index] = arr[i]; // বৈধ সংখ্যা হলে সামনের দিকে সরাও
+    index++;
+  }
+}
+
+// বাকি অংশ `undefined` দিয়ে পূরণ করো
+for (let i = index; i < arr.length; i++) {
+  arr[i] = undefined;
+}
+console.log(arr);
+```
+
 আমরা তাহলে আমাদের স্টেপ ৪ পেয়ে গেলাম। এবার এখান থেকে `undefined` বাদ দিয়ে দিতে হবে। সেটার জন্য আমরা একটা কাজ করতে পারি।
 
 ```js
-const arr = [1, 2, 3, null, false, 4, 5, '', 'test', 6, 7];
+const arr = [1, 2, 3, null, false, 4, 5, "", "test", 6, 7];
 
 count = 0;
 for (let i = 0; i < arr.length; i++) {
-	for (let j = i; j < arr.length - 1; j++) {
-		if (!arr[j] || typeof arr[j] !== 'number') {
-			arr[j] = arr[j + 1];
-			arr[j + 1] = undefined;
-		}
-	}
+  for (let j = i; j < arr.length - 1; j++) {
+    if (!arr[j] || typeof arr[j] !== "number") {
+      arr[j] = arr[j + 1];
+      arr[j + 1] = undefined;
+    }
+  }
 
-	if (arr[i] == undefined) {
-		count++;
-	}
+  if (arr[i] == undefined) {
+    count++;
+  }
 }
 arr.length -= count;
 
@@ -284,22 +305,22 @@ After completion of loop the array looks like this [1, 2, 3, undefined, undefine
 এখন যদি এই কাজটা ইম্পেরেটিভ ওয়েতে না করে ডিক্লারেটিভ ওয়েতে করতাম তাহলে অনেক সহজে করতে পারতাম।
 
 ```js
-const arr = [1, 2, 3, null, false, 4, 5, '', 'test', 6, 7];
+const arr = [1, 2, 3, null, false, 4, 5, "", "test", 6, 7];
 
-const filteredArray = arr.filter((val) => typeof val === 'number');
+const filteredArray = arr.filter((val) => typeof val === "number");
 console.log(filteredArray);
 ```
 
 কিন্তু এই জায়গায় একটা সমস্যা আছে। কারণ `filter` মেথড বিহাইন্ড দ্য সীন একটা এক্সট্রা মেমোরি ব্যবহার করে। আমরা যখন ফ্রন্টএন্ড ডেভেলপমেন্ট করি তখন সাধারণত এতো জটিল ইম্পেরেটিভ ওয়েতে করি না। আমরা যে বিল্ট-ইন মেথড আছে সেগুলো ব্যবহার করি। তাই দেখা যায় যে অনেক সময় ডাটা যখন অনেক বেশি হবে তখন অ্যাপ্লিকেশন হ্যাং হয়ে যায়। এখন আমরা কি সবসময় ইম্পেরেটিভ মেথডেই কাজ করবো? বা কখন বুঝবো আমাকে ইম্পেরেটিভ ওয়েতে করতে হবে, কখন ডিক্লারেটিভ ওয়েতে? প্রথম কথা হচ্ছে ৯০-৯৫% সময়ই আমাদের বিল্ট-ইন মেথড ইউজ করে কাজ হয়ে যাবে। কিন্তু কিছু কিছু ক্ষেত্রে আমাদের অ্যাপ্লিকেশনের কমপ্লেক্সিটি এতো বেশি হয় সেসব ক্ষেত্রে আমাদের বিল্ট-ইন মেথডের বাইরে গিয়ে কাজ করতে হতে পারে। ধরেন আমাদের অ্যারেতে এখন জাস্ট নাম্বার, স্ট্রিং এসব ডাটা আছে। কিন্তু যদি এমন হয় যে প্রতিটি ইলেমেন্ট এক একটা জায়ান্ট অবজেক্ট এবং প্রতিটা অবজেক্টের সাইজ প্রায় এক এমবি করে (যদিও এক এমবি ডাটা বানানো অনেক কঠিন, তাও বুঝার সুবিধার্থে উদাহরণ দিচ্ছি), এরকম যদি ১০০ টা অবজেক্ট থাকে তাহলে মোট অ্যারের সাইজ হবে ১০০ এমবি। এখন যদি এই ১০০ এমবি ডাটার অপারেশনের জন্য আমার আরো ১০০ এমবি মেমোরি খরচ হয় তাহলে সেটা অনেক সমস্যা। তাই এই ক্ষেত্রে আমাদের সম্পূর্ণ ইম্পেরেটিভ ওয়েতে গিয়ে কাজ করতে হবে। যদি আমাদের এখানে মেমোরি কনস্ট্রেইন না থাকতো তাহলে আমরা ইম্পেরেটিভ ওয়েতেও অনেক সহজে এই কাজটা করতে পারতাম।
 
 ```jsx
-const arr = [1, 2, 3, null, false, 4, 5, '', 'test', 6, 7];
+const arr = [1, 2, 3, null, false, 4, 5, "", "test", 6, 7];
 
 const newArr = [];
 for (let i = 0; i < arr.length; i++) {
-	if (typeof arr[i] === 'number') {
-		newArr.push(arr[i]);
-	}
+  if (typeof arr[i] === "number") {
+    newArr.push(arr[i]);
+  }
 }
 console.log(newArr);
 ```
@@ -324,11 +345,11 @@ console.log(arr); // [1, 2, 3, 300, 5]
 
 ```js
 const arr = [
-	{ id: 1, value: 10 },
-	{ id: 2, value: 20 },
-	{ id: 3, value: 30 },
-	{ id: 4, value: 40 },
-	{ id: 5, value: 50 },
+  { id: 1, value: 10 },
+  { id: 2, value: 20 },
+  { id: 3, value: 30 },
+  { id: 4, value: 40 },
+  { id: 5, value: 50 },
 ];
 
 const index = arr.findIndex((item) => item.id === 4);
@@ -349,11 +370,11 @@ console.log(arr);
 
 ```js
 const arr = [
-	{ id: 1, value: 10 },
-	{ id: 2, value: 20 },
-	{ id: 3, value: 30 },
-	{ id: 4, value: 40 },
-	{ id: 5, value: 50 },
+  { id: 1, value: 10 },
+  { id: 2, value: 20 },
+  { id: 3, value: 30 },
+  { id: 4, value: 40 },
+  { id: 5, value: 50 },
 ];
 
 const obj = arr.find((val) => val.id === 4);
@@ -379,11 +400,11 @@ console.log(arr);
 
 ```js
 const arr = [
-	{ id: 1, value: 10 },
-	{ id: 2, value: 20 },
-	{ id: 3, value: 30 },
-	{ id: 4, value: 40 },
-	{ id: 5, value: 50 },
+  { id: 1, value: 10 },
+  { id: 2, value: 20 },
+  { id: 3, value: 30 },
+  { id: 4, value: 40 },
+  { id: 5, value: 50 },
 ];
 
 const obj = arr.find((val) => val.id === 4);
@@ -406,11 +427,11 @@ console.log(a === b); // false
 
 ```js
 const arr = [
-	{ id: 1, value: 10 },
-	{ id: 2, value: 20 },
-	{ id: 3, value: 30 },
-	{ id: 4, value: 40 },
-	{ id: 5, value: 50 },
+  { id: 1, value: 10 },
+  { id: 2, value: 20 },
+  { id: 3, value: 30 },
+  { id: 4, value: 40 },
+  { id: 5, value: 50 },
 ];
 
 const index = arr.findIndex((item) => item.id === 4);
@@ -430,11 +451,11 @@ console.log(arr);
 
 ```js
 const arr = [
-	{ id: 1, value: 10 },
-	{ id: 2, value: 20 },
-	{ id: 3, value: 30 },
-	{ id: 4, value: 40 },
-	{ id: 5, value: 50 },
+  { id: 1, value: 10 },
+  { id: 2, value: 20 },
+  { id: 3, value: 30 },
+  { id: 4, value: 40 },
+  { id: 5, value: 50 },
 ];
 
 const arr2 = arr.filter((item) => item.id !== 4);
@@ -483,7 +504,7 @@ console.log(strs);
 ফিল্টারের কাজ আমরা একটা অ্যারে থেকে যে যে ডাটা চাইছি তা ফিল্টার করে দেয়া। ধরেন আমাদের কাছে একটা অ্যারে আছে।
 
 ```js
-const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
+const numbers = [1, 2, 3, 4, false, "", NaN, 5, 6];
 ```
 
 আমরা চাইছি এখান থেকে সমস্ত falsy value বাদ দিয়ে শুধু truthy ভ্যালু নিবো। সেক্ষেত্রে ফিল্টার মেথড আমাদের ব্যবহার করতে হবে।
@@ -500,7 +521,7 @@ console.log(filteredArr);
 আমরা একটু নিচের উদাহরণটা দেখি।
 
 ```js
-const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
+const numbers = [1, 2, 3, 4, false, "", NaN, 5, 6];
 const filteredArr = numbers.filter((v) => v);
 const strs = filteredArr.map((v) => v.toString());
 console.log(strs);
@@ -509,7 +530,7 @@ console.log(strs);
 এক্ষেত্রে কিছু অসুবিধা আছে। যখন ফিল্টার হচ্ছে তখন n সংখ্যকবার সে ট্রাভার্স হচ্ছে। আবার যখন ম্যাপ হচ্ছে তখনও আবার ট্রাভার্স হচ্ছে। এতে করে টাইম কমপ্লেক্সিটি বেড়ে যাচ্ছে। এটা চেইন করেও করা যায়।
 
 ```js
-const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
+const numbers = [1, 2, 3, 4, false, "", NaN, 5, 6];
 const filteredArr = numbers.filter((v) => v).map((v) => v.toString());
 console.log(strs);
 ```
@@ -530,18 +551,18 @@ console.log(sum);
 
 ```js
 numbers.reduce((acc, cur) => {
-	return acc;
-}, '');
+  return acc;
+}, "");
 ```
 
 প্রথম প্যারামিটার হিসেবে আমরা দিয়েছি acc (accumulator / previous value) এবং দ্বিতীয় ভ্যালু হিসেবে দিয়েছি cur (current value)। acc, cur এর পর আমরা চাইলে ইনডেক্স দিতে পারি, চাইলে পুরো অ্যারে দিতে পারি কিন্তু আমাদের সেটা দরকার নেই। reduce মেথডের সুবিধা হলো এখানে আমরা একটা ইনিশিয়াল ভ্যালু প্রোভাইড করতে পারি। '' এর জায়গায় খালি অবজেক্ট {}, খালি অ্যারে [], শূন্য যেকোনো কিছু বসাতে পারি। সেটা আমরা কি চাইছি তার উপর নির্ভর করবে। এর মানে হলো বর্তমানে acc এর ভ্যালু ঐ ইনিশিয়ালাইজার হিসেবে যেটা দিবো সেটা। দিন শেষে আমরা আমাদের acc কে রিটার্ন করবো। যাই করি না কেন আমরা reduce মেথডে acc কেই রিটার্ন করবো। এখন আমরা চাইছি `const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];` এটা থেকে আমরা `1234falseNaN56` রিটার্ন করতে। সেটা করতে আমরা reduce মেথডের সাহায্য নিবো।
 
 ```js
-const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
+const numbers = [1, 2, 3, 4, false, "", NaN, 5, 6];
 const result = numbers.reduce((acc, cur) => {
-	acc += cur.toString();
-	return acc;
-}, '');
+  acc += cur.toString();
+  return acc;
+}, "");
 
 console.log(result); // 1234falseNaN56
 ```
@@ -551,13 +572,13 @@ console.log(result); // 1234falseNaN56
 এখন আমরা চাইছি এই অ্যারে থেকে শুধু truthy values নিবো। কোনো falsy ভ্যালু নিবো না। সেক্ষেত্রে আমরা একটা কন্ডিশন বসিয়ে দিতে পারি।
 
 ```js
-const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
+const numbers = [1, 2, 3, 4, false, "", NaN, 5, 6];
 const result = numbers.reduce((acc, cur) => {
-	if (cur) {
-		acc += cur.toString();
-	}
-	return acc;
-}, '');
+  if (cur) {
+    acc += cur.toString();
+  }
+  return acc;
+}, "");
 
 console.log(result); // 123456
 ```
@@ -565,13 +586,13 @@ console.log(result); // 123456
 আমরা যদি চাই প্রতিটার শেষে কমা (,) যোগ করবো সেটাও করতে পারি।
 
 ```js
-const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
+const numbers = [1, 2, 3, 4, false, "", NaN, 5, 6];
 const result = numbers.reduce((acc, cur, index) => {
-	if (cur) {
-		acc += cur.toString() + (index < numbers.length - 1 ? ', ' : '');
-	}
-	return acc;
-}, '');
+  if (cur) {
+    acc += cur.toString() + (index < numbers.length - 1 ? ", " : "");
+  }
+  return acc;
+}, "");
 
 console.log(result); // 1, 2, 3, 4, 5, 6
 ```
@@ -579,31 +600,31 @@ console.log(result); // 1, 2, 3, 4, 5, 6
 আমরা চাইলে অ্যারের একটা শেইপও দিতে পারি। যেমন
 
 ```js
-const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
+const numbers = [1, 2, 3, 4, false, "", NaN, 5, 6];
 const result = numbers.reduce((acc, cur, i) => {
-	if (i === 0) {
-		acc += '[';
-	}
-	if (cur) {
-		acc += cur.toString() + (i < numbers.length - 1 ? ', ' : '');
-	}
-	if (i === numbers.length - 1) {
-		acc += ']';
-	}
-	return acc;
-}, '');
+  if (i === 0) {
+    acc += "[";
+  }
+  if (cur) {
+    acc += cur.toString() + (i < numbers.length - 1 ? ", " : "");
+  }
+  if (i === numbers.length - 1) {
+    acc += "]";
+  }
+  return acc;
+}, "");
 console.log(result); // [1, 2, 3, 4, 5, 6]
 ```
 
 তাহলে আমরা reduce এর পাওয়ারটা বুঝতে পারছি কিছুটা। এটা গেলো এক ধরণের পাওয়ার। আরো অনেক পাওয়ার আছে reduce মেথডের। যেমন এখন আমরা acc স্ট্রিং হিসেবে চাইছি না। আমরা চাইছি সকল truthy ভ্যালুর একটা অ্যারে। সেটাও reduce দিয়ে করা যায়।
 
 ```js
-const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
+const numbers = [1, 2, 3, 4, false, "", NaN, 5, 6];
 const result = numbers.reduce((acc, cur) => {
-	if (cur) {
-		acc.push(cur.toString());
-	}
-	return acc;
+  if (cur) {
+    acc.push(cur.toString());
+  }
+  return acc;
 }, []);
 console.log(result); // [ '1', '2', '3', '4', '5', '6' ]
 ```
@@ -615,32 +636,32 @@ console.log(result); // [ '1', '2', '3', '4', '5', '6' ]
 ```js
 const arr = [];
 for (let i = 1; i < 5000000; i++) {
-	arr.push(i);
+  arr.push(i);
 }
 
-console.time('not-optimized');
+console.time("not-optimized");
 arr.filter((item) => item % 2 === 0).map((item) => item * 2);
-console.timeEnd('not-optimized'); // not-optimized: 325.853ms
+console.timeEnd("not-optimized"); // not-optimized: 325.853ms
 
-console.time('optimized');
+console.time("optimized");
 arr.reduce((acc, cur) => {
-	if (cur % 2 === 0) {
-		acc.push(cur * 2);
-	}
-	return acc;
+  if (cur % 2 === 0) {
+    acc.push(cur * 2);
+  }
+  return acc;
 }, []);
-console.timeEnd('optimized'); // optimized: 198.256ms
+console.timeEnd("optimized"); // optimized: 198.256ms
 ```
 
 তাহলে দেখা যাচ্ছে reduce method অনেক অপটিমাইজড। এবার আমরা একটু reduce মেথডের ইমপ্লিমেন্টেশনটা দেখি। আমরা আমদের reduce ফুঞ্চতিওন বানিয়ে ফেলতে পারি। যেহেতু আমরা প্রোটোটাইপ নিয়ে আলোচনা করিনি তাই মেথড বানাবো না। আমরা জাস্ট একটা ফাংশন বানাবো।
 
 ```js
 function myReduce(arr, cb, init) {
-	let acc = init;
-	for (let i = 0; i < arr.length; i++) {
-		acc = cb(acc, arr[i], i, arr);
-	}
-	return acc;
+  let acc = init;
+  for (let i = 0; i < arr.length; i++) {
+    acc = cb(acc, arr[i], i, arr);
+  }
+  return acc;
 }
 ```
 
@@ -650,16 +671,16 @@ function myReduce(arr, cb, init) {
 const sum = myReduce([1, 2, 3, 4], (a, b) => a + b, 0);
 console.log(sum); // 10
 
-const arr = [1, 2, '', false, 3, NaN, false, 4, 5, NaN, 6];
+const arr = [1, 2, "", false, 3, NaN, false, 4, 5, NaN, 6];
 const result = myReduce(
-	arr,
-	(acc, cur) => {
-		if (cur) {
-			acc.push(cur ** 2);
-		}
-		return acc;
-	},
-	[]
+  arr,
+  (acc, cur) => {
+    if (cur) {
+      acc.push(cur ** 2);
+    }
+    return acc;
+  },
+  []
 );
 console.log(result); // [1, 4, 9, 16, 25, 36]
 ```
@@ -669,24 +690,24 @@ How amazing is this! জাভাস্ক্রিপ্টের যতোই 
 আমরা আরেকটা উদাহরণ দেখি reduce এর। তার জন্য আমাদের axios প্যাকেজটা ইনস্টল করে নেয়া লাগবে। আমরা ইনস্টল করে নিলাম। এখন আমরা [json placeholder](https://jsonplaceholder.typicode.com/posts) এই সাইটে ঢুকলে কিছু ডামী ডাটা পাবো পোস্টের। খেয়াল করলে দেখবো এই ডাটা দেয়া আছে অ্যারে হিসেবে। কিন্তু আমার ট্রাভার্সের চেয়ে গুরুত্বপূর্ণ হলো আপডেট ও ডিলিট করা। ব্যাকএন্ড ডেভেলপার তার সুবিধামতো অ্যারেতে দিয়ে দিলেও আমাদের নিজেদের প্রয়োজনে তা অবজেক্টে রূপান্তরিত করে নেয়া লাগবে। এখানে আমাদের body প্রোপার্টিজ প্রয়োজন নেই। আমাদের দরকার userId, id ও title। আর আমার এতো ডাটার প্রয়োজন নেই আমাদের প্রথম ১০টা ডাটা হলেই হয়ে যাবে। চলুন দেখি।
 
 ```js
-const axios = require('axios').default;
-const url = 'https://jsonplaceholder.typicode.com/posts';
+const axios = require("axios").default;
+const url = "https://jsonplaceholder.typicode.com/posts";
 
 async function getData() {
-	const { data } = await axios.get(url);
-	const result = data.slice(0, 10).map((item) => {
-		return {
-			userId: item.userId,
-			id: item.id,
-			title: item.title,
-		};
-	});
-	return result;
+  const { data } = await axios.get(url);
+  const result = data.slice(0, 10).map((item) => {
+    return {
+      userId: item.userId,
+      id: item.id,
+      title: item.title,
+    };
+  });
+  return result;
 }
 
 getData()
-	.then((data) => console.log(data))
-	.catch((e) => console.log(e));
+  .then((data) => console.log(data))
+  .catch((e) => console.log(e));
 
 /* 
 [
@@ -720,24 +741,24 @@ getData()
 আমরা map ব্যবহার করে প্রথম ১০টি ডাটা পেয়ে গেলাম। এবং বডিও আমরা বাদ দিয়ে দিলাম। কিন্তু এখনও এটা অ্যারে রিটার্ন করছে। map করলে কখনও আমরা অবজেক্ট রিটার্ন করতে পারবো না। কারণ map সবসময় অ্যারেই রিটার্ন করে। এবার আমরা একটু reduce নিয়ে কাজ করি। কারণ reduce এ আমরা কি টাইপের ডাটা চাই তা ইনিশিয়ালাইজের মাধ্যমে দিয়ে দিতে পারি।
 
 ```js
-const axios = require('axios').default;
-const url = 'https://jsonplaceholder.typicode.com/posts';
+const axios = require("axios").default;
+const url = "https://jsonplaceholder.typicode.com/posts";
 
 async function getData() {
-	const { data } = await axios.get(url);
-	const result = data.slice(0, 10).reduce((acc, cur) => {
-		acc[cur.id] = {
-			...cur,
-		};
-		delete acc[cur.id].body;
-		return acc;
-	}, {});
-	return result;
+  const { data } = await axios.get(url);
+  const result = data.slice(0, 10).reduce((acc, cur) => {
+    acc[cur.id] = {
+      ...cur,
+    };
+    delete acc[cur.id].body;
+    return acc;
+  }, {});
+  return result;
 }
 
 getData()
-	.then((data) => console.log(data))
-	.catch((e) => console.log(e));
+  .then((data) => console.log(data))
+  .catch((e) => console.log(e));
 
 /* 
 {
@@ -773,22 +794,22 @@ getData()
 
 ```js
 const names = [
-	'Ayman',
-	'Abu Rayhan',
-	'Anik',
-	'Elias Emon',
-	'Engr. Sabbir',
-	'Fahim Faisal',
-	'Feroz Khan',
-	'Habib',
-	'HM Azizul',
-	'Hridoy Saha',
-	'Jahid Hassan',
-	'Johir',
-	'Md Al-Amin',
-	'Md Arafatul',
-	'Md Ashraful',
-	'Parvez',
+  "Ayman",
+  "Abu Rayhan",
+  "Anik",
+  "Elias Emon",
+  "Engr. Sabbir",
+  "Fahim Faisal",
+  "Feroz Khan",
+  "Habib",
+  "HM Azizul",
+  "Hridoy Saha",
+  "Jahid Hassan",
+  "Johir",
+  "Md Al-Amin",
+  "Md Arafatul",
+  "Md Ashraful",
+  "Parvez",
 ];
 ```
 
@@ -830,9 +851,9 @@ Parvez
 
 ```js
 const namesGroup = {
-	A: ['Ayman', 'Abu Rayhan', 'Anik'],
-	E: ['Elias Emon', 'Engr. Sabbir'],
-	F: ['Fahim Faisal', 'Feroz Khan'],
+  A: ["Ayman", "Abu Rayhan", "Anik"],
+  E: ["Elias Emon", "Engr. Sabbir"],
+  F: ["Fahim Faisal", "Feroz Khan"],
 };
 ```
 
@@ -840,13 +861,13 @@ const namesGroup = {
 
 ```js
 const namesGrouped = names.reduce((acc, cur) => {
-	const firstLetter = cur[0].toUpperCase();
-	if (firstLetter in acc) {
-		acc[firstLetter].push(cur);
-	} else {
-		acc[firstLetter] = [cur];
-	}
-	return acc;
+  const firstLetter = cur[0].toUpperCase();
+  if (firstLetter in acc) {
+    acc[firstLetter].push(cur);
+  } else {
+    acc[firstLetter] = [cur];
+  }
+  return acc;
 }, {});
 console.log(namesGrouped);
 
@@ -867,9 +888,9 @@ console.log(namesGrouped);
 
 ```js
 Object.keys(namesGrouped).forEach((groupKey) => {
-	console.log('-----------', groupKey, '-----------');
-	namesGrouped[groupKey].forEach((name) => console.log(name));
-	console.log();
+  console.log("-----------", groupKey, "-----------");
+  namesGrouped[groupKey].forEach((name) => console.log(name));
+  console.log();
 });
 ```
 
@@ -885,16 +906,16 @@ Object.keys(namesGrouped).forEach((groupKey) => {
 
 ```js
 const microphone = {
-	brand: 'Fifine',
-	indictor: true,
-	price: 8000,
-	color: 'Black',
-	startRecording() {
-		console.log('recording started');
-	},
-	stopRecording() {
-		console.log('recording stopped');
-	},
+  brand: "Fifine",
+  indictor: true,
+  price: 8000,
+  color: "Black",
+  startRecording() {
+    console.log("recording started");
+  },
+  stopRecording() {
+    console.log("recording stopped");
+  },
 };
 ```
 
@@ -913,7 +934,7 @@ const microphone = {
 
 ```js
 const testObj = new Object();
-testObj.name = 'Test Object';
+testObj.name = "Test Object";
 testObj.time = new Date();
 console.log(testObj); // { name: 'Test Object', time: 2022-06-16T07:09:01.373Z }
 ```
@@ -928,19 +949,19 @@ console.log(testObj); // { name: 'Test Object', time: 2022-06-16T07:09:01.373Z }
 
 ```js
 const microphone = {
-	brand: 'Fifine',
-	indictor: true,
-	price: 8000,
-	color: 'Black',
-	startRecording() {
-		console.log('recording started');
-	},
-	stopRecording() {
-		console.log('recording stopped');
-	},
+  brand: "Fifine",
+  indictor: true,
+  price: 8000,
+  color: "Black",
+  startRecording() {
+    console.log("recording started");
+  },
+  stopRecording() {
+    console.log("recording stopped");
+  },
 };
 
-microphone.newProperty = 'New Property';
+microphone.newProperty = "New Property";
 console.log(microphone);
 /* {
   brand: 'Fifine',
@@ -957,20 +978,20 @@ console.log(microphone);
 
 ```js
 const microphone = {
-	brand: 'Fifine',
-	indictor: true,
-	price: 8000,
-	color: 'Black',
-	startRecording() {
-		console.log('recording started');
-	},
-	stopRecording() {
-		console.log('recording stopped');
-	},
+  brand: "Fifine",
+  indictor: true,
+  price: 8000,
+  color: "Black",
+  startRecording() {
+    console.log("recording started");
+  },
+  stopRecording() {
+    console.log("recording stopped");
+  },
 };
 
 Object.freeze(microphone);
-microphone.newProperty = 'New Property';
+microphone.newProperty = "New Property";
 console.log(microphone);
 /* {
   brand: 'Fifine',
@@ -1004,7 +1025,7 @@ console.log(Object.values(microphone));
 
 ```js
 for (let k in microphone) {
-	console.log(k, microphone[k]);
+  console.log(k, microphone[k]);
 }
 
 /* 
@@ -1068,10 +1089,10 @@ console.log(Object.entries(microphone));
 
 ```js
 const arr = [
-	['brand', 'Fifine'],
-	['indictor', true],
-	['price', 8000],
-	['color', 'Black'],
+  ["brand", "Fifine"],
+  ["indictor", true],
+  ["price", 8000],
+  ["color", "Black"],
 ];
 
 console.log(Object.fromEntries(arr)); // { brand: 'Fifine', indictor: true, price: 8000, color: 'Black' }
@@ -1083,20 +1104,20 @@ console.log(Object.fromEntries(arr)); // { brand: 'Fifine', indictor: true, pric
 
 ```js
 const microphone = {
-	brand: 'Fifine',
-	indictor: true,
-	price: 8000,
-	color: 'Black',
-	startRecording() {
-		console.log('recording started');
-	},
-	stopRecording() {
-		console.log('recording stopped');
-	},
+  brand: "Fifine",
+  indictor: true,
+  price: 8000,
+  color: "Black",
+  startRecording() {
+    console.log("recording started");
+  },
+  stopRecording() {
+    console.log("recording stopped");
+  },
 };
 
 function startRecording() {
-	console.log('recording started');
+  console.log("recording started");
 }
 
 startRecording();
@@ -1112,11 +1133,11 @@ microphone.startRecording();
 
 ```js
 function uuidv4() {
-	return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
-		const r = (Math.random() * 16) | 0;
-		const v = c == 'x' ? r : (r & 0x3) | 0x8;
-		return v.toString(16);
-	});
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+    const r = (Math.random() * 16) | 0;
+    const v = c == "x" ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
 }
 ```
 
@@ -1128,21 +1149,21 @@ function uuidv4() {
 
 ```js
 const students = [
-	{
-		id: uuidv4(),
-		name: 'Md Al-Amin',
-		email: 'alamin@test.com',
-	},
-	{
-		id: uuidv4(),
-		name: 'Akib Ahmed',
-		email: 'akib@test.com',
-	},
-	{
-		id: uuidv4(),
-		name: 'Elias Emon',
-		email: 'elias@test.com',
-	},
+  {
+    id: uuidv4(),
+    name: "Md Al-Amin",
+    email: "alamin@test.com",
+  },
+  {
+    id: uuidv4(),
+    name: "Akib Ahmed",
+    email: "akib@test.com",
+  },
+  {
+    id: uuidv4(),
+    name: "Elias Emon",
+    email: "elias@test.com",
+  },
 ];
 ```
 
@@ -1150,21 +1171,21 @@ const students = [
 
 ```js
 const students = [
-	{
-		id: '67de71e5-0eac-474f-ab51-850ba9b31ed5',
-		name: 'Md Al-Amin',
-		email: 'alamin@test.com',
-	},
-	{
-		id: 'ebdf6b78-c32b-4b1d-8574-e8c655b05c1e',
-		name: 'Akib Ahmed',
-		email: 'akib@test.com',
-	},
-	{
-		id: 'ee729e84-a84e-4adf-b32c-4647a7114d5b',
-		name: 'Elias Emon',
-		email: 'elias@test.com',
-	},
+  {
+    id: "67de71e5-0eac-474f-ab51-850ba9b31ed5",
+    name: "Md Al-Amin",
+    email: "alamin@test.com",
+  },
+  {
+    id: "ebdf6b78-c32b-4b1d-8574-e8c655b05c1e",
+    name: "Akib Ahmed",
+    email: "akib@test.com",
+  },
+  {
+    id: "ee729e84-a84e-4adf-b32c-4647a7114d5b",
+    name: "Elias Emon",
+    email: "elias@test.com",
+  },
 ];
 ```
 
@@ -1184,9 +1205,9 @@ const students = [
 
 ```js
 students.push({
-	id: '0a2c956c-a9f4-48b9-83fa-551b432dfb2b',
-	name: 'Fahim Faisal',
-	email: 'fahim@test.com',
+  id: "0a2c956c-a9f4-48b9-83fa-551b432dfb2b",
+  name: "Fahim Faisal",
+  email: "fahim@test.com",
 });
 ```
 
@@ -1197,18 +1218,18 @@ students.push({
 আমরা দুইভাবে আপডেট করতে পারি। একটা হচ্ছে যাকে আপডেট করতে হবে find মেথডের মাধ্যমে সেই অবজেক্টকে বের করে তাকে আপডেট করা। আরেকটা হলো ঐ অবজেক্টের ইনডেক্সকে findIndex মেথডের মাধ্যমে বের করে সেটা ধরে আপডেট করা। অবজেক্ট ধরে যদি আপডেট করতে চাই সেক্ষেত্রে একটা সমস্যা আছে। সেটা একটু আমরা দেখি।
 
 ```js
-const idToUpdate = 'ee729e84-a84e-4adf-b32c-4647a7114d5b';
+const idToUpdate = "ee729e84-a84e-4adf-b32c-4647a7114d5b";
 const updatedData = {
-	name: 'Habiba Akhtar',
-	email: 'habiba@test.com',
+  name: "Habiba Akhtar",
+  email: "habiba@test.com",
 };
 
 let updatedObj = students.find((item) => item.id === idToUpdate);
 updatedObj = {
-	id: idToUpdate,
-	...updatedData,
+  id: idToUpdate,
+  ...updatedData,
 };
-console.log('Updated', students);
+console.log("Updated", students);
 /* 
 Updated [
   {
@@ -1238,18 +1259,18 @@ Updated [
 কিছুই আপডেট হলো না। কারণ আমরা অবজেক্ট অ্যাসাইন করছি। আর যেহেতু অ্যাসাইন করছি সেহেতু এর রেফারেন্সও আলাদা হয়ে গেছে। আলাদা রেফারেন্সের কারণে আমার আপডেট কাজ করছে না। এবার আসি ইনডেক্স বের করে কিভাবে আপডেট করতে পারি সেটা নিয়ে।
 
 ```js
-const idToUpdate = 'ee729e84-a84e-4adf-b32c-4647a7114d5b';
+const idToUpdate = "ee729e84-a84e-4adf-b32c-4647a7114d5b";
 const updatedData = {
-	name: 'Habiba Akhtar',
-	email: 'habiba@test.com',
+  name: "Habiba Akhtar",
+  email: "habiba@test.com",
 };
 
 const updatedIndex = students.findIndex((item) => item.id === idToUpdate);
 students[updatedIndex] = {
-	...students[updatedIndex],
-	...updatedData,
+  ...students[updatedIndex],
+  ...updatedData,
 };
-console.log('Updated', students);
+console.log("Updated", students);
 ```
 
 তিনটা ডট দেয়াকে জাভাস্ক্রিপ্টে বলে স্প্রেড অপারেটর। এর মানে হলো অরিজিনাল অবজেক্টে যা যা আছে সবই থাকবে। আর নতুন ডাটা অনুযায়ী সেটা আপডেট হবে। যখন কোনো কিছু রিঅ্যাসাইনের কাজ আসবে তখন আমরা find ব্যবহার না করে findIndex ব্যবহার করবো। এই আপডেট করা মোটামুটি রকমের কমপ্লেক্স। তাই এর কমপ্লেক্সিটি আমরা O(n) হিসেবে ধরতে পারি।
@@ -1275,15 +1296,15 @@ console.log(filteredStudents);
 
 ```js
 for (let i = 0; i < students.length; i++) {
-	console.log(students[i].name);
+  console.log(students[i].name);
 }
 
 for (let i in students) {
-	console.log(students[i].name);
+  console.log(students[i].name);
 }
 
 for (let student of students) {
-	console.log(student.name);
+  console.log(student.name);
 }
 ```
 
@@ -1295,21 +1316,21 @@ for (let student of students) {
 
 ```js
 const students = {
-	'67de71e5-0eac-474f-ab51-850ba9b31ed5': {
-		id: '67de71e5-0eac-474f-ab51-850ba9b31ed5',
-		name: 'Md Al-Amin',
-		email: 'alamin@test.com',
-	},
-	'ebdf6b78-c32b-4b1d-8574-e8c655b05c1e': {
-		id: 'ebdf6b78-c32b-4b1d-8574-e8c655b05c1e',
-		name: 'Akib Ahmed',
-		email: 'akib@test.com',
-	},
-	'ee729e84-a84e-4adf-b32c-4647a7114d5b': {
-		id: 'ee729e84-a84e-4adf-b32c-4647a7114d5b',
-		name: 'Elias Emon',
-		email: 'elias@test.com',
-	},
+  "67de71e5-0eac-474f-ab51-850ba9b31ed5": {
+    id: "67de71e5-0eac-474f-ab51-850ba9b31ed5",
+    name: "Md Al-Amin",
+    email: "alamin@test.com",
+  },
+  "ebdf6b78-c32b-4b1d-8574-e8c655b05c1e": {
+    id: "ebdf6b78-c32b-4b1d-8574-e8c655b05c1e",
+    name: "Akib Ahmed",
+    email: "akib@test.com",
+  },
+  "ee729e84-a84e-4adf-b32c-4647a7114d5b": {
+    id: "ee729e84-a84e-4adf-b32c-4647a7114d5b",
+    name: "Elias Emon",
+    email: "elias@test.com",
+  },
 };
 ```
 
@@ -1321,9 +1342,9 @@ const students = {
 
 ```js
 const std = {
-	id: uuidv4(),
-	name: 'Feroz Khan',
-	email: 'feroz@test.com',
+  id: uuidv4(),
+  name: "Feroz Khan",
+  email: "feroz@test.com",
 };
 
 students[std.id] = std;
@@ -1336,14 +1357,14 @@ students[std.id] = std;
 যেহেতু এটা অ্যারে না সেহেতু এখানে find বা findIndex কিছুই কাজ করবে না। তাহলে কিভাবে আপডেট করবো। খুব সহজ। চলুন দেখা যাক।
 
 ```js
-const idToBeUpdated = 'ee729e84-a84e-4adf-b32c-4647a7114d5b';
+const idToBeUpdated = "ee729e84-a84e-4adf-b32c-4647a7114d5b";
 const updatedData = {
-	name: 'HM Azizul',
-	email: 'azizul@test.com',
+  name: "HM Azizul",
+  email: "azizul@test.com",
 };
 students[idToBeUpdated] = {
-	...students[idToBeUpdated],
-	...updatedData,
+  ...students[idToBeUpdated],
+  ...updatedData,
 };
 ```
 
@@ -1364,7 +1385,7 @@ delete students[idToBeUpdated];
 যদি আমাদের কোনো অবজেক্টের কী জানা থাকে তাহলে ১ সেকেন্ডের মধ্যে আমরা সেই অবজেক্টকে পেয়ে যাবো। কিভাবে> দেখুন তাহলে-
 
 ```js
-console.log(students['67de71e5-0eac-474f-ab51-850ba9b31ed5']);
+console.log(students["67de71e5-0eac-474f-ab51-850ba9b31ed5"]);
 ```
 
 জাস্ট এটুকুই। আর এটার কমপ্লেক্সিটিও O(1)।
@@ -1375,7 +1396,7 @@ console.log(students['67de71e5-0eac-474f-ab51-850ba9b31ed5']);
 
 ```js
 for (let key in students) {
-	console.log(students[key].name);
+  console.log(students[key].name);
 }
 ```
 
@@ -1383,8 +1404,8 @@ for (let key in students) {
 
 ```js
 Object.keys(students).forEach((key) => {
-	const student = students[key];
-	console.log(student.name);
+  const student = students[key];
+  console.log(student.name);
 });
 ```
 
@@ -1392,7 +1413,7 @@ Object.keys(students).forEach((key) => {
 
 ```js
 Object.values(students).forEach((student) => {
-	console.log(student.name);
+  console.log(student.name);
 });
 ```
 
@@ -1406,54 +1427,54 @@ Object.values(students).forEach((student) => {
 const arr = [];
 const arrToObj = {};
 for (let i = 0; i < 5000000; i++) {
-	const o = {
-		id: i,
-		value: i,
-	};
-	arr.push(o);
-	arrToObj[i] = o;
+  const o = {
+    id: i,
+    value: i,
+  };
+  arr.push(o);
+  arrToObj[i] = o;
 }
 
-console.time('array');
+console.time("array");
 let id = 4999999;
 const obj = arr.find((item) => item.id === id);
 obj.value = 555;
-console.timeEnd('array'); // 104.901ms
+console.timeEnd("array"); // 104.901ms
 
-console.time('obj');
+console.time("obj");
 arrToObj[id].value = 999;
-console.timeEnd('obj'); // 0.019ms
+console.timeEnd("obj"); // 0.019ms
 ```
 
 অ্যারের অপারেশনে সময় লেগেছে ১০৪.৯০১ মিলিসেকেন্ড আর অবজেক্টের অপারেশনে লেগেছে ০.০১৯ মিলিসেকেন্ড।
 
 ```js
-console.time('array');
+console.time("array");
 arr.unshift({
-	id: 5000000,
-	value: 5000000,
+  id: 5000000,
+  value: 5000000,
 });
-console.timeEnd('array'); // 15.084ms
+console.timeEnd("array"); // 15.084ms
 
-console.time('obj');
+console.time("obj");
 arrToObj[5000000] = {
-	id: 5000000,
-	value: 5000000,
+  id: 5000000,
+  value: 5000000,
 };
-console.timeEnd('obj'); // 0.018ms
+console.timeEnd("obj"); // 0.018ms
 ```
 
 অ্যারের জন্য লেগেছে ১৫.০৮৪ মিলিসেকেন্ড আর অবজেক্টের ক্ষেত্রে লেগেছে ০.০১৮ মিলিসেকেন্ড।
 
 ```js
-console.time('array');
+console.time("array");
 const index = arr.findIndex((item) => item.id === 4000000);
 arr.splice(index, 1);
-console.timeEnd('array'); // 93.135ms
+console.timeEnd("array"); // 93.135ms
 
-console.time('obj');
+console.time("obj");
 delete arrToObj[4000000];
-console.timeEnd('obj'); // 0.015ms
+console.timeEnd("obj"); // 0.015ms
 ```
 
 অ্যারের ক্ষেত্রে লেগেছে ৯৩.১৩৫ মিলিসেকেন্ড আর অবজেক্টের ক্ষেত্রে লেগেছে ০.০১৫ মিলিসেকেন্ড।
